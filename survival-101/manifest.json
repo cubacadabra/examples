@@ -1,6 +1,6 @@
 {
   "id": "survival-101",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "sdkVersion": "0.3.0",
   "package": {
     "formatVersion": 3,
@@ -16,6 +16,55 @@
       },
       "campfire": {
         "path": "assets/images/campfire-alpha.png"
+      }
+    }
+  },
+  "effects": {
+    "version": 1,
+    "templates": {
+      "radio-model": {
+        "duration": 30,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [0, 0.18, 0],
+            "size": [1.5, 0.36, 0.9],
+            "color": "ink",
+            "visibleStates": ["placed"]
+          },
+          {
+            "shape": "box",
+            "position": [0, 0.42, 0],
+            "size": [1.25, 0.15, 0.72],
+            "color": "coral",
+            "visibleStates": ["placed"]
+          },
+          {
+            "shape": "box",
+            "position": [0, 0.53, -0.39],
+            "size": [0.5, 0.14, 0.04],
+            "color": "periwinkle",
+            "visibleStates": ["placed"]
+          },
+          {
+            "shape": "cylinder",
+            "position": [0.36, 0.55, -0.43],
+            "size": [0.16, 0.12, 0.16],
+            "color": "signal",
+            "visibleStates": ["placed"],
+            "animation": {
+              "pulseAmount": 0.12,
+              "pulseSpeed": 3
+            }
+          },
+          {
+            "shape": "box",
+            "position": [0.43, 0.78, 0],
+            "size": [0.08, 0.55, 0.08],
+            "color": "signal",
+            "visibleStates": ["placed"]
+          }
+        ]
       }
     }
   },
@@ -208,20 +257,6 @@
       },
       "groundMaterial": "grass",
       "blocks": [
-        {
-          "position": [
-            0,
-            0.5,
-            12
-          ],
-          "size": [
-            18,
-            1,
-            16
-          ],
-          "color": "ink",
-          "material": "wood"
-        },
         {
           "position": [
             0,
@@ -756,13 +791,13 @@
           "label": "Rescue Radio",
           "kind": "objective",
           "position": [
-            0,
-            1,
-            -43
+            7,
+            1.875,
+            12
           ],
-          "radius": 5,
+          "radius": 4,
           "color": "hot",
-          "visual": "objective"
+          "visual": "radio-model"
         }
       ]
     }

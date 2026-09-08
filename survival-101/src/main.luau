@@ -41,6 +41,7 @@ local function initial_camp()
         fuel = 60,
         beacon = 1,
         radio = 0,
+        radioPlaced = false,
     }
 end
 
@@ -60,6 +61,7 @@ local function validate_camp(value)
         fuel = math.max(0, math.floor(value.fuel)),
         beacon = math.max(1, math.floor(value.beacon)),
         radio = math.min(100, math.max(0, math.floor(value.radio))),
+        radioPlaced = value.radioPlaced == true,
     }
 end
 
@@ -97,6 +99,19 @@ local function reduce_camp(state, intent)
         end
         next_state.radio = target
         return next_state
+    elseif intent.kind == "place_radio" then
+        if state.radioPlaced then
+            return nil
+        end
+        next_state.radioPlaced = true
+        return next_state
+    elseif intent.kind == "remove_radio" then
+        if not state.radioPlaced then
+            return nil
+        end
+        next_state.radioPlaced = false
+        next_state.radio = 0
+        return next_state
     end
     return nil
 end
@@ -106,8 +121,9 @@ local camp = CubaSharedState.create({
     initial = initial_camp,
     validate = validate_camp,
     reduce = reduce_camp,
-    onChange = function(_api, state)
+    onChange = function(api, state)
         cycle:sync(state.phase, state.day)
+        api.effects:set_state("radio", state.radioPlaced and "placed" or "empty")
         if state.radio >= 100 then
             status = "RESCUE RADIO READY  •  HOLD THE OUTPOST"
         elseif state.phase == "night" then
@@ -294,8 +310,12 @@ local function update_hud(api)
     api.ui:set_text("survival-beacon", "BEACON  " .. tostring(state.beacon)
         .. "   FUEL " .. tostring(state.fuel)
         .. "   RADIO " .. tostring(state.radio) .. "%")
+    local radio_action = "PLACE RADIO"
+    if state.radioPlaced then
+        radio_action = state.radio >= 100 and "PICK UP RADIO" or "REPAIR RADIO"
+    end
     api.ui:set_text("survival-action", nearby_zone == "radio"
-        and "REPAIR RADIO"
+        and radio_action
         or "FEED BEACON")
 end
 
@@ -355,6 +375,10 @@ local function repair_radio()
         status = "TAKE SUPPLIES TO THE RESCUE RADIO"
         return
     end
+    if not camp_value().radioPlaced then
+        status = "PLACE THE RADIO ON THE WORKBENCH FIRST"
+        return
+    end
     if inventory.scrap < 2 or inventory.crystals < 1 then
         status = "RADIO NEEDS 2 SCRAP + 1 CRYSTAL"
         return
@@ -365,6 +389,32 @@ local function repair_radio()
     status = "RADIO REPAIRED  •  KEEP THE BEACON ALIVE"
 end
 
+local function place_radio()
+    if not interaction_state(Game.api, "radio") then
+        status = "MOVE TO THE WORKBENCH TO PLACE THE RADIO"
+        return
+    end
+    if camp_value().radioPlaced then
+        status = "THE RADIO IS ALREADY ON THE WORKBENCH"
+        return
+    end
+    camp:dispatch(Game.api, { kind = "place_radio" })
+    status = "RADIO PLACED  •  FIND SCRAP AND CRYSTALS"
+end
+
+local function remove_radio()
+    if not interaction_state(Game.api, "radio") then
+        status = "MOVE TO THE WORKBENCH TO PICK UP THE RADIO"
+        return
+    end
+    if not camp_value().radioPlaced then
+        status = "THE RADIO IS NOT ON THE WORKBENCH"
+        return
+    end
+    camp:dispatch(Game.api, { kind = "remove_radio" })
+    status = "RADIO PACKED UP  •  PLACE IT AGAIN WHEN READY"
+end
+
 function Game.on_start(api)
     Game.api = api
     api.lobby:set_enabled(false)
@@ -372,6 +422,7 @@ function Game.on_start(api)
     api.session:start("survival-101", { mode = "preview" })
     api.ui:set_document(player_controls())
     camp:start(api)
+    api.effects:set_state("radio", "empty")
     update_hud(api)
 end
 
@@ -383,7 +434,14 @@ function Game.on_interaction(api, event)
         elseif resource_kind(event.id) ~= nil then
             status = "PRESS GATHER  •  " .. string.upper(event.id)
         elseif event.id == "radio" then
-            status = "PRESS FEED BEACON TO REPAIR THE RADIO"
+            local state = camp_value()
+            if not state.radioPlaced then
+                status = "PRESS FEED BEACON TO PLACE THE RADIO"
+            elseif state.radio >= 100 then
+                status = "PRESS FEED BEACON TO PICK UP THE RADIO"
+            else
+                status = "PRESS FEED BEACON TO REPAIR THE RADIO"
+            end
         end
     elseif event.phase == "exit" and nearby_zone == event.id then
         nearby_zone = nil
@@ -399,7 +457,14 @@ function Game.on_ui_event(api, event)
         gather(api)
     elseif event.action == "survival.action" then
         if nearby_zone == "radio" then
-            repair_radio()
+            local state = camp_value()
+            if not state.radioPlaced then
+                place_radio()
+            elseif state.radio >= 100 then
+                remove_radio()
+            else
+                repair_radio()
+            end
         else
             feed_beacon()
         end
