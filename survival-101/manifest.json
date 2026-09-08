@@ -1,6 +1,6 @@
 {
   "id": "survival-101",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "sdkVersion": "0.3.0",
   "package": {
     "formatVersion": 3,
@@ -8,8 +8,12 @@
   },
   "assets": {
     "images": {
-      "forest-grass": { "path": "assets/images/forest-grass.png" },
-      "forest-wood": { "path": "assets/images/forest-wood.png" }
+      "forest-grass": {
+        "path": "assets/images/forest-grass.png"
+      },
+      "forest-wood": {
+        "path": "assets/images/forest-wood.png"
+      }
     }
   },
   "displayName": "Survival 101",
@@ -64,7 +68,12 @@
     "groundSize": 100,
     "gridSize": 96,
     "gridDivisions": 32,
-    "spawn": [0, 1.5, 12],
+    "showGrid": false,
+    "spawn": [
+      0,
+      1.5,
+      12
+    ],
     "physics": {
       "gravity": 28,
       "jumpVelocity": 10.5,
@@ -84,9 +93,30 @@
     },
     "showSpawnPad": false,
     "clouds": [
-      { "position": [-30, 22, -35], "scale": 1.4 },
-      { "position": [26, 19, -15], "scale": 1.0 },
-      { "position": [5, 25, 30], "scale": 1.2 }
+      {
+        "position": [
+          -30,
+          22,
+          -35
+        ],
+        "scale": 1.4
+      },
+      {
+        "position": [
+          26,
+          19,
+          -15
+        ],
+        "scale": 1.0
+      },
+      {
+        "position": [
+          5,
+          25,
+          30
+        ],
+        "scale": 1.2
+      }
     ]
   },
   "launchPads": [],
@@ -110,7 +140,12 @@
         "groundSize": 100,
         "gridSize": 96,
         "gridDivisions": 32,
-        "spawn": [0, 1.5, 12],
+        "showGrid": false,
+        "spawn": [
+          0,
+          1.5,
+          12
+        ],
         "showSpawnPad": false,
         "physics": {
           "gravity": 28,
@@ -130,9 +165,30 @@
           "delay": 1.5
         },
         "clouds": [
-          { "position": [-30, 22, -35], "scale": 1.4 },
-          { "position": [26, 19, -15], "scale": 1.0 },
-          { "position": [5, 25, 30], "scale": 1.2 }
+          {
+            "position": [
+              -30,
+              22,
+              -35
+            ],
+            "scale": 1.4
+          },
+          {
+            "position": [
+              26,
+              19,
+              -15
+            ],
+            "scale": 1.0
+          },
+          {
+            "position": [
+              5,
+              25,
+              30
+            ],
+            "scale": 1.2
+          }
         ]
       },
       "materials": {
@@ -149,47 +205,319 @@
       },
       "groundMaterial": "grass",
       "blocks": [
-        { "position": [0, 0.5, 12], "size": [18, 1, 16], "color": "ink", "material": "wood" },
-        { "position": [0, 1.2, 12], "size": [3.4, 1.4, 3.4], "color": "coral" },
-        { "position": [0, 2.4, 12], "size": [1.8, 1.0, 1.8], "color": "hot" },
-        { "position": [0, 3.4, 12], "size": [0.4, 1.4, 0.4], "color": "signal", "outline": false },
-        { "position": [-18, 2.3, -8], "size": [2.2, 4.6, 2.2], "color": "coral", "material": "wood" },
-        { "position": [-24, 1.8, -5], "size": [1.8, 3.6, 1.8], "color": "butter", "material": "wood" },
-        { "position": [-14, 1.5, -14], "size": [3.6, 3, 3.6], "color": "periwinkle" },
-        { "position": [-27, 1.6, -13], "size": [1.4, 3.2, 1.4], "color": "coral", "material": "wood", "outline": false },
-        { "position": [-27, 3.8, -13], "size": [5.4, 1.8, 5.4], "color": "periwinkle", "material": "grass", "outline": false },
-        { "position": [-9, 1.4, -9], "size": [1.2, 2.8, 1.2], "color": "coral", "material": "wood", "outline": false },
-        { "position": [-9, 3.4, -9], "size": [4.6, 1.6, 4.6], "color": "periwinkle", "material": "grass", "outline": false },
-        { "position": [18, 1.8, -8], "size": [2.2, 3.6, 2.2], "color": "coral" },
-        { "position": [24, 2.5, -4], "size": [2.6, 5, 2.6], "color": "butter" },
-        { "position": [14, 1.4, -15], "size": [4.2, 2.8, 4.2], "color": "periwinkle" },
-        { "position": [-4, 1.2, -30], "size": [4.0, 2.4, 4.0], "color": "ink" },
-        { "position": [5, 1.8, -34], "size": [2.4, 3.6, 2.4], "color": "butter" },
-        { "position": [27, 1.0, 12], "size": [8, 2, 8], "color": "ink" },
-        { "position": [27, 4.2, 12], "size": [5, 2.4, 5], "color": "periwinkle" },
-        { "position": [27, 7.5, 12], "size": [2.5, 0.5, 2.5], "color": "signal" },
-        { "position": [0, 0.3, -43], "size": [14, 0.6, 6], "color": "hot" }
+        {
+          "position": [
+            0,
+            0.5,
+            12
+          ],
+          "size": [
+            18,
+            1,
+            16
+          ],
+          "color": "ink",
+          "material": "wood"
+        },
+        {
+          "position": [
+            0,
+            1.2,
+            12
+          ],
+          "size": [
+            3.4,
+            1.4,
+            3.4
+          ],
+          "color": "coral"
+        },
+        {
+          "position": [
+            0,
+            2.4,
+            12
+          ],
+          "size": [
+            1.8,
+            1.0,
+            1.8
+          ],
+          "color": "hot"
+        },
+        {
+          "position": [
+            0,
+            3.4,
+            12
+          ],
+          "size": [
+            0.4,
+            1.4,
+            0.4
+          ],
+          "color": "signal",
+          "outline": false
+        },
+        {
+          "position": [
+            -18,
+            2.3,
+            -8
+          ],
+          "size": [
+            2.2,
+            4.6,
+            2.2
+          ],
+          "color": "coral",
+          "material": "wood"
+        },
+        {
+          "position": [
+            -24,
+            1.8,
+            -5
+          ],
+          "size": [
+            1.8,
+            3.6,
+            1.8
+          ],
+          "color": "butter",
+          "material": "wood"
+        },
+        {
+          "position": [
+            -14,
+            1.5,
+            -14
+          ],
+          "size": [
+            3.6,
+            3,
+            3.6
+          ],
+          "color": "periwinkle"
+        },
+        {
+          "position": [
+            -27,
+            1.6,
+            -13
+          ],
+          "size": [
+            1.4,
+            3.2,
+            1.4
+          ],
+          "color": "coral",
+          "material": "wood",
+          "outline": false
+        },
+        {
+          "position": [
+            -27,
+            3.8,
+            -13
+          ],
+          "size": [
+            5.4,
+            1.8,
+            5.4
+          ],
+          "color": "periwinkle",
+          "material": "grass",
+          "outline": false
+        },
+        {
+          "position": [
+            -9,
+            1.4,
+            -9
+          ],
+          "size": [
+            1.2,
+            2.8,
+            1.2
+          ],
+          "color": "coral",
+          "material": "wood",
+          "outline": false
+        },
+        {
+          "position": [
+            -9,
+            3.4,
+            -9
+          ],
+          "size": [
+            4.6,
+            1.6,
+            4.6
+          ],
+          "color": "periwinkle",
+          "material": "grass",
+          "outline": false
+        },
+        {
+          "position": [
+            18,
+            1.8,
+            -8
+          ],
+          "size": [
+            2.2,
+            3.6,
+            2.2
+          ],
+          "color": "coral"
+        },
+        {
+          "position": [
+            24,
+            2.5,
+            -4
+          ],
+          "size": [
+            2.6,
+            5,
+            2.6
+          ],
+          "color": "butter"
+        },
+        {
+          "position": [
+            14,
+            1.4,
+            -15
+          ],
+          "size": [
+            4.2,
+            2.8,
+            4.2
+          ],
+          "color": "periwinkle"
+        },
+        {
+          "position": [
+            -4,
+            1.2,
+            -30
+          ],
+          "size": [
+            4.0,
+            2.4,
+            4.0
+          ],
+          "color": "ink"
+        },
+        {
+          "position": [
+            5,
+            1.8,
+            -34
+          ],
+          "size": [
+            2.4,
+            3.6,
+            2.4
+          ],
+          "color": "butter"
+        },
+        {
+          "position": [
+            27,
+            1.0,
+            12
+          ],
+          "size": [
+            8,
+            2,
+            8
+          ],
+          "color": "ink"
+        },
+        {
+          "position": [
+            27,
+            4.2,
+            12
+          ],
+          "size": [
+            5,
+            2.4,
+            5
+          ],
+          "color": "periwinkle"
+        },
+        {
+          "position": [
+            27,
+            7.5,
+            12
+          ],
+          "size": [
+            2.5,
+            0.5,
+            2.5
+          ],
+          "color": "signal"
+        },
+        {
+          "position": [
+            0,
+            0.3,
+            -43
+          ],
+          "size": [
+            14,
+            0.6,
+            6
+          ],
+          "color": "hot"
+        }
       ],
       "hazards": [
         {
           "id": "outer-storm",
           "kind": "damage",
-          "position": [0, 0.8, -25],
-          "size": [72, 1.6, 36],
+          "position": [
+            0,
+            0.8,
+            -25
+          ],
+          "size": [
+            72,
+            1.6,
+            36
+          ],
           "damagePerSecond": 3
         },
         {
           "id": "ravine",
           "kind": "kill",
-          "position": [0, -11, -25],
-          "size": [96, 2, 96],
+          "position": [
+            0,
+            -11,
+            -25
+          ],
+          "size": [
+            96,
+            2,
+            96
+          ],
           "damagePerSecond": 0
         }
       ],
       "safeZones": [
         {
           "id": "beacon-safe-zone",
-          "position": [0, 1.2, 12],
+          "position": [
+            0,
+            1.2,
+            12
+          ],
           "radius": 8,
           "healPerSecond": 18
         }
@@ -197,27 +525,93 @@
       "ladders": [
         {
           "id": "lookout-ladder",
-          "position": [27, 4.8, 12],
-          "size": [2.2, 6.5, 0.9],
+          "position": [
+            27,
+            4.8,
+            12
+          ],
+          "size": [
+            2.2,
+            6.5,
+            0.9
+          ],
           "climbAxis": "z",
           "color": "signal",
           "climbSpeed": 4.5
         }
       ],
       "signs": [
-        { "text": "STORMLINE OUTPOST", "position": [0, 5, 12], "maxWidth": 8, "color": "paper" },
-        { "text": "BEACON  /  SAFE AFTER DARK", "position": [0, 4.5, 12], "maxWidth": 7, "color": "signal" },
-        { "text": "WOOD GROVE", "position": [-18, 5.5, -8], "maxWidth": 5, "color": "butter" },
-        { "text": "SCRAP FIELD", "position": [18, 5.5, -8], "maxWidth": 5, "color": "paper" },
-        { "text": "STORM CRYSTALS", "position": [0, 5, -32], "maxWidth": 6, "color": "signal" },
-        { "text": "THE STORM IS COMING", "position": [0, 2.5, -43], "maxWidth": 7, "color": "hot" }
+        {
+          "text": "STORMLINE OUTPOST",
+          "position": [
+            0,
+            5,
+            12
+          ],
+          "maxWidth": 8,
+          "color": "paper"
+        },
+        {
+          "text": "BEACON  /  SAFE AFTER DARK",
+          "position": [
+            0,
+            4.5,
+            12
+          ],
+          "maxWidth": 7,
+          "color": "signal"
+        },
+        {
+          "text": "WOOD GROVE",
+          "position": [
+            -18,
+            5.5,
+            -8
+          ],
+          "maxWidth": 5,
+          "color": "butter"
+        },
+        {
+          "text": "SCRAP FIELD",
+          "position": [
+            18,
+            5.5,
+            -8
+          ],
+          "maxWidth": 5,
+          "color": "paper"
+        },
+        {
+          "text": "STORM CRYSTALS",
+          "position": [
+            0,
+            5,
+            -32
+          ],
+          "maxWidth": 6,
+          "color": "signal"
+        },
+        {
+          "text": "THE STORM IS COMING",
+          "position": [
+            0,
+            2.5,
+            -43
+          ],
+          "maxWidth": 7,
+          "color": "hot"
+        }
       ],
       "interactions": [
         {
           "id": "beacon",
           "label": "Beacon",
           "kind": "safe-zone",
-          "position": [0, 1.2, 12],
+          "position": [
+            0,
+            1.2,
+            12
+          ],
           "radius": 8,
           "color": "signal",
           "visual": "shelter-beacon"
@@ -226,7 +620,11 @@
           "id": "wood-grove",
           "label": "Wood Grove",
           "kind": "resource",
-          "position": [-18, 1, -8],
+          "position": [
+            -18,
+            1,
+            -8
+          ],
           "radius": 5,
           "color": "coral",
           "visual": "resource-node"
@@ -235,7 +633,11 @@
           "id": "scrap-field",
           "label": "Scrap Field",
           "kind": "resource",
-          "position": [18, 1, -8],
+          "position": [
+            18,
+            1,
+            -8
+          ],
           "radius": 5,
           "color": "butter",
           "visual": "resource-node"
@@ -244,7 +646,11 @@
           "id": "crystal-ridge",
           "label": "Storm Crystals",
           "kind": "resource",
-          "position": [0, 1, -32],
+          "position": [
+            0,
+            1,
+            -32
+          ],
           "radius": 5,
           "color": "signal",
           "visual": "resource-node"
@@ -253,7 +659,11 @@
           "id": "radio",
           "label": "Rescue Radio",
           "kind": "objective",
-          "position": [0, 1, -43],
+          "position": [
+            0,
+            1,
+            -43
+          ],
           "radius": 5,
           "color": "hot",
           "visual": "objective"
