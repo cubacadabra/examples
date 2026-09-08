@@ -1,18 +1,28 @@
 {
   "id": "adventure-101",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "sdkVersion": "0.3.0",
-  "package": { "formatVersion": 3, "entry": "game.luau" },
+  "package": {
+    "formatVersion": 3,
+    "entry": "game.luau"
+  },
   "assets": {
     "images": {
-      "forest-grass": { "path": "assets/images/forest-grass.png" },
-      "forest-wood": { "path": "assets/images/forest-wood.png" }
+      "forest-grass": {
+        "path": "assets/images/forest-grass.png"
+      },
+      "forest-wood": {
+        "path": "assets/images/forest-wood.png"
+      }
     }
   },
   "displayName": "Adventure 101",
   "lobby": false,
   "startWorld": "lobby",
-  "launch": { "destinationWorld": "starter-world", "authoritative": true },
+  "launch": {
+    "destinationWorld": "starter-world",
+    "authoritative": true
+  },
   "scene": {
     "eyebrow": "cubacadabra expedition",
     "title": "Whispering Wilds",
@@ -20,95 +30,515 @@
     "maxPlayers": 18
   },
   "palette": {
-    "sky": "#101A2B", "ground": "#263A32", "groundEdge": "#071015", "grid": "#36544F",
-    "signal": "#F2C86B", "hot": "#E77A62", "coral": "#B7644F", "butter": "#D9C982",
-    "periwinkle": "#86A9A0", "wood": "#7B492E", "ink": "#111B20", "paper": "#F4F0DF"
+    "sky": "#101A2B",
+    "ground": "#263A32",
+    "groundEdge": "#071015",
+    "grid": "#36544F",
+    "signal": "#F2C86B",
+    "hot": "#E77A62",
+    "coral": "#B7644F",
+    "butter": "#D9C982",
+    "periwinkle": "#86A9A0",
+    "wood": "#7B492E",
+    "ink": "#111B20",
+    "paper": "#F4F0DF"
   },
   "avatars": {
     "player": {
-      "skin": "#D99A72", "shirt": "#86A9A0", "pants": "#344A5D", "shoes": "#101A22",
+      "skin": "#D99A72",
+      "shirt": "#86A9A0",
+      "pants": "#344A5D",
+      "shoes": "#101A22",
       "character": {
-        "version": 1, "body": "cuba:person.v1", "face": "determined",
-        "outfit": "cuba:everyday-hoodie.v1", "equipment": {},
-        "colors": { "primary": "#86A9A0", "secondary": "#344A5D", "sole": "#101A22" },
+        "version": 1,
+        "body": "cuba:person.v1",
+        "face": "determined",
+        "outfit": "cuba:everyday-hoodie.v1",
+        "equipment": {},
+        "colors": {
+          "primary": "#86A9A0",
+          "secondary": "#344A5D",
+          "sole": "#101A22"
+        },
         "revision": 1
       }
     },
     "npcs": []
   },
   "world": {
-    "groundSize": 100, "gridSize": 96, "gridDivisions": 32, "showGrid": false,
-    "spawn": [0, 1.5, 22],
-    "physics": { "gravity": 28, "jumpVelocity": 10.5, "groundCollision": true, "groundY": 0, "deathY": -14, "respawnDelay": 1.2, "climbSpeed": 4.5 },
-    "health": { "max": 100, "start": 100 }, "respawn": { "mode": "spawn", "delay": 1.2 },
+    "groundSize": 100,
+    "gridSize": 96,
+    "gridDivisions": 32,
+    "showGrid": false,
+    "spawn": [
+      0,
+      1.5,
+      22
+    ],
+    "physics": {
+      "gravity": 28,
+      "jumpVelocity": 10.5,
+      "groundCollision": true,
+      "groundY": 0,
+      "deathY": -14,
+      "respawnDelay": 1.2,
+      "climbSpeed": 4.5
+    },
+    "health": {
+      "max": 100,
+      "start": 100
+    },
+    "respawn": {
+      "mode": "spawn",
+      "delay": 1.2
+    },
     "showSpawnPad": false,
     "clouds": [
-      { "position": [-30, 22, -35], "scale": 1.4 },
-      { "position": [26, 19, -15], "scale": 1.0 },
-      { "position": [5, 25, 30], "scale": 1.2 }
+      {
+        "position": [
+          -30,
+          22,
+          -35
+        ],
+        "scale": 1.4
+      },
+      {
+        "position": [
+          26,
+          19,
+          -15
+        ],
+        "scale": 1.0
+      },
+      {
+        "position": [
+          5,
+          25,
+          30
+        ],
+        "scale": 1.2
+      }
     ]
   },
-  "launchPads": [], "blocks": [],
+  "launchPads": [],
+  "blocks": [],
   "worlds": {
     "starter-world": {
       "palette": {
-        "sky": "#101A2B", "ground": "#263A32", "groundEdge": "#071015", "grid": "#36544F",
-        "signal": "#F2C86B", "hot": "#E77A62", "coral": "#B7644F", "butter": "#D9C982",
-        "periwinkle": "#86A9A0", "wood": "#7B492E", "ink": "#111B20", "paper": "#F4F0DF"
+        "sky": "#101A2B",
+        "ground": "#263A32",
+        "groundEdge": "#071015",
+        "grid": "#36544F",
+        "signal": "#F2C86B",
+        "hot": "#E77A62",
+        "coral": "#B7644F",
+        "butter": "#D9C982",
+        "periwinkle": "#86A9A0",
+        "wood": "#7B492E",
+        "ink": "#111B20",
+        "paper": "#F4F0DF"
       },
       "world": {
-        "groundSize": 100, "gridSize": 96, "gridDivisions": 32, "showGrid": false,
-        "spawn": [0, 1.5, 22],
-        "physics": { "gravity": 28, "jumpVelocity": 10.5, "groundCollision": true, "groundY": 0, "deathY": -14, "respawnDelay": 1.2, "climbSpeed": 4.5 },
-        "health": { "max": 100, "start": 100 }, "respawn": { "mode": "spawn", "delay": 1.2 },
+        "groundSize": 100,
+        "gridSize": 96,
+        "gridDivisions": 32,
+        "showGrid": false,
+        "spawn": [
+          0,
+          1.5,
+          22
+        ],
+        "physics": {
+          "gravity": 28,
+          "jumpVelocity": 10.5,
+          "groundCollision": true,
+          "groundY": 0,
+          "deathY": -14,
+          "respawnDelay": 1.2,
+          "climbSpeed": 4.5
+        },
+        "health": {
+          "max": 100,
+          "start": 100
+        },
+        "respawn": {
+          "mode": "spawn",
+          "delay": 1.2
+        },
         "showSpawnPad": false,
         "clouds": [
-          { "position": [-30, 22, -35], "scale": 1.4 },
-          { "position": [26, 19, -15], "scale": 1.0 },
-          { "position": [5, 25, 30], "scale": 1.2 }
+          {
+            "position": [
+              -30,
+              22,
+              -35
+            ],
+            "scale": 1.4
+          },
+          {
+            "position": [
+              26,
+              19,
+              -15
+            ],
+            "scale": 1.0
+          },
+          {
+            "position": [
+              5,
+              25,
+              30
+            ],
+            "scale": 1.2
+          }
         ]
       },
       "materials": {
-        "grass": { "image": "forest-grass", "tileU": 8, "tileV": 8 },
-        "wood": { "image": "forest-wood", "tileU": 2.5, "tileV": 2.5 }
+        "grass": {
+          "image": "forest-grass",
+          "tileU": 8,
+          "tileV": 8
+        },
+        "wood": {
+          "image": "forest-wood",
+          "tileU": 2.5,
+          "tileV": 2.5
+        }
       },
       "groundMaterial": "grass",
       "blocks": [
-        { "position": [0, 0.35, 17], "size": [8, 0.7, 5], "color": "wood", "material": "wood", "outline": false },
-        { "position": [-7, 0.45, 13], "size": [3.6, 0.9, 1.4], "color": "wood", "material": "wood", "outline": false },
-        { "position": [8, 0.45, 10], "size": [3.6, 0.9, 1.4], "color": "wood", "material": "wood", "outline": false },
-        { "position": [-8, 0.65, 4], "size": [3.2, 1.3, 3.2], "color": "periwinkle", "material": "wood" },
-        { "position": [0, 0.55, 0], "size": [5.6, 1.1, 3.2], "color": "ink", "material": "wood" },
-        { "position": [9, 0.6, -3], "size": [3.8, 1.2, 3.8], "color": "coral", "material": "wood" },
-        { "position": [15, 1.6, -11], "size": [7.5, 3.2, 7.5], "color": "wood", "material": "wood" },
-        { "position": [15, 3.55, -11], "size": [3.7, 0.7, 3.7], "color": "butter", "material": "wood" },
-        { "position": [-18, 0.8, -11], "size": [4.8, 1.6, 4.8], "color": "ink", "material": "wood" },
-        { "position": [-24, 1.0, -19], "size": [2.6, 2.0, 2.6], "color": "coral", "material": "wood" },
-        { "position": [-28, 1.6, -25], "size": [6, 3.2, 6], "color": "periwinkle", "material": "wood" },
-        { "position": [0, 0.25, -38], "size": [16, 0.5, 5], "color": "hot" }
+        {
+          "position": [
+            0,
+            0.35,
+            17
+          ],
+          "size": [
+            8,
+            0.7,
+            5
+          ],
+          "color": "wood",
+          "material": "wood",
+          "outline": false
+        },
+        {
+          "position": [
+            -7,
+            0.45,
+            13
+          ],
+          "size": [
+            3.6,
+            0.9,
+            1.4
+          ],
+          "color": "wood",
+          "material": "wood",
+          "outline": false
+        },
+        {
+          "position": [
+            8,
+            0.45,
+            10
+          ],
+          "size": [
+            3.6,
+            0.9,
+            1.4
+          ],
+          "color": "wood",
+          "material": "wood",
+          "outline": false
+        },
+        {
+          "position": [
+            -8,
+            0.65,
+            4
+          ],
+          "size": [
+            3.2,
+            1.3,
+            3.2
+          ],
+          "color": "periwinkle",
+          "material": "wood"
+        },
+        {
+          "position": [
+            0,
+            0.55,
+            0
+          ],
+          "size": [
+            5.6,
+            1.1,
+            3.2
+          ],
+          "color": "ink",
+          "material": "wood"
+        },
+        {
+          "position": [
+            9,
+            0.6,
+            -3
+          ],
+          "size": [
+            3.8,
+            1.2,
+            3.8
+          ],
+          "color": "coral",
+          "material": "wood"
+        },
+        {
+          "position": [
+            15,
+            1.6,
+            -11
+          ],
+          "size": [
+            7.5,
+            3.2,
+            7.5
+          ],
+          "color": "wood",
+          "material": "wood"
+        },
+        {
+          "position": [
+            15,
+            3.55,
+            -11
+          ],
+          "size": [
+            3.7,
+            0.7,
+            3.7
+          ],
+          "color": "butter",
+          "material": "wood"
+        },
+        {
+          "position": [
+            -18,
+            0.8,
+            -11
+          ],
+          "size": [
+            4.8,
+            1.6,
+            4.8
+          ],
+          "color": "ink",
+          "material": "wood"
+        },
+        {
+          "position": [
+            -24,
+            1.0,
+            -19
+          ],
+          "size": [
+            2.6,
+            2.0,
+            2.6
+          ],
+          "color": "coral",
+          "material": "wood"
+        },
+        {
+          "position": [
+            -28,
+            1.6,
+            -25
+          ],
+          "size": [
+            6,
+            3.2,
+            6
+          ],
+          "color": "periwinkle",
+          "material": "wood"
+        },
+        {
+          "position": [
+            0,
+            0.25,
+            -38
+          ],
+          "size": [
+            16,
+            0.5,
+            5
+          ],
+          "color": "hot"
+        }
       ],
       "ladders": [
-        { "id": "watchtower-ladder", "position": [11.1, 2.15, -11], "size": [2.0, 4.0, 0.8], "climbAxis": "z", "color": "butter" }
+        {
+          "id": "watchtower-ladder",
+          "position": [
+            11.1,
+            2.15,
+            -11
+          ],
+          "size": [
+            2.0,
+            4.0,
+            0.8
+          ],
+          "climbAxis": "z",
+          "color": "butter"
+        }
       ],
       "signs": [
-        { "text": "TRAILHEAD CAMP", "position": [0, 2.8, 19], "yaw": 3.14, "maxWidth": 5.0, "color": "signal" },
-        { "text": "CREEK CROSSING", "position": [0, 2.2, 3], "yaw": 0, "maxWidth": 5.0, "color": "paper" },
-        { "text": "OLD WATCHTOWER", "position": [15, 5.4, -11], "yaw": 3.14, "maxWidth": 5.5, "color": "butter" },
-        { "text": "THE HOLLOW", "position": [-18, 3, -11], "yaw": 0, "maxWidth": 4, "color": "periwinkle" }
+        {
+          "text": "TRAILHEAD CAMP",
+          "position": [
+            0,
+            2.8,
+            19
+          ],
+          "yaw": 3.14,
+          "maxWidth": 5.0,
+          "color": "signal"
+        },
+        {
+          "text": "CREEK CROSSING",
+          "position": [
+            0,
+            2.2,
+            3
+          ],
+          "yaw": 0,
+          "maxWidth": 5.0,
+          "color": "paper"
+        },
+        {
+          "text": "OLD WATCHTOWER",
+          "position": [
+            15,
+            5.4,
+            -11
+          ],
+          "yaw": 3.14,
+          "maxWidth": 5.5,
+          "color": "butter"
+        },
+        {
+          "text": "THE HOLLOW",
+          "position": [
+            -18,
+            3,
+            -11
+          ],
+          "yaw": 0,
+          "maxWidth": 4,
+          "color": "periwinkle"
+        }
       ],
       "checkpoints": [
-        { "id": "trailhead", "position": [0, 1.5, 20], "radius": 4 },
-        { "id": "watchtower", "position": [15, 4.5, -11], "radius": 3 }
+        {
+          "id": "trailhead",
+          "position": [
+            0,
+            1.5,
+            20
+          ],
+          "radius": 4
+        },
+        {
+          "id": "watchtower",
+          "position": [
+            15,
+            4.5,
+            -11
+          ],
+          "radius": 3
+        }
       ],
       "hazards": [
-        { "id": "ravine", "kind": "void", "position": [0, 0, -38], "size": [18, 2, 6], "damagePerSecond": 100 }
+        {
+          "id": "ravine",
+          "kind": "void",
+          "position": [
+            0,
+            0,
+            -38
+          ],
+          "size": [
+            18,
+            2,
+            6
+          ],
+          "damagePerSecond": 100
+        }
       ],
       "interactions": [
-        { "id": "trailhead", "label": "Read trail map", "position": [0, 1.4, 19], "radius": 4, "color": "signal", "visual": "checkpoint" },
-        { "id": "creek", "label": "Search the creek", "position": [0, 1.2, 0], "radius": 4, "color": "periwinkle", "visual": "checkpoint" },
-        { "id": "watchtower", "label": "Climb watchtower", "position": [15, 4.4, -11], "radius": 4, "color": "butter", "visual": "checkpoint" },
-        { "id": "hollow", "label": "Enter the hollow", "position": [-18, 1.8, -11], "radius": 4, "color": "hot", "visual": "checkpoint" },
-        { "id": "relic", "label": "Inspect the hidden relic", "position": [-28, 3.2, -25], "radius": 4, "color": "signal", "visual": "checkpoint" }
+        {
+          "id": "trailhead",
+          "label": "Read trail map",
+          "position": [
+            0,
+            1.4,
+            19
+          ],
+          "radius": 4,
+          "color": "signal",
+          "visual": "checkpoint"
+        },
+        {
+          "id": "creek",
+          "label": "Search the creek",
+          "position": [
+            0,
+            1.2,
+            0
+          ],
+          "radius": 4,
+          "color": "periwinkle",
+          "visual": "checkpoint"
+        },
+        {
+          "id": "watchtower",
+          "label": "Climb watchtower",
+          "position": [
+            15,
+            4.4,
+            -11
+          ],
+          "radius": 4,
+          "color": "butter",
+          "visual": "checkpoint"
+        },
+        {
+          "id": "hollow",
+          "label": "Enter the hollow",
+          "position": [
+            -18,
+            1.8,
+            -11
+          ],
+          "radius": 4,
+          "color": "hot",
+          "visual": "checkpoint"
+        },
+        {
+          "id": "relic",
+          "label": "Inspect the hidden relic",
+          "position": [
+            -28,
+            3.2,
+            -25
+          ],
+          "radius": 4,
+          "color": "signal",
+          "visual": "checkpoint"
+        }
       ]
     }
   }
