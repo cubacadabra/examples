@@ -13,6 +13,9 @@
       },
       "forest-wood": {
         "path": "assets/images/forest-wood.png"
+      },
+      "campfire": {
+        "path": "assets/images/campfire-alpha.png"
       }
     }
   },
@@ -476,6 +479,99 @@
             6
           ],
           "color": "hot"
+        },
+        {
+          "position": [-7, 0.45, 17],
+          "size": [5.2, 0.7, 0.8],
+          "color": "coral",
+          "material": "wood",
+          "outline": false
+        },
+        {
+          "position": [-8.5, 0.42, 18.1],
+          "size": [3.8, 0.65, 0.75],
+          "color": "butter",
+          "material": "wood",
+          "outline": false
+        },
+        {
+          "position": [10.5, 0.8, 17],
+          "size": [1.6, 1.6, 1.6],
+          "color": "coral",
+          "material": "wood"
+        },
+        {
+          "position": [12.2, 0.8, 17.5],
+          "size": [1.6, 1.6, 1.6],
+          "color": "butter",
+          "material": "wood"
+        },
+        {
+          "position": [12.2, 2.45, 17.5],
+          "size": [1.5, 1.5, 1.5],
+          "color": "coral",
+          "material": "wood"
+        },
+        {
+          "position": [7, 1.7, 12],
+          "size": [5, 0.35, 2.3],
+          "color": "coral",
+          "material": "wood"
+        },
+        {
+          "position": [5.1, 0.85, 11.2],
+          "size": [0.35, 1.7, 0.35],
+          "color": "coral",
+          "material": "wood",
+          "outline": false
+        },
+        {
+          "position": [8.9, 0.85, 11.2],
+          "size": [0.35, 1.7, 0.35],
+          "color": "coral",
+          "material": "wood",
+          "outline": false
+        },
+        {
+          "position": [5.1, 0.85, 12.8],
+          "size": [0.35, 1.7, 0.35],
+          "color": "coral",
+          "material": "wood",
+          "outline": false
+        },
+        {
+          "position": [8.9, 0.85, 12.8],
+          "size": [0.35, 1.7, 0.35],
+          "color": "coral",
+          "material": "wood",
+          "outline": false
+        },
+        {
+          "position": [-9, 0.35, 12],
+          "size": [0.9, 0.7, 0.9],
+          "color": "butter",
+          "outline": false
+        },
+        {
+          "position": [-10.1, 0.28, 12.8],
+          "size": [0.7, 0.56, 0.7],
+          "color": "periwinkle",
+          "outline": false
+        },
+        {
+          "position": [-8.3, 0.3, 11.3],
+          "size": [0.8, 0.6, 0.8],
+          "color": "periwinkle",
+          "outline": false
+        }
+      ],
+      "billboards": [
+        {
+          "image": "campfire",
+          "position": [-7, 2.35, 12],
+          "width": 4.8,
+          "height": 4.8,
+          "framed": false
         }
       ],
       "hazards": [
