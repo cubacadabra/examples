@@ -1,6 +1,6 @@
 {
   "id": "the-wild-west",
-  "version": "0.3.1",
+  "version": "0.3.3",
   "sdkVersion": "0.3.0",
   "package": {
     "formatVersion": 3,
@@ -173,16 +173,14 @@
       "checkpoints": [
         { "id": "trailhead", "position": [0, 1.05, 22], "radius": 3.6 },
         { "id": "water-tower", "position": [4, 2.75, -6], "radius": 2.5 },
-        { "id": "high-desert", "position": [3, 11.2, -23], "radius": 2.5 }
+        { "id": "high-desert", "position": [3, 11.2, -23], "radius": 2.5 },
+        { "id": "summit", "position": [0, 12.8, -31], "radius": 4 }
       ],
       "signs": [
         { "text": "THE CANYON RUN", "position": [0, 3.2, 25.8], "maxWidth": 7, "color": "paper" },
         { "text": "JUMP CAREFULLY", "position": [0, 2.5, 13.5], "maxWidth": 5, "color": "paper" },
         { "text": "CLIMB THE WATER TOWER", "position": [4, 11.2, -6], "maxWidth": 7, "color": "butter" },
         { "text": "RIDE THE WIND TO THE SUMMIT", "position": [0, 15.2, -31], "maxWidth": 8, "color": "signal" }
-      ],
-      "interactions": [
-        { "id": "summit", "kind": "zone", "label": "SUMMIT CAMP", "position": [0, 13, -31], "radius": 4.2, "color": "signal", "visual": "uplink-tower" }
       ]
     }
   }

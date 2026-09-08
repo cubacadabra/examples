@@ -43,7 +43,7 @@ local function document()
             {
                 id = "course-help",
                 kind = "text",
-                text = "WASD / JOYSTICK  MOVE   SPACE / JUMP   MOVE INTO THE LADDER TO CLIMB",
+                text = "WASD / JOYSTICK  MOVE   SPACE / JUMP   FORWARD / BACK CLIMBS LADDERS",
                 layout = { anchor = "bottom", width = "90%", maxWidth = 620, height = 24, offset = { 0, -24 } },
                 style = { color = "#F7F5E9B8", fontSize = 11, textAlign = "center" },
             },
@@ -115,7 +115,11 @@ end
 
 function Game.on_player_event(api, event)
     obby:handle(api, event)
-    if event.kind == "checkpoint" then
+    if event.kind == "checkpoint" and event.id == "summit" and not summit_reached then
+        summit_reached = true
+        status = "SUMMIT REACHED  •  CANYON CONQUERED"
+        api.lobby:set_status("The summit is yours. Try the route again with fewer falls.")
+    elseif event.kind == "checkpoint" then
         status = "CHECKPOINT SAVED  " .. string.upper(event.id)
     elseif event.kind == "death" then
         status = "YOU FELL  •  RETURNING TO " .. string.upper(event.checkpoint or "TRAILHEAD")
@@ -123,15 +127,6 @@ function Game.on_player_event(api, event)
         status = "TRY AGAIN  •  WATCH THE NEXT GAP"
     end
     update_hud(api)
-end
-
-function Game.on_interaction(api, event)
-    if event.id == "summit" and event.phase == "enter" and not summit_reached then
-        summit_reached = true
-        status = "SUMMIT REACHED  •  CANYON CONQUERED"
-        api.lobby:set_status("The summit is yours. Try the route again with fewer falls.")
-        update_hud(api)
-    end
 end
 
 return Game
