@@ -6,7 +6,7 @@
 
 local Game = {}
 
-local survival = CubaSurvival.create({ maxHealth = 100, startHealth = 100 })
+local survival = CubaSurvival.create({})
 local shelter_seconds = 0
 local in_shelter = false
 local shelter_secured = false
@@ -32,7 +32,7 @@ local function player_controls()
             {
                 id = "survival-health",
                 kind = "text",
-                text = "HEALTH  100 / 100",
+                text = "HEALTH  -- / --",
                 layout = { anchor = "topLeft", width = 250, height = 22, offset = { 26, 190 } },
                 style = { color = "#FF8A3D", fontSize = 12 },
             },
@@ -119,10 +119,14 @@ local function player_controls()
 end
 
 local function update_hud(api)
-    local _, health, max_health, deaths = survival:status()
+    local snapshot = survival:status()
     api.ui:set_text("survival-status", status)
-    api.ui:set_text("survival-health", "HEALTH  " .. tostring(math.floor(health)) .. " / " .. tostring(math.floor(max_health)))
-    api.ui:set_text("survival-deaths", "DEATHS  " .. tostring(deaths))
+    if snapshot.maxHealth > 0 then
+        api.ui:set_text("survival-health", "HEALTH  " .. tostring(math.floor(snapshot.health)) .. " / " .. tostring(math.floor(snapshot.maxHealth)))
+    else
+        api.ui:set_text("survival-health", "HEALTH  -- / --")
+    end
+    api.ui:set_text("survival-deaths", "DEATHS  " .. tostring(snapshot.deaths))
 end
 
 function Game.on_start(api)
@@ -146,7 +150,9 @@ end
 
 function Game.on_player_event(api, event)
     survival:handle(api, event)
-    if event.kind == "damage" then
+    if event.kind == "spawn" then
+        status = "CROSS THE HEAT FLATS"
+    elseif event.kind == "damage" then
         if survival.health < 35 then
             status = "CRITICAL  •  REACH THE SHELTER"
         end

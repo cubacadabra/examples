@@ -116,10 +116,10 @@ local function document()
 end
 
 local function update_hud(api)
-    local state, checkpoint, deaths = obby:status()
+    local snapshot = obby:status()
     api.ui:set_text("course-status", status)
-    api.ui:set_text("course-checkpoint", "CHECKPOINT  " .. string.upper(checkpoint))
-    api.ui:set_text("course-deaths", "FALLS  " .. tostring(deaths) .. "   " .. string.upper(state))
+    api.ui:set_text("course-checkpoint", "CHECKPOINT  " .. string.upper(snapshot.checkpoint))
+    api.ui:set_text("course-deaths", "FALLS  " .. tostring(snapshot.deaths) .. "   " .. string.upper(snapshot.state))
 end
 
 function Game.on_start(api)
