@@ -1,0 +1,137 @@
+{
+  "id": "survival-101",
+  "version": "0.3.0",
+  "sdkVersion": "0.3.0",
+  "package": {
+    "formatVersion": 3,
+    "entry": "game.luau"
+  },
+  "displayName": "Survival 101",
+  "lobby": false,
+  "startWorld": "lobby",
+  "launch": {
+    "destinationWorld": "starter-world",
+    "authoritative": true
+  },
+  "scene": {
+    "eyebrow": "cubacadabra",
+    "title": "Survival 101",
+    "description": "A new Cubacadabra game.",
+    "maxPlayers": 18
+  },
+  "palette": {
+    "sky": "#151A3F",
+    "ground": "#20295D",
+    "groundEdge": "#080D26",
+    "grid": "#3B4C86",
+    "signal": "#57E5D0",
+    "hot": "#FF5B85",
+    "coral": "#FF8A3D",
+    "butter": "#F1E95B",
+    "periwinkle": "#9F7BFF",
+    "ink": "#0B102B",
+    "paper": "#F7F5E9"
+  },
+  "avatars": {
+    "player": {
+      "skin": "#E8AE86",
+      "shirt": "#57E5D0",
+      "pants": "#4C3F91",
+      "shoes": "#0B102B",
+      "character": {
+        "version": 1,
+        "body": "cuba:person.v1",
+        "face": "determined",
+        "outfit": "cuba:everyday-hoodie.v1",
+        "equipment": {},
+        "colors": {
+          "primary": "#57E5D0",
+          "secondary": "#4C3F91",
+          "sole": "#0B102B"
+        },
+        "revision": 1
+      }
+    },
+    "npcs": []
+  },
+  "world": {
+    "groundSize": 70,
+    "gridSize": 64,
+    "gridDivisions": 32,
+    "spawn": [
+      0,
+      0,
+      23
+    ],
+    "showSpawnPad": false,
+    "clouds": [
+      {
+        "position": [
+          -20,
+          19,
+          -35
+        ],
+        "scale": 0.9
+      },
+      {
+        "position": [
+          24,
+          23,
+          -48
+        ],
+        "scale": 1.2
+      }
+    ]
+  },
+  "launchPads": [],
+  "blocks": [],
+  "worlds": {
+    "starter-world": {
+      "palette": {
+        "sky": "#151A3F",
+        "ground": "#20295D",
+        "groundEdge": "#080D26",
+        "grid": "#3B4C86",
+        "signal": "#57E5D0",
+        "hot": "#FF5B85",
+        "coral": "#FF8A3D",
+        "butter": "#F1E95B",
+        "periwinkle": "#9F7BFF",
+        "ink": "#0B102B",
+        "paper": "#F7F5E9"
+      },
+      "world": {
+        "groundSize": 70,
+        "gridSize": 64,
+        "gridDivisions": 32,
+        "spawn": [
+          0,
+          0,
+          23
+        ],
+        "showSpawnPad": false,
+        "clouds": [
+          {
+            "position": [
+              -20,
+              19,
+              -35
+            ],
+            "scale": 0.9
+          },
+          {
+            "position": [
+              24,
+              23,
+              -48
+            ],
+            "scale": 1.2
+          }
+        ]
+      },
+      "blocks": [],
+      "signs": [],
+      "interactions": []
+    }
+  }
+}
