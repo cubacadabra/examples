@@ -6,6 +6,12 @@
     "formatVersion": 3,
     "entry": "game.luau"
   },
+  "assets": {
+    "images": {
+      "forest-grass": { "path": "assets/images/forest-grass.png" },
+      "forest-wood": { "path": "assets/images/forest-wood.png" }
+    }
+  },
   "displayName": "Survival 101",
   "lobby": false,
   "startWorld": "lobby",
@@ -129,14 +135,31 @@
           { "position": [5, 25, 30], "scale": 1.2 }
         ]
       },
+      "materials": {
+        "grass": {
+          "image": "forest-grass",
+          "tileU": 8,
+          "tileV": 8
+        },
+        "wood": {
+          "image": "forest-wood",
+          "tileU": 2.5,
+          "tileV": 2.5
+        }
+      },
+      "groundMaterial": "grass",
       "blocks": [
-        { "position": [0, 0.5, 12], "size": [18, 1, 16], "color": "ink" },
+        { "position": [0, 0.5, 12], "size": [18, 1, 16], "color": "ink", "material": "wood" },
         { "position": [0, 1.2, 12], "size": [3.4, 1.4, 3.4], "color": "coral" },
         { "position": [0, 2.4, 12], "size": [1.8, 1.0, 1.8], "color": "hot" },
         { "position": [0, 3.4, 12], "size": [0.4, 1.4, 0.4], "color": "signal", "outline": false },
-        { "position": [-18, 2.3, -8], "size": [2.2, 4.6, 2.2], "color": "coral" },
-        { "position": [-24, 1.8, -5], "size": [1.8, 3.6, 1.8], "color": "butter" },
+        { "position": [-18, 2.3, -8], "size": [2.2, 4.6, 2.2], "color": "coral", "material": "wood" },
+        { "position": [-24, 1.8, -5], "size": [1.8, 3.6, 1.8], "color": "butter", "material": "wood" },
         { "position": [-14, 1.5, -14], "size": [3.6, 3, 3.6], "color": "periwinkle" },
+        { "position": [-27, 1.6, -13], "size": [1.4, 3.2, 1.4], "color": "coral", "material": "wood", "outline": false },
+        { "position": [-27, 3.8, -13], "size": [5.4, 1.8, 5.4], "color": "periwinkle", "material": "grass", "outline": false },
+        { "position": [-9, 1.4, -9], "size": [1.2, 2.8, 1.2], "color": "coral", "material": "wood", "outline": false },
+        { "position": [-9, 3.4, -9], "size": [4.6, 1.6, 4.6], "color": "periwinkle", "material": "grass", "outline": false },
         { "position": [18, 1.8, -8], "size": [2.2, 3.6, 2.2], "color": "coral" },
         { "position": [24, 2.5, -4], "size": [2.6, 5, 2.6], "color": "butter" },
         { "position": [14, 1.4, -15], "size": [4.2, 2.8, 4.2], "color": "periwinkle" },
