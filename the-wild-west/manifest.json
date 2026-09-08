@@ -1,0 +1,189 @@
+{
+  "id": "the-wild-west",
+  "version": "0.3.1",
+  "sdkVersion": "0.3.0",
+  "package": {
+    "formatVersion": 3,
+    "entry": "game.luau"
+  },
+  "displayName": "The Wild West",
+  "lobby": false,
+  "startWorld": "lobby",
+  "launch": {
+    "destinationWorld": "starter-world",
+    "authoritative": true
+  },
+  "scene": {
+    "eyebrow": "cubacadabra",
+    "title": "The Wild West",
+    "description": "A new Cubacadabra game.",
+    "maxPlayers": 18
+  },
+  "palette": {
+    "sky": "#151A3F",
+    "ground": "#20295D",
+    "groundEdge": "#080D26",
+    "grid": "#3B4C86",
+    "signal": "#57E5D0",
+    "hot": "#FF5B85",
+    "coral": "#FF8A3D",
+    "butter": "#F1E95B",
+    "periwinkle": "#9F7BFF",
+    "ink": "#0B102B",
+    "paper": "#F7F5E9"
+  },
+  "avatars": {
+    "player": {
+      "skin": "#E8AE86",
+      "shirt": "#57E5D0",
+      "pants": "#4C3F91",
+      "shoes": "#0B102B",
+      "character": {
+        "version": 1,
+        "body": "cuba:person.v1",
+        "face": "determined",
+        "outfit": "cuba:everyday-hoodie.v1",
+        "equipment": {},
+        "colors": {
+          "primary": "#57E5D0",
+          "secondary": "#4C3F91",
+          "sole": "#0B102B"
+        },
+        "revision": 1
+      }
+    },
+    "npcs": []
+  },
+  "world": {
+    "groundSize": 70,
+    "gridSize": 64,
+    "gridDivisions": 32,
+    "physics": {
+      "gravity": 28,
+      "jumpVelocity": 10.5,
+      "groundCollision": false,
+      "groundY": -14,
+      "deathY": -9,
+      "respawnDelay": 0.65,
+      "climbSpeed": 4.5
+    },
+    "spawn": [
+      0,
+      1,
+      23
+    ],
+    "showSpawnPad": false,
+    "clouds": [
+      {
+        "position": [
+          -20,
+          19,
+          -35
+        ],
+        "scale": 0.9
+      },
+      {
+        "position": [
+          24,
+          23,
+          -48
+        ],
+        "scale": 1.2
+      }
+    ]
+  },
+  "launchPads": [],
+  "blocks": [],
+  "worlds": {
+    "starter-world": {
+      "palette": {
+        "sky": "#151A3F",
+        "ground": "#20295D",
+        "groundEdge": "#080D26",
+        "grid": "#3B4C86",
+        "signal": "#57E5D0",
+        "hot": "#FF5B85",
+        "coral": "#FF8A3D",
+        "butter": "#F1E95B",
+        "periwinkle": "#9F7BFF",
+        "ink": "#0B102B",
+        "paper": "#F7F5E9"
+      },
+      "world": {
+        "groundSize": 70,
+        "gridSize": 64,
+        "gridDivisions": 32,
+        "physics": {
+          "gravity": 28,
+          "jumpVelocity": 10.5,
+          "groundCollision": false,
+          "groundY": -14,
+          "deathY": -9,
+          "respawnDelay": 0.65,
+          "climbSpeed": 4.5
+        },
+        "spawn": [
+          0,
+          1,
+          23
+        ],
+        "showSpawnPad": false,
+        "clouds": [
+          {
+            "position": [
+              -20,
+              19,
+              -35
+            ],
+            "scale": 0.9
+          },
+          {
+            "position": [
+              24,
+              23,
+              -48
+            ],
+            "scale": 1.2
+          }
+        ]
+      },
+      "blocks": [
+        { "position": [0, 0.5, 22], "size": [12, 1, 9], "color": "ink" },
+        { "position": [0, 0.45, 14], "size": [5.5, 0.9, 5], "color": "coral" },
+        { "position": [-4, 1.45, 7], "size": [4.5, 1.1, 4.5], "color": "butter" },
+        { "position": [4, 2.55, 0], "size": [4.5, 1.1, 4.5], "color": "periwinkle" },
+        { "position": [4, 2.25, -6], "size": [5.5, 0.7, 5], "color": "hot" },
+        { "position": [4, 8.35, -6], "size": [7, 0.9, 6], "color": "ink" },
+        { "position": [-3, 9.25, -15], "size": [4, 0.9, 4], "color": "coral" },
+        { "position": [3, 10.7, -23], "size": [5, 0.9, 5], "color": "butter" },
+        { "position": [0, 12.25, -31], "size": [10, 1, 8], "color": "signal" },
+        { "position": [0, 0.22, 25.4], "size": [3.2, 0.44, 1.3], "color": "signal", "outline": false },
+        { "position": [0, 12.82, -34.6], "size": [7, 0.2, 0.2], "color": "paper", "outline": false }
+      ],
+      "ladders": [
+        {
+          "id": "water-tower-ladder",
+          "position": [4, 5.4, -6],
+          "size": [2.4, 6.3, 0.9],
+          "climbAxis": "z",
+          "color": "butter",
+          "climbSpeed": 4.5
+        }
+      ],
+      "checkpoints": [
+        { "id": "trailhead", "position": [0, 1.05, 22], "radius": 3.6 },
+        { "id": "water-tower", "position": [4, 2.75, -6], "radius": 2.5 },
+        { "id": "high-desert", "position": [3, 11.2, -23], "radius": 2.5 }
+      ],
+      "signs": [
+        { "text": "THE CANYON RUN", "position": [0, 3.2, 25.8], "maxWidth": 7, "color": "paper" },
+        { "text": "JUMP CAREFULLY", "position": [0, 2.5, 13.5], "maxWidth": 5, "color": "paper" },
+        { "text": "CLIMB THE WATER TOWER", "position": [4, 11.2, -6], "maxWidth": 7, "color": "butter" },
+        { "text": "RIDE THE WIND TO THE SUMMIT", "position": [0, 15.2, -31], "maxWidth": 8, "color": "signal" }
+      ],
+      "interactions": [
+        { "id": "summit", "kind": "zone", "label": "SUMMIT CAMP", "position": [0, 13, -31], "radius": 4.2, "color": "signal", "visual": "uplink-tower" }
+      ]
+    }
+  }
+}
