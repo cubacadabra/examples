@@ -11,6 +11,7 @@ local shelter_seconds = 0
 local in_shelter = false
 local shelter_secured = false
 local status = "CROSS THE HEAT FLATS"
+local remote_survivors = {}
 
 local function player_controls()
     return {
@@ -162,6 +163,17 @@ function Game.on_player_event(api, event)
         status = "TRY AGAIN  •  WATCH THE NEXT GAP"
     end
     update_hud(api)
+end
+
+function Game.on_network_message(api, event)
+    if type(event) ~= "table"
+        or event.type ~= "player_state"
+        or type(event.id) ~= "string"
+        or type(event.state) ~= "table"
+        or event.state.kind ~= "survival" then
+        return
+    end
+    remote_survivors[event.id] = event.state
 end
 
 function Game.on_tick(api, delta)

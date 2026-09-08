@@ -8,6 +8,7 @@ local Game = {}
 local obby = CubaObby.create({})
 local summit_reached = false
 local status = "REACH THE WATER TOWER"
+local remote_runners = {}
 
 local function document()
     return {
@@ -144,6 +145,17 @@ function Game.on_player_event(api, event)
         status = "TRY AGAIN  •  WATCH THE NEXT GAP"
     end
     update_hud(api)
+end
+
+function Game.on_network_message(api, event)
+    if type(event) ~= "table"
+        or event.type ~= "player_state"
+        or type(event.id) ~= "string"
+        or type(event.state) ~= "table"
+        or event.state.kind ~= "obby" then
+        return
+    end
+    remote_runners[event.id] = event.state
 end
 
 return Game
