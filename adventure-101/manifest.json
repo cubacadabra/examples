@@ -1,6 +1,6 @@
 {
   "id": "adventure-101",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "sdkVersion": "0.3.0",
   "package": {
     "formatVersion": 3,
@@ -196,14 +196,29 @@
       "server": {
         "ambientNpcs": {
           "max": 3,
-          "bounds": { "minX": -28, "maxX": 28, "minZ": -24, "maxZ": 22 },
-          "wanderSeconds": { "min": 2.4, "max": 4.8 },
-          "speed": { "min": 2.2, "max": 3.0 },
+          "bounds": {
+            "minX": -28,
+            "maxX": 28,
+            "minZ": -24,
+            "maxZ": 22
+          },
+          "wanderSeconds": {
+            "min": 2.4,
+            "max": 4.8
+          },
+          "speed": {
+            "min": 2.2,
+            "max": 3.0
+          },
           "entities": [
             {
               "id": "wolf-1",
               "username": "Wolf",
-              "spawn": [-8, 1.5, 13],
+              "spawn": [
+                -8,
+                1.5,
+                13
+              ],
               "seed": 12711,
               "appearance": {
                 "version": 1,
@@ -223,7 +238,11 @@
             {
               "id": "wolf-2",
               "username": "Wolf",
-              "spawn": [9, 1.5, 6],
+              "spawn": [
+                9,
+                1.5,
+                6
+              ],
               "seed": 31513,
               "appearance": {
                 "version": 1,
@@ -243,7 +262,11 @@
             {
               "id": "wolf-3",
               "username": "Wolf",
-              "spawn": [-14, 1.5, -8],
+              "spawn": [
+                -14,
+                1.5,
+                -8
+              ],
               "seed": 50209,
               "appearance": {
                 "version": 1,
