@@ -2,9 +2,9 @@
 -- The manifest owns the physical world, safe beacon, and hazards. This script
 -- owns gathering, the shared camp objective, the day/night pressure, and HUD.
 
--- @include "@cubacadabra/survival-v1.luau"
--- @include "@cubacadabra/cycle-v1.luau"
--- @include "@cubacadabra/shared-state-v1.luau"
+local CubaSurvival = require("@cubacadabra/survival")
+local CubaCycle = require("@cubacadabra/cycle")
+local CubaSharedState = require("@cubacadabra/shared-state")
 
 local Game = {}
 

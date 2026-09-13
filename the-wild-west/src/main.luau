@@ -2,7 +2,7 @@
 -- The manifest owns the physical route; this script owns feedback and the
 -- summit goal.
 
--- @include "@cubacadabra/obby-v1.luau"
+local CubaObby = require("@cubacadabra/obby")
 
 local Game = {}
 local obby = CubaObby.create({})

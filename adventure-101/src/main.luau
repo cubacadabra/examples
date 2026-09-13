@@ -3,8 +3,8 @@
 -- This script owns the shared discovery trail and the compact adventure HUD.
 -- Wolves are world-owned ambient NPCs from the platform presence layer.
 
--- @include "@cubacadabra/survival-v1.luau"
--- @include "@cubacadabra/shared-state-v1.luau"
+local CubaSurvival = require("@cubacadabra/survival")
+local CubaSharedState = require("@cubacadabra/shared-state")
 
 local Game = {}
 
