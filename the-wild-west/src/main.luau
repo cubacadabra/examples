@@ -44,7 +44,7 @@ local function document()
             {
                 id = "course-help",
                 kind = "text",
-                text = "WASD / JOYSTICK  MOVE   SPACE / JUMP   CLIMB BUTTON OR W/S ON LADDERS",
+                text = "WASD / JOYSTICK  MOVE   SPACE / JUMP   AUTO-FLY TO NEXT PAD   CLIMB BUTTON / W-S LADDER",
                 layout = { anchor = "bottom", width = "90%", maxWidth = 620, height = 24, offset = { 0, -24 } },
                 style = { color = "#F7F5E9B8", fontSize = 11, textAlign = "center" },
             },
@@ -64,7 +64,7 @@ local function document()
             {
                 id = "player-jump",
                 kind = "button",
-                text = "JUMP",
+                text = "AUTO-FLY",
                 action = "player.jump",
                 layout = { anchor = "bottomRight", width = 86, height = 44, offset = { -22, -84 } },
                 style = {
@@ -145,6 +145,13 @@ function Game.on_player_event(api, event)
         status = "TRY AGAIN  •  WATCH THE NEXT GAP"
     end
     update_hud(api)
+end
+
+function Game.on_ui_event(api, event)
+    if type(event) == "table" and event.action == "player.jump" and event.phase ~= "release" then
+        status = "AUTO-FLY  •  AIM FOR THE NEXT PAD"
+        update_hud(api)
+    end
 end
 
 function Game.on_network_message(api, event)

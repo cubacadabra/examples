@@ -60,7 +60,7 @@
     "gridDivisions": 32,
     "physics": {
       "gravity": 28,
-      "jumpVelocity": 10.5,
+      "jumpVelocity": 15.5,
       "groundCollision": false,
       "groundY": -14,
       "deathY": -9,
@@ -115,7 +115,7 @@
         "gridDivisions": 32,
         "physics": {
           "gravity": 28,
-          "jumpVelocity": 10.5,
+          "jumpVelocity": 15.5,
           "groundCollision": false,
           "groundY": -14,
           "deathY": -9,
