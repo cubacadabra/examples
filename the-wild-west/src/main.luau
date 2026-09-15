@@ -9,10 +9,25 @@ local obby = CubaObby.create({})
 local summit_reached = false
 local status = "REACH THE WATER TOWER"
 local remote_runners = {}
+local hi_there_elapsed = 0
+local hi_there_refresh = 0
+local hi_there_colors = { "#F1E95B", "#57E5D0", "#FF8A3D", "#FF5B85", "#9F7BFF" }
 
-local function document()
+local function document(hi_there_x, hi_there_y, hi_there_color)
     return {
         nodes = {
+            {
+                id = "sky-greeting",
+                kind = "text",
+                text = "HI THERE",
+                layout = {
+                    anchor = "top",
+                    width = 150,
+                    height = 28,
+                    offset = { hi_there_x, hi_there_y },
+                },
+                style = { color = hi_there_color, fontSize = 17, textAlign = "center" },
+            },
             {
                 id = "course-title",
                 kind = "text",
@@ -127,8 +142,25 @@ function Game.on_start(api)
     api.lobby:set_enabled(false)
     api.lobby:set_status("Climb the water tower, cross the canyon, reach the summit.")
     api.session:start("the-wild-west", { mode = "preview" })
-    api.ui:set_document(document())
+    api.ui:set_document(document(0, 92, hi_there_colors[1]))
     update_hud(api)
+end
+
+function Game.on_tick(api, delta_seconds)
+    hi_there_elapsed += delta_seconds
+    hi_there_refresh += delta_seconds
+
+    -- Rebuild the small presentation document at a modest cadence so the
+    -- greeting drifts smoothly without needlessly replacing the HUD every
+    -- simulation tick.
+    if hi_there_refresh >= 0.1 then
+        hi_there_refresh = 0
+        local x = math.sin(hi_there_elapsed * 0.17) * 270
+        local y = 82 + math.sin(hi_there_elapsed * 0.11) * 72
+        local color_index = math.floor(hi_there_elapsed * 1.5) % #hi_there_colors + 1
+        api.ui:set_document(document(x, y, hi_there_colors[color_index]))
+        update_hud(api)
+    end
 end
 
 function Game.on_player_event(api, event)
