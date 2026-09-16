@@ -1,6 +1,6 @@
 {
   "id": "adventure-101",
-  "version": "0.4.4",
+  "version": "0.4.6",
   "sdkVersion": "0.3.0",
   "package": {
     "formatVersion": 3,
@@ -296,9 +296,14 @@
           "image": "forest-wood",
           "tileU": 2.5,
           "tileV": 2.5
+        },
+        "floor": {
+          "image": "forest-wood",
+          "tileU": 8,
+          "tileV": 8
         }
       },
-      "groundMaterial": "grass",
+      "groundMaterial": "floor",
       "blocks": [
         {
           "position": [
@@ -317,14 +322,14 @@
         },
         {
           "position": [
-            -7,
-            0.45,
-            13
+            -7.0,
+            0.44999998807907104,
+            13.0
           ],
           "size": [
-            3.6,
-            0.9,
-            1.4
+            3.5999999046325684,
+            0.8999999761581421,
+            1.399999976158142
           ],
           "color": "wood",
           "material": "wood",
@@ -486,6 +491,21 @@
           ],
           "climbAxis": "z",
           "color": "butter"
+        },
+        {
+          "id": "ladder-2",
+          "position": [
+            0,
+            3,
+            0
+          ],
+          "size": [
+            2,
+            6,
+            1
+          ],
+          "climbAxis": "z",
+          "color": "signal"
         }
       ],
       "signs": [
@@ -569,6 +589,21 @@
             6
           ],
           "damagePerSecond": 100
+        },
+        {
+          "id": "hazard-2",
+          "kind": "damage",
+          "position": [
+            0,
+            0.5,
+            0
+          ],
+          "size": [
+            4,
+            1,
+            4
+          ],
+          "damagePerSecond": 10
         }
       ],
       "interactions": [
@@ -631,6 +666,42 @@
           "radius": 4,
           "color": "signal",
           "visual": "checkpoint"
+        },
+        {
+          "id": "interaction-6",
+          "label": "Interaction 6",
+          "kind": "zone",
+          "position": [
+            0,
+            1,
+            0
+          ],
+          "radius": 3,
+          "color": "signal"
+        },
+        {
+          "id": "interaction-7",
+          "label": "Interaction 7",
+          "kind": "zone",
+          "position": [
+            0,
+            1,
+            0
+          ],
+          "radius": 3,
+          "color": "signal"
+        }
+      ],
+      "safeZones": [
+        {
+          "id": "safe-zone-1",
+          "position": [
+            0,
+            1,
+            0
+          ],
+          "radius": 5,
+          "healPerSecond": 10
         }
       ]
     }
