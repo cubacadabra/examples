@@ -181,7 +181,9 @@ function Game.on_interaction(api, event)
         return
     end
 
-    if string.sub(event.id, 1, 10) == "maze-coin-" and not collected_coins[event.id] then
+    if not completed and not timed_out
+        and string.sub(event.id, 1, 10) == "maze-coin-"
+        and not collected_coins[event.id] then
         collected_coins[event.id] = true
         collected += 1
         status = collected == COIN_COUNT and "ALL COINS FOUND  •  NOW FIND THE EXIT" or "COIN FOUND  •  KEEP MOVING"
