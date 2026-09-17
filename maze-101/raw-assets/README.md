@@ -8,10 +8,11 @@ package and engine.
 ## Rocks
 
 `blender/rocks.blend` is the upstream Blender source for three rock models in
-the Maze World repository. It is retained here as source artwork; Cubacadabra does not
-yet load general world meshes, so no runtime mesh is included. When that path
-is available, export the selected prop to a validated GLB under
-`assets/meshes/` and reference it through the game's mesh-instance schema.
+the Maze World repository. `assets/models/rock_01.glb` is the first runtime
+export, produced from the upstream `rock_01.fbx` with Blender. The package
+builder validates and ships this GLB; the general world-mesh renderer is still
+being wired into the runtime, so the current visual dressing uses the engine's
+procedural rock prefab until that registration path is complete.
 
 Source: [MayGo/maze-world, `raw-assets/blender/rocks.blend`](https://github.com/MayGo/maze-world/blob/2dba386/raw-assets/blender/rocks.blend)
 

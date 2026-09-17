@@ -6,6 +6,13 @@
     "formatVersion": 3,
     "entry": "game.luau"
   },
+  "assets": {
+    "models": {
+      "maze-rock-01": {
+        "path": "assets/models/rock_01.glb"
+      }
+    }
+  },
   "displayName": "Maze 101",
   "lobby": false,
   "startWorld": "lobby",
@@ -20,10 +27,10 @@
     "maxPlayers": 18
   },
   "palette": {
-    "sky": "#151A3F",
-    "ground": "#20295D",
-    "groundEdge": "#080D26",
-    "grid": "#3B4C86",
+    "sky": "#58E8F2",
+    "ground": "#5B351F",
+    "groundEdge": "#24150E",
+    "grid": "#A6F7E9",
     "signal": "#57E5D0",
     "hot": "#FF5B85",
     "coral": "#FF8A3D",
@@ -115,10 +122,10 @@
         }
       },
       "palette": {
-        "sky": "#151A3F",
-        "ground": "#20295D",
-        "groundEdge": "#080D26",
-        "grid": "#3B4C86",
+      "sky": "#58E8F2",
+      "ground": "#5B351F",
+      "groundEdge": "#24150E",
+      "grid": "#A6F7E9",
         "signal": "#57E5D0",
         "hot": "#FF5B85",
         "coral": "#FF8A3D",
@@ -137,6 +144,14 @@
           23
         ],
         "showSpawnPad": false,
+        "visual": {
+          "exposure": 1.18,
+          "contrast": 1.12,
+          "saturation": 1.28,
+          "fogStart": 58,
+          "fogEnd": 135,
+          "sunDirection": [-0.45, -0.82, 0.32]
+        },
         "clouds": [
           {
             "position": [
@@ -156,105 +171,11 @@
           }
         ]
       },
-      "blocks": [
-        {
-          "id": "block-1",
-          "position": [
-            0,
-            1,
-            0
-          ],
-          "size": [
-            4,
-            1,
-            4
-          ],
-          "color": "signal"
-        },
-        {
-          "id": "block-1-copy-2",
-          "position": [
-            0,
-            1,
-            0
-          ],
-          "size": [
-            4,
-            1,
-            4
-          ],
-          "color": "regrg"
-        },
-        {
-          "id": "block-3",
-          "position": [
-            0,
-            1,
-            0
-          ],
-          "size": [
-            4,
-            1,
-            4
-          ],
-          "color": "signal"
-        }
-      ],
-      "signs": [
-        {
-          "text": "New sign 1gergergerg\n",
-          "position": [
-            0,
-            2,
-            0
-          ],
-          "maxWidth": 5,
-          "color": "paper"
-        }
-      ],
-      "interactions": [
-        {
-          "id": "interaction-1",
-          "label": "Interaction 1",
-          "kind": "zone",
-          "position": [
-            0,
-            1,
-            0
-          ],
-          "radius": 3,
-          "color": "signal"
-        }
-      ],
-      "hazards": [
-        {
-          "id": "hazard-1",
-          "kind": "damage",
-          "position": [
-            0,
-            0.5,
-            0
-          ],
-          "size": [
-            4,
-            1,
-            4
-          ],
-          "damagePerSecond": 10
-        }
-      ],
-      "safeZones": [
-        {
-          "id": "safe-zone-1",
-          "position": [
-            0,
-            1,
-            0
-          ],
-          "radius": 5,
-          "healPerSecond": 10
-        }
-      ]
+      "blocks": [],
+      "signs": [],
+      "interactions": [],
+      "hazards": [],
+      "safeZones": []
     }
   }
 }
