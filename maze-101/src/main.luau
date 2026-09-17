@@ -25,6 +25,7 @@ local checkpoint = "START"
 local remote_runners = {}
 local collected_coins = {}
 local pending_island_advance = false
+local debug_build = false
 
 local function island_config()
     return ISLANDS[current_island]
@@ -61,7 +62,7 @@ local function format_time(seconds)
 end
 
 local function player_controls()
-    return {
+    local document = {
         nodes = {
             {
                 id = "maze-title",
@@ -161,10 +162,36 @@ local function player_controls()
             },
         },
     }
+
+    if debug_build then
+        table.insert(document.nodes, {
+            id = "maze-debug-end",
+            kind = "button",
+            text = "SKIP TO END",
+            action = "maze.debug.skip_to_end",
+            visible = false,
+            layout = { anchor = "topRight", width = 142, height = 44, offset = { -26, 122 } },
+            style = {
+                background = "#FF8A3D",
+                borderColor = "#F7F5E9",
+                borderWidth = 2,
+                cornerRadius = 17,
+                foreground = "#0B102B",
+                accent = "#F7F5E9",
+                textAlign = "center",
+                fontSize = 12,
+            },
+        })
+    end
+
+    return document
 end
 
 local function update_hud(api)
     if in_hub then
+        if debug_build then
+            api.ui:set_visible("maze-debug-end", false)
+        end
         api.ui:set_text("maze-title", "MAZE 101  •  ARCHIPELAGO")
         api.ui:set_text("maze-status", status)
         api.ui:set_text("maze-time", "3 ISLANDS")
@@ -176,6 +203,9 @@ local function update_hud(api)
     end
 
     local island = island_config()
+    if debug_build then
+        api.ui:set_visible("maze-debug-end", true)
+    end
     local time_left = completed and finish_time or math.max(0, island.time_limit - elapsed)
     api.ui:set_text(
         "maze-title",
@@ -201,7 +231,30 @@ local function set_coin_states(api)
     api.effects:set_state("maze-finish", completed and "reached" or "available")
 end
 
+local function skip_to_end(api)
+    if not debug_build or in_hub then
+        return
+    end
+
+    in_hub = false
+    current_island = #ISLANDS
+    pending_island_advance = false
+    reset_island_state()
+
+    local island = island_config()
+    collected = island.coin_count
+    for index = 1, island.coin_count do
+        collected_coins[string.format("maze-coin-%02d", index)] = true
+    end
+    completed = true
+    status = "DEBUG SKIP  •  ARCHIPELAGO CLEARED"
+    api.lobby:set_status("DEBUG: skipped to the end of Cloudpeak.")
+    set_coin_states(api)
+    update_hud(api)
+end
+
 function Game.on_start(api)
+    debug_build = api.build_mode == "DEBUG"
     reset_state()
     api.lobby:set_enabled(false)
     api.lobby:set_status("Clear Sunshore, Coral Cay, and Cloudpeak in one run.")
@@ -229,6 +282,14 @@ function Game.on_tick(api, delta_seconds)
     if refresh_elapsed >= 0.1 then
         refresh_elapsed = 0
         update_hud(api)
+    end
+end
+
+function Game.on_ui_event(api, event)
+    if type(event) == "table"
+        and event.action == "maze.debug.skip_to_end"
+        and event.phase == "activate" then
+        skip_to_end(api)
     end
 end
 
