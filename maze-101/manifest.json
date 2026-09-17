@@ -98,6 +98,7 @@
         "width": 10,
         "height": 10,
         "cellSize": 8,
+        "rockAsset": "maze-rock-01",
         "wallHeight": 7,
         "wallThickness": 0.8,
         "seed": 101,
