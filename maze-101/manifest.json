@@ -101,7 +101,7 @@
         "width": 10,
         "height": 10,
         "cellSize": 8,
-        "wallHeight": 14,
+        "wallHeight": 7,
         "wallThickness": 1.2,
         "seed": 101,
         "finishColor": "signal",
@@ -149,7 +149,7 @@
         "showSpawnPad": false,
         "presentationBounds": {
           "minimum": [-52, -17, -50],
-          "maximum": [52, 14, 50]
+          "maximum": [52, 7, 50]
         },
         "visual": {
           "exposure": 1.18,
