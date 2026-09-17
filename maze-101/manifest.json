@@ -1,6 +1,6 @@
 {
   "id": "maze-101",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "sdkVersion": "0.4.0",
   "package": {
     "formatVersion": 3,
@@ -13,6 +13,15 @@
       },
       "maze-island-shell": {
         "path": "assets/models/island_shell.glb"
+      },
+      "maze-island-cliff": {
+        "path": "assets/models/island_shell_open.glb"
+      },
+      "maze-island-cap": {
+        "path": "assets/models/island_cap.glb"
+      },
+      "maze-rope-bridge": {
+        "path": "assets/models/rope_bridge.glb"
       }
     }
   },
@@ -20,7 +29,7 @@
   "lobby": false,
   "startWorld": "lobby",
   "launch": {
-    "destinationWorld": "island-1",
+    "destinationWorld": "archipelago",
     "authoritative": true
   },
   "scene": {
@@ -96,6 +105,131 @@
   "launchPads": [],
   "blocks": [],
   "worlds": {
+    "archipelago": {
+      "palette": {
+        "sky": "#58E8F2",
+        "ground": "#5B351F",
+        "groundEdge": "#24150E",
+        "leaf": "#0B6424",
+        "wood": "#5C2D17",
+        "stone": "#A29A86",
+        "signal": "#57E5D0",
+        "hot": "#FF5B85",
+        "coral": "#FF8A3D",
+        "butter": "#F1E95B",
+        "periwinkle": "#9F7BFF",
+        "ink": "#0B102B",
+        "paper": "#F7F5E9"
+      },
+      "terrain": {
+        "cellSize": 1.0,
+        "hideDefaultGround": true,
+        "operations": [
+          { "operation": "fill", "shape": "ellipsoid", "position": [0, -2, 0], "size": [76, 4, 66], "material": "grass" },
+          { "operation": "fill", "shape": "ellipsoid", "position": [0, -1.5, -90], "size": [48, 3, 42], "material": "grass" },
+          { "operation": "fill", "shape": "ellipsoid", "position": [-95, -2.5, 5], "size": [46, 3, 40], "material": "grass" },
+          { "operation": "fill", "shape": "ellipsoid", "position": [95, -3.5, 8], "size": [52, 3, 46], "material": "grass" },
+          { "operation": "fill", "shape": "ellipsoid", "position": [14, -4.5, 95], "size": [44, 3, 38], "material": "grass" }
+        ]
+      },
+      "world": {
+        "groundSize": 62,
+        "gridSize": 58,
+        "gridDivisions": 16,
+        "spawn": [0, 1.5, 14],
+        "showSpawnPad": false,
+        "presentationBounds": {
+          "minimum": [-47, -17, -43],
+          "maximum": [47, 9, 43]
+        },
+        "physics": {
+          "deathY": -22,
+          "respawnDelay": 0.7
+        },
+        "visual": {
+          "exposure": 1.14,
+          "contrast": 1.12,
+          "saturation": 1.25,
+          "fogStart": 105,
+          "fogEnd": 260,
+          "sunDirection": [-0.72, -0.68, 0.18]
+        },
+        "clouds": [
+          {
+            "position": [-52, 25, -84],
+            "scale": 1.35
+          },
+          {
+            "position": [68, 20, -55],
+            "scale": 1.05
+          },
+          {
+            "position": [18, 30, 75],
+            "scale": 1.2
+          }
+        ]
+      },
+      "decorations": [
+        { "kind": "mesh", "asset": "maze-island-cliff", "position": [0, 0.5, 0], "scale": 0.9, "color": "groundEdge" },
+
+        { "kind": "mesh", "asset": "maze-island-cliff", "position": [0, 0, -90], "scale": 0.55, "yaw": 0.25, "color": "groundEdge" },
+        { "kind": "mesh", "asset": "maze-rope-bridge", "position": [0, 1.2, -51.5], "scale": 1, "color": "wood" },
+
+        { "kind": "mesh", "asset": "maze-island-cliff", "position": [-95, -1, 5], "scale": 0.5, "yaw": -0.3, "color": "groundEdge" },
+        { "kind": "mesh", "asset": "maze-rope-bridge", "position": [-57, 0.8, 3], "scale": 1, "yaw": 1.5708, "color": "wood" },
+
+        { "kind": "mesh", "asset": "maze-island-cliff", "position": [95, -2, 8], "scale": 0.58, "yaw": 0.4, "color": "groundEdge" },
+        { "kind": "mesh", "asset": "maze-rope-bridge", "position": [57, 0.5, 5], "scale": 1, "yaw": 1.5708, "color": "wood" },
+
+        { "kind": "mesh", "asset": "maze-island-cliff", "position": [14, -3, 95], "scale": 0.48, "yaw": -0.5, "color": "groundEdge" },
+        { "kind": "mesh", "asset": "maze-rope-bridge", "position": [6, 0.5, 58], "scale": 1, "color": "wood" },
+
+        { "kind": "gate", "position": [0, 0, -20], "scale": 1.35, "color": "coral" },
+        { "kind": "gate", "position": [-20, 0, 11], "scale": 1.0, "yaw": 1.5708, "color": "hot" },
+        { "kind": "gate", "position": [20, 0, 10], "scale": 1.0, "yaw": -1.5708, "color": "periwinkle" },
+
+        { "kind": "palm", "position": [-24, 0, -11], "scale": 1.3, "yaw": 0.2, "color": "leaf" },
+        { "kind": "palm", "position": [25, 0, -8], "scale": 1.15, "yaw": -0.4, "color": "leaf" },
+        { "kind": "palm", "position": [-22, 0, 16], "scale": 0.95, "yaw": 0.55, "color": "leaf" },
+        { "kind": "palm", "position": [23, 0, 17], "scale": 1.2, "yaw": -0.15, "color": "leaf" },
+        { "kind": "palm", "position": [0, 0, -90], "scale": 0.95, "yaw": 0.4, "color": "leaf" },
+        { "kind": "palm", "position": [-95, -1, 5], "scale": 0.8, "yaw": -0.2, "color": "leaf" },
+        { "kind": "palm", "position": [95, -2, 8], "scale": 0.9, "yaw": 0.3, "color": "leaf" },
+
+        { "kind": "mesh", "asset": "maze-rock-01", "position": [-15, 0.5, -15], "scale": 1.4, "yaw": 0.3, "color": "stone" },
+        { "kind": "mesh", "asset": "maze-rock-01", "position": [17, 0.5, -13], "scale": 1.1, "yaw": -0.8, "color": "stone" },
+        { "kind": "mesh", "asset": "maze-rock-01", "position": [-24, 0.5, 3], "scale": 0.9, "yaw": 0.7, "color": "stone" },
+        { "kind": "mesh", "asset": "maze-rock-01", "position": [25, 0.5, 4], "scale": 1.25, "yaw": -0.2, "color": "stone" },
+
+        { "kind": "grass-clump", "position": [-11, 0, -18], "scale": 1.1, "color": "leaf" },
+        { "kind": "grass-clump", "position": [10, 0, -17], "scale": 0.8, "color": "leaf" },
+        { "kind": "grass-clump", "position": [-27, 0, 8], "scale": 1.0, "color": "leaf" },
+        { "kind": "grass-clump", "position": [27, 0, 9], "scale": 0.9, "color": "leaf" },
+        { "kind": "grass-clump", "position": [-13, 0, 18], "scale": 1.2, "color": "leaf" },
+        { "kind": "grass-clump", "position": [13, 0, 18], "scale": 0.95, "color": "leaf" }
+      ],
+      "blocks": [
+        { "position": [0, 4.4, -20.2], "size": [10, 2.6, 0.5], "color": "wood", "outline": false },
+        { "position": [-20.2, 3.7, 11], "size": [0.5, 2.2, 8], "color": "wood", "outline": false },
+        { "position": [20.2, 3.7, 10], "size": [0.5, 2.2, 8], "color": "wood", "outline": false }
+      ],
+      "signs": [
+        { "text": "SUNSHORE  EASY", "position": [0, 4.5, -19.85], "maxWidth": 8, "color": "paper" },
+        { "text": "CORAL CAY", "position": [-19.85, 3.8, 11], "yaw": 1.5708, "maxWidth": 6, "color": "paper" },
+        { "text": "CLOUDPEAK", "position": [19.85, 3.8, 10], "yaw": -1.5708, "maxWidth": 6, "color": "paper" }
+      ],
+      "portals": [
+        {
+          "position": [0, 0, -20],
+          "radius": 2.4,
+          "destinationWorld": "island-1",
+          "destinationYaw": 0
+        }
+      ],
+      "interactions": [],
+      "hazards": [],
+      "safeZones": []
+    },
     "island-1": {
       "maze": {
         "width": 8,
@@ -129,6 +263,8 @@
         "ground": "#5B351F",
         "groundEdge": "#24150E",
         "grid": "#A6F7E9",
+        "leaf": "#0B6424",
+        "wood": "#5C2D17",
         "signal": "#57E5D0",
         "hot": "#FF5B85",
         "coral": "#FF8A3D",
@@ -207,7 +343,15 @@
           "scale": 1.5,
           "yaw": 0.4,
           "color": "paper"
-        }
+        },
+        { "kind": "palm", "position": [-26, 0, -12], "scale": 0.75, "yaw": 0.4, "color": "leaf" },
+        { "kind": "palm", "position": [12, 0, 20], "scale": 0.65, "yaw": -0.2, "color": "leaf" },
+        { "kind": "grass-clump", "position": [-21, 0, 11], "scale": 0.9, "color": "leaf" },
+        { "kind": "grass-clump", "position": [19, 0, -11], "scale": 0.8, "color": "leaf" },
+        { "kind": "mesh", "asset": "maze-island-shell", "position": [78, -3, 78], "scale": 0.42, "yaw": 0.3, "color": "groundEdge" },
+        { "kind": "mesh", "asset": "maze-island-cap", "position": [78, -3, 78], "scale": 0.42, "yaw": 0.3, "color": "leaf" },
+        { "kind": "mesh", "asset": "maze-rope-bridge", "position": [50, 0.7, 50], "scale": 0.88, "yaw": 0.7854, "color": "wood" },
+        { "kind": "palm", "position": [78, -3, 78], "scale": 0.75, "yaw": 0.35, "color": "leaf" }
       ],
       "portals": [
         {
@@ -234,7 +378,7 @@
         "finishColor": "coral",
         "terrain": {
           "cellSize": 1.0,
-          "wallMaterial": "builtin:rock",
+          "wallMaterial": "builtin:grass",
           "floorMaterial": "builtin:sand"
         },
         "start": [0, 0],
@@ -246,10 +390,12 @@
         }
       },
       "palette": {
-        "sky": "#6ED8E8",
-        "ground": "#70412A",
-        "groundEdge": "#321D26",
-        "grid": "#F2B98C",
+        "sky": "#58E8F2",
+        "ground": "#5B351F",
+        "groundEdge": "#24150E",
+        "grid": "#A6F7E9",
+        "leaf": "#0B6424",
+        "wood": "#5C2D17",
         "signal": "#57E5D0",
         "hot": "#FF5B85",
         "coral": "#FF8A3D",
@@ -317,7 +463,15 @@
           "scale": 1.25,
           "yaw": -0.55,
           "color": "paper"
-        }
+        },
+        { "kind": "palm", "position": [-33, 0, -8], "scale": 0.8, "yaw": 0.2, "color": "leaf" },
+        { "kind": "palm", "position": [18, 0, 28], "scale": 0.7, "yaw": -0.4, "color": "leaf" },
+        { "kind": "grass-clump", "position": [-27, 0, 25], "scale": 1.0, "color": "leaf" },
+        { "kind": "grass-clump", "position": [30, 0, -19], "scale": 0.85, "color": "leaf" },
+        { "kind": "mesh", "asset": "maze-island-shell", "position": [95, -3, 95], "scale": 0.48, "yaw": -0.2, "color": "groundEdge" },
+        { "kind": "mesh", "asset": "maze-island-cap", "position": [95, -3, 95], "scale": 0.48, "yaw": -0.2, "color": "leaf" },
+        { "kind": "mesh", "asset": "maze-rope-bridge", "position": [65, 0.7, 65], "scale": 1.0, "yaw": 0.7854, "color": "wood" },
+        { "kind": "palm", "position": [95, -3, 95], "scale": 0.85, "yaw": -0.3, "color": "leaf" }
       ],
       "portals": [
         {
@@ -344,8 +498,8 @@
         "finishColor": "periwinkle",
         "terrain": {
           "cellSize": 1.0,
-          "wallMaterial": "builtin:snow",
-          "floorMaterial": "builtin:rock"
+          "wallMaterial": "builtin:grass",
+          "floorMaterial": "builtin:sand"
         },
         "start": [0, 0],
         "finish": [11, 11],
@@ -356,10 +510,12 @@
         }
       },
       "palette": {
-        "sky": "#91C9F2",
-        "ground": "#525068",
-        "groundEdge": "#252338",
-        "grid": "#DCE8F5",
+        "sky": "#58E8F2",
+        "ground": "#5B351F",
+        "groundEdge": "#24150E",
+        "grid": "#A6F7E9",
+        "leaf": "#0B6424",
+        "wood": "#5C2D17",
         "signal": "#57E5D0",
         "hot": "#FF5B85",
         "coral": "#FF8A3D",
@@ -406,18 +562,18 @@
           "color": "groundEdge"
         },
         {
-          "kind": "tree",
+          "kind": "palm",
           "position": [-51, 0, 31],
           "scale": 1.15,
           "yaw": -0.2,
-          "color": "periwinkle"
+          "color": "leaf"
         },
         {
-          "kind": "tree",
+          "kind": "palm",
           "position": [52, 0, -30],
           "scale": 0.95,
           "yaw": 0.4,
-          "color": "periwinkle"
+          "color": "leaf"
         },
         {
           "kind": "mesh",
@@ -426,7 +582,15 @@
           "scale": 2.0,
           "yaw": -0.7,
           "color": "paper"
-        }
+        },
+        { "kind": "palm", "position": [-38, 0, -12], "scale": 0.8, "yaw": 0.2, "color": "leaf" },
+        { "kind": "palm", "position": [29, 0, 34], "scale": 0.75, "yaw": -0.4, "color": "leaf" },
+        { "kind": "grass-clump", "position": [-31, 0, 31], "scale": 1.0, "color": "leaf" },
+        { "kind": "grass-clump", "position": [37, 0, -25], "scale": 0.9, "color": "leaf" },
+        { "kind": "mesh", "asset": "maze-island-shell", "position": [-112, -5, 18], "scale": 0.5, "yaw": 0.25, "color": "groundEdge" },
+        { "kind": "mesh", "asset": "maze-island-cap", "position": [-112, -5, 18], "scale": 0.5, "yaw": 0.25, "color": "leaf" },
+        { "kind": "mesh", "asset": "maze-island-shell", "position": [115, -7, -35], "scale": 0.46, "yaw": -0.35, "color": "groundEdge" },
+        { "kind": "mesh", "asset": "maze-island-cap", "position": [115, -7, -35], "scale": 0.46, "yaw": -0.35, "color": "leaf" }
       ],
       "blocks": [],
       "signs": [],

@@ -10,7 +10,9 @@ local ISLANDS = {
     { name = "CLOUDPEAK", time_limit = 210, coin_count = 16 },
 }
 
-local current_island = 1
+local current_island = 0
+local in_hub = true
+local hub_spawn_seen = false
 local elapsed = 0
 local refresh_elapsed = 0
 local falls = 0
@@ -43,9 +45,12 @@ local function reset_island_state()
 end
 
 local function reset_state()
-    current_island = 1
+    current_island = 0
+    in_hub = true
+    hub_spawn_seen = false
     pending_island_advance = false
     reset_island_state()
+    status = "CROSS THE BRIDGE TO SUNSHORE"
 end
 
 local function format_time(seconds)
@@ -159,6 +164,17 @@ local function player_controls()
 end
 
 local function update_hud(api)
+    if in_hub then
+        api.ui:set_text("maze-title", "MAZE 101  •  ARCHIPELAGO")
+        api.ui:set_text("maze-status", status)
+        api.ui:set_text("maze-time", "3 ISLANDS")
+        api.ui:set_text("maze-coins", "NEXT  SUNSHORE")
+        api.ui:set_text("maze-checkpoint", "FOLLOW THE CORAL GATE")
+        api.ui:set_text("maze-runners", "EXPLORE  •  THEN ENTER")
+        api.ui:set_text("maze-help", "EXPLORE THE HUB   •   ENTER SUNSHORE TO START THE CLOCK")
+        return
+    end
+
     local island = island_config()
     local time_left = completed and finish_time or math.max(0, island.time_limit - elapsed)
     api.ui:set_text(
@@ -169,6 +185,7 @@ local function update_hud(api)
     api.ui:set_text("maze-time", "TIME " .. format_time(time_left))
     api.ui:set_text("maze-coins", "COINS " .. tostring(collected) .. "/" .. tostring(island.coin_count))
     api.ui:set_text("maze-checkpoint", "CHECKPOINT  " .. checkpoint)
+    api.ui:set_text("maze-help", "MOVE  WASD / JOYSTICK   SPACE / JUMP   CLEAR ALL 3 ISLANDS")
     local remote_count = 0
     for _ in pairs(remote_runners) do
         remote_count += 1
@@ -190,11 +207,14 @@ function Game.on_start(api)
     api.lobby:set_status("Clear Sunshore, Coral Cay, and Cloudpeak in one run.")
     api.session:start("maze-101", { mode = "cooperative", islands = #ISLANDS })
     api.ui:set_document(player_controls())
-    set_coin_states(api)
     update_hud(api)
 end
 
 function Game.on_tick(api, delta_seconds)
+    if in_hub then
+        return
+    end
+
     local island = island_config()
     if not completed and not timed_out then
         elapsed += delta_seconds
@@ -214,6 +234,10 @@ end
 
 function Game.on_interaction(api, event)
     if type(event) ~= "table" or event.phase ~= "enter" or type(event.id) ~= "string" then
+        return
+    end
+
+    if in_hub then
         return
     end
 
@@ -265,7 +289,18 @@ function Game.on_player_event(api, event)
     if type(event) ~= "table" then
         return
     end
-    if event.kind == "spawn" and pending_island_advance then
+    if event.kind == "spawn" and in_hub then
+        if not hub_spawn_seen then
+            hub_spawn_seen = true
+        else
+            in_hub = false
+            current_island = 1
+            reset_island_state()
+            status = island_config().name .. "  •  FIND THE EXIT"
+            api.lobby:set_status("Island 1 of " .. tostring(#ISLANDS) .. ": " .. island_config().name)
+            set_coin_states(api)
+        end
+    elseif event.kind == "spawn" and pending_island_advance then
         current_island += 1
         pending_island_advance = false
         reset_island_state()
@@ -280,7 +315,7 @@ function Game.on_player_event(api, event)
     elseif event.kind == "death" then
         falls = event.deaths or falls + 1
         status = "YOU FELL  •  RETURNING TO " .. checkpoint
-    elseif event.kind == "respawn" and not completed then
+    elseif event.kind == "respawn" and not in_hub and not completed then
         status = "TRY AGAIN  •  FOLLOW THE WALLS"
     end
     update_hud(api)
