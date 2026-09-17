@@ -106,7 +106,7 @@
         "seed": 101,
         "finishColor": "signal",
         "terrain": {
-          "cellSize": 0.5,
+          "cellSize": 1.0,
           "wallMaterial": "builtin:grass",
           "floorMaterial": "builtin:sand"
         },
@@ -176,18 +176,18 @@
             ],
             "scale": 1.2
           }
-        ],
-        "decorations": [
-          {
-            "id": "maze-authored-island-shell",
-            "kind": "mesh",
-            "asset": "maze-island-shell",
-            "position": [0, 0, 0],
-            "scale": 1,
-            "color": "groundEdge"
-          }
         ]
       },
+      "decorations": [
+        {
+          "id": "maze-authored-island-shell",
+          "kind": "mesh",
+          "asset": "maze-island-shell",
+          "position": [0, 0, 0],
+          "scale": 1,
+          "color": "groundEdge"
+        }
+      ],
       "blocks": [],
       "signs": [],
       "interactions": [],
