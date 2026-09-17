@@ -19,6 +19,20 @@ local checkpoint = "START"
 local remote_runners = {}
 local collected_coins = {}
 
+local function reset_state()
+    elapsed = 0
+    refresh_elapsed = 0
+    falls = 0
+    collected = 0
+    completed = false
+    timed_out = false
+    finish_time = 0
+    status = "FIND THE EXIT"
+    checkpoint = "START"
+    remote_runners = {}
+    collected_coins = {}
+end
+
 local function format_time(seconds)
     local whole = math.max(0, math.floor(seconds))
     local minutes = math.floor(whole / 60)
@@ -151,6 +165,7 @@ local function set_coin_states(api)
 end
 
 function Game.on_start(api)
+    reset_state()
     api.lobby:set_enabled(false)
     api.lobby:set_status("Find the signal exit before the three-minute timer expires.")
     api.session:start("maze-101", { mode = "cooperative", difficulty = "easy" })

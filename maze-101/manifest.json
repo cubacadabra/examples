@@ -10,6 +10,9 @@
     "models": {
       "maze-rock-01": {
         "path": "assets/models/rock_01.glb"
+      },
+      "maze-island-shell": {
+        "path": "assets/models/island_shell.glb"
       }
     }
   },
@@ -98,15 +101,14 @@
         "width": 10,
         "height": 10,
         "cellSize": 8,
-        "rockAsset": "maze-rock-01",
-        "wallHeight": 7,
-        "wallThickness": 0.8,
+        "wallHeight": 14,
+        "wallThickness": 1.2,
         "seed": 101,
         "finishColor": "signal",
         "terrain": {
           "cellSize": 0.5,
           "wallMaterial": "builtin:grass",
-          "floorMaterial": "builtin:ground"
+          "floorMaterial": "builtin:sand"
         },
         "start": [
           0,
@@ -145,6 +147,10 @@
           23
         ],
         "showSpawnPad": false,
+        "presentationBounds": {
+          "minimum": [-52, -17, -50],
+          "maximum": [52, 14, 50]
+        },
         "visual": {
           "exposure": 1.18,
           "contrast": 1.12,
@@ -169,6 +175,16 @@
               -48
             ],
             "scale": 1.2
+          }
+        ],
+        "decorations": [
+          {
+            "id": "maze-authored-island-shell",
+            "kind": "mesh",
+            "asset": "maze-island-shell",
+            "position": [0, 0, 0],
+            "scale": 1,
+            "color": "groundEdge"
           }
         ]
       },
