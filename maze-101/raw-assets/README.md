@@ -35,5 +35,6 @@ and bridge meshes under `assets/models/`:
   between islands.
 
 The meshes are visual-only. Generated maze terrain and authored hub terrain
-remain the playable collision surfaces. Run `python3 generate_island_shell.py`
-from this directory after source changes.
+provide island collision, while package-owned wood blocks follow the rope
+bridge decks to provide walkable collision. Run
+`python3 generate_island_shell.py` from this directory after source changes.
