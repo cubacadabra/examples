@@ -1,6 +1,6 @@
 {
   "id": "maze-101",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "sdkVersion": "0.4.0",
   "package": {
     "formatVersion": 3,
@@ -77,6 +77,7 @@
     "groundSize": 70,
     "gridSize": 64,
     "gridDivisions": 32,
+    "showGrid": false,
     "spawn": [
       0,
       0,
@@ -141,6 +142,7 @@
         "groundSize": 112,
         "gridSize": 112,
         "gridDivisions": 24,
+        "showGrid": false,
         "spawn": [0, 1.5, 14],
         "showSpawnPad": false,
         "presentationBounds": {
@@ -283,6 +285,7 @@
         "groundSize": 64,
         "gridSize": 64,
         "gridDivisions": 16,
+        "showGrid": false,
         "spawn": [
           0,
           0,
@@ -423,6 +426,7 @@
         "groundSize": 80,
         "gridSize": 80,
         "gridDivisions": 20,
+        "showGrid": false,
         "spawn": [0, 0, 31],
         "showSpawnPad": false,
         "presentationBounds": {
@@ -552,6 +556,7 @@
         "groundSize": 96,
         "gridSize": 96,
         "gridDivisions": 24,
+        "showGrid": false,
         "spawn": [0, 0, 39],
         "showSpawnPad": false,
         "presentationBounds": {

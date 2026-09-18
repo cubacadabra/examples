@@ -71,112 +71,73 @@ local function player_controls()
     local document = {
         nodes = {
             {
-                id = "maze-hud",
-                kind = "panel",
-                layout = {
-                    anchor = "top",
-                    width = "88%",
-                    maxWidth = 420,
-                    height = "auto",
-                    offset = { 0, 72 },
-                    padding = 12,
-                    gap = 2,
-                    direction = "column",
-                    align = "stretch",
-                },
-                style = {
-                    background = "#0B102BD9",
-                    borderColor = "#F7F5E929",
-                    borderWidth = 1,
-                    cornerRadius = 14,
-                },
-                children = {
-                    {
-                        id = "maze-title",
-                        kind = "text",
-                        text = "MAZE 101  •  ISLAND 1/3",
-                        layout = { width = "fill", height = 24 },
-                        style = { foreground = "#F7F5E9", fontSize = 17, textAlign = "center" },
-                    },
-                    {
-                        id = "maze-status",
-                        kind = "text",
-                        text = status,
-                        layout = { width = "fill", height = 22 },
-                        style = { foreground = "#57E5D0", fontSize = 13, textAlign = "center" },
-                    },
-                    {
-                        id = "maze-progress",
-                        kind = "text",
-                        text = "02:30  •  0/8 COINS  •  START",
-                        layout = { width = "fill", height = 20 },
-                        style = { foreground = "#F1E95B", fontSize = 12, textAlign = "center" },
-                    },
-                    {
-                        id = "maze-detail",
-                        kind = "text",
-                        text = "1 RUNNER  •  0 FALLS",
-                        layout = { width = "fill", height = 18 },
-                        style = { foreground = "#F7F5E9B8", fontSize = 11, textAlign = "center" },
-                    },
-                },
-            },
-            {
-                id = "maze-help",
+                id = "maze-status",
                 kind = "text",
-                text = "WASD / JOYSTICK  •  SPACE TO JUMP  •  SHIFT / RUN TO SPRINT",
-                layout = { anchor = "top", width = "90%", maxWidth = 700, height = 20, offset = { 0, 196 } },
+                text = status,
+                layout = { anchor = "top", width = 260, height = 20, offset = { 0, 72 } },
+                style = { foreground = "#F7F5E9E8", fontSize = 13, textAlign = "center" },
+            },
+            {
+                id = "maze-progress",
+                kind = "text",
+                text = "02:30",
+                layout = { anchor = "top", width = 180, height = 18, offset = { 0, 92 } },
                 style = { foreground = "#F7F5E9B8", fontSize = 11, textAlign = "center" },
-            },
-            {
-                id = "player-joystick",
-                kind = "joystick",
-                action = "player.move",
-                layout = { anchor = "bottomLeft", width = 120, height = 120, offset = { 20, -24 } },
-                style = {
-                    background = "#0B102BC9",
-                    borderColor = "#57E5D055",
-                    borderWidth = 2,
-                    cornerRadius = 60,
-                    accent = "#57E5D0",
-                },
-            },
-            {
-                id = "player-jump",
-                kind = "button",
-                text = "JUMP",
-                action = "player.jump",
-                layout = { anchor = "bottomRight", width = 86, height = 44, offset = { -22, -84 } },
-                style = {
-                    background = "#0B102BF5",
-                    borderColor = "#57E5D0",
-                    borderWidth = 2,
-                    cornerRadius = 17,
-                    foreground = "#F7F5E9",
-                    accent = "#57E5D0",
-                    textAlign = "center",
-                    fontSize = 14,
-                },
-            },
-            {
-                id = "player-run",
-                kind = "button",
-                text = "RUN",
-                action = "player.run",
-                layout = { anchor = "bottomRight", width = 86, height = 44, offset = { -22, -30 } },
-                style = {
-                    background = "#0B102BF5",
-                    borderColor = "#57E5D0",
-                    borderWidth = 2,
-                    cornerRadius = 17,
-                    foreground = "#F7F5E9",
-                    accent = "#57E5D0",
-                    textAlign = "center",
-                    fontSize = 14,
-                },
             },
         },
     }
+
+    -- Studio uses DEBUG for its creator preview. Keyboard input remains
+    -- available there, while the release package keeps its mobile controls.
+    if not debug_build then
+        table.insert(document.nodes, {
+            id = "player-joystick",
+            kind = "joystick",
+            action = "player.move",
+            layout = { anchor = "bottomLeft", width = 96, height = 96, offset = { 18, -22 } },
+            style = {
+                background = "#0B102B96",
+                borderColor = "#F7F5E940",
+                borderWidth = 1,
+                cornerRadius = 48,
+                accent = "#F7F5E9CC",
+            },
+        })
+        table.insert(document.nodes, {
+            id = "player-jump",
+            kind = "button",
+            text = "JUMP",
+            action = "player.jump",
+            layout = { anchor = "bottomRight", width = 68, height = 44, offset = { -18, -76 } },
+            style = {
+                background = "#0B102BB8",
+                borderColor = "#F7F5E955",
+                borderWidth = 1,
+                cornerRadius = 16,
+                foreground = "#F7F5E9",
+                accent = "#F7F5E9",
+                textAlign = "center",
+                fontSize = 12,
+            },
+        })
+        table.insert(document.nodes, {
+            id = "player-run",
+            kind = "button",
+            text = "RUN",
+            action = "player.run",
+            layout = { anchor = "bottomRight", width = 68, height = 44, offset = { -18, -22 } },
+            style = {
+                background = "#0B102BB8",
+                borderColor = "#F7F5E955",
+                borderWidth = 1,
+                cornerRadius = 16,
+                foreground = "#F7F5E9",
+                accent = "#F7F5E9",
+                textAlign = "center",
+                fontSize = 12,
+            },
+        })
+    end
 
     if debug_build then
         table.insert(document.nodes, {
@@ -185,16 +146,16 @@ local function player_controls()
             text = "SKIP TO END",
             action = "maze.debug.skip_to_end",
             visible = false,
-            layout = { anchor = "topRight", width = 142, height = 44, offset = { -26, 224 } },
+            layout = { anchor = "topRight", width = 84, height = 32, offset = { -18, 72 } },
             style = {
-                background = "#FF8A3D",
-                borderColor = "#F7F5E9",
-                borderWidth = 2,
-                cornerRadius = 17,
-                foreground = "#0B102B",
+                background = "#0B102B8C",
+                borderColor = "#F7F5E955",
+                borderWidth = 1,
+                cornerRadius = 12,
+                foreground = "#F7F5E9",
                 accent = "#F7F5E9",
                 textAlign = "center",
-                fontSize = 12,
+                fontSize = 10,
             },
         })
     end
@@ -207,11 +168,8 @@ local function update_hud(api)
         if debug_build then
             api.ui:set_visible("maze-debug-end", false)
         end
-        api.ui:set_text("maze-title", "MAZE 101  •  ARCHIPELAGO")
         api.ui:set_text("maze-status", status)
-        api.ui:set_text("maze-progress", "3 ISLANDS  •  EASY TO HARD")
-        api.ui:set_text("maze-detail", "NEXT  •  SUNSHORE  •  FOLLOW THE CORAL GATE")
-        api.ui:set_text("maze-help", "EXPLORE THE HUB  •  ENTER SUNSHORE TO START THE CLOCK")
+        api.ui:set_text("maze-progress", "SUNSHORE  •  CORAL CAY  •  CLOUDPEAK")
         return
     end
 
@@ -220,25 +178,10 @@ local function update_hud(api)
         api.ui:set_visible("maze-debug-end", true)
     end
     local time_left = completed and finish_time or math.max(0, island.time_limit - elapsed)
-    api.ui:set_text(
-        "maze-title",
-        "MAZE 101  •  ISLAND " .. tostring(current_island) .. "/" .. tostring(#ISLANDS)
-    )
     api.ui:set_text("maze-status", status)
     api.ui:set_text(
         "maze-progress",
-        format_time(time_left) .. "  •  " .. tostring(collected) .. "/" .. tostring(island.coin_count)
-            .. " COINS  •  " .. checkpoint
-    )
-    api.ui:set_text("maze-help", "WASD / JOYSTICK  •  SPACE TO JUMP  •  SHIFT / RUN TO SPRINT")
-    local remote_count = 0
-    for _ in pairs(remote_runners) do
-        remote_count += 1
-    end
-    api.ui:set_text(
-        "maze-detail",
-        tostring(1 + remote_count) .. " RUNNER" .. (remote_count == 0 and "" or "S")
-            .. "  •  " .. tostring(falls) .. " FALL" .. (falls == 1 and "" or "S")
+        format_time(time_left) .. "  •  " .. tostring(collected) .. "/" .. tostring(island.coin_count) .. " COINS"
     )
 end
 
