@@ -71,53 +71,62 @@ local function player_controls()
     local document = {
         nodes = {
             {
-                id = "maze-title",
-                kind = "text",
-                text = "MAZE 101  •  ISLAND 1/3",
-                layout = { anchor = "topLeft", width = "86%", maxWidth = 420, height = 30, offset = { 26, 122 } },
-                style = { color = "#F7F5E9", fontSize = 20 },
-            },
-            {
-                id = "maze-status",
-                kind = "text",
-                text = status,
-                layout = { anchor = "topLeft", width = "86%", maxWidth = 420, height = 26, offset = { 26, 158 } },
-                style = { color = "#57E5D0", fontSize = 14 },
-            },
-            {
-                id = "maze-time",
-                kind = "text",
-                text = "TIME 02:30",
-                layout = { anchor = "topLeft", width = 220, height = 22, offset = { 26, 190 } },
-                style = { color = "#F1E95B", fontSize = 12 },
-            },
-            {
-                id = "maze-coins",
-                kind = "text",
-                text = "COINS 0/8",
-                layout = { anchor = "topLeft", width = 220, height = 22, offset = { 26, 218 } },
-                style = { color = "#F7F5E9", fontSize = 12 },
-            },
-            {
-                id = "maze-checkpoint",
-                kind = "text",
-                text = "CHECKPOINT  START",
-                layout = { anchor = "topLeft", width = 300, height = 22, offset = { 26, 246 } },
-                style = { color = "#9F7BFF", fontSize = 12 },
-            },
-            {
-                id = "maze-runners",
-                kind = "text",
-                text = "RUNNERS 1",
-                layout = { anchor = "topLeft", width = 220, height = 22, offset = { 26, 274 } },
-                style = { color = "#F7F5E9B8", fontSize = 12 },
+                id = "maze-hud",
+                kind = "panel",
+                layout = {
+                    anchor = "top",
+                    width = "88%",
+                    maxWidth = 420,
+                    height = "auto",
+                    offset = { 0, 72 },
+                    padding = 12,
+                    gap = 2,
+                    direction = "column",
+                    align = "stretch",
+                },
+                style = {
+                    background = "#0B102BD9",
+                    borderColor = "#F7F5E929",
+                    borderWidth = 1,
+                    cornerRadius = 14,
+                },
+                children = {
+                    {
+                        id = "maze-title",
+                        kind = "text",
+                        text = "MAZE 101  •  ISLAND 1/3",
+                        layout = { width = "fill", height = 24 },
+                        style = { foreground = "#F7F5E9", fontSize = 17, textAlign = "center" },
+                    },
+                    {
+                        id = "maze-status",
+                        kind = "text",
+                        text = status,
+                        layout = { width = "fill", height = 22 },
+                        style = { foreground = "#57E5D0", fontSize = 13, textAlign = "center" },
+                    },
+                    {
+                        id = "maze-progress",
+                        kind = "text",
+                        text = "02:30  •  0/8 COINS  •  START",
+                        layout = { width = "fill", height = 20 },
+                        style = { foreground = "#F1E95B", fontSize = 12, textAlign = "center" },
+                    },
+                    {
+                        id = "maze-detail",
+                        kind = "text",
+                        text = "1 RUNNER  •  0 FALLS",
+                        layout = { width = "fill", height = 18 },
+                        style = { foreground = "#F7F5E9B8", fontSize = 11, textAlign = "center" },
+                    },
+                },
             },
             {
                 id = "maze-help",
                 kind = "text",
-                text = "MOVE  WASD / JOYSTICK   SPACE / JUMP   CLEAR ALL 3 ISLANDS",
-                layout = { anchor = "bottom", width = "90%", maxWidth = 700, height = 24, offset = { 0, -24 } },
-                style = { color = "#F7F5E9B8", fontSize = 11, textAlign = "center" },
+                text = "WASD / JOYSTICK  •  SPACE TO JUMP  •  SHIFT / RUN TO SPRINT",
+                layout = { anchor = "top", width = "90%", maxWidth = 700, height = 20, offset = { 0, 196 } },
+                style = { foreground = "#F7F5E9B8", fontSize = 11, textAlign = "center" },
             },
             {
                 id = "player-joystick",
@@ -176,7 +185,7 @@ local function player_controls()
             text = "SKIP TO END",
             action = "maze.debug.skip_to_end",
             visible = false,
-            layout = { anchor = "topRight", width = 142, height = 44, offset = { -26, 122 } },
+            layout = { anchor = "topRight", width = 142, height = 44, offset = { -26, 224 } },
             style = {
                 background = "#FF8A3D",
                 borderColor = "#F7F5E9",
@@ -200,11 +209,9 @@ local function update_hud(api)
         end
         api.ui:set_text("maze-title", "MAZE 101  •  ARCHIPELAGO")
         api.ui:set_text("maze-status", status)
-        api.ui:set_text("maze-time", "3 ISLANDS")
-        api.ui:set_text("maze-coins", "NEXT  SUNSHORE")
-        api.ui:set_text("maze-checkpoint", "FOLLOW THE CORAL GATE")
-        api.ui:set_text("maze-runners", "EXPLORE  •  THEN ENTER")
-        api.ui:set_text("maze-help", "EXPLORE THE HUB   •   ENTER SUNSHORE TO START THE CLOCK")
+        api.ui:set_text("maze-progress", "3 ISLANDS  •  EASY TO HARD")
+        api.ui:set_text("maze-detail", "NEXT  •  SUNSHORE  •  FOLLOW THE CORAL GATE")
+        api.ui:set_text("maze-help", "EXPLORE THE HUB  •  ENTER SUNSHORE TO START THE CLOCK")
         return
     end
 
@@ -218,15 +225,21 @@ local function update_hud(api)
         "MAZE 101  •  ISLAND " .. tostring(current_island) .. "/" .. tostring(#ISLANDS)
     )
     api.ui:set_text("maze-status", status)
-    api.ui:set_text("maze-time", "TIME " .. format_time(time_left))
-    api.ui:set_text("maze-coins", "COINS " .. tostring(collected) .. "/" .. tostring(island.coin_count))
-    api.ui:set_text("maze-checkpoint", "CHECKPOINT  " .. checkpoint)
-    api.ui:set_text("maze-help", "MOVE  WASD / JOYSTICK   SPACE / JUMP   CLEAR ALL 3 ISLANDS")
+    api.ui:set_text(
+        "maze-progress",
+        format_time(time_left) .. "  •  " .. tostring(collected) .. "/" .. tostring(island.coin_count)
+            .. " COINS  •  " .. checkpoint
+    )
+    api.ui:set_text("maze-help", "WASD / JOYSTICK  •  SPACE TO JUMP  •  SHIFT / RUN TO SPRINT")
     local remote_count = 0
     for _ in pairs(remote_runners) do
         remote_count += 1
     end
-    api.ui:set_text("maze-runners", "RUNNERS " .. tostring(1 + remote_count) .. "   FALLS " .. tostring(falls))
+    api.ui:set_text(
+        "maze-detail",
+        tostring(1 + remote_count) .. " RUNNER" .. (remote_count == 0 and "" or "S")
+            .. "  •  " .. tostring(falls) .. " FALL" .. (falls == 1 and "" or "S")
+    )
 end
 
 local function set_coin_states(api)

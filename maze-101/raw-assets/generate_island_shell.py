@@ -167,14 +167,16 @@ def make_bridge() -> tuple[list[tuple[float, float, float]], list[int]]:
     indices: list[int] = []
     for index in range(17):
         z = -16.0 + index * 2.0
-        append_box(vertices, indices, (0.0, 0.0, z), (5.7, 0.34, 1.62))
+        deck_y = bridge_height(z) * 0.55
+        append_box(vertices, indices, (0.0, deck_y, z), (5.7, 0.34, 1.62))
 
     post_zs = (-16.0, -8.0, 0.0, 8.0, 16.0)
     for side in (-1.0, 1.0):
         rope_points: list[tuple[float, float, float]] = []
         for z in post_zs:
-            append_box(vertices, indices, (side * 3.0, 1.55, z), (0.28, 3.1, 0.28))
-            rope_points.append((side * 3.0, bridge_height(z) * 0.45 + 2.75, z))
+            deck_y = bridge_height(z) * 0.55
+            append_box(vertices, indices, (side * 3.0, deck_y + 1.55, z), (0.28, 3.1, 0.28))
+            rope_points.append((side * 3.0, deck_y + 2.75, z))
         for start, end in zip(rope_points, rope_points[1:]):
             append_beam(vertices, indices, start, end, 0.16)
             lower_start = (start[0], start[1] - 1.0, start[2])
