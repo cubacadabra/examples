@@ -22,19 +22,7 @@ Source: [MayGo/maze-world, `raw-assets/blender/rocks.blend`](https://github.com/
 The source repository is licensed under MIT; its license notice is included in
 this directory. See [LICENSE](LICENSE).
 
-## Authored archipelago meshes
-
-`generate_island_shell.py` deterministically produces the package-owned island
-and bridge meshes under `assets/models/`:
-
-- `island_shell.glb` is the closed low-poly shell used below maze floors.
-- `island_shell_open.glb` leaves the top open so textured hub terrain can form
-  the playable grass surface without being covered by a flat mesh face.
-- `island_cap.glb` gives distant, visual-only islands a simple grass top.
-- `rope_bridge.glb` supplies the sagging plank, post, and rail silhouette used
-  between islands.
-
-The meshes are visual-only. Generated maze terrain and authored hub terrain
-provide island collision, while narrow ground-terrain strips beneath the rope
-bridge decks provide walkable collision. Run
-`python3 generate_island_shell.py` from this directory after source changes.
+The first Maze 101 visual milestone intentionally has no authored environment
+meshes. The generated maze terrain is the whole scene so its camera, scale,
+grass walls, sand floor, and daylight response can be compared against the
+MayGo reference before adding any scenery.
