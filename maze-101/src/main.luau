@@ -8,7 +8,7 @@ local MAZE = {
     name = "EASY ROOM",
     time_limit = 150,
     coin_count = 8,
-    finish_position = { 28, 0, 28 },
+    finish_position = { -7.5, 0, 52.5 },
 }
 
 local elapsed = 0
@@ -134,6 +134,9 @@ local function player_controls()
         })
     end
 
+    for _, node in document.nodes do
+        node.visibleIn = { "easy-room" }
+    end
     return document
 end
 

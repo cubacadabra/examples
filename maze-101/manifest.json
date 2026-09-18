@@ -837,23 +837,23 @@
       "maze": {
         "width": 8,
         "height": 8,
-        "cellSize": 8,
-        "wallHeight": 6.5,
-        "wallThickness": 1,
+        "cellSize": 15,
+        "wallHeight": 12,
+        "wallThickness": 2,
         "seed": 101,
         "wallColor": "groundEdge",
         "finishColor": "signal",
         "terrain": {
           "cellSize": 1,
-          "wallMaterial": "builtin:grass",
+          "wallMaterial": "builtin:leafygrass",
           "floorMaterial": "builtin:sand"
         },
         "start": [
           0,
-          0
+          6
         ],
         "finish": [
-          7,
+          3,
           7
         ],
         "checkpointEvery": 10,
@@ -876,26 +876,26 @@
         "paper": "#F4F0D8"
       },
       "world": {
-        "groundSize": 84,
-        "gridSize": 80,
+        "groundSize": 140,
+        "gridSize": 140,
         "gridDivisions": 32,
         "showGrid": false,
         "spawn": [
-          0,
+          -52.5,
           1.5,
-          0
+          37.5
         ],
         "showSpawnPad": false,
         "presentationBounds": {
           "minimum": [
-            -36,
-            -1,
-            -36
+            -62,
+            -2,
+            -62
           ],
           "maximum": [
-            36,
-            9,
-            36
+            62,
+            14,
+            62
           ]
         },
         "physics": {
