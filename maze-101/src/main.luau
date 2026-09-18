@@ -243,7 +243,10 @@ local function skip_to_end(api)
     end
 
     in_hub = false
-    pending_island_advance = false
+    -- The teleport enters the finish portal immediately. Keep the same
+    -- progression flag that manual finish uses so the following spawn event
+    -- advances the Lua state to the destination island.
+    pending_island_advance = current_island < #ISLANDS
     reset_island_state()
 
     local island = island_config()
