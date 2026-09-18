@@ -10,6 +10,12 @@ local ISLANDS = {
     { name = "CLOUDPEAK", time_limit = 210, coin_count = 16 },
 }
 
+local FINISH_POSITIONS = {
+    { 28, 0, 28 },
+    { 36, 0, 36 },
+    { 44, 0, 44 },
+}
+
 local current_island = 0
 local in_hub = true
 local hub_spawn_seen = false
@@ -237,7 +243,6 @@ local function skip_to_end(api)
     end
 
     in_hub = false
-    current_island = #ISLANDS
     pending_island_advance = false
     reset_island_state()
 
@@ -246,11 +251,14 @@ local function skip_to_end(api)
     for index = 1, island.coin_count do
         collected_coins[string.format("maze-coin-%02d", index)] = true
     end
-    completed = true
-    status = "DEBUG SKIP  •  ARCHIPELAGO CLEARED"
-    api.lobby:set_status("DEBUG: skipped to the end of Cloudpeak.")
+    status = "DEBUG SKIP  •  ALL COINS FOUND  •  FIND THE EXIT"
+    api.lobby:set_status("DEBUG: all " .. island.name .. " items collected. Reach the exit to continue.")
     if api.debug ~= nil then
-        api.debug:teleport_to("island-3", { 44, 0, 44 }, 0)
+        api.debug:teleport_to(
+            "island-" .. tostring(current_island),
+            FINISH_POSITIONS[current_island],
+            0
+        )
     end
     set_coin_states(api)
     update_hud(api)
