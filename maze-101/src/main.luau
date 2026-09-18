@@ -249,6 +249,9 @@ local function skip_to_end(api)
     completed = true
     status = "DEBUG SKIP  •  ARCHIPELAGO CLEARED"
     api.lobby:set_status("DEBUG: skipped to the end of Cloudpeak.")
+    if api.debug ~= nil then
+        api.debug:teleport_to("island-3", { 44, 0, 44 }, 0)
+    end
     set_coin_states(api)
     update_hud(api)
 end
@@ -288,7 +291,7 @@ end
 function Game.on_ui_event(api, event)
     if type(event) == "table"
         and event.action == "maze.debug.skip_to_end"
-        and event.phase == "activate" then
+        and event.phase ~= "release" then
         skip_to_end(api)
     end
 end
