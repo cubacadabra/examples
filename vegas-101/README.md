@@ -13,9 +13,10 @@ The build starts with 46,248 credits and 3,504 tickets to match the supplied
 reference screenshot. Bets and wins last for the current session.
 
 The default presentation is the first imported Texas Hold'em room from the
-reference export. The player starts inside its interaction zone, so the authored
-orbit camera and poker HUD focus on that table through the normal interaction
-event; walking away returns the HUD to floor exploration.
+reference export. The player starts in a clear spot just outside the room's
+near-side wall but inside its interaction zone, so the authored orbit camera
+and poker HUD focus on that table through the normal interaction event;
+walking away returns the HUD to floor exploration.
 
 ## Build
 
