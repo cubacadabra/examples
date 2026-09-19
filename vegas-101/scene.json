@@ -1,5 +1,6 @@
 {
   "formatVersion": 1,
+  "worldId": "vegas-floor",
   "nodes": [
     {
       "id": "world-vegas-floor",
@@ -105,7 +106,7 @@
       "parentId": "interactions",
       "name": "Texas Hold'em",
       "transform": { "position": [-12.43, 3.27, 14.21], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
-      "components": { "interaction": { "id": "table-texas", "kind": "zone", "label": "PLAY TEXAS HOLD'EM", "radius": 7.5, "color": "signal", "visual": "checkpoint" } },
+      "components": { "interaction": { "id": "table-texas", "kind": "zone", "label": "PLAY TEXAS HOLD'EM", "radius": 16, "color": "signal", "visual": "checkpoint" } },
       "editor": { "visible": true, "locked": false }
     },
     {
