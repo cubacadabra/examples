@@ -6,8 +6,8 @@ and slot bank are exported as ordinary package meshes; the authored Luau layer
 adds a compact credits/tickets HUD and deterministic local rounds for the
 source table locations.
 
-The imported floor and collision are preserved. Walk with WASD/arrows, run with
-Shift, jump with Space, and orbit/zoom with drag and wheel. Walk into a marked table zone to
+The imported floor and collision are preserved. Walk with WASD/arrows or the
+mobile joystick, run with Shift or RUN, jump with Space or JUMP, and orbit/zoom with drag and wheel. Walk into a marked table zone to
 play Texas Hold'em, blackjack, baccarat, roulette, slots, Plinko, or Cash Wheel.
 The build starts with 46,248 credits and 3,504 tickets to match the supplied
 reference screenshot. Bets and wins last for the current session.

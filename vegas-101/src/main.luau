@@ -176,9 +176,24 @@ local function hud_document()
                 style = { background = "#17121BEA", borderColor = "#F8F2DF55", borderWidth = 1, cornerRadius = 4, foreground = "#F8F2DF", fontSize = 18, textAlign = "center" },
             }),
             visible({
-                id = "vegas-help", kind = "text", text = "WASD / ARROWS MOVE   •   SHIFT RUN   •   SPACE JUMP   •   WALK TO A TABLE",
+                id = "vegas-help", kind = "text", text = "WASD / JOYSTICK MOVE   •   SHIFT / RUN   •   SPACE / JUMP   •   WALK TO A TABLE",
                 layout = { anchor = "bottom", width = "90%", maxWidth = 520, height = 20, offset = { 0, -8 } },
                 style = { foreground = "#F8F2DFB8", fontSize = 9 },
+            }),
+            visible({
+                id = "player-joystick", kind = "joystick", action = "player.move",
+                layout = { anchor = "bottomLeft", width = 120, height = 120, offset = { 20, -24 } },
+                style = { background = "#17121BD9", borderColor = "#E5B94E66", borderWidth = 2, cornerRadius = 60, accent = "#E5B94E" },
+            }),
+            visible({
+                id = "player-jump", kind = "button", text = "JUMP", action = "player.jump",
+                layout = { anchor = "bottomRight", width = 86, height = 44, offset = { -22, -84 } },
+                style = { background = "#17121BF5", borderColor = "#F8F2DF99", borderWidth = 2, cornerRadius = 17, foreground = "#F8F2DF", accent = "#E5B94E", textAlign = "center", fontSize = 14 },
+            }),
+            visible({
+                id = "player-run", kind = "button", text = "RUN", action = "player.run",
+                layout = { anchor = "bottomRight", width = 86, height = 44, offset = { -22, -30 } },
+                style = { background = "#17121BF5", borderColor = "#F8F2DF99", borderWidth = 2, cornerRadius = 17, foreground = "#F8F2DF", accent = "#E5B94E", textAlign = "center", fontSize = 14 },
             }),
         },
     }
