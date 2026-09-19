@@ -13,9 +13,9 @@ The build starts with 46,248 credits and 3,504 tickets to match the supplied
 reference screenshot. Bets and wins last for the current session.
 
 The default presentation is the first imported Texas Hold'em room from the
-reference export. The player starts just beyond the near-side chairs, with the
-authored orbit camera and poker HUD already focused on that table; walking away
-returns the HUD to floor exploration.
+reference export. The player starts inside its interaction zone, so the authored
+orbit camera and poker HUD focus on that table through the normal interaction
+event; walking away returns the HUD to floor exploration.
 
 ## Build
 
@@ -39,9 +39,15 @@ cargo run --release --no-default-features --features headless \
 The headless runner checks that package loading, Luau startup, world selection,
 input stepping, and the resulting state hash are deterministic.
 
-The checked-in meshes and collision file were generated from the reference
-scene with `scripts/export_reference.sh`. The original Roblox XML is not
-required to build or run this package.
+To regenerate the checked-in meshes and compact collision file from the default
+reference scene, install `jq` and run:
+
+```sh
+./scripts/export_reference.sh
+```
+
+An alternate scene JSON can be supplied as the first argument. The original
+Roblox XML is not required to build or run this package.
 
 ## Source fidelity
 

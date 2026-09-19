@@ -1,31 +1,40 @@
 #!/bin/sh
 set -eu
 
-SCENE_PATH="${1:-/Users/aa/cubacadabra/other-examples/vegas.json}"
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+PROJECT_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+REPO_ROOT=$(CDPATH= cd -- "$PROJECT_ROOT/../.." && pwd)
+SCENE_PATH="${1:-$REPO_ROOT/other-examples/vegas.json}"
+TOOLS_MANIFEST="$REPO_ROOT/tools/Cargo.toml"
+TEMP_DIR=$(mktemp -d "${TMPDIR:-/tmp}/vegas-reference.XXXXXX")
 
-cargo run --manifest-path ../../tools/Cargo.toml --bin cubacadabra -- \
+cleanup() {
+  rm -f "$TEMP_DIR/map.json" "$TEMP_DIR/tables.json" "$TEMP_DIR/slots.json"
+  rmdir "$TEMP_DIR"
+}
+trap cleanup EXIT HUP INT TERM
+
+cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   export-reference-mesh --scene "$SCENE_PATH" \
   --path-prefix 'Workspace:Workspace[1]/Folder:Map[1]' \
-  --scale 1 --output assets/models/vegas_map.glb \
-  --collision-output /tmp/vegas-map-collision.json
+  --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_map.glb" \
+  --collision-output "$TEMP_DIR/map.json"
 
-cargo run --manifest-path ../../tools/Cargo.toml --bin cubacadabra -- \
+cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   export-reference-mesh --scene "$SCENE_PATH" \
   --path-prefix 'Workspace:Workspace[1]/Folder:Games[1]/Folder:Tables[1]' \
-  --scale 1 --output assets/models/vegas_tables.glb \
-  --collision-output /tmp/vegas-tables-collision.json
+  --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_tables.glb" \
+  --collision-output "$TEMP_DIR/tables.json"
 
-cargo run --manifest-path ../../tools/Cargo.toml --bin cubacadabra -- \
+cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   export-reference-mesh --scene "$SCENE_PATH" \
   --path-prefix 'Workspace:Workspace[1]/Folder:Games[1]/Folder:Slots[1]' \
-  --scale 1 --output assets/models/vegas_slots.glb \
-  --collision-output /tmp/vegas-slots-collision.json
+  --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_slots.glb" \
+  --collision-output "$TEMP_DIR/slots.json"
 
-jq -n \
-  --slurpfile map /tmp/vegas-map-collision.json \
-  --slurpfile tables /tmp/vegas-tables-collision.json \
-  --slurpfile slots /tmp/vegas-slots-collision.json \
+jq -c -n \
+  --slurpfile map "$TEMP_DIR/map.json" \
+  --slurpfile tables "$TEMP_DIR/tables.json" \
+  --slurpfile slots "$TEMP_DIR/slots.json" \
   '{formatVersion: 1, triangles: ($map[0].triangles + $tables[0].triangles + $slots[0].triangles)}' \
-  > reference/vegas-collision.json
-
-rm -f /tmp/vegas-map-collision.json /tmp/vegas-tables-collision.json /tmp/vegas-slots-collision.json
+  > "$PROJECT_ROOT/reference/vegas-collision.json"

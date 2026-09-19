@@ -337,7 +337,7 @@ def main() -> None:
         raise SystemExit(f"reference scene is missing RoomLabel markers: {sorted(set(ROOM_TIERS) - set(labels))}")
     manifest = json.loads((ROOT / "manifest.json").read_text(encoding="utf-8"))
     manifest.update({
-        "version": "0.6.1",
+        "version": "0.6.2",
         "sdkVersion": "0.5.0",
         "startWorld": "maze-world",
         "launch": {"destinationWorld": "maze-world", "authoritative": True},

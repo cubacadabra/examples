@@ -30,6 +30,8 @@ local round_elapsed = 0
 local rounds_played = 0
 local status = "FIND A TABLE"
 local result = ""
+local hud_dirty = true
+local next_clock_update = 0
 
 local function format_number(value)
     local text = tostring(math.floor(value))
@@ -60,7 +62,7 @@ local function hud_document()
             visible({
                 id = "vegas-brand", kind = "text", text = "VEGAS 101",
                 layout = { anchor = "topLeft", width = 220, height = 30, offset = { 22, 18 } },
-                style = { foreground = "#F8F2DF", fontSize = 18, fontWeight = "bold" },
+                style = { foreground = "#F8F2DF", fontSize = 18 },
             }),
             visible({
                 id = "vegas-eyebrow", kind = "text", text = "THE HIGH ROLLER FLOOR",
@@ -73,11 +75,6 @@ local function hud_document()
                 style = { foreground = "#F8F2DFE6", fontSize = 11, textAlign = "end" },
             }),
             visible({
-                id = "vegas-server", kind = "text", text = "2 PLAYERS IN SERVER\nGamerOkami     CrayQuick",
-                layout = { anchor = "topRight", width = 230, height = 34, offset = { -24, 48 } },
-                style = { foreground = "#F8F2DFB8", fontSize = 9, textAlign = "end" },
-            }),
-            visible({
                 id = "vegas-status", kind = "text", text = status,
                 layout = { anchor = "top", width = 360, height = 28, offset = { 0, 74 } },
                 style = { background = "#17121BD9", foreground = "#F8F2DF", cornerRadius = 4, fontSize = 12, textAlign = "center" },
@@ -88,54 +85,80 @@ local function hud_document()
                 style = { background = "#17121BC7", foreground = "#F8F2DF", cornerRadius = 4, fontSize = 12 },
             }),
             visible({
-                id = "poker-cards-label", kind = "text", text = "YOUR CARDS:",
-                layout = { anchor = "bottomLeft", width = 160, height = 20, offset = { 282, -278 } },
-                style = { foreground = "#F8F2DF", fontSize = 12, fontWeight = "bold" },
+                id = "poker-shell", kind = "panel",
+                layout = { anchor = "bottom", width = "92%", maxWidth = 720, height = 190, offset = { 0, -24 }, padding = 10, direction = "row", gap = 10, align = "stretch" },
+                style = { background = "#09080DE8", borderColor = "#F8F2DF24", borderWidth = 1, cornerRadius = 5 },
+                children = {
+                    {
+                        id = "poker-cards", kind = "panel",
+                        layout = { width = "30%", maxWidth = 184, height = "fill", padding = 2, direction = "column", gap = 6 },
+                        style = { foreground = "#F8F2DF" },
+                        children = {
+                            {
+                                id = "poker-cards-label", kind = "text", text = "YOUR CARDS",
+                                layout = { width = "fill", height = 20 },
+                                style = { foreground = "#F8F2DF", fontSize = 12, textAlign = "center" },
+                            },
+                            {
+                                id = "poker-card-row", kind = "panel",
+                                layout = { width = "fill", height = "fill", direction = "row", gap = 8, align = "stretch" },
+                                children = {
+                                    {
+                                        id = "poker-card-left", kind = "text", text = "♦\n✦\n♦",
+                                        layout = { width = "fill", height = "fill" },
+                                        style = { background = "#C83D4D", borderColor = "#F8F2DF", borderWidth = 2, cornerRadius = 4, foreground = "#F8F2DF", fontSize = 20, textAlign = "center" },
+                                    },
+                                    {
+                                        id = "poker-card-right", kind = "text", text = "♦\n✦\n♦",
+                                        layout = { width = "fill", height = "fill" },
+                                        style = { background = "#C83D4D", borderColor = "#F8F2DF", borderWidth = 2, cornerRadius = 4, foreground = "#F8F2DF", fontSize = 20, textAlign = "center" },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                    {
+                        id = "poker-panel", kind = "panel", layout = { width = "fill", height = "fill", padding = 8, direction = "column", gap = 6, align = "stretch" },
+                        style = { background = "#17121BD9", cornerRadius = 4 },
+                        children = {
+                            {
+                                id = "poker-info", kind = "text", text = "",
+                                layout = { width = "fill", height = 28 },
+                                style = { foreground = "#F8F2DF", fontSize = 12, textAlign = "center" },
+                            },
+                            {
+                                id = "poker-status", kind = "text", text = "WAITING ON DEALER...",
+                                layout = { width = "fill", height = 34 },
+                                style = { foreground = "#F8F2DF", fontSize = 16, textAlign = "center" },
+                            },
+                            {
+                                id = "poker-actions", kind = "panel", layout = { width = "fill", height = "fill", direction = "column", gap = 4, align = "stretch" },
+                                children = {
+                                    {
+                                        id = "poker-actions-primary", kind = "panel", layout = { width = "fill", height = "fill", direction = "row", gap = 4, align = "stretch" },
+                                        children = {
+                                            { id = "poker-call", kind = "button", text = "R\nCALL", action = "casino.call", layout = { width = "fill", height = "fill" }, style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" } },
+                                            { id = "poker-raise", kind = "button", text = "T\nRAISE", action = "casino.raise", layout = { width = "fill", height = "fill" }, style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" } },
+                                            { id = "poker-bet", kind = "button", text = "Y\nBET", action = "casino.bet", layout = { width = "fill", height = "fill" }, style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" } },
+                                        },
+                                    },
+                                    {
+                                        id = "poker-actions-secondary", kind = "panel", layout = { width = "fill", height = "fill", direction = "row", gap = 4, align = "stretch" },
+                                        children = {
+                                            { id = "poker-check", kind = "button", text = "F\nCHECK", action = "casino.check", layout = { width = "fill", height = "fill" }, style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" } },
+                                            { id = "poker-fold", kind = "button", text = "G\nFOLD", action = "casino.fold", layout = { width = "fill", height = "fill" }, style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" } },
+                                        },
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
             }),
             visible({
-                id = "poker-card-left", kind = "text", text = "♦\n✦\n♦",
-                layout = { anchor = "bottomLeft", width = 76, height = 108, offset = { 282, -158 } },
-                style = { background = "#C83D4D", borderColor = "#F8F2DF", borderWidth = 2, cornerRadius = 4, foreground = "#F8F2DF", fontSize = 20, textAlign = "center" },
-            }),
-            visible({
-                id = "poker-card-right", kind = "text", text = "♦\n✦\n♦",
-                layout = { anchor = "bottomLeft", width = 76, height = 108, offset = { 366, -158 } },
-                style = { background = "#C83D4D", borderColor = "#F8F2DF", borderWidth = 2, cornerRadius = 4, foreground = "#F8F2DF", fontSize = 20, textAlign = "center" },
-            }),
-            visible({
-                id = "poker-panel", kind = "text", text = "",
-                layout = { anchor = "bottom", width = 520, height = 190, offset = { 0, -92 } },
-                style = { background = "#09080DE8", borderColor = "#F8F2DF24", borderWidth = 1, cornerRadius = 5, foreground = "#F8F2DF", fontSize = 12, textAlign = "center" },
-            }),
-            visible({
-                id = "poker-status", kind = "text", text = "WAITING ON DEALER...",
-                layout = { anchor = "bottom", width = 350, height = 44, offset = { 0, -176 } },
-                style = { foreground = "#F8F2DF", fontSize = 18, textAlign = "center" },
-            }),
-            visible({
-                id = "poker-call", kind = "button", text = "R\nCALL", action = "casino.call",
-                layout = { anchor = "bottom", width = 84, height = 52, offset = { -190, -110 } },
-                style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" },
-            }),
-            visible({
-                id = "poker-raise", kind = "button", text = "T\nRAISE", action = "casino.raise",
-                layout = { anchor = "bottom", width = 84, height = 52, offset = { -95, -110 } },
-                style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" },
-            }),
-            visible({
-                id = "poker-bet", kind = "button", text = "Y\nBET", action = "casino.bet",
-                layout = { anchor = "bottom", width = 84, height = 52, offset = { 0, -110 } },
-                style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" },
-            }),
-            visible({
-                id = "poker-check", kind = "button", text = "F\nCHECK", action = "casino.check",
-                layout = { anchor = "bottom", width = 84, height = 52, offset = { -95, -46 } },
-                style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" },
-            }),
-            visible({
-                id = "poker-fold", kind = "button", text = "G\nFOLD", action = "casino.fold",
-                layout = { anchor = "bottom", width = 84, height = 52, offset = { 0, -46 } },
-                style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" },
+                id = "vegas-table", kind = "text", text = "",
+                layout = { anchor = "bottom", width = "90%", maxWidth = 460, height = 62, offset = { 0, -226 } },
+                style = { background = "#09080DD9", borderColor = "#F8F2DF24", borderWidth = 1, cornerRadius = 5, foreground = "#F8F2DF", fontSize = 13, textAlign = "center" },
             }),
             visible({
                 id = "vegas-play", kind = "button", text = "PLAY ROUND", action = "casino.play",
@@ -154,35 +177,40 @@ local function hud_document()
             }),
             visible({
                 id = "vegas-help", kind = "text", text = "WASD / ARROWS MOVE   •   SHIFT RUN   •   SPACE JUMP   •   WALK TO A TABLE",
-                layout = { anchor = "bottomLeft", width = 520, height = 20, offset = { 22, -22 } },
+                layout = { anchor = "bottom", width = "90%", maxWidth = 520, height = 20, offset = { 0, -8 } },
                 style = { foreground = "#F8F2DFB8", fontSize = 9 },
             }),
         },
     }
 end
 
-local function update_hud(api)
+local function mark_hud_dirty()
+    hud_dirty = true
+end
+
+local function update_hud(api, force)
+    local clock_due = playtime >= next_clock_update
+    if not force and not hud_dirty and not clock_due then return end
     local table = active_table and TABLES[active_table] or nil
-    api.ui:set_text("vegas-stats", "CREDITS  " .. format_number(credits) .. "    TICKETS  " .. format_number(tickets) .. "    PLAYTIME  " .. format_time(playtime))
-    api.ui:set_text("vegas-status", status)
-    api.ui:set_text("vegas-wallet", "◉  " .. format_number(credits) .. "\n◇  " .. format_number(tickets) .. "\n▰  " .. format_number(math.max(0, credits - bet)))
-    local table_text = table ~= nil and (table.name .. "\nBET  " .. format_number(bet)) or "WALK TO A TABLE TO PLAY\nBET  " .. format_number(bet)
-    api.ui:set_text("poker-panel", table_text)
-    api.ui:set_text("poker-status", table ~= nil and (result ~= "" and result or "WAITING ON DEALER...") or "WALK TO A TABLE")
-    local poker_visible = table ~= nil
-    api.ui:set_visible("poker-cards-label", poker_visible)
-    api.ui:set_visible("poker-card-left", poker_visible)
-    api.ui:set_visible("poker-card-right", poker_visible)
-    api.ui:set_visible("poker-panel", poker_visible)
-    api.ui:set_visible("poker-status", poker_visible)
-    api.ui:set_visible("poker-call", poker_visible and round_state ~= "dealing")
-    api.ui:set_visible("poker-raise", poker_visible and round_state ~= "dealing")
-    api.ui:set_visible("poker-bet", poker_visible and round_state ~= "dealing")
-    api.ui:set_visible("poker-check", poker_visible and round_state ~= "dealing")
-    api.ui:set_visible("poker-fold", poker_visible and round_state ~= "dealing")
-    api.ui:set_visible("vegas-play", table ~= nil and round_state ~= "dealing" and credits >= bet)
-    api.ui:set_visible("vegas-bet-down", table ~= nil and round_state ~= "dealing")
-    api.ui:set_visible("vegas-bet-up", table ~= nil and round_state ~= "dealing")
+    local poker_visible = active_table == "table-texas"
+    if hud_dirty or clock_due then
+        api.ui:set_text("vegas-stats", "CREDITS  " .. format_number(credits) .. "    TICKETS  " .. format_number(tickets) .. "    PLAYTIME  " .. format_time(playtime))
+    end
+    if hud_dirty then
+        api.ui:set_text("vegas-status", status)
+        api.ui:set_text("vegas-wallet", "◉  " .. format_number(credits) .. "\n◇  " .. format_number(tickets))
+        local table_text = table ~= nil and (table.name .. "\nBET  " .. format_number(bet)) or "WALK TO A TABLE TO PLAY\nBET  " .. format_number(bet)
+        api.ui:set_text("vegas-table", table_text)
+        api.ui:set_text("poker-info", poker_visible and ("TEXAS HOLD'EM\nBET  " .. format_number(bet)) or "")
+        api.ui:set_text("poker-status", poker_visible and (result ~= "" and result or "WAITING ON DEALER...") or "")
+        api.ui:set_visible("poker-shell", poker_visible)
+        api.ui:set_visible("vegas-table", table ~= nil and not poker_visible)
+        api.ui:set_visible("vegas-play", table ~= nil and not poker_visible and round_state ~= "dealing" and credits >= bet)
+        api.ui:set_visible("vegas-bet-down", table ~= nil and not poker_visible and round_state ~= "dealing")
+        api.ui:set_visible("vegas-bet-up", table ~= nil and not poker_visible and round_state ~= "dealing")
+        hud_dirty = false
+    end
+    if clock_due then next_clock_update = math.floor(playtime) + 1 end
 end
 
 local function set_table(api, id)
@@ -191,6 +219,7 @@ local function set_table(api, id)
     round_elapsed = 0
     result = ""
     status = TABLES[id].name .. "  •  WAITING ON DEALER"
+    mark_hud_dirty()
     update_hud(api)
 end
 
@@ -200,6 +229,7 @@ local function leave_table(api)
     round_elapsed = 0
     result = ""
     status = "FIND A TABLE"
+    mark_hud_dirty()
     update_hud(api)
 end
 
@@ -211,6 +241,7 @@ local function play_round(api)
     round_elapsed = 0
     result = "DEALING..."
     status = TABLES[active_table].name .. "  •  DEALING"
+    mark_hud_dirty()
     update_hud(api)
 end
 
@@ -230,6 +261,7 @@ local function settle_round(api)
     end
     round_state = "ready"
     round_elapsed = 0
+    mark_hud_dirty()
     update_hud(api)
 end
 
@@ -243,17 +275,14 @@ function Game.on_start(api)
     rounds_played = 0
     status = "FIND A TABLE"
     result = ""
+    hud_dirty = true
+    next_clock_update = 0
     api.lobby:set_enabled(false)
     api.session:start("vegas-101", { mode = "cooperative", difficulty = "source-floor" })
     api.ui:set_document(hud_document())
-    -- The first imported Texas Hold'em table is the visual benchmark for this
-    -- example. Starting just beyond the near-side chairs makes the reference
-    -- room and its poker HUD appear immediately, while leaving the floor fully
-    -- explorable once the player walks away.
-    active_table = "table-texas"
-    round_state = "ready"
-    status = "TEXAS HOLD'EM  •  WAITING ON DEALER"
-    update_hud(api)
+    -- The spawn is inside the first Texas Hold'em zone, so the interaction
+    -- runtime owns the initial table state and emits a normal enter event.
+    update_hud(api, true)
 end
 
 function Game.on_tick(api, delta_seconds)
@@ -279,16 +308,20 @@ function Game.on_ui_event(api, event)
     elseif event.action == "casino.check" then
         result = "CHECK"
         status = active_table and (TABLES[active_table].name .. "  •  CHECKED") or "FIND A TABLE"
+        mark_hud_dirty()
         update_hud(api)
     elseif event.action == "casino.fold" then
         result = "FOLD"
         status = "ROUND FOLDED  •  FIND A TABLE"
+        mark_hud_dirty()
         update_hud(api)
     elseif event.action == "casino.bet.down" then
         bet = math.max(MIN_BET, bet - 25)
+        mark_hud_dirty()
         update_hud(api)
     elseif event.action == "casino.bet.up" then
         bet = math.min(MAX_BET, bet + 25)
+        mark_hud_dirty()
         update_hud(api)
     end
 end
@@ -310,6 +343,7 @@ function Game.on_player_event(api, event)
         round_state = "explore"
         status = "RETURNING TO THE FLOOR"
         result = ""
+        mark_hud_dirty()
         update_hud(api)
     end
 end
