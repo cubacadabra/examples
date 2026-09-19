@@ -114,8 +114,8 @@
           "respawnDelay": 0.8
         },
         "visual": {
-          "colorCorrection": { "brightness": -0.02, "contrast": 0.08, "saturation": -0.04 },
-          "daylight": { "timeOfDay": 18.0, "geographicLatitude": 36.0, "brightness": 1.4, "outdoorAmbient": [0.42, 0.40, 0.38], "shadowSoftness": 0.35 },
+          "colorCorrection": { "brightness": 0.08, "contrast": 0.02, "saturation": -0.04 },
+          "daylight": { "timeOfDay": 16.0, "geographicLatitude": 36.0, "brightness": 1.8, "outdoorAmbient": [0.68, 0.64, 0.60], "shadowSoftness": 0.35 },
           "sunRays": { "intensity": 0.08, "spread": 0.45 },
           "fogStart": 300,
           "fogEnd": 1100
