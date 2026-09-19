@@ -11,7 +11,7 @@ CHAIR_PREFIX='Workspace:Workspace[1]/Folder:Games[1]/Folder:Tables[1]/Folder:Rou
 CHAIR_ORIGIN='-78.13532,4.1533,-19.07567'
 
 cleanup() {
-  rm -f "$TEMP_DIR/map.json" "$TEMP_DIR/tables.json" "$TEMP_DIR/slots.json" "$TEMP_DIR/chair.json"
+  rm -f "$TEMP_DIR/map.json" "$TEMP_DIR/tables.json" "$TEMP_DIR/slots.json"
   rmdir "$TEMP_DIR"
 }
 trap cleanup EXIT HUP INT TERM
@@ -38,13 +38,11 @@ cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
 cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   export-reference-mesh --scene "$SCENE_PATH" \
   --path-prefix "$CHAIR_PREFIX" --origin "$CHAIR_ORIGIN" \
-  --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_chair.glb" \
-  --collision-output "$TEMP_DIR/chair.json"
+  --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_chair.glb"
 
 jq -c -n \
   --slurpfile map "$TEMP_DIR/map.json" \
   --slurpfile tables "$TEMP_DIR/tables.json" \
   --slurpfile slots "$TEMP_DIR/slots.json" \
-  --slurpfile chair "$TEMP_DIR/chair.json" \
-  '{formatVersion: 1, triangles: ($map[0].triangles + $tables[0].triangles + $slots[0].triangles + $chair[0].triangles)}' \
+  '{formatVersion: 1, triangles: ($map[0].triangles + $tables[0].triangles + $slots[0].triangles)}' \
   > "$PROJECT_ROOT/reference/vegas-collision.json"
