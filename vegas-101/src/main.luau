@@ -73,34 +73,84 @@ local function hud_document()
                 style = { foreground = "#F8F2DFE6", fontSize = 11, textAlign = "end" },
             }),
             visible({
+                id = "vegas-server", kind = "text", text = "2 PLAYERS IN SERVER\nGamerOkami     CrayQuick",
+                layout = { anchor = "topRight", width = 230, height = 34, offset = { -24, 48 } },
+                style = { foreground = "#F8F2DFB8", fontSize = 9, textAlign = "end" },
+            }),
+            visible({
                 id = "vegas-status", kind = "text", text = status,
                 layout = { anchor = "top", width = 360, height = 28, offset = { 0, 74 } },
                 style = { background = "#17121BD9", foreground = "#F8F2DF", cornerRadius = 4, fontSize = 12, textAlign = "center" },
             }),
             visible({
                 id = "vegas-wallet", kind = "text", text = "",
-                layout = { anchor = "bottomLeft", width = 220, height = 66, offset = { 22, -90 } },
+                layout = { anchor = "bottomLeft", width = 236, height = 126, offset = { 22, -184 } },
                 style = { background = "#17121BC7", foreground = "#F8F2DF", cornerRadius = 4, fontSize = 12 },
             }),
             visible({
-                id = "vegas-table", kind = "text", text = "",
-                layout = { anchor = "bottom", width = 430, height = 72, offset = { 0, -92 } },
-                style = { background = "#17121BE8", foreground = "#F8F2DF", cornerRadius = 5, fontSize = 14, textAlign = "center" },
+                id = "poker-cards-label", kind = "text", text = "YOUR CARDS:",
+                layout = { anchor = "bottomLeft", width = 160, height = 20, offset = { 282, -278 } },
+                style = { foreground = "#F8F2DF", fontSize = 12, fontWeight = "bold" },
+            }),
+            visible({
+                id = "poker-card-left", kind = "text", text = "♦\n✦\n♦",
+                layout = { anchor = "bottomLeft", width = 76, height = 108, offset = { 282, -158 } },
+                style = { background = "#C83D4D", borderColor = "#F8F2DF", borderWidth = 2, cornerRadius = 4, foreground = "#F8F2DF", fontSize = 20, textAlign = "center" },
+            }),
+            visible({
+                id = "poker-card-right", kind = "text", text = "♦\n✦\n♦",
+                layout = { anchor = "bottomLeft", width = 76, height = 108, offset = { 366, -158 } },
+                style = { background = "#C83D4D", borderColor = "#F8F2DF", borderWidth = 2, cornerRadius = 4, foreground = "#F8F2DF", fontSize = 20, textAlign = "center" },
+            }),
+            visible({
+                id = "poker-panel", kind = "text", text = "",
+                layout = { anchor = "bottom", width = 520, height = 190, offset = { 0, -92 } },
+                style = { background = "#09080DE8", borderColor = "#F8F2DF24", borderWidth = 1, cornerRadius = 5, foreground = "#F8F2DF", fontSize = 12, textAlign = "center" },
+            }),
+            visible({
+                id = "poker-status", kind = "text", text = "WAITING ON DEALER...",
+                layout = { anchor = "bottom", width = 350, height = 44, offset = { 0, -176 } },
+                style = { foreground = "#F8F2DF", fontSize = 18, textAlign = "center" },
+            }),
+            visible({
+                id = "poker-call", kind = "button", text = "R\nCALL", action = "casino.call",
+                layout = { anchor = "bottom", width = 84, height = 52, offset = { -190, -110 } },
+                style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" },
+            }),
+            visible({
+                id = "poker-raise", kind = "button", text = "T\nRAISE", action = "casino.raise",
+                layout = { anchor = "bottom", width = 84, height = 52, offset = { -95, -110 } },
+                style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" },
+            }),
+            visible({
+                id = "poker-bet", kind = "button", text = "Y\nBET", action = "casino.bet",
+                layout = { anchor = "bottom", width = 84, height = 52, offset = { 0, -110 } },
+                style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" },
+            }),
+            visible({
+                id = "poker-check", kind = "button", text = "F\nCHECK", action = "casino.check",
+                layout = { anchor = "bottom", width = 84, height = 52, offset = { -95, -46 } },
+                style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" },
+            }),
+            visible({
+                id = "poker-fold", kind = "button", text = "G\nFOLD", action = "casino.fold",
+                layout = { anchor = "bottom", width = 84, height = 52, offset = { 0, -46 } },
+                style = { foreground = "#F8F2DFB8", fontSize = 11, textAlign = "center" },
+            }),
+            visible({
+                id = "vegas-play", kind = "button", text = "PLAY ROUND", action = "casino.play",
+                layout = { anchor = "bottomRight", width = 136, height = 42, offset = { -24, -92 } },
+                style = { background = "#E5B94E", borderColor = "#F8F2DF", borderWidth = 1, cornerRadius = 4, foreground = "#17121B", fontSize = 11, textAlign = "center" },
             }),
             visible({
                 id = "vegas-bet-down", kind = "button", text = "−", action = "casino.bet.down",
-                layout = { anchor = "bottom", width = 42, height = 38, offset = { -192, -36 } },
+                layout = { anchor = "bottomRight", width = 42, height = 42, offset = { -210, -92 } },
                 style = { background = "#17121BEA", borderColor = "#F8F2DF55", borderWidth = 1, cornerRadius = 4, foreground = "#F8F2DF", fontSize = 18, textAlign = "center" },
             }),
             visible({
                 id = "vegas-bet-up", kind = "button", text = "+", action = "casino.bet.up",
-                layout = { anchor = "bottom", width = 42, height = 38, offset = { 192, -36 } },
+                layout = { anchor = "bottomRight", width = 42, height = 42, offset = { -162, -92 } },
                 style = { background = "#17121BEA", borderColor = "#F8F2DF55", borderWidth = 1, cornerRadius = 4, foreground = "#F8F2DF", fontSize = 18, textAlign = "center" },
-            }),
-            visible({
-                id = "vegas-play", kind = "button", text = "PLAY ROUND", action = "casino.play",
-                layout = { anchor = "bottom", width = 136, height = 38, offset = { 0, -36 } },
-                style = { background = "#E5B94E", borderColor = "#F8F2DF", borderWidth = 1, cornerRadius = 4, foreground = "#17121B", fontSize = 11, textAlign = "center" },
             }),
             visible({
                 id = "vegas-help", kind = "text", text = "WASD / ARROWS MOVE   •   SHIFT RUN   •   SPACE JUMP   •   WALK TO A TABLE",
@@ -115,14 +165,21 @@ local function update_hud(api)
     local table = active_table and TABLES[active_table] or nil
     api.ui:set_text("vegas-stats", "CREDITS  " .. format_number(credits) .. "    TICKETS  " .. format_number(tickets) .. "    PLAYTIME  " .. format_time(playtime))
     api.ui:set_text("vegas-status", status)
-    api.ui:set_text("vegas-wallet", "CREDITS\n" .. format_number(credits) .. "\nTICKETS  " .. format_number(tickets))
-    local table_text = ""
-    if table ~= nil then
-        table_text = table.name .. "\nBET  " .. format_number(bet) .. "   " .. (result ~= "" and result or "READY TO DEAL")
-    else
-        table_text = "WALK TO A TABLE TO PLAY\nBET  " .. format_number(bet)
-    end
-    api.ui:set_text("vegas-table", table_text)
+    api.ui:set_text("vegas-wallet", "◉  " .. format_number(credits) .. "\n◇  " .. format_number(tickets) .. "\n▰  " .. format_number(math.max(0, credits - bet)))
+    local table_text = table ~= nil and (table.name .. "\nBET  " .. format_number(bet)) or "WALK TO A TABLE TO PLAY\nBET  " .. format_number(bet)
+    api.ui:set_text("poker-panel", table_text)
+    api.ui:set_text("poker-status", table ~= nil and (result ~= "" and result or "WAITING ON DEALER...") or "WALK TO A TABLE")
+    local poker_visible = table ~= nil
+    api.ui:set_visible("poker-cards-label", poker_visible)
+    api.ui:set_visible("poker-card-left", poker_visible)
+    api.ui:set_visible("poker-card-right", poker_visible)
+    api.ui:set_visible("poker-panel", poker_visible)
+    api.ui:set_visible("poker-status", poker_visible)
+    api.ui:set_visible("poker-call", poker_visible and round_state ~= "dealing")
+    api.ui:set_visible("poker-raise", poker_visible and round_state ~= "dealing")
+    api.ui:set_visible("poker-bet", poker_visible and round_state ~= "dealing")
+    api.ui:set_visible("poker-check", poker_visible and round_state ~= "dealing")
+    api.ui:set_visible("poker-fold", poker_visible and round_state ~= "dealing")
     api.ui:set_visible("vegas-play", table ~= nil and round_state ~= "dealing" and credits >= bet)
     api.ui:set_visible("vegas-bet-down", table ~= nil and round_state ~= "dealing")
     api.ui:set_visible("vegas-bet-up", table ~= nil and round_state ~= "dealing")
@@ -133,7 +190,7 @@ local function set_table(api, id)
     round_state = "ready"
     round_elapsed = 0
     result = ""
-    status = TABLES[id].name .. "  •  PLACE YOUR BET"
+    status = TABLES[id].name .. "  •  WAITING ON DEALER"
     update_hud(api)
 end
 
@@ -189,6 +246,13 @@ function Game.on_start(api)
     api.lobby:set_enabled(false)
     api.session:start("vegas-101", { mode = "cooperative", difficulty = "source-floor" })
     api.ui:set_document(hud_document())
+    -- The first imported Texas Hold'em table is the visual benchmark for this
+    -- example. Starting just beyond the near-side chairs makes the reference
+    -- room and its poker HUD appear immediately, while leaving the floor fully
+    -- explorable once the player walks away.
+    active_table = "table-texas"
+    round_state = "ready"
+    status = "TEXAS HOLD'EM  •  WAITING ON DEALER"
     update_hud(api)
 end
 
@@ -205,6 +269,21 @@ function Game.on_ui_event(api, event)
     if type(event) ~= "table" or event.phase == "release" then return end
     if event.action == "casino.play" then
         play_round(api)
+    elseif event.action == "casino.call" then
+        play_round(api)
+    elseif event.action == "casino.raise" then
+        bet = math.min(MAX_BET, bet + 25)
+        play_round(api)
+    elseif event.action == "casino.bet" then
+        play_round(api)
+    elseif event.action == "casino.check" then
+        result = "CHECK"
+        status = active_table and (TABLES[active_table].name .. "  •  CHECKED") or "FIND A TABLE"
+        update_hud(api)
+    elseif event.action == "casino.fold" then
+        result = "FOLD"
+        status = "ROUND FOLDED  •  FIND A TABLE"
+        update_hud(api)
     elseif event.action == "casino.bet.down" then
         bet = math.max(MIN_BET, bet - 25)
         update_hud(api)

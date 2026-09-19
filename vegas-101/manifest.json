@@ -66,7 +66,7 @@
     "gridSize": 1,
     "gridDivisions": 1,
     "showGrid": false,
-    "spawn": [80.69981, 28.5, -19.459991],
+    "spawn": [-12.43, 1.2, 30.0],
     "showSpawnPad": false
   },
   "launchPads": [],
@@ -97,12 +97,12 @@
         "gridSize": 1,
         "gridDivisions": 1,
         "showGrid": false,
-        "spawn": [80.69981, 28.5, -19.459991],
+        "spawn": [-12.43, 1.2, 30.0],
         "showSpawnPad": false,
-        "camera": { "yaw": 0.63, "pitch": 0.42, "distance": 24 },
+        "camera": { "yaw": 0.0, "pitch": 0.45, "distance": 4.3 },
         "presentationBounds": {
-          "minimum": [-700, -70, -280],
-          "maximum": [220, 100, 380]
+          "minimum": [-75, -2, -90],
+          "maximum": [45, 40, 85]
         },
         "physics": {
           "groundCollision": false,
@@ -114,9 +114,9 @@
           "respawnDelay": 0.8
         },
         "visual": {
-          "exposure": 1.05,
-          "contrast": 1.12,
-          "saturation": 1.08,
+          "exposure": 0.98,
+          "contrast": 1.08,
+          "saturation": 0.96,
           "fogStart": 300,
           "fogEnd": 1100,
           "sunDirection": [-0.45, -0.82, 0.32]
