@@ -70,6 +70,18 @@ FINISH_BY_SEED = {
     401: (2, 7),
 }
 
+SOURCE_WORLD_VISUAL = {
+    # The source place runs with a bright color correction effect at 06:30.
+    # These portable controls reproduce its clear, saturated morning read
+    # without attempting to import Roblox post-processing or sky assets.
+    "exposure": 1.12,
+    "contrast": 1.24,
+    "saturation": 1.3,
+    "fogStart": 180,
+    "fogEnd": 650,
+    "sunDirection": [-0.45, -0.82, 0.32],
+}
+
 
 def source_room_positions(scene: dict[str, object]) -> dict[str, list[float]]:
     positions: dict[str, list[float]] = {}
@@ -178,18 +190,61 @@ def hub_world(positions: dict[str, list[float]], labels: dict[str, dict]) -> dic
                 "horizontalBounds": {"minimum": [-620, -180], "maximum": [330, 410]},
                 "respawnDelay": 0.7,
             },
-            "visual": {
-                "exposure": 1.1, "contrast": 1.08, "saturation": 1.08,
-                "fogStart": 180, "fogEnd": 650, "sunDirection": [-0.45, -0.82, 0.32],
-            },
+            "visual": SOURCE_WORLD_VISUAL,
         },
-        "decorations": [{"kind": "mesh", "asset": "maze-world-hub", "position": [0, 0, 0], "scale": 1, "color": "#FFFFFF"}],
+        "decorations": [
+            {"kind": "mesh", "asset": "maze-world-main", "position": [0, 0, 0], "scale": 1, "color": "#FFFFFF"},
+            {"kind": "mesh", "asset": "maze-world-rooms", "position": [0, 0, 0], "scale": 1, "color": "#FFFFFF"},
+            {"kind": "mesh", "asset": "maze-world-leaderboards", "position": [0, 0, 0], "scale": 1, "color": "#FFFFFF"},
+        ],
         "blocks": [],
         "signs": source_signs(positions, labels),
         "interactions": interactions,
         "hazards": [],
         "safeZones": [],
     }
+
+
+def maze_cell_position(width: int, height: int, cell: tuple[int, int], offset: tuple[float, float]) -> list[float]:
+    """Return a visual-only prop position tucked into a maze-cell corner."""
+    return [
+        (cell[0] - (width - 1) / 2) * 15 + offset[0],
+        0,
+        (cell[1] - (height - 1) / 2) * 15 + offset[1],
+    ]
+
+
+def maze_dressing(width: int, height: int, finish: tuple[int, int], seed: int) -> list[dict[str, object]]:
+    """Use the source maze's compact tropical prop vocabulary.
+
+    Decorations deliberately stay visual-only and sit at cell edges: the
+    generated terrain remains the single authority for maze collision and
+    route tests.  The positions depend solely on baked maze metadata, so a
+    variant always keeps the same visual landmarks.
+    """
+    candidates = [
+        (width - 1, 0),
+        (width - 1, height - 1),
+        (0, height - 1),
+        (width // 2, height // 2),
+        (max(1, width // 3), max(1, height - 2)),
+        (max(1, width - 2), max(1, height // 3)),
+    ]
+    candidates = [cell for cell in candidates if cell not in {(0, 0), finish}]
+    kinds = ["grass-clump", "crate", "rock", "grass-clump", "palm", "crate"]
+    decorations: list[dict[str, object]] = []
+    for index, cell in enumerate(candidates[:max(2, min(len(candidates), width // 3 + 1))]):
+        kind = kinds[(seed + index) % len(kinds)]
+        scale = {"grass-clump": 1.15, "crate": 0.75, "rock": 0.72, "palm": 0.9}[kind]
+        decorations.append({
+            "kind": kind,
+            "position": maze_cell_position(width, height, cell, (-4.4, -4.1)),
+            "scale": scale,
+            "yaw": ((seed * 0.19 + index * 1.7) % math.tau),
+            "color": "groundEdge" if kind in {"grass-clump", "palm"} else "paper",
+            "variant": (seed + index) % 3,
+        })
+    return decorations
 
 
 def maze_world(tier: dict[str, object], seed: int) -> dict[str, object]:
@@ -209,7 +264,7 @@ def maze_world(tier: dict[str, object], seed: int) -> dict[str, object]:
             "seed": seed,
             "wallColor": "groundEdge",
             "finishColor": "signal",
-            "terrain": {"cellSize": 1.5, "wallMaterial": "builtin:leafygrass", "floorMaterial": "builtin:sand"},
+            "terrain": {"cellSize": 1.5, "wallMaterial": "builtin:leafygrass", "floorMaterial": "builtin:ground"},
             "start": [0, 0],
             "finish": list(finish),
             "landmarks": False,
@@ -230,6 +285,7 @@ def maze_world(tier: dict[str, object], seed: int) -> dict[str, object]:
                 "horizontalBounds": {"minimum": [-half - 4, -half - 4], "maximum": [half + 4, half + 4]},
                 "respawnDelay": 0.7,
             },
+            "visual": SOURCE_WORLD_VISUAL,
         },
         "palette": {
             "sky": "#76D6EC", "ground": "#B08A55", "groundEdge": "#365E29",
@@ -237,7 +293,8 @@ def maze_world(tier: dict[str, object], seed: int) -> dict[str, object]:
             "ink": "#172A24", "paper": "#F4F0D8",
         },
         "terrain": {"cellSize": 1.5, "hideDefaultGround": True, "operations": []},
-        "decorations": [], "blocks": [], "signs": [], "interactions": [], "hazards": [], "safeZones": [],
+        "decorations": maze_dressing(width, height, finish, seed),
+        "blocks": [], "signs": [], "interactions": [], "hazards": [], "safeZones": [],
     }
 
 
@@ -285,7 +342,12 @@ def main() -> None:
         },
         "worlds": {"maze-world": hub_world(positions, labels)},
     })
-    manifest["assets"]["models"]["maze-world-hub"] = {"path": "assets/models/maze_world_hub.glb"}
+    manifest["assets"]["models"].pop("maze-world-hub", None)
+    manifest["assets"]["models"].update({
+        "maze-world-main": {"path": "assets/models/maze_world_main.glb"},
+        "maze-world-rooms": {"path": "assets/models/maze_world_rooms.glb"},
+        "maze-world-leaderboards": {"path": "assets/models/maze_world_leaderboards.glb"},
+    })
     for tier in ROOM_TIERS.values():
         for world_id, seed in tier["worlds"]:
             manifest["worlds"][world_id] = maze_world(tier, seed)

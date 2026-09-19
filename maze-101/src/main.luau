@@ -110,8 +110,8 @@ local function player_controls()
         nodes = {
             visible_worlds({
                 id = "maze-status", kind = "text", text = status,
-                layout = { anchor = "top", width = 300, height = 22, offset = { 0, 72 } },
-                style = { foreground = "#F4F0D8E8", fontSize = 13, textAlign = "center" },
+                layout = { anchor = "top", width = 180, height = 22, offset = { 0, 70 } },
+                style = { background = "#F4F0D8D9", foreground = "#172A24", cornerRadius = 3, fontSize = 12, textAlign = "center" },
             }, all_worlds()),
             visible_worlds({
                 id = "maze-wallet", kind = "text", text = "COINS  " .. tostring(wallet),
@@ -133,8 +133,8 @@ local function player_controls()
             }, { HUB }),
             visible_worlds({
                 id = "maze-progress", kind = "text", text = "",
-                layout = { anchor = "top", width = 260, height = 20, offset = { 0, 94 } },
-                style = { foreground = "#F4F0D8B8", fontSize = 11, textAlign = "center" },
+                layout = { anchor = "top", width = 156, height = 18, offset = { 0, 96 } },
+                style = { background = "#F4F0D8BE", foreground = "#172A24", cornerRadius = 3, fontSize = 10, textAlign = "center" },
             }, all_maze_worlds()),
             visible_worlds({
                 id = "player-joystick", kind = "joystick", action = "player.move",

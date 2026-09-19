@@ -35,19 +35,25 @@ islands are visible and marked **NOT PORTED**. DEBUG exposes a maze-only
 
 ## Source geometry and remaining fidelity gaps
 
-`maze_world_hub.glb` includes the source Main, Rooms, and Leaderboards
-hierarchies, uniformly scaled by 0.6 to match the Cubacadabra character.
-Source transforms, wedges, Color3, and semantic materials are retained.
-Separate versioned triangles make the actual islands and bridges walkable;
-there is no invisible ground plane between them. World-mesh materials use the
-normal shared renderer, including terrain textures and shadows.
+`maze_world_main.glb`, `maze_world_rooms.glb`, and
+`maze_world_leaderboards.glb` retain the corresponding source hierarchies,
+uniformly scaled by 0.6 to match the Cubacadabra character. Splitting the
+visual model keeps every package asset below the runtime's 16 MiB limit while
+leaving the hub's scene composition intact. Source transforms, wedges, Color3,
+and semantic materials are retained. Separate versioned triangles make the
+actual islands and bridges walkable; there is no invisible ground plane between
+them. World-mesh materials use the normal shared renderer, including terrain
+textures and shadows.
 
 The original local rock FBXs are reused. Protected Roblox palm/grass/rope mesh
 assets were unavailable anonymously, so `prepare_reference_meshes.py` creates
 explicit geometric substitutes at their source placements. These are not
-claimed to be recovered Roblox meshes. Static lock placeholders are omitted:
-game Luau and the retained HUD handle unlocks instead of baking permanent red
-screens or invisible lock volumes into the scenery.
+claimed to be recovered Roblox meshes. Generated maze rooms use leafy hedge
+walls, earthen paths, and a small deterministic set of edge decorations in the
+same palm/crate/rock/grass vocabulary as the source; decoration stays
+visual-only so terrain remains the collision authority. Static lock
+placeholders are omitted: game Luau and the retained HUD handle unlocks instead
+of baking permanent red screens or invisible lock volumes into the scenery.
 
 This is a playable local port, not an exact recreation yet. Source decals,
 full MeshPart/Union geometry, sky/post effects, dynamic voting/dark mazes,
@@ -74,7 +80,7 @@ python3 scripts/generate_worlds.py --scene /Users/aa/Downloads/reference-scene.j
 ```
 
 The extracted scene JSON is a local development input, not a package asset.
-The generated GLB, mesh overrides, and collision JSON are checked-in source
+The generated GLBs, mesh overrides, and collision JSON are checked-in source
 artifacts. Rebuild packages after regenerating; do not hand-edit built output.
 
 ## Verification
