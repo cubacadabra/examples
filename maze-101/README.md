@@ -49,14 +49,16 @@ The original local rock FBXs are reused. Protected Roblox palm/grass/rope mesh
 assets were unavailable anonymously, so `prepare_reference_meshes.py` creates
 explicit geometric substitutes at their source placements. These are not
 claimed to be recovered Roblox meshes. Generated maze rooms use leafy hedge
-walls, earthen paths, and a small deterministic set of edge decorations in the
-same palm/crate/rock/grass vocabulary as the source; decoration stays
-visual-only so terrain remains the collision authority. Static lock
+walls, sand paths, and deterministic foliage-only dressing distributed across
+the baked cells. Grass clumps stay visual-only because they do not imply solid
+collision; crates, rocks, and palm trunks are deliberately excluded from player
+paths until they have matching collision. Terrain remains the collision
+authority. Static lock
 placeholders are omitted: game Luau and the retained HUD handle unlocks instead
 of baking permanent red screens or invisible lock volumes into the scenery.
 
 This is a playable local port, not an exact recreation yet. Source decals,
-full MeshPart/Union geometry, sky/post effects, dynamic voting/dark mazes,
+full MeshPart/Union geometry, dynamic voting/dark mazes,
 multiplayer ranking, pets/shop, persistent economy, original maze props and
 kill blocks remain unported. The reference screenshots under
 `other-examples/maze-world/screenshots` remain the visual target.
@@ -100,3 +102,10 @@ Studio's DEBUG `CUBA_STUDIO_PROBE_DIR` captures the app-owned GPU framebuffer
 without OS screen-recording permission; see the Studio README. Compilation,
 headless checks, and framebuffer captures are separate evidence, not substitutes
 for verification on Web, mobile, or other desktop hosts.
+
+For the fixed `maze-world-2.png` atmosphere comparison, run the DEBUG Studio
+probe with `CUBA_STUDIO_PROBE_WORLD=maze-world` and
+`CUBA_STUDIO_PROBE_REFERENCE=../../other-examples/maze-world/screenshots/maze-world-2.png`.
+It writes `target.png`, `current.png`, and an amplified absolute `diff.png` to
+`CUBA_STUDIO_PROBE_DIR`; the current frame uses this world's authored Gameplay
+camera and remains separate from the normal review-camera probe.

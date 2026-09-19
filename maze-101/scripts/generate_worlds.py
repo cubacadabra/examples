@@ -71,15 +71,19 @@ FINISH_BY_SEED = {
 }
 
 SOURCE_WORLD_VISUAL = {
-    # The source place runs with a bright color correction effect at 06:30.
-    # These portable controls reproduce its clear, saturated morning read
-    # without attempting to import Roblox post-processing or sky assets.
-    "exposure": 1.12,
-    "contrast": 1.24,
-    "saturation": 1.3,
+    # The source place runs a clear, saturated 06:30 morning. These are
+    # portable SDK 0.5 scene controls, not copied Roblox sky assets.
+    "colorCorrection": {"brightness": 0.12, "contrast": 0.20, "saturation": 0.60},
+    "daylight": {
+        "timeOfDay": 6.5,
+        "geographicLatitude": 45,
+        "brightness": 2,
+        "outdoorAmbient": [0.5, 0.5, 0.5],
+        "shadowSoftness": 0.5,
+    },
+    "sunRays": {"intensity": 0.058, "spread": 0.463},
     "fogStart": 180,
     "fogEnd": 650,
-    "sunDirection": [-0.45, -0.82, 0.32],
 }
 
 
@@ -215,33 +219,34 @@ def maze_cell_position(width: int, height: int, cell: tuple[int, int], offset: t
 
 
 def maze_dressing(width: int, height: int, finish: tuple[int, int], seed: int) -> list[dict[str, object]]:
-    """Use the source maze's compact tropical prop vocabulary.
+    """Use source-like dense, foliage-only maze dressing.
 
-    Decorations deliberately stay visual-only and sit at cell edges: the
-    generated terrain remains the single authority for maze collision and
-    route tests.  The positions depend solely on baked maze metadata, so a
-    variant always keeps the same visual landmarks.
+    The original generator makes per-cell decoration decisions.  These grass
+    clumps intentionally remain visual-only: unlike crates, rocks, or palms,
+    they do not imply a solid obstacle that the player expects to collide
+    with. The generated terrain remains the single authority for route tests.
+    Positions and variants depend only on baked maze metadata.
     """
+    target_counts = {5: 10, 10: 25, 15: 42, 20: 62}
+    target = target_counts.get(max(width, height), max(8, round(width * height * 0.16)))
     candidates = [
-        (width - 1, 0),
-        (width - 1, height - 1),
-        (0, height - 1),
-        (width // 2, height // 2),
-        (max(1, width // 3), max(1, height - 2)),
-        (max(1, width - 2), max(1, height // 3)),
+        (x, z)
+        for z in range(height)
+        for x in range(width)
+        if (x, z) not in {(0, 0), finish}
     ]
-    candidates = [cell for cell in candidates if cell not in {(0, 0), finish}]
-    kinds = ["grass-clump", "crate", "rock", "grass-clump", "palm", "crate"]
+    # Integer ranking avoids a runtime RNG while distributing the retained
+    # cells across each baked layout rather than filling row by row.
+    candidates.sort(key=lambda cell: ((cell[0] * 73 + cell[1] * 151 + seed * 37) % 997, cell))
     decorations: list[dict[str, object]] = []
-    for index, cell in enumerate(candidates[:max(2, min(len(candidates), width // 3 + 1))]):
-        kind = kinds[(seed + index) % len(kinds)]
-        scale = {"grass-clump": 1.15, "crate": 0.75, "rock": 0.72, "palm": 0.9}[kind]
+    corners = [(-4.4, -4.1), (4.2, -4.0), (-4.0, 4.3), (4.1, 4.2)]
+    for index, cell in enumerate(candidates[:min(target, len(candidates))]):
         decorations.append({
-            "kind": kind,
-            "position": maze_cell_position(width, height, cell, (-4.4, -4.1)),
-            "scale": scale,
+            "kind": "grass-clump",
+            "position": maze_cell_position(width, height, cell, corners[(seed + index) % len(corners)]),
+            "scale": 0.85 + ((seed + index * 7) % 5) * 0.10,
             "yaw": ((seed * 0.19 + index * 1.7) % math.tau),
-            "color": "groundEdge" if kind in {"grass-clump", "palm"} else "paper",
+            "color": "groundEdge",
             "variant": (seed + index) % 3,
         })
     return decorations
@@ -264,7 +269,7 @@ def maze_world(tier: dict[str, object], seed: int) -> dict[str, object]:
             "seed": seed,
             "wallColor": "groundEdge",
             "finishColor": "signal",
-            "terrain": {"cellSize": 1.5, "wallMaterial": "builtin:leafygrass", "floorMaterial": "builtin:ground"},
+            "terrain": {"cellSize": 1.5, "wallMaterial": "builtin:leafygrass", "floorMaterial": "builtin:sand"},
             "start": [0, 0],
             "finish": list(finish),
             "landmarks": False,
@@ -343,6 +348,7 @@ def main() -> None:
         "worlds": {"maze-world": hub_world(positions, labels)},
     })
     manifest["assets"]["models"].pop("maze-world-hub", None)
+    manifest["assets"]["models"].pop("maze-world-reference", None)
     manifest["assets"]["models"].update({
         "maze-world-main": {"path": "assets/models/maze_world_main.glb"},
         "maze-world-rooms": {"path": "assets/models/maze_world_rooms.glb"},
