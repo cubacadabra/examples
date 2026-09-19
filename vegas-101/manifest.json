@@ -16,6 +16,9 @@
       },
       "vegas-slots": {
         "path": "assets/models/vegas_slots.glb"
+      },
+      "vegas-chair": {
+        "path": "assets/models/vegas_chair.glb"
       }
     }
   },

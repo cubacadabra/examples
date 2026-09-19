@@ -46,6 +46,15 @@
       "source": { "format": "roblox", "class": "Model", "path": "Workspace:Workspace[1]/Folder:Slots[1]" }
     },
     {
+      "id": "chair-roulette-player-3",
+      "parentId": "imported-environment",
+      "name": "Chair — Roulette Player 3",
+      "transform": { "position": [-78.13532, 4.1533, -19.07567], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "render": { "mesh": "vegas-chair", "bounds": [4.2, 4.4, 4.2] } },
+      "editor": { "visible": true, "locked": false },
+      "source": { "format": "roblox", "class": "Model", "path": "Workspace:Workspace[1]/Folder:Games[1]/Folder:Tables[1]/Folder:Roulette[1]/Model:Roulette[1]/Folder:Functional[1]/Folder:Stools[1]/Model:Player3[1]/Model:SofaChair[1]" }
+    },
+    {
       "id": "signs",
       "parentId": "world-vegas-floor",
       "name": "Signs",
