@@ -9,16 +9,20 @@
   "assets": {
     "models": {
       "vegas-map": {
-        "path": "assets/models/vegas_map.glb"
+        "path": "assets/models/vegas_map.glb",
+        "bounds": [669.1521, 123.965805, 407.74]
       },
       "vegas-tables": {
-        "path": "assets/models/vegas_tables.glb"
+        "path": "assets/models/vegas_tables.glb",
+        "bounds": [527.69476, 38.076645, 558.03424]
       },
       "vegas-slots": {
-        "path": "assets/models/vegas_slots.glb"
+        "path": "assets/models/vegas_slots.glb",
+        "bounds": [251.01303, 8.734669, 222.48453]
       },
       "vegas-chair": {
-        "path": "assets/models/vegas_chair.glb"
+        "path": "assets/models/vegas_chair.glb",
+        "bounds": [4.1271515, 4.3060293, 4.181389]
       }
     }
   },

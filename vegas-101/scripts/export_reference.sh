@@ -20,6 +20,7 @@ cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   export-reference-mesh --scene "$SCENE_PATH" \
   --path-prefix 'Workspace:Workspace[1]/Folder:Map[1]' \
   --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_map.glb" \
+  --bounds-output "$PROJECT_ROOT/assets/models/vegas_map.bounds.json" \
   --collision-output "$TEMP_DIR/map.json"
 
 cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
@@ -27,18 +28,21 @@ cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   --path-prefix 'Workspace:Workspace[1]/Folder:Games[1]/Folder:Tables[1]' \
   --exclude-path "$CHAIR_PREFIX" \
   --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_tables.glb" \
+  --bounds-output "$PROJECT_ROOT/assets/models/vegas_tables.bounds.json" \
   --collision-output "$TEMP_DIR/tables.json"
 
 cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   export-reference-mesh --scene "$SCENE_PATH" \
   --path-prefix 'Workspace:Workspace[1]/Folder:Games[1]/Folder:Slots[1]' \
   --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_slots.glb" \
+  --bounds-output "$PROJECT_ROOT/assets/models/vegas_slots.bounds.json" \
   --collision-output "$TEMP_DIR/slots.json"
 
 cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   export-reference-mesh --scene "$SCENE_PATH" \
   --path-prefix "$CHAIR_PREFIX" --origin "$CHAIR_ORIGIN" \
-  --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_chair.glb"
+  --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_chair.glb" \
+  --bounds-output "$PROJECT_ROOT/assets/models/vegas_chair.bounds.json"
 
 jq -c -n \
   --slurpfile map "$TEMP_DIR/map.json" \
