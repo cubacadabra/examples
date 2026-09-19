@@ -8,9 +8,15 @@
   },
   "assets": {
     "models": {
-      "vegas-map": { "path": "assets/models/vegas_map.glb" },
-      "vegas-tables": { "path": "assets/models/vegas_tables.glb" },
-      "vegas-slots": { "path": "assets/models/vegas_slots.glb" }
+      "vegas-map": {
+        "path": "assets/models/vegas_map.glb"
+      },
+      "vegas-tables": {
+        "path": "assets/models/vegas_tables.glb"
+      },
+      "vegas-slots": {
+        "path": "assets/models/vegas_slots.glb"
+      }
     }
   },
   "displayName": "Vegas 101",
@@ -66,14 +72,20 @@
     "gridSize": 1,
     "gridDivisions": 1,
     "showGrid": false,
-    "spawn": [-24.6, 2.2, 24.0],
+    "spawn": [
+      -24.6,
+      2.2,
+      24.0
+    ],
     "showSpawnPad": false
   },
   "launchPads": [],
   "blocks": [],
   "worlds": {
     "vegas-floor": {
-      "collision": { "source": "reference/vegas-collision.json" },
+      "collision": {
+        "source": "reference/vegas-collision.json"
+      },
       "terrain": {
         "cellSize": 1.5,
         "hideDefaultGround": true,
@@ -97,33 +109,101 @@
         "gridSize": 1,
         "gridDivisions": 1,
         "showGrid": false,
-        "spawn": [-24.6, 2.2, 24.0],
+        "spawn": [
+          -24.6,
+          2.2,
+          24.0
+        ],
         "showSpawnPad": false,
-        "camera": { "yaw": 0.0, "pitch": 0.45, "distance": 4.3 },
+        "camera": {
+          "yaw": 0.0,
+          "pitch": 0.45,
+          "distance": 4.3
+        },
         "presentationBounds": {
-          "minimum": [-75, -2, -90],
-          "maximum": [45, 40, 85]
+          "minimum": [
+            -75,
+            -2,
+            -90
+          ],
+          "maximum": [
+            45,
+            40,
+            85
+          ]
         },
         "physics": {
           "groundCollision": false,
           "deathY": -80,
           "horizontalBounds": {
-            "minimum": [-720, -310],
-            "maximum": [260, 410]
+            "minimum": [
+              -720,
+              -310
+            ],
+            "maximum": [
+              260,
+              410
+            ]
           },
           "respawnDelay": 0.8
         },
         "visual": {
-          "colorCorrection": { "brightness": 0.08, "contrast": 0.02, "saturation": -0.04 },
-          "daylight": { "timeOfDay": 16.0, "geographicLatitude": 36.0, "brightness": 1.8, "outdoorAmbient": [0.68, 0.64, 0.60], "shadowSoftness": 0.35 },
-          "sunRays": { "intensity": 0.08, "spread": 0.45 },
+          "colorCorrection": {
+            "brightness": 0.08,
+            "contrast": 0.02,
+            "saturation": -0.04
+          },
+          "daylight": {
+            "timeOfDay": 16.0,
+            "geographicLatitude": 36.0,
+            "brightness": 1.8,
+            "outdoorAmbient": [
+              0.68,
+              0.64,
+              0.6
+            ],
+            "shadowSoftness": 0.35
+          },
+          "sunRays": {
+            "intensity": 0.08,
+            "spread": 0.45
+          },
           "fogStart": 300,
           "fogEnd": 1100
         }
       },
       "blocks": [],
       "hazards": [],
-      "safeZones": []
+      "safeZones": [],
+      "signs": [
+        {
+          "text": "New sign 1",
+          "position": [
+            0,
+            2,
+            0
+          ],
+          "maxWidth": 5,
+          "color": "paper"
+        }
+      ],
+      "ladders": [
+        {
+          "id": "ladder-1",
+          "position": [
+            0,
+            3,
+            0
+          ],
+          "size": [
+            2,
+            6,
+            1
+          ],
+          "climbAxis": "z",
+          "color": "signal"
+        }
+      ]
     }
   }
 }
