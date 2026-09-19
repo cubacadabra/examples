@@ -1,0 +1,160 @@
+{
+  "formatVersion": 1,
+  "nodes": [
+    {
+      "id": "world-vegas-floor",
+      "parentId": null,
+      "name": "Vegas Floor",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "imported-environment",
+      "parentId": "world-vegas-floor",
+      "name": "Imported Environment",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "vegas-map",
+      "parentId": "imported-environment",
+      "name": "Vegas Map",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "render": { "mesh": "vegas-map" } },
+      "editor": { "visible": true, "locked": true, "lockReason": "Vegas GLB is baked as one imported asset" },
+      "source": { "format": "roblox", "class": "Model", "path": "Workspace:Workspace[1]/Folder:Map[1]" }
+    },
+    {
+      "id": "vegas-tables",
+      "parentId": "imported-environment",
+      "name": "Vegas Tables",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "render": { "mesh": "vegas-tables" } },
+      "editor": { "visible": true, "locked": true, "lockReason": "Vegas GLB is baked as one imported asset" },
+      "source": { "format": "roblox", "class": "Model", "path": "Workspace:Workspace[1]/Folder:Tables[1]" }
+    },
+    {
+      "id": "vegas-slots",
+      "parentId": "imported-environment",
+      "name": "Vegas Slots",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "render": { "mesh": "vegas-slots" } },
+      "editor": { "visible": true, "locked": true, "lockReason": "Vegas GLB is baked as one imported asset" },
+      "source": { "format": "roblox", "class": "Model", "path": "Workspace:Workspace[1]/Folder:Slots[1]" }
+    },
+    {
+      "id": "signs",
+      "parentId": "world-vegas-floor",
+      "name": "Signs",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "sign-vegas-101",
+      "parentId": "signs",
+      "name": "VEGAS 101",
+      "transform": { "position": [80.7, 35.5, -19.46], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "VEGAS 101", "maxWidth": 10, "color": "butter" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "sign-high-roller-floor",
+      "parentId": "signs",
+      "name": "HIGH ROLLER FLOOR",
+      "transform": { "position": [80.7, 33.7, -19.46], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "HIGH ROLLER FLOOR", "maxWidth": 12, "color": "paper" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "sign-tables",
+      "parentId": "signs",
+      "name": "TABLES",
+      "transform": { "position": [-12.4, 11, 14.2], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "TABLES", "maxWidth": 8, "color": "butter" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "sign-slots",
+      "parentId": "signs",
+      "name": "SLOTS",
+      "transform": { "position": [-217.5, 13, -19], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "SLOTS", "maxWidth": 8, "color": "butter" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "sign-plinko",
+      "parentId": "signs",
+      "name": "PLINKO",
+      "transform": { "position": [-289.3, 31, 246.5], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "PLINKO", "maxWidth": 8, "color": "butter" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "interactions",
+      "parentId": "world-vegas-floor",
+      "name": "Interactions",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "interaction-texas-holdem",
+      "parentId": "interactions",
+      "name": "Texas Hold'em",
+      "transform": { "position": [-12.43, 3.27, 14.21], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "table-texas", "kind": "zone", "label": "PLAY TEXAS HOLD'EM", "radius": 7.5, "color": "signal", "visual": "checkpoint" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "interaction-blackjack",
+      "parentId": "interactions",
+      "name": "Blackjack",
+      "transform": { "position": [-42.58, 3.27, -52.33], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "table-blackjack", "kind": "zone", "label": "PLAY BLACKJACK", "radius": 7.5, "color": "coral", "visual": "checkpoint" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "interaction-baccarat",
+      "parentId": "interactions",
+      "name": "Baccarat",
+      "transform": { "position": [-42.48, 3.27, 13.6], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "table-baccarat", "kind": "zone", "label": "PLAY BACCARAT", "radius": 7.5, "color": "periwinkle", "visual": "checkpoint" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "interaction-roulette",
+      "parentId": "interactions",
+      "name": "Roulette",
+      "transform": { "position": [-70.6, 3.25, -19.22], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "table-roulette", "kind": "zone", "label": "PLAY ROULETTE", "radius": 8, "color": "hot", "visual": "checkpoint" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "interaction-slots",
+      "parentId": "interactions",
+      "name": "Slots",
+      "transform": { "position": [-217.47, 3.99, -18.95], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "table-slots", "kind": "zone", "label": "PLAY SLOTS", "radius": 6.5, "color": "signal", "visual": "checkpoint" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "interaction-plinko",
+      "parentId": "interactions",
+      "name": "Plinko",
+      "transform": { "position": [-297.49, 3, 246.6], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "table-plinko", "kind": "zone", "label": "PLAY PLINKO", "radius": 7, "color": "hot", "visual": "checkpoint" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "interaction-cash-wheel",
+      "parentId": "interactions",
+      "name": "Cash Wheel",
+      "transform": { "position": [33.6, 3, -7.1], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "table-cashwheel", "kind": "zone", "label": "SPIN CASH WHEEL", "radius": 7, "color": "butter", "visual": "checkpoint" } },
+      "editor": { "visible": true, "locked": false }
+    }
+  ]
+}
