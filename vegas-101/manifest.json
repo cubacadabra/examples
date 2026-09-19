@@ -1,0 +1,151 @@
+{
+  "id": "vegas-101",
+  "version": "0.1.0",
+  "sdkVersion": "0.5.0",
+  "package": {
+    "formatVersion": 3,
+    "entry": "game.luau"
+  },
+  "assets": {
+    "models": {
+      "vegas-map": { "path": "assets/models/vegas_map.glb" },
+      "vegas-tables": { "path": "assets/models/vegas_tables.glb" },
+      "vegas-slots": { "path": "assets/models/vegas_slots.glb" }
+    }
+  },
+  "displayName": "Vegas 101",
+  "lobby": false,
+  "startWorld": "vegas-floor",
+  "launch": {
+    "destinationWorld": "vegas-floor",
+    "authoritative": true
+  },
+  "scene": {
+    "eyebrow": "cubacadabra presents",
+    "title": "Vegas 101",
+    "description": "Walk the source-imported casino floor, find a table, and play for credits and tickets.",
+    "maxPlayers": 18
+  },
+  "palette": {
+    "sky": "#100D16",
+    "ground": "#241C23",
+    "groundEdge": "#0B0910",
+    "grid": "#352A35",
+    "signal": "#E5B94E",
+    "hot": "#E7645A",
+    "coral": "#B9544C",
+    "butter": "#F4D477",
+    "periwinkle": "#8297C6",
+    "ink": "#17121B",
+    "paper": "#F8F2DF"
+  },
+  "avatars": {
+    "player": {
+      "skin": "#DDA17D",
+      "shirt": "#1688A1",
+      "pants": "#24293A",
+      "shoes": "#12131A",
+      "character": {
+        "version": 1,
+        "body": "cuba:person.v1",
+        "face": "determined",
+        "outfit": "cuba:everyday-hoodie.v1",
+        "equipment": {},
+        "colors": {
+          "primary": "#1688A1",
+          "secondary": "#24293A",
+          "sole": "#12131A"
+        },
+        "revision": 1
+      }
+    },
+    "npcs": []
+  },
+  "world": {
+    "groundSize": 1,
+    "gridSize": 1,
+    "gridDivisions": 1,
+    "showGrid": false,
+    "spawn": [80.69981, 28.5, -19.459991],
+    "showSpawnPad": false
+  },
+  "launchPads": [],
+  "blocks": [],
+  "worlds": {
+    "vegas-floor": {
+      "collision": { "source": "reference/vegas-collision.json" },
+      "terrain": {
+        "cellSize": 1.5,
+        "hideDefaultGround": true,
+        "operations": []
+      },
+      "palette": {
+        "sky": "#100D16",
+        "ground": "#241C23",
+        "groundEdge": "#0B0910",
+        "grid": "#352A35",
+        "signal": "#E5B94E",
+        "hot": "#E7645A",
+        "coral": "#B9544C",
+        "butter": "#F4D477",
+        "periwinkle": "#8297C6",
+        "ink": "#17121B",
+        "paper": "#F8F2DF"
+      },
+      "world": {
+        "groundSize": 1,
+        "gridSize": 1,
+        "gridDivisions": 1,
+        "showGrid": false,
+        "spawn": [80.69981, 28.5, -19.459991],
+        "showSpawnPad": false,
+        "camera": { "yaw": 0.63, "pitch": 0.42, "distance": 24 },
+        "presentationBounds": {
+          "minimum": [-700, -70, -280],
+          "maximum": [220, 100, 380]
+        },
+        "physics": {
+          "groundCollision": false,
+          "deathY": -80,
+          "horizontalBounds": {
+            "minimum": [-720, -310],
+            "maximum": [260, 410]
+          },
+          "respawnDelay": 0.8
+        },
+        "visual": {
+          "exposure": 1.05,
+          "contrast": 1.12,
+          "saturation": 1.08,
+          "fogStart": 300,
+          "fogEnd": 1100,
+          "sunDirection": [-0.45, -0.82, 0.32]
+        }
+      },
+      "decorations": [
+        { "kind": "mesh", "asset": "vegas-map", "position": [0, 0, 0], "scale": 1, "color": "#FFFFFF" },
+        { "kind": "mesh", "asset": "vegas-tables", "position": [0, 0, 0], "scale": 1, "color": "#FFFFFF" },
+        { "kind": "mesh", "asset": "vegas-slots", "position": [0, 0, 0], "scale": 1, "color": "#FFFFFF" }
+      ],
+      "blocks": [],
+      "signs": [
+        { "text": "VEGAS 101", "position": [80.7, 35.5, -19.46], "maxWidth": 10, "color": "butter" },
+        { "text": "HIGH ROLLER FLOOR", "position": [80.7, 33.7, -19.46], "maxWidth": 12, "color": "paper" },
+        { "text": "TABLES", "position": [-12.4, 11.0, 14.2], "maxWidth": 8, "color": "butter" },
+        { "text": "SLOTS", "position": [-217.5, 13.0, -19.0], "maxWidth": 8, "color": "butter" },
+        { "text": "PLINKO", "position": [-289.3, 31.0, 246.5], "maxWidth": 8, "color": "butter" }
+      ],
+      "interactions": [
+        { "id": "table-texas", "kind": "zone", "label": "PLAY TEXAS HOLD'EM", "position": [-12.43, 3.27, 14.21], "radius": 7.5, "color": "signal", "visual": "checkpoint" },
+        { "id": "table-blackjack", "kind": "zone", "label": "PLAY BLACKJACK", "position": [-42.58, 3.27, -52.33], "radius": 7.5, "color": "coral", "visual": "checkpoint" },
+        { "id": "table-baccarat", "kind": "zone", "label": "PLAY BACCARAT", "position": [-42.48, 3.27, 13.6], "radius": 7.5, "color": "periwinkle", "visual": "checkpoint" },
+        { "id": "table-roulette", "kind": "zone", "label": "PLAY ROULETTE", "position": [-70.6, 3.25, -19.22], "radius": 8.0, "color": "hot", "visual": "checkpoint" },
+        { "id": "table-slots", "kind": "zone", "label": "PLAY SLOTS", "position": [-217.47, 3.99, -18.95], "radius": 6.5, "color": "signal", "visual": "checkpoint" },
+        { "id": "table-plinko", "kind": "zone", "label": "PLAY PLINKO", "position": [-297.49, 3.0, 246.6], "radius": 7.0, "color": "hot", "visual": "checkpoint" },
+        { "id": "table-cashwheel", "kind": "zone", "label": "SPIN CASH WHEEL", "position": [33.6, 3.0, -7.1], "radius": 7.0, "color": "butter", "visual": "checkpoint" }
+      ],
+      "hazards": [],
+      "safeZones": []
+    }
+  }
+}
