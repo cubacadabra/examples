@@ -1,0 +1,101 @@
+{
+  "formatVersion": 2,
+  "kind": "cubacadabra-roblox-source-hierarchy",
+  "source": {
+    "place": {
+      "name": "vegas.rbxlx",
+      "bytes": 171298158,
+      "sha256": "ef71a00b36d7df79dd992aa7f6f312c0be86f4ec18e2d21d890e8b674d58a638"
+    }
+  },
+  "instanceCount": 68873,
+  "geometryCount": 17420,
+  "nodeStore": {
+    "kind": "sharded-json",
+    "path": "nodes",
+    "targetBytes": 3145728,
+    "maxBytes": 4194304,
+    "shards": [
+      {
+        "path": "0.json",
+        "nodeCount": 4401,
+        "bytes": 1844629
+      },
+      {
+        "path": "1.json",
+        "nodeCount": 4266,
+        "bytes": 1800133
+      },
+      {
+        "path": "2.json",
+        "nodeCount": 4213,
+        "bytes": 1772896
+      },
+      {
+        "path": "3.json",
+        "nodeCount": 4287,
+        "bytes": 1786711
+      },
+      {
+        "path": "4.json",
+        "nodeCount": 4317,
+        "bytes": 1815075
+      },
+      {
+        "path": "5.json",
+        "nodeCount": 4274,
+        "bytes": 1776283
+      },
+      {
+        "path": "6.json",
+        "nodeCount": 4275,
+        "bytes": 1771442
+      },
+      {
+        "path": "7.json",
+        "nodeCount": 4349,
+        "bytes": 1819842
+      },
+      {
+        "path": "8.json",
+        "nodeCount": 4342,
+        "bytes": 1829561
+      },
+      {
+        "path": "9.json",
+        "nodeCount": 4226,
+        "bytes": 1785460
+      },
+      {
+        "path": "a.json",
+        "nodeCount": 4242,
+        "bytes": 1796850
+      },
+      {
+        "path": "b.json",
+        "nodeCount": 4294,
+        "bytes": 1823515
+      },
+      {
+        "path": "c.json",
+        "nodeCount": 4323,
+        "bytes": 1795125
+      },
+      {
+        "path": "d.json",
+        "nodeCount": 4382,
+        "bytes": 1846253
+      },
+      {
+        "path": "e.json",
+        "nodeCount": 4328,
+        "bytes": 1801571
+      },
+      {
+        "path": "f.json",
+        "nodeCount": 4354,
+        "bytes": 1833648
+      }
+    ]
+  }
+}
