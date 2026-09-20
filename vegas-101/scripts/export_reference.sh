@@ -44,7 +44,7 @@ cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   --asset-path-prefix assets/models --mapping-output "$TEMP_DIR/chairs.json"
 
 jq --slurpfile chairs "$TEMP_DIR/chairs.json" \
-  '.assets.models = ((.assets.models // {}) + (reduce $chairs[0].assets[] as $asset ({}; .[$asset.id] = {path: $asset.path, bounds: $asset.bounds})))' \
+  '.assets.models = ((.assets.models // {}) + (reduce $chairs[0].assets[] as $asset ({}; .[$asset.id] = {path: $asset.path, bounds: $asset.bounds, collision: $asset.collision})))' \
   "$PROJECT_ROOT/manifest.json" > "$TEMP_DIR/manifest.json"
 mv "$TEMP_DIR/manifest.json" "$PROJECT_ROOT/manifest.json"
 
@@ -63,3 +63,6 @@ jq -c -n \
   --slurpfile slots "$TEMP_DIR/slots.json" \
   '{formatVersion: 1, triangles: ($map[0].triangles + $tables[0].triangles + $slots[0].triangles)} | .triangles |= map(map(map((. * 1000 | round) / 1000)))' \
   > "$PROJECT_ROOT/reference/vegas-collision.json"
+
+printf 'Vegas baked collision triangles: '
+jq '.triangles | length' "$PROJECT_ROOT/reference/vegas-collision.json"

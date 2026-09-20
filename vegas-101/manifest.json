@@ -38,7 +38,8 @@
           4.127217769622803,
           4.306029319763184,
           4.181356430053711
-        ]
+        ],
+        "collision": "assets/models/vegas-chair.collision.json"
       },
       "vegas-chair-2": {
         "path": "assets/models/vegas-chair-2.glb",
@@ -46,7 +47,8 @@
           4.12711238861084,
           4.306029319763184,
           4.181324005126953
-        ]
+        ],
+        "collision": "assets/models/vegas-chair-2.collision.json"
       },
       "vegas-chair-3": {
         "path": "assets/models/vegas-chair-3.glb",
@@ -54,7 +56,8 @@
           4.127032279968262,
           4.306028366088867,
           4.181328773498535
-        ]
+        ],
+        "collision": "assets/models/vegas-chair-3.collision.json"
       },
       "vegas-chair-4": {
         "path": "assets/models/vegas-chair-4.glb",
@@ -62,7 +65,8 @@
           4.127075672149658,
           4.306028366088867,
           4.1813178062438965
-        ]
+        ],
+        "collision": "assets/models/vegas-chair-4.collision.json"
       },
       "vegas-chair-5": {
         "path": "assets/models/vegas-chair-5.glb",
@@ -70,7 +74,8 @@
           4.127223014831543,
           4.306029319763184,
           4.181342124938965
-        ]
+        ],
+        "collision": "assets/models/vegas-chair-5.collision.json"
       },
       "vegas-chair-6": {
         "path": "assets/models/vegas-chair-6.glb",
@@ -78,7 +83,8 @@
           4.127201080322266,
           4.306029319763184,
           4.181338310241699
-        ]
+        ],
+        "collision": "assets/models/vegas-chair-6.collision.json"
       },
       "vegas-chair-7": {
         "path": "assets/models/vegas-chair-7.glb",
@@ -86,7 +92,8 @@
           4.127058029174805,
           4.306028366088867,
           4.181325435638428
-        ]
+        ],
+        "collision": "assets/models/vegas-chair-7.collision.json"
       },
       "vegas-chair-8": {
         "path": "assets/models/vegas-chair-8.glb",
@@ -94,7 +101,8 @@
           4.127204895019531,
           4.3060302734375,
           4.181333065032959
-        ]
+        ],
+        "collision": "assets/models/vegas-chair-8.collision.json"
       }
     }
   },
