@@ -1,0 +1,17 @@
+{
+  "formatVersion": 1,
+  "kind": "roblox-native-promotion-report",
+  "parts": {
+    "total": 10566,
+    "promoted": 160,
+    "fallback": 10406,
+    "fallbackReasons": {
+      "unsupported-dynamic": 393,
+      "unsupported-mesh": 753,
+      "unsupported-shadow": 2142,
+      "unsupported-shape": 1792,
+      "unsupported-transform": 4714,
+      "unsupported-transparency": 612
+    }
+  }
+}

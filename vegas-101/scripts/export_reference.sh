@@ -16,8 +16,26 @@ cleanup() {
 trap cleanup EXIT HUP INT TERM
 
 cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
+  export-reference-instances --scene "$SCENE_PATH" \
+  --path-prefix "$TABLES_PREFIX" --instance-name SofaChair \
+  --asset-prefix vegas-chair --asset-directory "$PROJECT_ROOT/assets/models" \
+  --asset-path-prefix assets/models --mapping-output "$TEMP_DIR/chairs.json"
+
+cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
+  import-roblox-scene --reference "$SCENE_PATH" \
+  --base-scene "$PROJECT_ROOT/scene.json" --output "$PROJECT_ROOT/scene.json" \
+  --source-index "$PROJECT_ROOT/imports/roblox/vegas/index.json" \
+  --promotion-report-output "$PROJECT_ROOT/reference/vegas-promotion-report.json" \
+  --compact-output \
+  --tree-depth 4 --reset-generated-source-tree \
+  --editable-instance-map "$TEMP_DIR/chairs.json" \
+  --editable-parent-id imported-environment \
+  --editable-id-prefix vegas-chair --editable-display-prefix 'Vegas Chair'
+
+cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   export-reference-mesh --scene "$SCENE_PATH" \
   --path-prefix 'Workspace:Workspace[1]/Folder:Map[1]' \
+  --exclude-authoring-scene "$PROJECT_ROOT/scene.json" \
   --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_map.glb" \
   --bounds-output "$PROJECT_ROOT/assets/models/vegas_map.bounds.json" \
   --collision-output "$TEMP_DIR/map.json"
@@ -26,6 +44,7 @@ cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   export-reference-mesh --scene "$SCENE_PATH" \
   --path-prefix "$TABLES_PREFIX" \
   --exclude-path '/Model:SofaChair[1]' \
+  --exclude-authoring-scene "$PROJECT_ROOT/scene.json" \
   --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_tables.glb" \
   --bounds-output "$PROJECT_ROOT/assets/models/vegas_tables.bounds.json" \
   --collision-output "$TEMP_DIR/tables.json"
@@ -33,30 +52,15 @@ cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
 cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   export-reference-mesh --scene "$SCENE_PATH" \
   --path-prefix 'Workspace:Workspace[1]/Folder:Games[1]/Folder:Slots[1]' \
+  --exclude-authoring-scene "$PROJECT_ROOT/scene.json" \
   --scale 1 --output "$PROJECT_ROOT/assets/models/vegas_slots.glb" \
   --bounds-output "$PROJECT_ROOT/assets/models/vegas_slots.bounds.json" \
   --collision-output "$TEMP_DIR/slots.json"
-
-cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
-  export-reference-instances --scene "$SCENE_PATH" \
-  --path-prefix "$TABLES_PREFIX" --instance-name SofaChair \
-  --asset-prefix vegas-chair --asset-directory "$PROJECT_ROOT/assets/models" \
-  --asset-path-prefix assets/models --mapping-output "$TEMP_DIR/chairs.json"
 
 jq --slurpfile chairs "$TEMP_DIR/chairs.json" \
   '.assets.models = ((.assets.models // {}) + (reduce $chairs[0].assets[] as $asset ({}; .[$asset.id] = {path: $asset.path, bounds: $asset.bounds, collision: $asset.collision})))' \
   "$PROJECT_ROOT/manifest.json" > "$TEMP_DIR/manifest.json"
 mv "$TEMP_DIR/manifest.json" "$PROJECT_ROOT/manifest.json"
-
-cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
-  import-roblox-scene --reference "$SCENE_PATH" \
-  --base-scene "$PROJECT_ROOT/scene.json" --output "$PROJECT_ROOT/scene.json" \
-  --source-index "$PROJECT_ROOT/imports/roblox/vegas/index.json" \
-  --tree-depth 4 --reset-generated-source-tree \
-  --editable-instance-map "$TEMP_DIR/chairs.json" \
-  --editable-parent-id imported-environment \
-  --editable-part-name DirtTrack \
-  --editable-id-prefix vegas-chair --editable-display-prefix 'Vegas Chair'
 
 jq -c -n \
   --slurpfile map "$TEMP_DIR/map.json" \
