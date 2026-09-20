@@ -221,6 +221,7 @@
         },
         "physics": {
           "groundCollision": false,
+          "jumpVelocity": 11.5,
           "deathY": -80,
           "horizontalBounds": {
             "minimum": [
