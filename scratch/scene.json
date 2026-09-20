@@ -34,9 +34,9 @@
       "name": "Block 1",
       "transform": {
         "position": [
-          5.75,
-          1.0,
-          6.5
+          -4.75,
+          1.5,
+          9.25
         ],
         "rotation": [
           0.0,
@@ -59,6 +59,191 @@
             4.25,
             1.0,
             4.25
+          ],
+          "material": "signal"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "block-1",
+      "parentId": "world-starter-world",
+      "name": "Block 1",
+      "transform": {
+        "position": [
+          0.5,
+          0.961319,
+          -6.75
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            1.922706,
+            2.0
+          ],
+          "material": "signal"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "block-1-copy-1",
+      "parentId": "world-starter-world",
+      "name": "Block 1 Copy 1",
+      "transform": {
+        "position": [
+          7.0,
+          0.961319,
+          -2.5
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            1.922706,
+            2.0
+          ],
+          "material": "signal"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "block-1-copy-1-copy-1",
+      "parentId": "world-starter-world",
+      "name": "Block 1 Copy 1 Copy 1",
+      "transform": {
+        "position": [
+          5.5,
+          0.961319,
+          -6.75
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            1.922706,
+            2.0
+          ],
+          "material": "signal"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "block-1-copy-1-copy-1-copy-1",
+      "parentId": "world-starter-world",
+      "name": "Block 1 Copy 1 Copy 1 Copy 1",
+      "transform": {
+        "position": [
+          5.5,
+          2.75,
+          -6.75
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            1.70714,
+            2.0
+          ],
+          "material": "signal"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "block-2",
+      "parentId": "world-starter-world",
+      "name": "Block 2",
+      "transform": {
+        "position": [
+          1.5,
+          2.5,
+          -6.75
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            1.105896,
+            2.0
           ],
           "material": "signal"
         }
