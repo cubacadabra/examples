@@ -55,6 +55,7 @@ cargo run --manifest-path "$TOOLS_MANIFEST" --bin cubacadabra -- \
   --tree-depth 4 --reset-generated-source-tree \
   --editable-instance-map "$TEMP_DIR/chairs.json" \
   --editable-parent-id imported-environment \
+  --editable-part-name DirtTrack \
   --editable-id-prefix vegas-chair --editable-display-prefix 'Vegas Chair'
 
 jq -c -n \

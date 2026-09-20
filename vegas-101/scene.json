@@ -51032,9 +51032,9 @@
       "name": "Vegas Chair 112",
       "transform": {
         "position": [
-          -29.25,
+          -63.551849,
           3.060189,
-          -15.0
+          -29.075699
         ],
         "rotation": [
           0.0,
@@ -56920,6 +56920,251 @@
         "generatedBy": "import-roblox-scene",
         "representation": "editable-imported-instance",
         "sourceFrame": "inferred-from-first-descendant-geometry"
+      }
+    },
+    {
+      "id": "imported-part-51e3f15cb218970a",
+      "parentId": "imported-environment",
+      "name": "DirtTrack — 1",
+      "transform": {
+        "position": [
+          -456.819702,
+          -10.385443,
+          -208.765762
+        ],
+        "rotation": [
+          0.0,
+          -1.570797,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "collision": {
+          "kind": "box"
+        },
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.948623,
+            0.210805,
+            4.216101
+          ],
+          "material": "#785A2A"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      },
+      "source": {
+        "format": "roblox",
+        "class": "Part",
+        "path": "Workspace:Workspace[1]/Model:DirtTrack[1]/Part:DirtTrack[29]",
+        "generatedBy": "import-roblox-scene",
+        "representation": "primitive",
+        "sourceColor": "#785A2A",
+        "sourceFrame": "geometry-transform-and-bounds"
+      }
+    },
+    {
+      "id": "imported-part-aec9b21705f45513",
+      "parentId": "imported-environment",
+      "name": "DirtTrack — 2",
+      "transform": {
+        "position": [
+          -473.172028,
+          -10.385442,
+          -200.043411
+        ],
+        "rotation": [
+          0.0,
+          -1e-6,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "collision": {
+          "kind": "box"
+        },
+        "primitive": {
+          "shape": "box",
+          "size": [
+            16.179285,
+            0.210805,
+            4.216101
+          ],
+          "material": "#785A2A"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      },
+      "source": {
+        "format": "roblox",
+        "class": "Part",
+        "path": "Workspace:Workspace[1]/Model:DirtTrack[1]/Part:DirtTrack[31]",
+        "generatedBy": "import-roblox-scene",
+        "representation": "primitive",
+        "sourceColor": "#785A2A",
+        "sourceFrame": "geometry-transform-and-bounds"
+      }
+    },
+    {
+      "id": "imported-part-fbca87d8be9fefba",
+      "parentId": "imported-environment",
+      "name": "DirtTrack — 3",
+      "transform": {
+        "position": [
+          -489.517944,
+          -10.385442,
+          -208.77565
+        ],
+        "rotation": [
+          0.0,
+          1.570795,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "collision": {
+          "kind": "box"
+        },
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.948623,
+            0.210805,
+            4.216101
+          ],
+          "material": "#785A2A"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      },
+      "source": {
+        "format": "roblox",
+        "class": "Part",
+        "path": "Workspace:Workspace[1]/Model:DirtTrack[1]/Part:DirtTrack[69]",
+        "generatedBy": "import-roblox-scene",
+        "representation": "primitive",
+        "sourceColor": "#785A2A",
+        "sourceFrame": "geometry-transform-and-bounds"
+      }
+    },
+    {
+      "id": "imported-part-5a4bc7cdaf3f2c63",
+      "parentId": "imported-environment",
+      "name": "DirtTrack — 4",
+      "transform": {
+        "position": [
+          -473.171967,
+          -10.385441,
+          -217.500473
+        ],
+        "rotation": [
+          0.0,
+          -1e-6,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "collision": {
+          "kind": "box"
+        },
+        "primitive": {
+          "shape": "box",
+          "size": [
+            16.179285,
+            0.210805,
+            4.216101
+          ],
+          "material": "#785A2A"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      },
+      "source": {
+        "format": "roblox",
+        "class": "Part",
+        "path": "Workspace:Workspace[1]/Model:DirtTrack[1]/Part:DirtTrack[6]",
+        "generatedBy": "import-roblox-scene",
+        "representation": "primitive",
+        "sourceColor": "#785A2A",
+        "sourceFrame": "geometry-transform-and-bounds"
+      }
+    },
+    {
+      "id": "imported-part-077e5a6e8d2ea802",
+      "parentId": "imported-environment",
+      "name": "DirtTrack — 5",
+      "transform": {
+        "position": [
+          -473.171997,
+          -10.385441,
+          -208.75206
+        ],
+        "rotation": [
+          0.0,
+          -1e-6,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "collision": {
+          "kind": "box"
+        },
+        "primitive": {
+          "shape": "box",
+          "size": [
+            11.541575,
+            0.210805,
+            13.280717
+          ],
+          "material": "#785A2A"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      },
+      "source": {
+        "format": "roblox",
+        "class": "Part",
+        "path": "Workspace:Workspace[1]/Model:DirtTrack[1]/Part:DirtTrack[73]",
+        "generatedBy": "import-roblox-scene",
+        "representation": "primitive",
+        "sourceColor": "#785A2A",
+        "sourceFrame": "geometry-transform-and-bounds"
       }
     }
   ]
