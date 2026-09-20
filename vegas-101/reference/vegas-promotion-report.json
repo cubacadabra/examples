@@ -6,25 +6,23 @@
     "sourceTotal": 10566,
     "workspace": {
       "total": 10424,
-      "promoted": 140,
-      "fallback": 10284,
+      "promoted": 1864,
+      "fallback": 8560,
       "fallbackReasons": {
         "unsupported-dynamic": 379,
-        "unsupported-material": 17,
+        "unsupported-material": 337,
         "unsupported-mesh": 749,
-        "unsupported-shadow": 2044,
         "unsupported-shape": 1780,
         "unsupported-transform": 4712,
         "unsupported-transparency": 603
       }
     },
-    "promoted": 140,
-    "fallback": 10284,
+    "promoted": 1864,
+    "fallback": 8560,
     "fallbackReasons": {
       "unsupported-dynamic": 379,
-      "unsupported-material": 17,
+      "unsupported-material": 337,
       "unsupported-mesh": 749,
-      "unsupported-shadow": 2044,
       "unsupported-shape": 1780,
       "unsupported-transform": 4712,
       "unsupported-transparency": 603
