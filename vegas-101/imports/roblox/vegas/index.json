@@ -19,82 +19,82 @@
       {
         "path": "0.json",
         "nodeCount": 4401,
-        "bytes": 1844629
+        "bytes": 1844965
       },
       {
         "path": "1.json",
         "nodeCount": 4266,
-        "bytes": 1800133
+        "bytes": 1800462
       },
       {
         "path": "2.json",
         "nodeCount": 4213,
-        "bytes": 1772896
+        "bytes": 1773187
       },
       {
         "path": "3.json",
         "nodeCount": 4287,
-        "bytes": 1786711
+        "bytes": 1787018
       },
       {
         "path": "4.json",
         "nodeCount": 4317,
-        "bytes": 1815075
+        "bytes": 1815409
       },
       {
         "path": "5.json",
         "nodeCount": 4274,
-        "bytes": 1776283
+        "bytes": 1776640
       },
       {
         "path": "6.json",
         "nodeCount": 4275,
-        "bytes": 1771442
+        "bytes": 1771786
       },
       {
         "path": "7.json",
         "nodeCount": 4349,
-        "bytes": 1819842
+        "bytes": 1820080
       },
       {
         "path": "8.json",
         "nodeCount": 4342,
-        "bytes": 1829561
+        "bytes": 1829936
       },
       {
         "path": "9.json",
         "nodeCount": 4226,
-        "bytes": 1785460
+        "bytes": 1785821
       },
       {
         "path": "a.json",
         "nodeCount": 4242,
-        "bytes": 1796850
+        "bytes": 1797167
       },
       {
         "path": "b.json",
         "nodeCount": 4294,
-        "bytes": 1823515
+        "bytes": 1823865
       },
       {
         "path": "c.json",
         "nodeCount": 4323,
-        "bytes": 1795125
+        "bytes": 1795498
       },
       {
         "path": "d.json",
         "nodeCount": 4382,
-        "bytes": 1846253
+        "bytes": 1846607
       },
       {
         "path": "e.json",
         "nodeCount": 4328,
-        "bytes": 1801571
+        "bytes": 1801965
       },
       {
         "path": "f.json",
         "nodeCount": 4354,
-        "bytes": 1833648
+        "bytes": 1833962
       }
     ]
   }

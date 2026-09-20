@@ -10,19 +10,91 @@
     "models": {
       "vegas-map": {
         "path": "assets/models/vegas_map.glb",
-        "bounds": [669.1521, 123.965805, 407.74]
+        "bounds": [
+          669.1521,
+          123.965805,
+          407.74
+        ]
       },
       "vegas-tables": {
         "path": "assets/models/vegas_tables.glb",
-        "bounds": [527.69476, 38.076645, 558.03424]
+        "bounds": [
+          527.69476,
+          38.076645,
+          558.03424
+        ]
       },
       "vegas-slots": {
         "path": "assets/models/vegas_slots.glb",
-        "bounds": [251.01303, 8.734669, 222.48453]
+        "bounds": [
+          251.01303,
+          8.734669,
+          222.48453
+        ]
       },
       "vegas-chair": {
-        "path": "assets/models/vegas_chair.glb",
-        "bounds": [4.1271515, 4.3060293, 4.181389]
+        "path": "assets/models/vegas-chair.glb",
+        "bounds": [
+          4.127217769622803,
+          4.306029319763184,
+          4.181356430053711
+        ]
+      },
+      "vegas-chair-2": {
+        "path": "assets/models/vegas-chair-2.glb",
+        "bounds": [
+          4.12711238861084,
+          4.306029319763184,
+          4.181324005126953
+        ]
+      },
+      "vegas-chair-3": {
+        "path": "assets/models/vegas-chair-3.glb",
+        "bounds": [
+          4.127032279968262,
+          4.306028366088867,
+          4.181328773498535
+        ]
+      },
+      "vegas-chair-4": {
+        "path": "assets/models/vegas-chair-4.glb",
+        "bounds": [
+          4.127075672149658,
+          4.306028366088867,
+          4.1813178062438965
+        ]
+      },
+      "vegas-chair-5": {
+        "path": "assets/models/vegas-chair-5.glb",
+        "bounds": [
+          4.127223014831543,
+          4.306029319763184,
+          4.181342124938965
+        ]
+      },
+      "vegas-chair-6": {
+        "path": "assets/models/vegas-chair-6.glb",
+        "bounds": [
+          4.127201080322266,
+          4.306029319763184,
+          4.181338310241699
+        ]
+      },
+      "vegas-chair-7": {
+        "path": "assets/models/vegas-chair-7.glb",
+        "bounds": [
+          4.127058029174805,
+          4.306028366088867,
+          4.181325435638428
+        ]
+      },
+      "vegas-chair-8": {
+        "path": "assets/models/vegas-chair-8.glb",
+        "bounds": [
+          4.127204895019531,
+          4.3060302734375,
+          4.181333065032959
+        ]
       }
     }
   },
