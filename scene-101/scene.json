@@ -1,0 +1,305 @@
+{
+  "formatVersion": 1,
+  "worldId": "starter-world",
+  "nodes": [
+    {
+      "id": "world-starter-world",
+      "name": "Starter World",
+      "transform": {
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {},
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "start-platform",
+      "parentId": "world-starter-world",
+      "name": "Start Platform",
+      "transform": {
+        "position": [
+          0.0,
+          0.5,
+          18.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "collision": {
+          "kind": "box"
+        },
+        "primitive": {
+          "shape": "box",
+          "size": [
+            7.0,
+            1.0,
+            7.0
+          ],
+          "material": "signal"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "first-jump",
+      "parentId": "world-starter-world",
+      "name": "First Jump",
+      "transform": {
+        "position": [
+          -4.0,
+          1.9058685,
+          6.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "collision": {
+          "kind": "box"
+        },
+        "primitive": {
+          "shape": "box",
+          "size": [
+            4.5,
+            3.812197685241699,
+            4.5
+          ],
+          "material": "coral"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "left-route",
+      "parentId": "world-starter-world",
+      "name": "Left Route",
+      "transform": {
+        "position": [
+          -4.5,
+          1.8,
+          -3.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "collision": {
+          "kind": "box"
+        },
+        "primitive": {
+          "shape": "box",
+          "size": [
+            4.5,
+            1.2000000476837158,
+            4.5
+          ],
+          "material": "butter"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "right-route",
+      "parentId": "world-starter-world",
+      "name": "Right Route",
+      "transform": {
+        "position": [
+          4.5,
+          3.1,
+          -13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "collision": {
+          "kind": "box"
+        },
+        "primitive": {
+          "shape": "box",
+          "size": [
+            4.5,
+            1.2000000476837158,
+            4.5
+          ],
+          "material": "periwinkle"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "checkpoint-platform",
+      "parentId": "world-starter-world",
+      "name": "Checkpoint Platform",
+      "transform": {
+        "position": [
+          0.0,
+          4.5,
+          -22.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "collision": {
+          "kind": "box"
+        },
+        "primitive": {
+          "shape": "box",
+          "size": [
+            6.0,
+            1.0,
+            6.0
+          ],
+          "material": "signal"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "finish-platform",
+      "parentId": "world-starter-world",
+      "name": "Finish Platform",
+      "transform": {
+        "position": [
+          0.0,
+          4.5,
+          -32.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "collision": {
+          "kind": "box"
+        },
+        "primitive": {
+          "shape": "box",
+          "size": [
+            8.0,
+            1.0,
+            6.0
+          ],
+          "material": "hot"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "welcome-sign",
+      "parentId": "world-starter-world",
+      "name": "Welcome Sign",
+      "transform": {
+        "position": [
+          0.0,
+          2.2,
+          14.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "text": {
+          "text": "EDIT THIS SIGN IN INSPECTOR",
+          "maxWidth": 7.0,
+          "color": "paper"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    }
+  ]
+}

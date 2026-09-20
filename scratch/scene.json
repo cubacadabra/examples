@@ -1,0 +1,72 @@
+{
+  "formatVersion": 1,
+  "worldId": "starter-world",
+  "nodes": [
+    {
+      "id": "world-starter-world",
+      "name": "starter world World",
+      "transform": {
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {},
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "block-block-1",
+      "parentId": "world-starter-world",
+      "name": "Block 1",
+      "transform": {
+        "position": [
+          5.75,
+          1.0,
+          6.5
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "collision": {
+          "kind": "box"
+        },
+        "primitive": {
+          "shape": "box",
+          "size": [
+            4.25,
+            1.0,
+            4.25
+          ],
+          "material": "signal"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    }
+  ]
+}

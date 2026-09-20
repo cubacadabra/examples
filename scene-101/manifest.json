@@ -1,0 +1,216 @@
+{
+  "id": "scene-101",
+  "version": "0.3.0",
+  "sdkVersion": "0.3.0",
+  "package": {
+    "formatVersion": 3,
+    "entry": "game.luau"
+  },
+  "displayName": "scene-101",
+  "lobby": false,
+  "startWorld": "lobby",
+  "launch": {
+    "destinationWorld": "starter-world",
+    "authoritative": true
+  },
+  "scene": {
+    "eyebrow": "cubacadabra",
+    "title": "scene-101",
+    "description": "A new Cubacadabra game.",
+    "maxPlayers": 18
+  },
+  "palette": {
+    "sky": "#151A3F",
+    "ground": "#20295D",
+    "groundEdge": "#080D26",
+    "grid": "#3B4C86",
+    "signal": "#57E5D0",
+    "hot": "#FF5B85",
+    "coral": "#FF8A3D",
+    "butter": "#F1E95B",
+    "periwinkle": "#9F7BFF",
+    "ink": "#0B102B",
+    "paper": "#F7F5E9"
+  },
+  "assets": {
+    "images": {
+      "starter-floor": {
+        "path": "assets/images/starter-floor.png"
+      }
+    }
+  },
+  "avatars": {
+    "player": {
+      "skin": "#E8AE86",
+      "shirt": "#57E5D0",
+      "pants": "#4C3F91",
+      "shoes": "#0B102B",
+      "character": {
+        "version": 1,
+        "body": "cuba:person.v1",
+        "face": "determined",
+        "outfit": "cuba:everyday-hoodie.v1",
+        "equipment": {},
+        "colors": {
+          "primary": "#57E5D0",
+          "secondary": "#4C3F91",
+          "sole": "#0B102B"
+        },
+        "revision": 1
+      }
+    },
+    "npcs": []
+  },
+  "world": {
+    "groundSize": 70,
+    "gridSize": 64,
+    "gridDivisions": 32,
+    "spawn": [
+      0,
+      1.2,
+      18
+    ],
+    "showSpawnPad": false,
+    "physics": {
+      "gravity": 28,
+      "jumpVelocity": 10.5,
+      "groundCollision": false,
+      "groundY": -12,
+      "deathY": -9,
+      "respawnDelay": 0.65
+    },
+    "groundMaterial": "floor",
+    "materials": {
+      "floor": {
+        "image": "starter-floor",
+        "tileU": 8,
+        "tileV": 8
+      }
+    },
+    "clouds": [
+      {
+        "position": [
+          -20,
+          19,
+          -35
+        ],
+        "scale": 0.9
+      },
+      {
+        "position": [
+          24,
+          23,
+          -48
+        ],
+        "scale": 1.2
+      }
+    ]
+  },
+  "launchPads": [],
+  "blocks": [],
+  "worlds": {
+    "starter-world": {
+      "palette": {
+        "sky": "#151A3F",
+        "ground": "#20295D",
+        "groundEdge": "#080D26",
+        "grid": "#3B4C86",
+        "signal": "#57E5D0",
+        "hot": "#FF5B85",
+        "coral": "#FF8A3D",
+        "butter": "#F1E95B",
+        "periwinkle": "#9F7BFF",
+        "ink": "#0B102B",
+        "paper": "#F7F5E9"
+      },
+      "world": {
+        "groundSize": 70,
+        "gridSize": 64,
+        "gridDivisions": 32,
+        "spawn": [
+          0,
+          1.2,
+          18
+        ],
+        "showSpawnPad": false,
+        "physics": {
+          "gravity": 28,
+          "jumpVelocity": 10.5,
+          "groundCollision": false,
+          "groundY": -12,
+          "deathY": -9,
+          "respawnDelay": 0.65
+        },
+        "groundMaterial": "floor",
+        "materials": {
+          "floor": {
+            "image": "starter-floor",
+            "tileU": 8,
+            "tileV": 8
+          }
+        },
+        "clouds": [
+          {
+            "position": [
+              -20,
+              19,
+              -35
+            ],
+            "scale": 0.9
+          },
+          {
+            "position": [
+              24,
+              23,
+              -48
+            ],
+            "scale": 1.2
+          }
+        ]
+      },
+      "checkpoints": [
+        {
+          "id": "start",
+          "position": [
+            0,
+            1.5,
+            18
+          ],
+          "radius": 3.5
+        },
+        {
+          "id": "checkpoint",
+          "position": [
+            0,
+            5.5,
+            -22
+          ],
+          "radius": 2.8
+        },
+        {
+          "id": "finish",
+          "position": [
+            0,
+            5.5,
+            -32
+          ],
+          "radius": 3.6
+        }
+      ],
+      "signs": [
+        {
+          "id": "welcome-sign",
+          "text": "EDIT THIS SIGN IN INSPECTOR",
+          "position": [
+            0,
+            2.2,
+            14
+          ],
+          "maxWidth": 7.0,
+          "color": "paper"
+        }
+      ],
+      "interactions": []
+    }
+  }
+}
