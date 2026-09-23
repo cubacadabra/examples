@@ -164,46 +164,9 @@
           "fogEnd": 110
         }
       },
-      "blocks": [
-        { "position": [0, 0.25, 0], "size": [7.5, 0.5, 3.2], "color": "wood", "material": "wood" },
-        { "position": [0, 1.25, 0], "size": [6.2, 0.35, 2.4], "color": "paper", "material": "wood" },
-        { "position": [-2.65, 1.0, 0], "size": [0.35, 1.7, 0.35], "color": "wood", "material": "wood", "outline": false },
-        { "position": [2.65, 1.0, 0], "size": [0.35, 1.7, 0.35], "color": "wood", "material": "wood", "outline": false },
-        { "position": [0, 2.55, 0.25], "size": [6.8, 0.25, 0.3], "color": "coral", "material": "wood", "outline": false },
-        { "position": [-12, 0.8, -5], "size": [2.4, 1.6, 2.4], "color": "lemon", "material": "wood" },
-        { "position": [12, 0.8, -5], "size": [2.4, 1.6, 2.4], "color": "sugar", "material": "wood" },
-        { "position": [0, 0.8, -11], "size": [2.4, 1.6, 2.4], "color": "ice", "material": "wood" },
-        { "position": [0, 0.55, 7], "size": [1.7, 1.1, 1.7], "color": "ink", "material": "wood" },
-        { "position": [-10, 0.35, 8], "size": [4.2, 0.7, 2.2], "color": "wood", "material": "wood" },
-        { "position": [10, 0.35, 8], "size": [4.2, 0.7, 2.2], "color": "wood", "material": "wood" },
-        { "position": [-10, 0.35, -17], "size": [4.2, 0.7, 2.2], "color": "wood", "material": "wood" },
-        { "position": [10, 0.35, -17], "size": [4.2, 0.7, 2.2], "color": "wood", "material": "wood" },
-        { "position": [-17, 0.4, 0], "size": [1.0, 0.8, 1.0], "color": "leaf", "material": "wood", "outline": false },
-        { "position": [17, 0.4, -2], "size": [1.0, 0.8, 1.0], "color": "leaf", "material": "wood", "outline": false },
-        { "position": [-16, 0.4, -12], "size": [1.0, 0.8, 1.0], "color": "leaf", "material": "wood", "outline": false },
-        { "position": [17, 0.4, -14], "size": [1.0, 0.8, 1.0], "color": "leaf", "material": "wood", "outline": false }
-      ],
-      "signs": [
-        { "text": "LEMONADE", "position": [0, 3.8, 0.25], "maxWidth": 8, "color": "ink" },
-        { "text": "LEMONS", "position": [-12, 2.2, -5], "maxWidth": 5, "color": "ink" },
-        { "text": "SUGAR", "position": [12, 2.2, -5], "maxWidth": 5, "color": "ink" },
-        { "text": "ICE", "position": [0, 2.2, -11], "maxWidth": 5, "color": "ink" },
-        { "text": "MAYA", "position": [-10, 2.1, 8], "maxWidth": 5, "color": "coral" },
-        { "text": "JUN", "position": [10, 2.1, 8], "maxWidth": 5, "color": "coral" },
-        { "text": "PRIYA", "position": [-10, 2.1, -17], "maxWidth": 5, "color": "coral" },
-        { "text": "THEO", "position": [10, 2.1, -17], "maxWidth": 5, "color": "coral" },
-        { "text": "DUMP", "position": [0, 1.8, 7], "maxWidth": 4, "color": "paper" }
-      ],
-      "interactions": [
-        { "id": "station-lemons", "kind": "zone", "label": "ADD LEMON", "position": [-12, 1, -5], "radius": 3.2, "color": "lemon" },
-        { "id": "station-sugar", "kind": "zone", "label": "ADD SUGAR", "position": [12, 1, -5], "radius": 3.2, "color": "sugar" },
-        { "id": "station-ice", "kind": "zone", "label": "ADD ICE", "position": [0, 1, -11], "radius": 3.2, "color": "ice" },
-        { "id": "station-trash", "kind": "zone", "label": "DUMP CUP", "position": [0, 1, 7], "radius": 2.6, "color": "ink" },
-        { "id": "customer-maya", "kind": "zone", "label": "SERVE MAYA", "position": [-10, 1, 8], "radius": 3.4, "color": "coral", "visual": "customer-zone" },
-        { "id": "customer-jun", "kind": "zone", "label": "SERVE JUN", "position": [10, 1, 8], "radius": 3.4, "color": "coral", "visual": "customer-zone" },
-        { "id": "customer-priya", "kind": "zone", "label": "SERVE PRIYA", "position": [-10, 1, -17], "radius": 3.4, "color": "coral", "visual": "customer-zone" },
-        { "id": "customer-theo", "kind": "zone", "label": "SERVE THEO", "position": [10, 1, -17], "radius": 3.4, "color": "coral", "visual": "customer-zone" }
-      ]
+      "blocks": [],
+      "signs": [],
+      "interactions": []
     }
   }
 }

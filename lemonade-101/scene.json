@@ -1,0 +1,381 @@
+{
+  "formatVersion": 1,
+  "worldId": "lemonade-park",
+  "nodes": [
+    {
+      "id": "world-lemonade-park",
+      "name": "Lemonade Park",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "group-lemonade-stand",
+      "parentId": "world-lemonade-park",
+      "name": "Lemonade Stand",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "stand-base",
+      "parentId": "group-lemonade-stand",
+      "name": "Stand Base",
+      "transform": { "position": [0, 0.25, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [7.5, 0.5, 3.2], "material": "wood", "runtimeMaterial": "wood" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "stand-counter",
+      "parentId": "group-lemonade-stand",
+      "name": "Counter",
+      "transform": { "position": [0, 1.25, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [6.2, 0.35, 2.4], "material": "paper", "runtimeMaterial": "wood" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "stand-leg-left",
+      "parentId": "group-lemonade-stand",
+      "name": "Left Leg",
+      "transform": { "position": [-2.65, 1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [0.35, 1.7, 0.35], "material": "wood", "runtimeMaterial": "wood", "outline": false } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "stand-leg-right",
+      "parentId": "group-lemonade-stand",
+      "name": "Right Leg",
+      "transform": { "position": [2.65, 1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [0.35, 1.7, 0.35], "material": "wood", "runtimeMaterial": "wood", "outline": false } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "stand-header",
+      "parentId": "group-lemonade-stand",
+      "name": "Header",
+      "transform": { "position": [0, 2.55, 0.25], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [6.8, 0.25, 0.3], "material": "coral", "runtimeMaterial": "wood", "outline": false } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "stand-name",
+      "parentId": "group-lemonade-stand",
+      "name": "Stand Name",
+      "transform": { "position": [0, 3.8, 0.25], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "LEMONADE", "maxWidth": 8, "color": "ink" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "group-stations",
+      "parentId": "world-lemonade-park",
+      "name": "Stations",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-lemons",
+      "parentId": "group-stations",
+      "name": "Lemons",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-lemons-block",
+      "parentId": "station-lemons",
+      "name": "Lemon Crate",
+      "transform": { "position": [-12, 0.8, -5], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [2.4, 1.6, 2.4], "material": "lemon", "runtimeMaterial": "wood" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-lemons-interaction",
+      "parentId": "station-lemons",
+      "name": "Interaction",
+      "transform": { "position": [-12, 1, -5], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "station-lemons", "kind": "zone", "label": "ADD LEMON", "radius": 3.2, "color": "lemon" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-lemons-label",
+      "parentId": "station-lemons",
+      "name": "Label",
+      "transform": { "position": [-12, 2.2, -5], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "LEMONS", "maxWidth": 5, "color": "ink" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-sugar",
+      "parentId": "group-stations",
+      "name": "Sugar",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-sugar-block",
+      "parentId": "station-sugar",
+      "name": "Sugar Jar",
+      "transform": { "position": [12, 0.8, -5], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [2.4, 1.6, 2.4], "material": "sugar", "runtimeMaterial": "wood" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-sugar-interaction",
+      "parentId": "station-sugar",
+      "name": "Interaction",
+      "transform": { "position": [12, 1, -5], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "station-sugar", "kind": "zone", "label": "ADD SUGAR", "radius": 3.2, "color": "sugar" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-sugar-label",
+      "parentId": "station-sugar",
+      "name": "Label",
+      "transform": { "position": [12, 2.2, -5], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "SUGAR", "maxWidth": 5, "color": "ink" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-ice",
+      "parentId": "group-stations",
+      "name": "Ice",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-ice-block",
+      "parentId": "station-ice",
+      "name": "Ice Chest",
+      "transform": { "position": [0, 0.8, -11], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [2.4, 1.6, 2.4], "material": "ice", "runtimeMaterial": "wood" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-ice-interaction",
+      "parentId": "station-ice",
+      "name": "Interaction",
+      "transform": { "position": [0, 1, -11], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "station-ice", "kind": "zone", "label": "ADD ICE", "radius": 3.2, "color": "ice" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-ice-label",
+      "parentId": "station-ice",
+      "name": "Label",
+      "transform": { "position": [0, 2.2, -11], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "ICE", "maxWidth": 5, "color": "ink" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-trash",
+      "parentId": "group-stations",
+      "name": "Dump Cup",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-trash-block",
+      "parentId": "station-trash",
+      "name": "Trash Can",
+      "transform": { "position": [0, 0.55, 7], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [1.7, 1.1, 1.7], "material": "ink", "runtimeMaterial": "wood" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-trash-interaction",
+      "parentId": "station-trash",
+      "name": "Interaction",
+      "transform": { "position": [0, 1, 7], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "station-trash", "kind": "zone", "label": "DUMP CUP", "radius": 2.6, "color": "ink" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "station-trash-label",
+      "parentId": "station-trash",
+      "name": "Label",
+      "transform": { "position": [0, 1.8, 7], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "DUMP", "maxWidth": 4, "color": "paper" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "group-customers",
+      "parentId": "world-lemonade-park",
+      "name": "Customers",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-maya",
+      "parentId": "group-customers",
+      "name": "Maya",
+      "transform": { "position": [-10, 0, 8], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-maya-table",
+      "parentId": "customer-maya",
+      "name": "Picnic Table",
+      "transform": { "position": [0, 0.35, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [4.2, 0.7, 2.2], "material": "wood", "runtimeMaterial": "wood" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-maya-interaction",
+      "parentId": "customer-maya",
+      "name": "Interaction",
+      "transform": { "position": [0, 1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "customer-maya", "kind": "zone", "label": "SERVE MAYA", "radius": 3.4, "color": "coral", "visual": "customer-zone" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-maya-label",
+      "parentId": "customer-maya",
+      "name": "Name",
+      "transform": { "position": [0, 2.1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "MAYA", "maxWidth": 5, "color": "coral" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-jun",
+      "parentId": "group-customers",
+      "name": "Jun",
+      "transform": { "position": [10, 0, 8], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-jun-table",
+      "parentId": "customer-jun",
+      "name": "Picnic Table",
+      "transform": { "position": [0, 0.35, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [4.2, 0.7, 2.2], "material": "wood", "runtimeMaterial": "wood" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-jun-interaction",
+      "parentId": "customer-jun",
+      "name": "Interaction",
+      "transform": { "position": [0, 1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "customer-jun", "kind": "zone", "label": "SERVE JUN", "radius": 3.4, "color": "coral", "visual": "customer-zone" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-jun-label",
+      "parentId": "customer-jun",
+      "name": "Name",
+      "transform": { "position": [0, 2.1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "JUN", "maxWidth": 5, "color": "coral" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-priya",
+      "parentId": "group-customers",
+      "name": "Priya",
+      "transform": { "position": [-10, 0, -17], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-priya-table",
+      "parentId": "customer-priya",
+      "name": "Picnic Table",
+      "transform": { "position": [0, 0.35, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [4.2, 0.7, 2.2], "material": "wood", "runtimeMaterial": "wood" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-priya-interaction",
+      "parentId": "customer-priya",
+      "name": "Interaction",
+      "transform": { "position": [0, 1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "customer-priya", "kind": "zone", "label": "SERVE PRIYA", "radius": 3.4, "color": "coral", "visual": "customer-zone" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-priya-label",
+      "parentId": "customer-priya",
+      "name": "Name",
+      "transform": { "position": [0, 2.1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "PRIYA", "maxWidth": 5, "color": "coral" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-theo",
+      "parentId": "group-customers",
+      "name": "Theo",
+      "transform": { "position": [10, 0, -17], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-theo-table",
+      "parentId": "customer-theo",
+      "name": "Picnic Table",
+      "transform": { "position": [0, 0.35, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [4.2, 0.7, 2.2], "material": "wood", "runtimeMaterial": "wood" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-theo-interaction",
+      "parentId": "customer-theo",
+      "name": "Interaction",
+      "transform": { "position": [0, 1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "interaction": { "id": "customer-theo", "kind": "zone", "label": "SERVE THEO", "radius": 3.4, "color": "coral", "visual": "customer-zone" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "customer-theo-label",
+      "parentId": "customer-theo",
+      "name": "Name",
+      "transform": { "position": [0, 2.1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "text": { "text": "THEO", "maxWidth": 5, "color": "coral" } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "group-park-decorations",
+      "parentId": "world-lemonade-park",
+      "name": "Park Decorations",
+      "transform": { "position": [0, 0, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": {},
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "park-tree-west",
+      "parentId": "group-park-decorations",
+      "name": "West Tree",
+      "transform": { "position": [-17, 0.4, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [1, 0.8, 1], "material": "leaf", "runtimeMaterial": "wood", "outline": false } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "park-tree-east",
+      "parentId": "group-park-decorations",
+      "name": "East Tree",
+      "transform": { "position": [17, 0.4, -2], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [1, 0.8, 1], "material": "leaf", "runtimeMaterial": "wood", "outline": false } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "park-tree-southwest",
+      "parentId": "group-park-decorations",
+      "name": "Southwest Tree",
+      "transform": { "position": [-16, 0.4, -12], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [1, 0.8, 1], "material": "leaf", "runtimeMaterial": "wood", "outline": false } },
+      "editor": { "visible": true, "locked": false }
+    },
+    {
+      "id": "park-tree-southeast",
+      "parentId": "group-park-decorations",
+      "name": "Southeast Tree",
+      "transform": { "position": [17, 0.4, -14], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
+      "components": { "primitive": { "shape": "box", "size": [1, 0.8, 1], "material": "leaf", "runtimeMaterial": "wood", "outline": false } },
+      "editor": { "visible": true, "locked": false }
+    }
+  ]
+}
