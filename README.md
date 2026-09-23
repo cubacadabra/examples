@@ -15,6 +15,10 @@ The examples demonstrate different kinds of gameplay and platform features:
   night, repair a rescue radio, and survive environmental hazards.
 - **The Wild West** (`the-wild-west`) — a platforming course where players
   cross a canyon, use checkpoints, recover from falls, and reach the summit.
+- **Lemonade 101** (`lemonade-101`) — a behavior-first native park prototype
+  where players prepare recipes, serve customer zones, and race a short shift.
+  Customer interaction zones are temporary placeholders until stationary world
+  actors are available.
 
 Each `manifest.json` defines the package metadata, scene, world, avatars, and
 assets. The corresponding `src/main.luau` file implements the game-specific

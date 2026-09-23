@@ -1,0 +1,209 @@
+{
+  "id": "lemonade-101",
+  "version": "0.1.0",
+  "sdkVersion": "0.5.0",
+  "package": {
+    "formatVersion": 3,
+    "entry": "game.luau"
+  },
+  "displayName": "Lemonade 101",
+  "lobby": false,
+  "startWorld": "lemonade-park",
+  "launch": {
+    "destinationWorld": "lemonade-park",
+    "authoritative": true
+  },
+  "scene": {
+    "eyebrow": "cubacadabra summer shift",
+    "title": "Lemonade 101",
+    "description": "Make what the park wants, serve ten customers, and save the stand before sunset.",
+    "maxPlayers": 4
+  },
+  "palette": {
+    "sky": "#86D9F2",
+    "ground": "#B7D889",
+    "groundEdge": "#4F8A52",
+    "grid": "#DCEBAE",
+    "lemon": "#F8D94E",
+    "sugar": "#FFF7D6",
+    "ice": "#9BE3F1",
+    "wood": "#A8613A",
+    "leaf": "#4E9A5B",
+    "coral": "#EF846B",
+    "ink": "#19343A",
+    "paper": "#FFFDF1"
+  },
+  "avatars": {
+    "player": {
+      "skin": "#E8AE86",
+      "shirt": "#EF846B",
+      "pants": "#315A6D",
+      "shoes": "#19343A",
+      "character": {
+        "version": 1,
+        "body": "cuba:person.v1",
+        "face": "happy",
+        "outfit": "cuba:everyday-hoodie.v1",
+        "equipment": {},
+        "colors": {
+          "primary": "#EF846B",
+          "secondary": "#315A6D",
+          "sole": "#19343A"
+        },
+        "revision": 1
+      }
+    },
+    "npcs": []
+  },
+  "world": {
+    "groundSize": 44,
+    "gridSize": 40,
+    "gridDivisions": 20,
+    "showGrid": false,
+    "spawn": [0, 0, 13],
+    "showSpawnPad": false,
+    "physics": {
+      "gravity": 28,
+      "jumpVelocity": 10.5,
+      "groundCollision": true,
+      "groundY": 0,
+      "deathY": -12,
+      "respawnDelay": 0.8
+    },
+    "clouds": [
+      { "position": [-18, 17, -22], "scale": 1.0 },
+      { "position": [20, 19, -28], "scale": 1.35 }
+    ]
+  },
+  "launchPads": [],
+  "blocks": [],
+  "effects": {
+    "version": 1,
+    "templates": {
+      "customer-zone": {
+        "duration": 1,
+        "nodes": [
+          {
+            "shape": "ring",
+            "position": [0, 0.12, 0],
+            "size": [2.3, 0.12, 1],
+            "color": "$interaction",
+            "opacity": 0.72,
+            "animation": { "pulseAmount": 0.08, "pulseSpeed": 2.2 }
+          }
+        ]
+      },
+      "serve-success": {
+        "duration": 0.9,
+        "nodes": [
+          {
+            "shape": "sphere",
+            "position": [0, 1.4, 0],
+            "size": [0.18, 1, 1],
+            "color": "lemon",
+            "count": 6,
+            "animation": { "orbitRadius": 1.1, "orbitSpeed": 3.5, "bobAmount": 0.2 }
+          }
+        ]
+      },
+      "serve-wrong": {
+        "duration": 0.7,
+        "nodes": [
+          {
+            "shape": "ring",
+            "position": [0, 0.2, 0],
+            "size": [1.7, 0.16, 1],
+            "color": "coral",
+            "animation": { "pulseAmount": 0.12, "pulseSpeed": 4 }
+          }
+        ]
+      }
+    }
+  },
+  "worlds": {
+    "lemonade-park": {
+      "palette": {
+        "sky": "#86D9F2",
+        "ground": "#B7D889",
+        "groundEdge": "#4F8A52",
+        "grid": "#DCEBAE",
+        "lemon": "#F8D94E",
+        "sugar": "#FFF7D6",
+        "ice": "#9BE3F1",
+        "wood": "#A8613A",
+        "leaf": "#4E9A5B",
+        "coral": "#EF846B",
+        "ink": "#19343A",
+        "paper": "#FFFDF1"
+      },
+      "world": {
+        "groundSize": 44,
+        "gridSize": 40,
+        "gridDivisions": 20,
+        "showGrid": false,
+        "spawn": [0, 0, 13],
+        "showSpawnPad": false,
+        "camera": { "yaw": 0.25, "pitch": 0.38, "distance": 22 },
+        "physics": {
+          "gravity": 28,
+          "jumpVelocity": 10.5,
+          "groundCollision": true,
+          "groundY": 0,
+          "deathY": -12,
+          "respawnDelay": 0.8
+        },
+        "visual": {
+          "daylight": {
+            "timeOfDay": 9.5,
+            "geographicLatitude": 35,
+            "brightness": 2.1,
+            "outdoorAmbient": [0.62, 0.62, 0.62],
+            "shadowSoftness": 0.5
+          },
+          "fogStart": 55,
+          "fogEnd": 110
+        }
+      },
+      "blocks": [
+        { "position": [0, 0.25, 0], "size": [7.5, 0.5, 3.2], "color": "wood", "material": "wood" },
+        { "position": [0, 1.25, 0], "size": [6.2, 0.35, 2.4], "color": "paper", "material": "wood" },
+        { "position": [-2.65, 1.0, 0], "size": [0.35, 1.7, 0.35], "color": "wood", "material": "wood", "outline": false },
+        { "position": [2.65, 1.0, 0], "size": [0.35, 1.7, 0.35], "color": "wood", "material": "wood", "outline": false },
+        { "position": [0, 2.55, 0.25], "size": [6.8, 0.25, 0.3], "color": "coral", "material": "wood", "outline": false },
+        { "position": [-12, 0.8, -5], "size": [2.4, 1.6, 2.4], "color": "lemon", "material": "wood" },
+        { "position": [12, 0.8, -5], "size": [2.4, 1.6, 2.4], "color": "sugar", "material": "wood" },
+        { "position": [0, 0.8, -11], "size": [2.4, 1.6, 2.4], "color": "ice", "material": "wood" },
+        { "position": [0, 0.55, 7], "size": [1.7, 1.1, 1.7], "color": "ink", "material": "wood" },
+        { "position": [-10, 0.35, 8], "size": [4.2, 0.7, 2.2], "color": "wood", "material": "wood" },
+        { "position": [10, 0.35, 8], "size": [4.2, 0.7, 2.2], "color": "wood", "material": "wood" },
+        { "position": [-10, 0.35, -17], "size": [4.2, 0.7, 2.2], "color": "wood", "material": "wood" },
+        { "position": [10, 0.35, -17], "size": [4.2, 0.7, 2.2], "color": "wood", "material": "wood" },
+        { "position": [-17, 0.4, 0], "size": [1.0, 0.8, 1.0], "color": "leaf", "material": "wood", "outline": false },
+        { "position": [17, 0.4, -2], "size": [1.0, 0.8, 1.0], "color": "leaf", "material": "wood", "outline": false },
+        { "position": [-16, 0.4, -12], "size": [1.0, 0.8, 1.0], "color": "leaf", "material": "wood", "outline": false },
+        { "position": [17, 0.4, -14], "size": [1.0, 0.8, 1.0], "color": "leaf", "material": "wood", "outline": false }
+      ],
+      "signs": [
+        { "text": "LEMONADE", "position": [0, 3.8, 0.25], "maxWidth": 8, "color": "ink" },
+        { "text": "LEMONS", "position": [-12, 2.2, -5], "maxWidth": 5, "color": "ink" },
+        { "text": "SUGAR", "position": [12, 2.2, -5], "maxWidth": 5, "color": "ink" },
+        { "text": "ICE", "position": [0, 2.2, -11], "maxWidth": 5, "color": "ink" },
+        { "text": "MAYA", "position": [-10, 2.1, 8], "maxWidth": 5, "color": "coral" },
+        { "text": "JUN", "position": [10, 2.1, 8], "maxWidth": 5, "color": "coral" },
+        { "text": "PRIYA", "position": [-10, 2.1, -17], "maxWidth": 5, "color": "coral" },
+        { "text": "THEO", "position": [10, 2.1, -17], "maxWidth": 5, "color": "coral" },
+        { "text": "DUMP", "position": [0, 1.8, 7], "maxWidth": 4, "color": "paper" }
+      ],
+      "interactions": [
+        { "id": "station-lemons", "kind": "zone", "label": "ADD LEMON", "position": [-12, 1, -5], "radius": 3.2, "color": "lemon" },
+        { "id": "station-sugar", "kind": "zone", "label": "ADD SUGAR", "position": [12, 1, -5], "radius": 3.2, "color": "sugar" },
+        { "id": "station-ice", "kind": "zone", "label": "ADD ICE", "position": [0, 1, -11], "radius": 3.2, "color": "ice" },
+        { "id": "station-trash", "kind": "zone", "label": "DUMP CUP", "position": [0, 1, 7], "radius": 2.6, "color": "ink" },
+        { "id": "customer-maya", "kind": "zone", "label": "SERVE MAYA", "position": [-10, 1, 8], "radius": 3.4, "color": "coral", "visual": "customer-zone" },
+        { "id": "customer-jun", "kind": "zone", "label": "SERVE JUN", "position": [10, 1, 8], "radius": 3.4, "color": "coral", "visual": "customer-zone" },
+        { "id": "customer-priya", "kind": "zone", "label": "SERVE PRIYA", "position": [-10, 1, -17], "radius": 3.4, "color": "coral", "visual": "customer-zone" },
+        { "id": "customer-theo", "kind": "zone", "label": "SERVE THEO", "position": [10, 1, -17], "radius": 3.4, "color": "coral", "visual": "customer-zone" }
+      ]
+    }
+  }
+}
