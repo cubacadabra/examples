@@ -214,7 +214,7 @@
       "parentId": "group-customers",
       "name": "Maya",
       "transform": { "position": [-10, 0, 8], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
-      "components": {},
+      "components": { "actor": { "id": "maya", "name": "Maya", "yaw": 3.14159, "appearance": { "skin": "#E8AE86", "shirt": "#EF846B", "pants": "#4C3F91", "shoes": "#19343A" } } },
       "editor": { "visible": true, "locked": false }
     },
     {
@@ -234,19 +234,11 @@
       "editor": { "visible": true, "locked": false }
     },
     {
-      "id": "customer-maya-label",
-      "parentId": "customer-maya",
-      "name": "Name",
-      "transform": { "position": [0, 2.1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
-      "components": { "text": { "text": "MAYA", "maxWidth": 5, "color": "coral" } },
-      "editor": { "visible": true, "locked": false }
-    },
-    {
       "id": "customer-jun",
       "parentId": "group-customers",
       "name": "Jun",
       "transform": { "position": [10, 0, 8], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
-      "components": {},
+      "components": { "actor": { "id": "jun", "name": "Jun", "yaw": 3.14159, "appearance": { "skin": "#A96545", "shirt": "#57E5D0", "pants": "#19343A", "shoes": "#FFF7D6" } } },
       "editor": { "visible": true, "locked": false }
     },
     {
@@ -266,19 +258,11 @@
       "editor": { "visible": true, "locked": false }
     },
     {
-      "id": "customer-jun-label",
-      "parentId": "customer-jun",
-      "name": "Name",
-      "transform": { "position": [0, 2.1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
-      "components": { "text": { "text": "JUN", "maxWidth": 5, "color": "coral" } },
-      "editor": { "visible": true, "locked": false }
-    },
-    {
       "id": "customer-priya",
       "parentId": "group-customers",
       "name": "Priya",
       "transform": { "position": [-10, 0, -17], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
-      "components": {},
+      "components": { "actor": { "id": "priya", "name": "Priya", "yaw": 0, "appearance": { "skin": "#7C4B36", "shirt": "#F8D94E", "pants": "#4C3F91", "shoes": "#EF846B" } } },
       "editor": { "visible": true, "locked": false }
     },
     {
@@ -298,19 +282,11 @@
       "editor": { "visible": true, "locked": false }
     },
     {
-      "id": "customer-priya-label",
-      "parentId": "customer-priya",
-      "name": "Name",
-      "transform": { "position": [0, 2.1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
-      "components": { "text": { "text": "PRIYA", "maxWidth": 5, "color": "coral" } },
-      "editor": { "visible": true, "locked": false }
-    },
-    {
       "id": "customer-theo",
       "parentId": "group-customers",
       "name": "Theo",
       "transform": { "position": [10, 0, -17], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
-      "components": {},
+      "components": { "actor": { "id": "theo", "name": "Theo", "yaw": 0, "appearance": { "skin": "#D38D6A", "shirt": "#9BE3F1", "pants": "#A8613A", "shoes": "#19343A" } } },
       "editor": { "visible": true, "locked": false }
     },
     {
@@ -327,14 +303,6 @@
       "name": "Interaction",
       "transform": { "position": [0, 1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
       "components": { "interaction": { "id": "customer-theo", "kind": "zone", "label": "SERVE THEO", "radius": 3.4, "color": "coral", "visual": "customer-zone" } },
-      "editor": { "visible": true, "locked": false }
-    },
-    {
-      "id": "customer-theo-label",
-      "parentId": "customer-theo",
-      "name": "Name",
-      "transform": { "position": [0, 2.1, 0], "rotation": [0, 0, 0], "scale": [1, 1, 1] },
-      "components": { "text": { "text": "THEO", "maxWidth": 5, "color": "coral" } },
       "editor": { "visible": true, "locked": false }
     },
     {

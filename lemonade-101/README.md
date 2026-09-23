@@ -6,11 +6,11 @@ three-minute shift, and a Luau-owned recipe loop.
 
 This first slice deliberately has no imported content and no walking NPCs.
 The native scene is authored in `scene.json`, so the stand, stations,
-customer placeholders, and their hierarchy are visible to Studio instead of
-being duplicated only in manifest arrays. Customer signs and interaction
-zones stand in for Maya, Jun, Priya, and Theo until the shared runtime can
-place stationary world actors with stable names and appearances. That missing
-capability is tracked in the canonical
+customers, and their hierarchy are visible to Studio instead of being
+duplicated only in manifest arrays. Maya, Jun, Priya, and Theo are now
+stationary authored actors rendered through the shared character renderer.
+They have identity and appearance but no AI or movement. The next Studio gate
+is tracked in the canonical
 [Lemonade 101 plan](../../docs/reference/lemonade-101.md).
 
 ## Build
