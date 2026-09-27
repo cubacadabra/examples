@@ -97,7 +97,7 @@ local function read_cube_offsets(api)
     local changed = false
     for index = 1, cube_count do
         local body = positions.blocks["starter-cube-" .. index]
-        local offset = body and { body.position[1] + body.offset[1] - (-12 + 2 * index), body.position[3] + body.offset[2] + 4 } or { 0, 0 }
+        local offset = body and { body.position[1] - (-12 + 2 * index), body.position[3] + 4 } or { 0, 0 }
         local previous = last_offsets[index]
         if not previous or previous[1] ~= offset[1] or previous[2] ~= offset[2] then
             last_offsets[index] = offset
@@ -107,8 +107,14 @@ local function read_cube_offsets(api)
     return changed
 end
 
-local function add_block(blocks, position, size, color)
-    blocks[#blocks + 1] = { position = position, size = size, color = color }
+local function add_block(blocks, position, size, color, collidable, cube_index)
+    blocks[#blocks + 1] = {
+        position = position,
+        size = size,
+        color = color,
+        collidable = collidable,
+        attachedTo = "starter-cube-" .. cube_index,
+    }
 end
 
 local function line_position(index, line_layer)
@@ -133,9 +139,9 @@ local function add_line(blocks, index, line_layer)
             0.06 + (size[2] - 0.06) * fraction,
             0.08 + (size[3] - 0.08) * fraction,
         }
-        add_block(blocks, position, size, ink_color)
+        add_block(blocks, position, size, ink_color, false, cube_for_line[index])
     else
-        add_block(blocks, target, size, ink_color)
+        add_block(blocks, target, size, ink_color, false, cube_for_line[index])
     end
 end
 
@@ -154,12 +160,12 @@ local function refresh_blocks(api)
             local offset = last_offsets[index] or { 0, 0 }
             local x = -12 + 2 * index + offset[1]
             local z = -4 + offset[2]
-            add_block(blocks, { x, y, z }, { 2, 2, 2 }, cube_color)
-            add_block(blocks, { x, y + 0.96, z + 1.03 }, { 2, 0.08, 0.06 }, ink_color)
-            add_block(blocks, { x, y - 0.96, z + 1.03 }, { 2, 0.08, 0.06 }, ink_color)
-            add_block(blocks, { x + 0.96, y, z + 1.03 }, { 0.08, 2, 0.06 }, ink_color)
+            add_block(blocks, { x, y, z }, { 2, 2, 2 }, cube_color, true, index)
+            add_block(blocks, { x, y + 0.96, z + 1.03 }, { 2, 0.08, 0.06 }, ink_color, false, index)
+            add_block(blocks, { x, y - 0.96, z + 1.03 }, { 2, 0.08, 0.06 }, ink_color, false, index)
+            add_block(blocks, { x + 0.96, y, z + 1.03 }, { 0.08, 2, 0.06 }, ink_color, false, index)
             if index == 1 then
-                add_block(blocks, { x - 0.96, y, z + 1.03 }, { 0.08, 2, 0.06 }, ink_color)
+                add_block(blocks, { x - 0.96, y, z + 1.03 }, { 0.08, 2, 0.06 }, ink_color, false, index)
             end
         end
         if row < layer then
