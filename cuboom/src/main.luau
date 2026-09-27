@@ -3,10 +3,28 @@ local Game = {}
 local CubaSharedState = require("@cubacadabra/shared-state")
 
 local line_count = 21
+local cube_count = 11
+local max_layers = 31 -- Runtime build blocks are bounded to 2,048; a layer uses at most 66.
+local layer_height = 2
+local cube_color = 0xF7F5E9
+local ink_color = 0x0B102B
+local layer = 1
 local completed = {}
 local moving = {}
+local animations = {}
+local advance_scheduled = false
 local target_positions = { { -9.500, 1.000, -2.970 }, { -7.850, 1.550, -2.970 }, { -6.000, 1.400, -2.970 }, { -6.000, 0.600, -2.970 }, { -5.150, 1.000, -2.970 }, { -4.000, 1.400, -2.970 }, { -4.000, 0.250, -2.970 }, { -1.500, 1.000, -2.970 }, { 0.000, 1.400, -2.970 }, { 0.000, 0.250, -2.970 }, { 2.000, 1.000, -2.970 }, { 4.000, 1.400, -2.970 }, { 4.000, 0.250, -2.970 }, { 6.000, 1.400, -2.970 }, { 6.000, 0.600, -2.970 }, { 6.850, 1.000, -2.970 }, { 8.000, 1.400, -2.970 }, { 8.850, 1.000, -2.970 }, { 8.060, 0.380, -2.970 }, { 10.000, 1.400, -2.970 }, { 10.000, 0.250, -2.970 } }
 local loose_positions = { { -8.400, 0.000, 13.000 }, { -5.600, 0.000, 13.000 }, { -2.800, 0.000, 13.000 }, { 0.000, 0.000, 13.000 }, { 2.800, 0.000, 13.000 }, { 5.600, 0.000, 13.000 }, { 8.400, 0.000, 13.000 }, { -8.400, 0.000, 10.000 }, { -5.600, 0.000, 10.000 }, { -2.800, 0.000, 10.000 }, { 0.000, 0.000, 10.000 }, { 2.800, 0.000, 10.000 }, { 5.600, 0.000, 10.000 }, { 8.400, 0.000, 10.000 }, { -8.400, 0.000, 7.000 }, { -5.600, 0.000, 7.000 }, { -2.800, 0.000, 7.000 }, { 0.000, 0.000, 7.000 }, { 2.800, 0.000, 7.000 }, { 5.600, 0.000, 7.000 }, { 8.400, 0.000, 7.000 } }
+local cube_for_line = { 1, 2, 3, 3, 3, 4, 4, 5, 6, 6, 7, 8, 8, 9, 9, 9, 10, 10, 10, 11, 11 }
+local line_sizes = {
+    { 1, 0.08, 0.06 }, { 0.08, 0.9, 0.06 }, { 0.3, 0.08, 0.06 },
+    { 0.3, 0.08, 0.06 }, { 0.3, 0.08, 0.06 }, { 0.08, 0.65, 0.06 },
+    { 0.08, 0.5, 0.06 }, { 1, 0.08, 0.06 }, { 0.08, 0.65, 0.06 },
+    { 0.08, 0.5, 0.06 }, { 0.08, 0.85, 0.06 }, { 0.08, 0.65, 0.06 },
+    { 0.08, 0.5, 0.06 }, { 0.3, 0.08, 0.06 }, { 0.3, 0.08, 0.06 },
+    { 0.3, 0.08, 0.06 }, { 0.3, 0.08, 0.06 }, { 0.3, 0.08, 0.06 },
+    { 0.08, 0.78, 0.06 }, { 0.08, 0.65, 0.06 }, { 0.08, 0.5, 0.06 },
+}
 
 local function effect_id(index)
     return "letter-line-" .. index
@@ -58,22 +76,118 @@ end
 
 local function update_status(api)
     local count = completed_count()
-    if count == line_count then
-        api.lobby:set_status("All 21 lines are back on the cubes!")
+    if count == line_count and layer == max_layers then
+        api.lobby:set_status("Tower complete — all " .. max_layers .. " layers restored!")
+    elseif count == line_count then
+        api.lobby:set_status("Layer " .. layer .. " complete — building the next layer…")
     elseif count == 0 then
-        api.lobby:set_status("heavy2" .. " — walk over a dark line.")
+        api.lobby:set_status("Layer " .. layer .. " — walk over a dark line.")
     else
-        api.lobby:set_status(tostring(count) .. "/" .. line_count .. " lines restored — find another dark line.")
+        api.lobby:set_status("Layer " .. layer .. " — " .. count .. "/" .. line_count .. " lines restored.")
     end
 end
 
-local lines = CubaSharedState.create({
-    channel = "starter-lines-v1",
+local last_offsets = {}
+
+local function read_cube_offsets(api)
+    local positions = api.world:get_positions()
+    if not positions then
+        return false
+    end
+    local changed = false
+    for index = 1, cube_count do
+        local body = positions.blocks["starter-cube-" .. index]
+        local offset = body and { body.position[1] + body.offset[1] - (-12 + 2 * index), body.position[3] + body.offset[2] + 4 } or { 0, 0 }
+        local previous = last_offsets[index]
+        if not previous or previous[1] ~= offset[1] or previous[2] ~= offset[2] then
+            last_offsets[index] = offset
+            changed = true
+        end
+    end
+    return changed
+end
+
+local function add_block(blocks, position, size, color)
+    blocks[#blocks + 1] = { position = position, size = size, color = color }
+end
+
+local function line_position(index, line_layer)
+    local target = target_positions[index]
+    local offset = last_offsets[cube_for_line[index]] or { 0, 0 }
+    return { target[1] + offset[1], target[2] + layer_height * (line_layer - 1), target[3] + offset[2] }
+end
+
+local function add_line(blocks, index, line_layer)
+    local target = line_position(index, line_layer)
+    local size = line_sizes[index]
+    local progress = line_layer == layer and animations[index]
+    if progress then
+        local start = loose_positions[index]
+        local fraction = math.min(progress / 1.15, 1)
+        local position = {}
+        for axis = 1, 3 do
+            position[axis] = start[axis] + (target[axis] - start[axis]) * fraction
+        end
+        size = {
+            1 + (size[1] - 1) * fraction,
+            0.06 + (size[2] - 0.06) * fraction,
+            0.08 + (size[3] - 0.08) * fraction,
+        }
+        add_block(blocks, position, size, ink_color)
+    else
+        add_block(blocks, target, size, ink_color)
+    end
+end
+
+local function refresh_blocks(api)
+    local blocks = {}
+    -- The first row is authored in scene.json. After its pickup visuals are rearmed,
+    -- retain its restored lines as runtime blocks so the finished row stays visible.
+    if layer > 1 then
+        for index = 1, line_count do
+            add_line(blocks, index, 1)
+        end
+    end
+    for row = 2, layer do
+        local y = 1 + layer_height * (row - 1)
+        for index = 1, cube_count do
+            local offset = last_offsets[index] or { 0, 0 }
+            local x = -12 + 2 * index + offset[1]
+            local z = -4 + offset[2]
+            add_block(blocks, { x, y, z }, { 2, 2, 2 }, cube_color)
+            add_block(blocks, { x, y + 0.96, z + 1.03 }, { 2, 0.08, 0.06 }, ink_color)
+            add_block(blocks, { x, y - 0.96, z + 1.03 }, { 2, 0.08, 0.06 }, ink_color)
+            add_block(blocks, { x + 0.96, y, z + 1.03 }, { 0.08, 2, 0.06 }, ink_color)
+            if index == 1 then
+                add_block(blocks, { x - 0.96, y, z + 1.03 }, { 0.08, 2, 0.06 }, ink_color)
+            end
+        end
+        if row < layer then
+            for index = 1, line_count do
+                add_line(blocks, index, row)
+            end
+        else
+            for index = 1, line_count do
+                if completed[index] then
+                    add_line(blocks, index, row)
+                end
+            end
+        end
+    end
+    api.world:set_build_blocks(blocks)
+end
+
+local lines
+lines = CubaSharedState.create({
+    channel = "starter-lines-v2",
     initial = function()
-        return { version = 1, completed = {} }
+        return { version = 2, layer = 1, completed = {} }
     end,
     validate = function(value)
-        if type(value) ~= "table" or value.version ~= 1 or type(value.completed) ~= "table" then
+        if type(value) ~= "table" or value.version ~= 2
+            or type(value.layer) ~= "number" or value.layer % 1 ~= 0
+            or value.layer < 1 or value.layer > max_layers
+            or type(value.completed) ~= "table" then
             return nil
         end
         local accepted = {}
@@ -85,9 +199,23 @@ local lines = CubaSharedState.create({
             end
             accepted[key] = true
         end
-        return { version = 1, completed = accepted }
+        return { version = 2, layer = value.layer, completed = accepted }
     end,
     reduce = function(state, intent)
+        if type(intent) ~= "table" or intent.layer ~= state.layer then
+            return nil
+        end
+        if intent.type == "advance" then
+            if state.layer >= max_layers then
+                return nil
+            end
+            for index = 1, line_count do
+                if not state.completed[tostring(index)] then
+                    return nil
+                end
+            end
+            return { version = 2, layer = state.layer + 1, completed = {} }
+        end
         if intent.type ~= "restore" or type(intent.index) ~= "number"
             or intent.index < 1 or intent.index > line_count
             or intent.index % 1 ~= 0 or state.completed[tostring(intent.index)] then
@@ -98,28 +226,66 @@ local lines = CubaSharedState.create({
             accepted[key] = done
         end
         accepted[tostring(intent.index)] = true
-        return { version = 1, completed = accepted }
+        return { version = 2, layer = state.layer, completed = accepted }
+    end,
+    intentExpired = function(state, intent)
+        return intent.layer ~= state.layer
     end,
     onChange = function(api, state, previous)
+        if state.layer ~= layer then
+            layer = state.layer
+            completed = {}
+            moving = {}
+            animations = {}
+            advance_scheduled = false
+        end
         for index = 1, line_count do
             if state.completed[tostring(index)] and not completed[index] then
                 completed[index] = true
-                moving[index] = nil
-                if previous then
+                if previous and previous.layer == layer then
+                    moving[index] = true
                     api.effects:set_state(interaction_id(index), "carried")
-                    api.effects:play(effect_id(index), { position = loose_positions[index] })
-                    api.task:delay(1.15, function()
-                        api.effects:set_state(interaction_id(index), "complete")
-                        api.effects:play("line-settle-" .. index, { position = target_positions[index] })
-                    end)
+                    if layer == 1 then
+                        api.effects:play(effect_id(index), { position = loose_positions[index] })
+                        local line_layer = layer
+                        api.task:delay(1.15, function()
+                            if layer == line_layer then
+                                moving[index] = nil
+                                api.effects:set_state(interaction_id(index), "complete")
+                                api.effects:play("line-settle-" .. index, { position = target_positions[index] })
+                                update_status(api)
+                            end
+                        end)
+                    else
+                        animations[index] = 0
+                    end
                 else
                     api.effects:set_state(interaction_id(index), "complete")
                 end
-            elseif not completed[index] and not moving[index] then
+            elseif not completed[index] then
                 api.effects:set_state(interaction_id(index), "available")
             end
         end
+        refresh_blocks(api)
         update_status(api)
+        if state.layer < max_layers and not advance_scheduled then
+            local all_done = true
+            for index = 1, line_count do
+                if not state.completed[tostring(index)] then
+                    all_done = false
+                    break
+                end
+            end
+            if all_done then
+                advance_scheduled = true
+                local finished_layer = state.layer
+                api.task:delay(previous and 1.25 or 0, function()
+                    if layer == finished_layer then
+                        lines:dispatch(api, { type = "advance", layer = finished_layer })
+                    end
+                end)
+            end
+        end
     end,
 })
 
@@ -127,6 +293,11 @@ function Game.on_start(api)
     api.lobby:set_enabled(false)
     api.session:start("heavy2", { mode = "preview" })
     api.ui:set_document(player_controls())
+    local ids = {}
+    for index = 1, cube_count do
+        ids[index] = "starter-cube-" .. index
+    end
+    api.world:watch_blocks(ids)
     lines:start(api)
 end
 
@@ -138,6 +309,22 @@ function Game.on_tick(api, delta)
     if api.network:is_connected() then
         lines:update(api, delta)
     end
+    local changed = layer > 1 and read_cube_offsets(api)
+    for index, progress in pairs(animations) do
+        local next_progress = progress + delta
+        if next_progress >= 1.15 then
+            animations[index] = nil
+            moving[index] = nil
+            api.effects:set_state(interaction_id(index), "complete")
+            update_status(api)
+        else
+            animations[index] = next_progress
+        end
+        changed = true
+    end
+    if changed then
+        refresh_blocks(api)
+    end
 end
 
 function Game.on_interaction(api, event)
@@ -148,18 +335,26 @@ function Game.on_interaction(api, event)
     if not index or index < 1 or index > line_count or completed[index] or moving[index] then
         return
     end
-    if lines:dispatch(api, { type = "restore", index = index }) then
-        moving[index] = true
+    if lines:dispatch(api, { type = "restore", layer = layer, index = index }) then
         completed[index] = true
+        moving[index] = true
         api.effects:set_state(interaction_id(index), "carried")
-        api.effects:play(effect_id(index), { position = loose_positions[index] })
+        if layer == 1 then
+            api.effects:play(effect_id(index), { position = loose_positions[index] })
+            local line_layer = layer
+            api.task:delay(1.15, function()
+                if layer == line_layer then
+                    moving[index] = nil
+                    api.effects:set_state(interaction_id(index), "complete")
+                    api.effects:play("line-settle-" .. index, { position = target_positions[index] })
+                    update_status(api)
+                end
+            end)
+        else
+            animations[index] = 0
+            refresh_blocks(api)
+        end
         api.lobby:set_status("Line " .. index .. " is snapping into place…")
-        api.task:delay(1.15, function()
-            moving[index] = nil
-            api.effects:set_state(interaction_id(index), "complete")
-            api.effects:play("line-settle-" .. index, { position = target_positions[index] })
-            update_status(api)
-        end)
     end
 end
 

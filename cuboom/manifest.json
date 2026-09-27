@@ -1,7 +1,7 @@
 {
   "id": "heavy2",
-  "version": "0.3.0",
-  "sdkVersion": "0.3.0",
+  "version": "0.4.0",
+  "sdkVersion": "0.6.0",
   "package": {
     "formatVersion": 3,
     "entry": "game.luau"
