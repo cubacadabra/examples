@@ -1,184 +1,99 @@
-local SharedState = require("@cubacadabra/shared-state")
-local Rules = require("./rules")
-local Hud = require("./hud")
+-- Welcome to Cubacadabra. Restore every loose letter line to the wall.
 local Game = {}
-local state = Rules.initial()
-local store = nil
-local online = false
-local hasBeenOnline = false
-local localAge = 0
-local refresh = 0
-local positions = nil
-local visualStates = {}
-local uiText = {}
-local notice, noticeTime = "", 0
 
-local function set_text(api, id, text)
-    if uiText[id] ~= text then
-        uiText[id] = text
-        api.ui:set_text(id, text)
-    end
+local line_count = 21
+local completed = {}
+local moving = {}
+local target_positions = { { -9.500, 1.000, -2.970 }, { -7.850, 1.550, -2.970 }, { -6.000, 1.400, -2.970 }, { -6.000, 0.600, -2.970 }, { -5.150, 1.000, -2.970 }, { -4.000, 1.400, -2.970 }, { -4.000, 0.250, -2.970 }, { -1.500, 1.000, -2.970 }, { 0.000, 1.400, -2.970 }, { 0.000, 0.250, -2.970 }, { 2.000, 1.000, -2.970 }, { 4.000, 1.400, -2.970 }, { 4.000, 0.250, -2.970 }, { 6.000, 1.400, -2.970 }, { 6.000, 0.600, -2.970 }, { 6.850, 1.000, -2.970 }, { 8.000, 1.400, -2.970 }, { 8.850, 1.000, -2.970 }, { 8.060, 0.380, -2.970 }, { 10.000, 1.400, -2.970 }, { 10.000, 0.250, -2.970 } }
+
+local function effect_id(index)
+    return "letter-line-" .. index
 end
-local function effect_state(api, id, value)
-    if visualStates[id] ~= value then
-        visualStates[id] = value
-        api.effects:set_state(id, value)
-    end
+
+local function interaction_id(index)
+    return "loose-line-" .. index
 end
-local function elapsed()
-    return state.clock + (online and store and store.hasSnapshot and store.ageSeconds or localAge)
+
+local function player_controls()
+    return {
+        nodes = {
+            {
+                id = "player-joystick",
+                kind = "joystick",
+                action = "player.move",
+                layout = { anchor = "bottomLeft", width = 120, height = 120, offset = { 20, -24 } },
+                style = { background = "#0B102BC9", borderColor = "#57E5D055", borderWidth = 2, cornerRadius = 60, accent = "#57E5D0" },
+            },
+            {
+                id = "player-jump",
+                kind = "button",
+                text = "JUMP",
+                action = "player.jump",
+                layout = { anchor = "bottomRight", width = 86, height = 44, offset = { -22, -84 } },
+                style = { background = "#0B102BF5", borderColor = "#57E5D0", borderWidth = 2, cornerRadius = 17, foreground = "#F7F5E9", fontSize = 14, textAlign = "center" },
+            },
+            {
+                id = "player-run",
+                kind = "button",
+                text = "RUN",
+                action = "player.run",
+                layout = { anchor = "bottomRight", width = 86, height = 44, offset = { -22, -30 } },
+                style = { background = "#0B102BF5", borderColor = "#57E5D0", borderWidth = 2, cornerRadius = 17, foreground = "#F7F5E9", fontSize = 14, textAlign = "center" },
+            },
+        },
+    }
 end
-local function can_play()
-    return (not hasBeenOnline) or (online and store ~= nil and store.hasSnapshot)
-end
-local function accept(api, next, previous, age, feedback)
-    state, localAge = next, age or 0
-    if feedback and previous and next.revision ~= previous.revision then
-        for _, blast in ipairs(next.blasts) do
-            api.effects:play(blast.safe and "contained-burst" or "loose-burst", { position = blast.position })
-            if not blast.safe and positions then
-                local player = positions.player
-                if (player[1] - blast.position[1]) ^ 2 + (player[3] - blast.position[3]) ^ 2 <= Rules.radius ^ 2 then
-                    notice, noticeTime = "Too close! The reactor took the hit. Clear the fuse rings.", 3
-                end
-            end
+
+local function completed_count()
+    local count = 0
+    for index = 1, line_count do
+        if completed[index] then
+            count += 1
         end
     end
-    refresh = 0
+    return count
 end
-local function dispatch(api, kind, extra)
-    if not can_play() then return end
-    local intent = extra or {}
-    intent.kind, intent.run, intent.round, intent.revision = kind, state.run, state.round, state.revision
-    if online then
-        if #store.pending == 0 then store:dispatch(api, intent) end
+
+local function update_status(api)
+    local count = completed_count()
+    if count == line_count then
+        api.lobby:set_status("All 21 lines are back on the cubes!")
+    elseif count == 0 then
+        api.lobby:set_status("heavy2" .. " — walk over a dark line.")
     else
-        local next = Rules.reduce(state, intent)
-        if next then accept(api, next, state, 0, true) end
+        api.lobby:set_status(tostring(count) .. "/" .. line_count .. " lines restored — find another dark line.")
     end
-end
-local function connect(api)
-    store = SharedState.create({
-        channel = "cuboom-campaign-v1",
-        initial = Rules.initial,
-        validate = Rules.validate,
-        reduce = Rules.reduce,
-        intentExpired = function(value, intent)
-            return intent.run ~= value.run or intent.round ~= value.round or intent.revision ~= value.revision
-        end,
-        onChange = function(context, value, previous, event)
-            if event.bootstrap then return end
-            local age = math.max(0, (event.ageMs or 0) / 1000)
-            accept(context, value, previous, age, previous ~= nil and age < 1)
-        end,
-    })
-    store:start(api)
-end
-local function present(api)
-    local level = Rules.levels[state.round]
-    local bay = Rules.bays[Rules.bay(state)]
-    local running = state.phase == "running"
-    set_text(api, "title", "CUBOOM / " .. state.round .. " OF 5 / " .. level.name)
-    set_text(api, "objective", "Push bombs into the " .. bay .. " bay.")
-    set_text(api, "score", "REACTOR " .. state.charge .. "/5   SCORE " .. state.score .. "   SAVED " .. state.saved .. "/" .. level.quota)
-    local message = "Walk into cubes to push. Jump to escape a trap."
-    local fuse = "Save at least " .. level.quota .. " of " .. level.count .. " bombs."
-    local nextIndex, remaining = nil, math.huge
-    if running then
-        for index, status in ipairs(state.bombs) do
-            if status == "armed" and Rules.deadline(state, index) - elapsed() < remaining then
-                nextIndex, remaining = index, Rules.deadline(state, index) - elapsed()
-            end
-        end
-        if nextIndex then fuse = "BOMB " .. nextIndex .. "  /  " .. math.max(0, math.ceil(remaining)) .. "s  /  " .. bay end
-        message = "Stripes contain blasts. Loose bombs chain together."
-    elseif state.phase == "clear" then
-        fuse = "ROUND CLEAR / +1 reactor charge"
-        message = "Next bay changes. Reuse the cubes; plan your route."
-    elseif state.phase == "won" then
-        fuse = "YOU SAVED THE REACTOR!"
-        message = "Five rounds cleared. Play again for a higher score."
-    elseif state.phase == "lost" then
-        fuse = state.charge == 0 and "REACTOR DOWN" or "CONTAINMENT QUOTA MISSED"
-        message = "Try again. Split up and keep loose bombs apart."
-    end
-    if not can_play() then
-        fuse = online and "Joining the shared round..." or "Reconnecting / round paused locally"
-    elseif noticeTime > 0 then message = notice end
-    set_text(api, "fuse", fuse)
-    set_text(api, "message", message)
-    set_text(api, "round-action", state.phase == "ready" and "START ROUND"
-        or state.phase == "clear" and "NEXT ROUND" or "PLAY AGAIN")
-    api.ui:set_visible("round-action", not running and can_play())
-    api.ui:set_visible("cash-in", running and can_play() and positions ~= nil and Rules.all_parked(state, positions.blocks))
-    for index, id in ipairs(Rules.ids) do
-        local status = state.bombs[index]
-        local value = "idle"
-        if running and status == "armed" then
-            value = positions and Rules.contained(state, positions.blocks[id]) and "safe"
-                or (Rules.deadline(state, index) - elapsed() <= 6 and "urgent" or "armed")
-        elseif status == "saved" then value = "spent" end
-        effect_state(api, "signal-" .. id, value)
-    end
-    for index, direction in ipairs(Rules.bays) do
-        effect_state(api, "bay-" .. string.lower(direction), index == Rules.bay(state) and "active" or "idle")
-    end
-    effect_state(api, "reactor-status", state.charge == 0 and "broken" or state.charge <= 2 and "weak" or "healthy")
 end
 
 function Game.on_start(api)
     api.lobby:set_enabled(false)
-    api.session:start("cuboom", { mode = "cooperative" })
-    api.world:watch_positions(Rules.ids)
-    api.ui:set_document(Hud.document())
-    present(api)
+    api.session:start("heavy2", { mode = "preview" })
+    api.ui:set_document(player_controls())
+    for index = 1, line_count do
+        api.effects:set_state(interaction_id(index), "available")
+    end
+    update_status(api)
 end
 
-function Game.on_tick(api, delta)
-    local connected = api.network:is_connected()
-    if connected ~= online then
-        online = connected
-        if online then hasBeenOnline = true; connect(api) end
+function Game.on_interaction(api, event)
+    if event.phase ~= "enter" then
+        return
     end
-    if online then store:update(api, delta) elseif not hasBeenOnline then localAge += delta end
-    positions = api.world:get_positions()
-    if positions and positions.worldId ~= "starter-world" then positions = nil end
-    noticeTime = math.max(0, noticeTime - delta)
-    refresh -= delta
-    if refresh > 0 then return end
-    if state.phase == "running" and positions and can_play() then
-        dispatch(api, "resolve", { positions = positions.blocks, at = elapsed() })
+    local index = tonumber(string.match(event.id, "^loose%-line%-(%d+)$"))
+    if not index or completed[index] or moving[index] then
+        return
     end
-    present(api)
-    refresh = 0.1
+    moving[index] = true
+    api.effects:set_state(interaction_id(index), "carried")
+    api.effects:play(effect_id(index), { position = event.position })
+    api.lobby:set_status("Line " .. index .. " is snapping into place…")
+    api.task:delay(1.15, function()
+        moving[index] = nil
+        completed[index] = true
+        api.effects:set_state(interaction_id(index), "complete")
+        api.effects:play("line-settle-" .. index, { position = target_positions[index] })
+        update_status(api)
+    end)
 end
 
-function Game.on_network_message(api, event)
-    if online and store then store:receive(api, event) end
-end
-
-function Game.on_ui_event(api, event)
-    if event.phase ~= "activate" then return end
-    if event.action == "cuboom.advance" then
-        dispatch(api, (state.phase == "won" or state.phase == "lost") and "replay" or "start")
-    elseif event.action == "cuboom.cash" and positions then
-        dispatch(api, "resolve", { positions = positions.blocks, at = elapsed(), cashIn = true })
-    end
-    present(api)
-end
-
-function Game.on_save()
-    return { state = state, age = elapsed() - state.clock }
-end
-function Game.on_restore(api, saved)
-    local restored = type(saved) == "table" and Rules.validate(saved.state)
-    if not restored or type(saved.age) ~= "number" or saved.age ~= saved.age or saved.age < 0 or saved.age > 3600 then
-        error("Invalid Cuboom save")
-    end
-    store, online, hasBeenOnline = nil, false, false
-    positions, visualStates, uiText = nil, {}, {}
-    accept(api, restored, nil, saved.age, false)
-    api.world:watch_positions(Rules.ids)
-    present(api)
-end
 return Game

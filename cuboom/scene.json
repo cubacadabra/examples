@@ -4,22 +4,22 @@
   "nodes": [
     {
       "id": "world-starter-world",
-      "name": "Cuboom Arena",
+      "name": "Starter World",
       "transform": {
         "position": [
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0
         ],
         "rotation": [
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0
         ],
         "scale": [
-          1,
-          1,
-          1
+          1.0,
+          1.0,
+          1.0
         ]
       },
       "components": {},
@@ -29,5435 +29,2549 @@
       }
     },
     {
-      "id": "arena-deck",
-      "name": "Arena Deck",
+      "id": "starter-cube-1",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 1",
       "transform": {
         "position": [
-          0,
-          -0.25,
-          0
+          -10.0,
+          1.0,
+          -4.0
         ],
         "rotation": [
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0
         ],
         "scale": [
-          1,
-          1,
-          1
+          1.0,
+          1.0,
+          1.0
         ]
       },
       "components": {
         "primitive": {
           "shape": "box",
           "size": [
-            30,
-            0.5,
-            30
+            2.0,
+            2.0,
+            2.0
           ],
-          "color": "#283E51",
-          "collidable": true,
+          "color": "#F7F5E9",
+          "pushable": true,
           "outline": false
         }
       },
       "editor": {
         "visible": true,
         "locked": false
-      },
-      "parentId": "world-starter-world"
+      }
     },
     {
-      "id": "rail-north",
-      "name": "Rail North",
+      "id": "starter-cube-1-border-1",
+      "parentId": "starter-cube-1",
+      "name": "Letter 1 Border Top",
       "transform": {
         "position": [
-          0,
-          0.45,
-          -14.6
+          0.0,
+          0.96,
+          1.03
         ],
         "rotation": [
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0
         ],
         "scale": [
-          1,
-          1,
-          1
+          1.0,
+          1.0,
+          1.0
         ]
       },
       "components": {
         "primitive": {
           "shape": "box",
           "size": [
-            30,
-            0.9,
-            0.8
+            2.0,
+            0.08,
+            0.06
           ],
-          "color": "#101B2E",
-          "collidable": true,
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
           "outline": false
         }
       },
       "editor": {
         "visible": true,
         "locked": false
-      },
-      "parentId": "world-starter-world"
+      }
     },
     {
-      "id": "rail-cap-north",
-      "name": "Rail Cap North",
+      "id": "starter-cube-1-border-2",
+      "parentId": "starter-cube-1",
+      "name": "Letter 1 Border Bottom",
       "transform": {
         "position": [
-          0,
-          0.93,
-          -14.6
+          0.0,
+          -0.96,
+          1.03
         ],
         "rotation": [
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0
         ],
         "scale": [
-          1,
-          1,
-          1
+          1.0,
+          1.0,
+          1.0
         ]
       },
       "components": {
         "primitive": {
           "shape": "box",
           "size": [
-            30,
-            0.06,
-            0.8
+            2.0,
+            0.08,
+            0.06
           ],
-          "color": "#587386",
+          "color": "#0B102B",
           "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "rail-south",
-      "name": "Rail South",
-      "transform": {
-        "position": [
-          0,
-          0.45,
-          14.6
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            30,
-            0.9,
-            0.8
-          ],
-          "color": "#101B2E",
-          "collidable": true,
+          "castShadow": false,
           "outline": false
         }
       },
       "editor": {
         "visible": true,
         "locked": false
-      },
-      "parentId": "world-starter-world"
+      }
     },
     {
-      "id": "rail-cap-south",
-      "name": "Rail Cap South",
+      "id": "starter-cube-1-border-3",
+      "parentId": "starter-cube-1",
+      "name": "Letter 1 Border Left",
       "transform": {
         "position": [
-          0,
-          0.93,
-          14.6
+          -0.96,
+          0.0,
+          1.03
         ],
         "rotation": [
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0
         ],
         "scale": [
-          1,
-          1,
-          1
+          1.0,
+          1.0,
+          1.0
         ]
       },
       "components": {
         "primitive": {
           "shape": "box",
           "size": [
-            30,
-            0.06,
-            0.8
+            0.08,
+            2.0,
+            0.06
           ],
-          "color": "#587386",
+          "color": "#0B102B",
           "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "rail-east",
-      "name": "Rail East",
-      "transform": {
-        "position": [
-          14.6,
-          0.45,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.8,
-            0.9,
-            28
-          ],
-          "color": "#101B2E",
-          "collidable": true,
+          "castShadow": false,
           "outline": false
         }
       },
       "editor": {
         "visible": true,
         "locked": false
-      },
-      "parentId": "world-starter-world"
+      }
     },
     {
-      "id": "rail-cap-east",
-      "name": "Rail Cap East",
+      "id": "starter-cube-1-border-4",
+      "parentId": "starter-cube-1",
+      "name": "Letter 1 Border Right",
       "transform": {
         "position": [
-          14.6,
-          0.93,
-          0
+          0.96,
+          0.0,
+          1.03
         ],
         "rotation": [
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0
         ],
         "scale": [
-          1,
-          1,
-          1
+          1.0,
+          1.0,
+          1.0
         ]
       },
       "components": {
         "primitive": {
           "shape": "box",
           "size": [
-            0.8,
-            0.06,
-            28
+            0.08,
+            2.0,
+            0.06
           ],
-          "color": "#587386",
+          "color": "#0B102B",
           "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "rail-west",
-      "name": "Rail West",
-      "transform": {
-        "position": [
-          -14.6,
-          0.45,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.8,
-            0.9,
-            28
-          ],
-          "color": "#101B2E",
-          "collidable": true,
+          "castShadow": false,
           "outline": false
         }
       },
       "editor": {
         "visible": true,
         "locked": false
-      },
-      "parentId": "world-starter-world"
+      }
     },
     {
-      "id": "rail-cap-west",
-      "name": "Rail Cap West",
+      "id": "starter-cube-2",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 2",
       "transform": {
         "position": [
-          -14.6,
-          0.93,
-          0
+          -8.0,
+          1.0,
+          -4.0
         ],
         "rotation": [
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0
         ],
         "scale": [
-          1,
-          1,
-          1
+          1.0,
+          1.0,
+          1.0
         ]
       },
       "components": {
         "primitive": {
           "shape": "box",
           "size": [
-            0.8,
-            0.06,
-            28
+            2.0,
+            2.0,
+            2.0
           ],
-          "color": "#587386",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "pad-north",
-      "name": "Pad North",
-      "transform": {
-        "position": [
-          0,
-          0.015,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            12,
-            0.05,
-            5
-          ],
-          "color": "#152C3B",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-north-0",
-      "name": "Stripe North 0",
-      "transform": {
-        "position": [
-          -5,
-          0.04,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-north-1",
-      "name": "Stripe North 1",
-      "transform": {
-        "position": [
-          -4,
-          0.04,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-north-2",
-      "name": "Stripe North 2",
-      "transform": {
-        "position": [
-          -3,
-          0.04,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-north-3",
-      "name": "Stripe North 3",
-      "transform": {
-        "position": [
-          -2,
-          0.04,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-north-4",
-      "name": "Stripe North 4",
-      "transform": {
-        "position": [
-          -1,
-          0.04,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-north-5",
-      "name": "Stripe North 5",
-      "transform": {
-        "position": [
-          0,
-          0.04,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-north-6",
-      "name": "Stripe North 6",
-      "transform": {
-        "position": [
-          1,
-          0.04,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-north-7",
-      "name": "Stripe North 7",
-      "transform": {
-        "position": [
-          2,
-          0.04,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-north-8",
-      "name": "Stripe North 8",
-      "transform": {
-        "position": [
-          3,
-          0.04,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-north-9",
-      "name": "Stripe North 9",
-      "transform": {
-        "position": [
-          4,
-          0.04,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-north-10",
-      "name": "Stripe North 10",
-      "transform": {
-        "position": [
-          5,
-          0.04,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bay-north",
-      "name": "bay-north",
-      "transform": {
-        "position": [
-          0,
-          0,
-          -9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "interaction": {
-          "id": "bay-north",
-          "kind": "zone",
-          "label": " ",
-          "radius": 0.1,
-          "visual": "bay-horizontal",
-          "color": "signal"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "sign-north",
-      "name": "NORTH",
-      "transform": {
-        "position": [
-          0,
-          1.4,
-          -12.6
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "text": {
-          "text": "NORTH",
-          "maxWidth": 4,
-          "color": "paper"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "pad-east",
-      "name": "Pad East",
-      "transform": {
-        "position": [
-          9.5,
-          0.015,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            5,
-            0.05,
-            12
-          ],
-          "color": "#152C3B",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-east-0",
-      "name": "Stripe East 0",
-      "transform": {
-        "position": [
-          9.5,
-          0.04,
-          -5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-east-1",
-      "name": "Stripe East 1",
-      "transform": {
-        "position": [
-          9.5,
-          0.04,
-          -4
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-east-2",
-      "name": "Stripe East 2",
-      "transform": {
-        "position": [
-          9.5,
-          0.04,
-          -3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-east-3",
-      "name": "Stripe East 3",
-      "transform": {
-        "position": [
-          9.5,
-          0.04,
-          -2
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-east-4",
-      "name": "Stripe East 4",
-      "transform": {
-        "position": [
-          9.5,
-          0.04,
-          -1
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-east-5",
-      "name": "Stripe East 5",
-      "transform": {
-        "position": [
-          9.5,
-          0.04,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-east-6",
-      "name": "Stripe East 6",
-      "transform": {
-        "position": [
-          9.5,
-          0.04,
-          1
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-east-7",
-      "name": "Stripe East 7",
-      "transform": {
-        "position": [
-          9.5,
-          0.04,
-          2
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-east-8",
-      "name": "Stripe East 8",
-      "transform": {
-        "position": [
-          9.5,
-          0.04,
-          3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-east-9",
-      "name": "Stripe East 9",
-      "transform": {
-        "position": [
-          9.5,
-          0.04,
-          4
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-east-10",
-      "name": "Stripe East 10",
-      "transform": {
-        "position": [
-          9.5,
-          0.04,
-          5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bay-east",
-      "name": "bay-east",
-      "transform": {
-        "position": [
-          9.5,
-          0,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "interaction": {
-          "id": "bay-east",
-          "kind": "zone",
-          "label": " ",
-          "radius": 0.1,
-          "visual": "bay-vertical",
-          "color": "signal"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "sign-east",
-      "name": "EAST",
-      "transform": {
-        "position": [
-          9.5,
-          1.4,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "text": {
-          "text": "EAST",
-          "maxWidth": 4,
-          "color": "paper"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "pad-south",
-      "name": "Pad South",
-      "transform": {
-        "position": [
-          0,
-          0.015,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            12,
-            0.05,
-            5
-          ],
-          "color": "#152C3B",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-south-0",
-      "name": "Stripe South 0",
-      "transform": {
-        "position": [
-          -5,
-          0.04,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-south-1",
-      "name": "Stripe South 1",
-      "transform": {
-        "position": [
-          -4,
-          0.04,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-south-2",
-      "name": "Stripe South 2",
-      "transform": {
-        "position": [
-          -3,
-          0.04,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-south-3",
-      "name": "Stripe South 3",
-      "transform": {
-        "position": [
-          -2,
-          0.04,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-south-4",
-      "name": "Stripe South 4",
-      "transform": {
-        "position": [
-          -1,
-          0.04,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-south-5",
-      "name": "Stripe South 5",
-      "transform": {
-        "position": [
-          0,
-          0.04,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-south-6",
-      "name": "Stripe South 6",
-      "transform": {
-        "position": [
-          1,
-          0.04,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-south-7",
-      "name": "Stripe South 7",
-      "transform": {
-        "position": [
-          2,
-          0.04,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-south-8",
-      "name": "Stripe South 8",
-      "transform": {
-        "position": [
-          3,
-          0.04,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-south-9",
-      "name": "Stripe South 9",
-      "transform": {
-        "position": [
-          4,
-          0.04,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-south-10",
-      "name": "Stripe South 10",
-      "transform": {
-        "position": [
-          5,
-          0.04,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.16,
-            0.05,
-            4.7
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bay-south",
-      "name": "bay-south",
-      "transform": {
-        "position": [
-          0,
-          0,
-          9.5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "interaction": {
-          "id": "bay-south",
-          "kind": "zone",
-          "label": " ",
-          "radius": 0.1,
-          "visual": "bay-horizontal",
-          "color": "signal"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "sign-south",
-      "name": "SOUTH",
-      "transform": {
-        "position": [
-          0,
-          1.4,
-          12.6
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "text": {
-          "text": "SOUTH",
-          "maxWidth": 4,
-          "color": "paper"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "pad-west",
-      "name": "Pad West",
-      "transform": {
-        "position": [
-          -9.5,
-          0.015,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            5,
-            0.05,
-            12
-          ],
-          "color": "#152C3B",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-west-0",
-      "name": "Stripe West 0",
-      "transform": {
-        "position": [
-          -9.5,
-          0.04,
-          -5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-west-1",
-      "name": "Stripe West 1",
-      "transform": {
-        "position": [
-          -9.5,
-          0.04,
-          -4
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-west-2",
-      "name": "Stripe West 2",
-      "transform": {
-        "position": [
-          -9.5,
-          0.04,
-          -3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-west-3",
-      "name": "Stripe West 3",
-      "transform": {
-        "position": [
-          -9.5,
-          0.04,
-          -2
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-west-4",
-      "name": "Stripe West 4",
-      "transform": {
-        "position": [
-          -9.5,
-          0.04,
-          -1
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-west-5",
-      "name": "Stripe West 5",
-      "transform": {
-        "position": [
-          -9.5,
-          0.04,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-west-6",
-      "name": "Stripe West 6",
-      "transform": {
-        "position": [
-          -9.5,
-          0.04,
-          1
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-west-7",
-      "name": "Stripe West 7",
-      "transform": {
-        "position": [
-          -9.5,
-          0.04,
-          2
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-west-8",
-      "name": "Stripe West 8",
-      "transform": {
-        "position": [
-          -9.5,
-          0.04,
-          3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-west-9",
-      "name": "Stripe West 9",
-      "transform": {
-        "position": [
-          -9.5,
-          0.04,
-          4
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "stripe-west-10",
-      "name": "Stripe West 10",
-      "transform": {
-        "position": [
-          -9.5,
-          0.04,
-          5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            4.7,
-            0.05,
-            0.16
-          ],
-          "color": "#52685D",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bay-west",
-      "name": "bay-west",
-      "transform": {
-        "position": [
-          -9.5,
-          0,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "interaction": {
-          "id": "bay-west",
-          "kind": "zone",
-          "label": " ",
-          "radius": 0.1,
-          "visual": "bay-vertical",
-          "color": "signal"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "sign-west",
-      "name": "WEST",
-      "transform": {
-        "position": [
-          -9.5,
-          1.4,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "text": {
-          "text": "WEST",
-          "maxWidth": 4,
-          "color": "paper"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "reactor-base",
-      "name": "Reactor Base",
-      "transform": {
-        "position": [
-          0,
-          0.35,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            2.8,
-            0.7,
-            2.8
-          ],
-          "color": "#101B2E",
-          "collidable": true,
+          "color": "#F7F5E9",
+          "pushable": true,
           "outline": false
         }
       },
       "editor": {
         "visible": true,
         "locked": false
-      },
-      "parentId": "world-starter-world"
+      }
     },
     {
-      "id": "reactor-core",
-      "name": "Reactor Core",
+      "id": "starter-cube-2-border-1",
+      "parentId": "starter-cube-2",
+      "name": "Letter 2 Border Top",
       "transform": {
         "position": [
-          0,
-          1.7,
-          0
+          0.0,
+          0.96,
+          1.03
         ],
         "rotation": [
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0
         ],
         "scale": [
-          1,
-          1,
-          1
+          1.0,
+          1.0,
+          1.0
         ]
       },
       "components": {
         "primitive": {
           "shape": "box",
           "size": [
-            1.6,
-            2,
-            1.6
+            2.0,
+            0.08,
+            0.06
           ],
-          "color": "#73E0BE",
-          "collidable": true,
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
           "outline": false
         }
       },
       "editor": {
         "visible": true,
         "locked": false
-      },
-      "parentId": "world-starter-world"
+      }
     },
     {
-      "id": "reactor-cap",
-      "name": "Reactor Cap",
+      "id": "starter-cube-2-border-2",
+      "parentId": "starter-cube-2",
+      "name": "Letter 2 Border Bottom",
       "transform": {
         "position": [
-          0,
-          2.9,
-          0
+          0.0,
+          -0.96,
+          1.03
         ],
         "rotation": [
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0
         ],
         "scale": [
-          1,
-          1,
-          1
+          1.0,
+          1.0,
+          1.0
         ]
       },
       "components": {
         "primitive": {
           "shape": "box",
           "size": [
-            2.1,
-            0.4,
-            2.1
+            2.0,
+            0.08,
+            0.06
           ],
-          "color": "#F4F5EA",
-          "collidable": true,
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
           "outline": false
         }
       },
       "editor": {
         "visible": true,
         "locked": false
-      },
-      "parentId": "world-starter-world"
+      }
     },
     {
-      "id": "reactor-status",
-      "name": "reactor-status",
+      "id": "starter-cube-2-border-4",
+      "parentId": "starter-cube-2",
+      "name": "Letter 2 Border Right",
       "transform": {
         "position": [
-          0,
-          0,
-          0
+          0.96,
+          0.0,
+          1.03
         ],
         "rotation": [
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0
         ],
         "scale": [
-          1,
-          1,
-          1
+          1.0,
+          1.0,
+          1.0
         ]
       },
       "components": {
-        "interaction": {
-          "id": "reactor-status",
-          "kind": "zone",
-          "label": " ",
-          "radius": 0.1,
-          "visual": "reactor",
-          "color": "signal"
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
         }
       },
       "editor": {
         "visible": true,
         "locked": false
-      },
-      "parentId": "world-starter-world"
+      }
     },
     {
-      "id": "reactor-label",
-      "name": "CUBOOM",
+      "id": "starter-cube-3",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 3",
       "transform": {
         "position": [
-          0,
+          -6.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-3-border-1",
+      "parentId": "starter-cube-3",
+      "name": "Letter 3 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-3-border-2",
+      "parentId": "starter-cube-3",
+      "name": "Letter 3 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-3-border-4",
+      "parentId": "starter-cube-3",
+      "name": "Letter 3 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-4",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 4",
+      "transform": {
+        "position": [
+          -4.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-4-border-1",
+      "parentId": "starter-cube-4",
+      "name": "Letter 4 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-4-border-2",
+      "parentId": "starter-cube-4",
+      "name": "Letter 4 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-4-border-4",
+      "parentId": "starter-cube-4",
+      "name": "Letter 4 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-5",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 5",
+      "transform": {
+        "position": [
+          -2.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-5-border-1",
+      "parentId": "starter-cube-5",
+      "name": "Letter 5 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-5-border-2",
+      "parentId": "starter-cube-5",
+      "name": "Letter 5 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-5-border-4",
+      "parentId": "starter-cube-5",
+      "name": "Letter 5 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-6",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 6",
+      "transform": {
+        "position": [
+          0.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-6-border-1",
+      "parentId": "starter-cube-6",
+      "name": "Letter 6 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-6-border-2",
+      "parentId": "starter-cube-6",
+      "name": "Letter 6 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-6-border-4",
+      "parentId": "starter-cube-6",
+      "name": "Letter 6 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-7",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 7",
+      "transform": {
+        "position": [
+          2.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-7-border-1",
+      "parentId": "starter-cube-7",
+      "name": "Letter 7 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-7-border-2",
+      "parentId": "starter-cube-7",
+      "name": "Letter 7 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-7-border-4",
+      "parentId": "starter-cube-7",
+      "name": "Letter 7 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-8",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 8",
+      "transform": {
+        "position": [
           4.0,
-          0
+          1.0,
+          -4.0
         ],
         "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "text": {
-          "text": "CUBOOM",
-          "maxWidth": 6,
-          "color": "paper"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bomb-1",
-      "name": "Bomb 1",
-      "transform": {
-        "position": [
-          -5,
-          0.8,
-          -3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.6,
-            1.6,
-            1.6
-          ],
-          "color": "#E8AD55",
-          "collidable": true,
-          "outline": false,
-          "pushable": true
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bomb-1-top",
-      "name": "Bomb 1 Top",
-      "transform": {
-        "position": [
-          0,
-          0.83,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.4,
-            0.08,
-            1.4
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-1"
-    },
-    {
-      "id": "bomb-1-fuse",
-      "name": "Bomb 1 Fuse",
-      "transform": {
-        "position": [
-          0,
-          1.04,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.34,
-            0.22
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-1"
-    },
-    {
-      "id": "bomb-1-pip-1",
-      "name": "Bomb 1 Pip 1",
-      "transform": {
-        "position": [
-          -0.42,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-1"
-    },
-    {
-      "id": "bomb-1-top-pip-1",
-      "name": "Bomb 1 Top Pip 1",
-      "transform": {
-        "position": [
-          -0.42,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-1"
-    },
-    {
-      "id": "signal-bomb-1",
-      "name": "signal-bomb-1",
-      "transform": {
-        "position": [
-          -5,
-          0,
-          -3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "interaction": {
-          "id": "signal-bomb-1",
-          "kind": "zone",
-          "label": " ",
-          "radius": 0.1,
-          "visual": "signal-bomb-1",
-          "color": "signal"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bomb-2",
-      "name": "Bomb 2",
-      "transform": {
-        "position": [
-          0,
-          0.8,
-          -3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.6,
-            1.6,
-            1.6
-          ],
-          "color": "#E8AD55",
-          "collidable": true,
-          "outline": false,
-          "pushable": true
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bomb-2-top",
-      "name": "Bomb 2 Top",
-      "transform": {
-        "position": [
-          0,
-          0.83,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.4,
-            0.08,
-            1.4
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-2"
-    },
-    {
-      "id": "bomb-2-fuse",
-      "name": "Bomb 2 Fuse",
-      "transform": {
-        "position": [
-          0,
-          1.04,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.34,
-            0.22
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-2"
-    },
-    {
-      "id": "bomb-2-pip-1",
-      "name": "Bomb 2 Pip 1",
-      "transform": {
-        "position": [
-          -0.42,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-2"
-    },
-    {
-      "id": "bomb-2-top-pip-1",
-      "name": "Bomb 2 Top Pip 1",
-      "transform": {
-        "position": [
-          -0.42,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-2"
-    },
-    {
-      "id": "bomb-2-pip-2",
-      "name": "Bomb 2 Pip 2",
-      "transform": {
-        "position": [
           0.0,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-2"
-    },
-    {
-      "id": "bomb-2-top-pip-2",
-      "name": "Bomb 2 Top Pip 2",
-      "transform": {
-        "position": [
           0.0,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
+          0.0
         ],
         "scale": [
-          1,
-          1,
-          1
+          1.0,
+          1.0,
+          1.0
         ]
       },
       "components": {
         "primitive": {
           "shape": "box",
           "size": [
-            0.18,
-            0.05,
-            0.18
+            2.0,
+            2.0,
+            2.0
           ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-2"
-    },
-    {
-      "id": "signal-bomb-2",
-      "name": "signal-bomb-2",
-      "transform": {
-        "position": [
-          0,
-          0,
-          -3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "interaction": {
-          "id": "signal-bomb-2",
-          "kind": "zone",
-          "label": " ",
-          "radius": 0.1,
-          "visual": "signal-bomb-2",
-          "color": "signal"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bomb-3",
-      "name": "Bomb 3",
-      "transform": {
-        "position": [
-          5,
-          0.8,
-          -3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.6,
-            1.6,
-            1.6
-          ],
-          "color": "#E8AD55",
-          "collidable": true,
-          "outline": false,
-          "pushable": true
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bomb-3-top",
-      "name": "Bomb 3 Top",
-      "transform": {
-        "position": [
-          0,
-          0.83,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.4,
-            0.08,
-            1.4
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-3"
-    },
-    {
-      "id": "bomb-3-fuse",
-      "name": "Bomb 3 Fuse",
-      "transform": {
-        "position": [
-          0,
-          1.04,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.34,
-            0.22
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-3"
-    },
-    {
-      "id": "bomb-3-pip-1",
-      "name": "Bomb 3 Pip 1",
-      "transform": {
-        "position": [
-          -0.42,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-3"
-    },
-    {
-      "id": "bomb-3-top-pip-1",
-      "name": "Bomb 3 Top Pip 1",
-      "transform": {
-        "position": [
-          -0.42,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-3"
-    },
-    {
-      "id": "bomb-3-pip-2",
-      "name": "Bomb 3 Pip 2",
-      "transform": {
-        "position": [
-          0.0,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-3"
-    },
-    {
-      "id": "bomb-3-top-pip-2",
-      "name": "Bomb 3 Top Pip 2",
-      "transform": {
-        "position": [
-          0.0,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-3"
-    },
-    {
-      "id": "bomb-3-pip-3",
-      "name": "Bomb 3 Pip 3",
-      "transform": {
-        "position": [
-          0.42,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-3"
-    },
-    {
-      "id": "bomb-3-top-pip-3",
-      "name": "Bomb 3 Top Pip 3",
-      "transform": {
-        "position": [
-          0.42,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-3"
-    },
-    {
-      "id": "signal-bomb-3",
-      "name": "signal-bomb-3",
-      "transform": {
-        "position": [
-          5,
-          0,
-          -3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "interaction": {
-          "id": "signal-bomb-3",
-          "kind": "zone",
-          "label": " ",
-          "radius": 0.1,
-          "visual": "signal-bomb-3",
-          "color": "signal"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bomb-4",
-      "name": "Bomb 4",
-      "transform": {
-        "position": [
-          -5,
-          0.8,
-          3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.6,
-            1.6,
-            1.6
-          ],
-          "color": "#E8AD55",
-          "collidable": true,
-          "outline": false,
-          "pushable": true
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bomb-4-top",
-      "name": "Bomb 4 Top",
-      "transform": {
-        "position": [
-          0,
-          0.83,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.4,
-            0.08,
-            1.4
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-4"
-    },
-    {
-      "id": "bomb-4-fuse",
-      "name": "Bomb 4 Fuse",
-      "transform": {
-        "position": [
-          0,
-          1.04,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.34,
-            0.22
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-4"
-    },
-    {
-      "id": "bomb-4-pip-1",
-      "name": "Bomb 4 Pip 1",
-      "transform": {
-        "position": [
-          -0.42,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-4"
-    },
-    {
-      "id": "bomb-4-top-pip-1",
-      "name": "Bomb 4 Top Pip 1",
-      "transform": {
-        "position": [
-          -0.42,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-4"
-    },
-    {
-      "id": "bomb-4-pip-2",
-      "name": "Bomb 4 Pip 2",
-      "transform": {
-        "position": [
-          0.0,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-4"
-    },
-    {
-      "id": "bomb-4-top-pip-2",
-      "name": "Bomb 4 Top Pip 2",
-      "transform": {
-        "position": [
-          0.0,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-4"
-    },
-    {
-      "id": "bomb-4-pip-3",
-      "name": "Bomb 4 Pip 3",
-      "transform": {
-        "position": [
-          0.42,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-4"
-    },
-    {
-      "id": "bomb-4-top-pip-3",
-      "name": "Bomb 4 Top Pip 3",
-      "transform": {
-        "position": [
-          0.42,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-4"
-    },
-    {
-      "id": "bomb-4-pip-4",
-      "name": "Bomb 4 Pip 4",
-      "transform": {
-        "position": [
-          -0.42,
-          -0.21999999999999997,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-4"
-    },
-    {
-      "id": "bomb-4-top-pip-4",
-      "name": "Bomb 4 Top Pip 4",
-      "transform": {
-        "position": [
-          -0.42,
-          0.89,
-          -0.21999999999999997
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-4"
-    },
-    {
-      "id": "signal-bomb-4",
-      "name": "signal-bomb-4",
-      "transform": {
-        "position": [
-          -5,
-          0,
-          3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "interaction": {
-          "id": "signal-bomb-4",
-          "kind": "zone",
-          "label": " ",
-          "radius": 0.1,
-          "visual": "signal-bomb-4",
-          "color": "signal"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bomb-5",
-      "name": "Bomb 5",
-      "transform": {
-        "position": [
-          0,
-          0.8,
-          3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.6,
-            1.6,
-            1.6
-          ],
-          "color": "#E8AD55",
-          "collidable": true,
-          "outline": false,
-          "pushable": true
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bomb-5-top",
-      "name": "Bomb 5 Top",
-      "transform": {
-        "position": [
-          0,
-          0.83,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.4,
-            0.08,
-            1.4
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-5"
-    },
-    {
-      "id": "bomb-5-fuse",
-      "name": "Bomb 5 Fuse",
-      "transform": {
-        "position": [
-          0,
-          1.04,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.34,
-            0.22
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-5"
-    },
-    {
-      "id": "bomb-5-pip-1",
-      "name": "Bomb 5 Pip 1",
-      "transform": {
-        "position": [
-          -0.42,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-5"
-    },
-    {
-      "id": "bomb-5-top-pip-1",
-      "name": "Bomb 5 Top Pip 1",
-      "transform": {
-        "position": [
-          -0.42,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-5"
-    },
-    {
-      "id": "bomb-5-pip-2",
-      "name": "Bomb 5 Pip 2",
-      "transform": {
-        "position": [
-          0.0,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-5"
-    },
-    {
-      "id": "bomb-5-top-pip-2",
-      "name": "Bomb 5 Top Pip 2",
-      "transform": {
-        "position": [
-          0.0,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-5"
-    },
-    {
-      "id": "bomb-5-pip-3",
-      "name": "Bomb 5 Pip 3",
-      "transform": {
-        "position": [
-          0.42,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-5"
-    },
-    {
-      "id": "bomb-5-top-pip-3",
-      "name": "Bomb 5 Top Pip 3",
-      "transform": {
-        "position": [
-          0.42,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-5"
-    },
-    {
-      "id": "bomb-5-pip-4",
-      "name": "Bomb 5 Pip 4",
-      "transform": {
-        "position": [
-          -0.42,
-          -0.21999999999999997,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-5"
-    },
-    {
-      "id": "bomb-5-top-pip-4",
-      "name": "Bomb 5 Top Pip 4",
-      "transform": {
-        "position": [
-          -0.42,
-          0.89,
-          -0.21999999999999997
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-5"
-    },
-    {
-      "id": "bomb-5-pip-5",
-      "name": "Bomb 5 Pip 5",
-      "transform": {
-        "position": [
-          0.0,
-          -0.21999999999999997,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-5"
-    },
-    {
-      "id": "bomb-5-top-pip-5",
-      "name": "Bomb 5 Top Pip 5",
-      "transform": {
-        "position": [
-          0.0,
-          0.89,
-          -0.21999999999999997
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-5"
-    },
-    {
-      "id": "signal-bomb-5",
-      "name": "signal-bomb-5",
-      "transform": {
-        "position": [
-          0,
-          0,
-          3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "interaction": {
-          "id": "signal-bomb-5",
-          "kind": "zone",
-          "label": " ",
-          "radius": 0.1,
-          "visual": "signal-bomb-5",
-          "color": "signal"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bomb-6",
-      "name": "Bomb 6",
-      "transform": {
-        "position": [
-          5,
-          0.8,
-          3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.6,
-            1.6,
-            1.6
-          ],
-          "color": "#E8AD55",
-          "collidable": true,
-          "outline": false,
-          "pushable": true
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bomb-6-top",
-      "name": "Bomb 6 Top",
-      "transform": {
-        "position": [
-          0,
-          0.83,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.4,
-            0.08,
-            1.4
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-fuse",
-      "name": "Bomb 6 Fuse",
-      "transform": {
-        "position": [
-          0,
-          1.04,
-          0
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.34,
-            0.22
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-pip-1",
-      "name": "Bomb 6 Pip 1",
-      "transform": {
-        "position": [
-          -0.42,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-top-pip-1",
-      "name": "Bomb 6 Top Pip 1",
-      "transform": {
-        "position": [
-          -0.42,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-pip-2",
-      "name": "Bomb 6 Pip 2",
-      "transform": {
-        "position": [
-          0.0,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-top-pip-2",
-      "name": "Bomb 6 Top Pip 2",
-      "transform": {
-        "position": [
-          0.0,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-pip-3",
-      "name": "Bomb 6 Pip 3",
-      "transform": {
-        "position": [
-          0.42,
-          0.28,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-top-pip-3",
-      "name": "Bomb 6 Top Pip 3",
-      "transform": {
-        "position": [
-          0.42,
-          0.89,
-          0.28
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-pip-4",
-      "name": "Bomb 6 Pip 4",
-      "transform": {
-        "position": [
-          -0.42,
-          -0.21999999999999997,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-top-pip-4",
-      "name": "Bomb 6 Top Pip 4",
-      "transform": {
-        "position": [
-          -0.42,
-          0.89,
-          -0.21999999999999997
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-pip-5",
-      "name": "Bomb 6 Pip 5",
-      "transform": {
-        "position": [
-          0.0,
-          -0.21999999999999997,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-top-pip-5",
-      "name": "Bomb 6 Top Pip 5",
-      "transform": {
-        "position": [
-          0.0,
-          0.89,
-          -0.21999999999999997
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-pip-6",
-      "name": "Bomb 6 Pip 6",
-      "transform": {
-        "position": [
-          0.42,
-          -0.21999999999999997,
-          0.815
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.22,
-            0.22,
-            0.05
-          ],
-          "color": "#101B2E",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "bomb-6-top-pip-6",
-      "name": "Bomb 6 Top Pip 6",
-      "transform": {
-        "position": [
-          0.42,
-          0.89,
-          -0.21999999999999997
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            0.18,
-            0.05,
-            0.18
-          ],
-          "color": "#F4F5EA",
-          "collidable": false,
-          "outline": false,
-          "castShadow": false
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "bomb-6"
-    },
-    {
-      "id": "signal-bomb-6",
-      "name": "signal-bomb-6",
-      "transform": {
-        "position": [
-          5,
-          0,
-          3
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "interaction": {
-          "id": "signal-bomb-6",
-          "kind": "zone",
-          "label": " ",
-          "radius": 0.1,
-          "visual": "signal-bomb-6",
-          "color": "signal"
-        }
-      },
-      "editor": {
-        "visible": true,
-        "locked": false
-      },
-      "parentId": "world-starter-world"
-    },
-    {
-      "id": "bumper-1",
-      "name": "Bumper 1",
-      "transform": {
-        "position": [
-          -3,
-          0.5,
-          -5
-        ],
-        "rotation": [
-          0,
-          0,
-          0
-        ],
-        "scale": [
-          1,
-          1,
-          1
-        ]
-      },
-      "components": {
-        "primitive": {
-          "shape": "box",
-          "size": [
-            1.1,
-            1,
-            2.4
-          ],
-          "color": "#587386",
-          "collidable": true,
+          "color": "#F7F5E9",
+          "pushable": true,
           "outline": false
         }
       },
       "editor": {
         "visible": true,
         "locked": false
-      },
-      "parentId": "world-starter-world"
+      }
     },
     {
-      "id": "bumper-2",
-      "name": "Bumper 2",
+      "id": "starter-cube-8-border-1",
+      "parentId": "starter-cube-8",
+      "name": "Letter 8 Border Top",
       "transform": {
         "position": [
-          3,
-          0.5,
-          5
+          0.0,
+          0.96,
+          1.03
         ],
         "rotation": [
-          0,
-          0,
-          0
+          0.0,
+          0.0,
+          0.0
         ],
         "scale": [
-          1,
-          1,
-          1
+          1.0,
+          1.0,
+          1.0
         ]
       },
       "components": {
         "primitive": {
           "shape": "box",
           "size": [
-            1.1,
-            1,
-            2.4
+            2.0,
+            0.08,
+            0.06
           ],
-          "color": "#587386",
-          "collidable": true,
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
           "outline": false
         }
       },
       "editor": {
         "visible": true,
         "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-8-border-2",
+      "parentId": "starter-cube-8",
+      "name": "Letter 8 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
       },
-      "parentId": "world-starter-world"
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-8-border-4",
+      "parentId": "starter-cube-8",
+      "name": "Letter 8 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-9",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 9",
+      "transform": {
+        "position": [
+          6.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-9-border-1",
+      "parentId": "starter-cube-9",
+      "name": "Letter 9 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-9-border-2",
+      "parentId": "starter-cube-9",
+      "name": "Letter 9 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-9-border-4",
+      "parentId": "starter-cube-9",
+      "name": "Letter 9 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-10",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 10",
+      "transform": {
+        "position": [
+          8.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-10-border-1",
+      "parentId": "starter-cube-10",
+      "name": "Letter 10 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-10-border-2",
+      "parentId": "starter-cube-10",
+      "name": "Letter 10 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-10-border-4",
+      "parentId": "starter-cube-10",
+      "name": "Letter 10 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-11",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 11",
+      "transform": {
+        "position": [
+          10.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-11-border-1",
+      "parentId": "starter-cube-11",
+      "name": "Letter 11 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-11-border-2",
+      "parentId": "starter-cube-11",
+      "name": "Letter 11 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-11-border-4",
+      "parentId": "starter-cube-11",
+      "name": "Letter 11 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-1",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 1",
+      "transform": {
+        "position": [
+          -8.4,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-1",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-1"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-2",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 2",
+      "transform": {
+        "position": [
+          -5.6,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-2",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-2"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-3",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 3",
+      "transform": {
+        "position": [
+          -2.8,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-3",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-3"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-4",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 4",
+      "transform": {
+        "position": [
+          0.0,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-4",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-4"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-5",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 5",
+      "transform": {
+        "position": [
+          2.8,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-5",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-5"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-6",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 6",
+      "transform": {
+        "position": [
+          5.6,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-6",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-6"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-7",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 7",
+      "transform": {
+        "position": [
+          8.4,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-7",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-7"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-8",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 8",
+      "transform": {
+        "position": [
+          -8.4,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-8",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-8"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-9",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 9",
+      "transform": {
+        "position": [
+          -5.6,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-9",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-9"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-10",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 10",
+      "transform": {
+        "position": [
+          -2.8,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-10",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-10"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-11",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 11",
+      "transform": {
+        "position": [
+          0.0,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-11",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-11"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-12",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 12",
+      "transform": {
+        "position": [
+          2.8,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-12",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-12"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-13",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 13",
+      "transform": {
+        "position": [
+          5.6,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-13",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-13"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-14",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 14",
+      "transform": {
+        "position": [
+          8.4,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-14",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-14"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-15",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 15",
+      "transform": {
+        "position": [
+          -8.4,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-15",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-15"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-16",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 16",
+      "transform": {
+        "position": [
+          -5.6,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-16",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-16"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-17",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 17",
+      "transform": {
+        "position": [
+          -2.8,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-17",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-17"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-18",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 18",
+      "transform": {
+        "position": [
+          0.0,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-18",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-18"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-19",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 19",
+      "transform": {
+        "position": [
+          2.8,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-19",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-19"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-20",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 20",
+      "transform": {
+        "position": [
+          5.6,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-20",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-20"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-21",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 21",
+      "transform": {
+        "position": [
+          8.4,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-21",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-21"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
     }
   ]
 }
