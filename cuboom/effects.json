@@ -1,0 +1,912 @@
+{
+  "version": 1,
+  "templates": {
+    "signal-bomb-1": {
+      "nodes": [
+        {
+          "shape": "ring",
+          "attachedTo": "bomb-1",
+          "position": [
+            0,
+            0.08,
+            0
+          ],
+          "size": [
+            3.8,
+            0.06,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "armed"
+              ],
+              "color": "butter",
+              "opacity": 0.35
+            },
+            {
+              "visibleStates": [
+                "urgent"
+              ],
+              "color": "hot",
+              "opacity": 0.8,
+              "animation": {
+                "pulseAmount": 0.04,
+                "pulseSpeed": 10
+              }
+            },
+            {
+              "visibleStates": [
+                "safe"
+              ],
+              "color": "signal",
+              "opacity": 0.65
+            }
+          ]
+        },
+        {
+          "shape": "sphere",
+          "attachedTo": "bomb-1",
+          "position": [
+            0,
+            2.1,
+            0
+          ],
+          "size": [
+            0.2,
+            1,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "ink",
+              "opacity": 0.5
+            },
+            {
+              "visibleStates": [
+                "armed"
+              ],
+              "color": "butter"
+            },
+            {
+              "visibleStates": [
+                "urgent"
+              ],
+              "color": "hot",
+              "animation": {
+                "pulseAmount": 0.3,
+                "pulseSpeed": 10
+              }
+            },
+            {
+              "visibleStates": [
+                "safe",
+                "spent"
+              ],
+              "color": "signal"
+            }
+          ]
+        }
+      ]
+    },
+    "signal-bomb-2": {
+      "nodes": [
+        {
+          "shape": "ring",
+          "attachedTo": "bomb-2",
+          "position": [
+            0,
+            0.08,
+            0
+          ],
+          "size": [
+            3.8,
+            0.06,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "armed"
+              ],
+              "color": "butter",
+              "opacity": 0.35
+            },
+            {
+              "visibleStates": [
+                "urgent"
+              ],
+              "color": "hot",
+              "opacity": 0.8,
+              "animation": {
+                "pulseAmount": 0.04,
+                "pulseSpeed": 10
+              }
+            },
+            {
+              "visibleStates": [
+                "safe"
+              ],
+              "color": "signal",
+              "opacity": 0.65
+            }
+          ]
+        },
+        {
+          "shape": "sphere",
+          "attachedTo": "bomb-2",
+          "position": [
+            0,
+            2.1,
+            0
+          ],
+          "size": [
+            0.2,
+            1,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "ink",
+              "opacity": 0.5
+            },
+            {
+              "visibleStates": [
+                "armed"
+              ],
+              "color": "butter"
+            },
+            {
+              "visibleStates": [
+                "urgent"
+              ],
+              "color": "hot",
+              "animation": {
+                "pulseAmount": 0.3,
+                "pulseSpeed": 10
+              }
+            },
+            {
+              "visibleStates": [
+                "safe",
+                "spent"
+              ],
+              "color": "signal"
+            }
+          ]
+        }
+      ]
+    },
+    "signal-bomb-3": {
+      "nodes": [
+        {
+          "shape": "ring",
+          "attachedTo": "bomb-3",
+          "position": [
+            0,
+            0.08,
+            0
+          ],
+          "size": [
+            3.8,
+            0.06,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "armed"
+              ],
+              "color": "butter",
+              "opacity": 0.35
+            },
+            {
+              "visibleStates": [
+                "urgent"
+              ],
+              "color": "hot",
+              "opacity": 0.8,
+              "animation": {
+                "pulseAmount": 0.04,
+                "pulseSpeed": 10
+              }
+            },
+            {
+              "visibleStates": [
+                "safe"
+              ],
+              "color": "signal",
+              "opacity": 0.65
+            }
+          ]
+        },
+        {
+          "shape": "sphere",
+          "attachedTo": "bomb-3",
+          "position": [
+            0,
+            2.1,
+            0
+          ],
+          "size": [
+            0.2,
+            1,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "ink",
+              "opacity": 0.5
+            },
+            {
+              "visibleStates": [
+                "armed"
+              ],
+              "color": "butter"
+            },
+            {
+              "visibleStates": [
+                "urgent"
+              ],
+              "color": "hot",
+              "animation": {
+                "pulseAmount": 0.3,
+                "pulseSpeed": 10
+              }
+            },
+            {
+              "visibleStates": [
+                "safe",
+                "spent"
+              ],
+              "color": "signal"
+            }
+          ]
+        }
+      ]
+    },
+    "signal-bomb-4": {
+      "nodes": [
+        {
+          "shape": "ring",
+          "attachedTo": "bomb-4",
+          "position": [
+            0,
+            0.08,
+            0
+          ],
+          "size": [
+            3.8,
+            0.06,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "armed"
+              ],
+              "color": "butter",
+              "opacity": 0.35
+            },
+            {
+              "visibleStates": [
+                "urgent"
+              ],
+              "color": "hot",
+              "opacity": 0.8,
+              "animation": {
+                "pulseAmount": 0.04,
+                "pulseSpeed": 10
+              }
+            },
+            {
+              "visibleStates": [
+                "safe"
+              ],
+              "color": "signal",
+              "opacity": 0.65
+            }
+          ]
+        },
+        {
+          "shape": "sphere",
+          "attachedTo": "bomb-4",
+          "position": [
+            0,
+            2.1,
+            0
+          ],
+          "size": [
+            0.2,
+            1,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "ink",
+              "opacity": 0.5
+            },
+            {
+              "visibleStates": [
+                "armed"
+              ],
+              "color": "butter"
+            },
+            {
+              "visibleStates": [
+                "urgent"
+              ],
+              "color": "hot",
+              "animation": {
+                "pulseAmount": 0.3,
+                "pulseSpeed": 10
+              }
+            },
+            {
+              "visibleStates": [
+                "safe",
+                "spent"
+              ],
+              "color": "signal"
+            }
+          ]
+        }
+      ]
+    },
+    "signal-bomb-5": {
+      "nodes": [
+        {
+          "shape": "ring",
+          "attachedTo": "bomb-5",
+          "position": [
+            0,
+            0.08,
+            0
+          ],
+          "size": [
+            3.8,
+            0.06,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "armed"
+              ],
+              "color": "butter",
+              "opacity": 0.35
+            },
+            {
+              "visibleStates": [
+                "urgent"
+              ],
+              "color": "hot",
+              "opacity": 0.8,
+              "animation": {
+                "pulseAmount": 0.04,
+                "pulseSpeed": 10
+              }
+            },
+            {
+              "visibleStates": [
+                "safe"
+              ],
+              "color": "signal",
+              "opacity": 0.65
+            }
+          ]
+        },
+        {
+          "shape": "sphere",
+          "attachedTo": "bomb-5",
+          "position": [
+            0,
+            2.1,
+            0
+          ],
+          "size": [
+            0.2,
+            1,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "ink",
+              "opacity": 0.5
+            },
+            {
+              "visibleStates": [
+                "armed"
+              ],
+              "color": "butter"
+            },
+            {
+              "visibleStates": [
+                "urgent"
+              ],
+              "color": "hot",
+              "animation": {
+                "pulseAmount": 0.3,
+                "pulseSpeed": 10
+              }
+            },
+            {
+              "visibleStates": [
+                "safe",
+                "spent"
+              ],
+              "color": "signal"
+            }
+          ]
+        }
+      ]
+    },
+    "signal-bomb-6": {
+      "nodes": [
+        {
+          "shape": "ring",
+          "attachedTo": "bomb-6",
+          "position": [
+            0,
+            0.08,
+            0
+          ],
+          "size": [
+            3.8,
+            0.06,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "armed"
+              ],
+              "color": "butter",
+              "opacity": 0.35
+            },
+            {
+              "visibleStates": [
+                "urgent"
+              ],
+              "color": "hot",
+              "opacity": 0.8,
+              "animation": {
+                "pulseAmount": 0.04,
+                "pulseSpeed": 10
+              }
+            },
+            {
+              "visibleStates": [
+                "safe"
+              ],
+              "color": "signal",
+              "opacity": 0.65
+            }
+          ]
+        },
+        {
+          "shape": "sphere",
+          "attachedTo": "bomb-6",
+          "position": [
+            0,
+            2.1,
+            0
+          ],
+          "size": [
+            0.2,
+            1,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "ink",
+              "opacity": 0.5
+            },
+            {
+              "visibleStates": [
+                "armed"
+              ],
+              "color": "butter"
+            },
+            {
+              "visibleStates": [
+                "urgent"
+              ],
+              "color": "hot",
+              "animation": {
+                "pulseAmount": 0.3,
+                "pulseSpeed": 10
+              }
+            },
+            {
+              "visibleStates": [
+                "safe",
+                "spent"
+              ],
+              "color": "signal"
+            }
+          ]
+        }
+      ]
+    },
+    "bay-horizontal": {
+      "nodes": [
+        {
+          "shape": "box",
+          "position": [
+            0,
+            0.08,
+            -2.5
+          ],
+          "size": [
+            12,
+            0.09,
+            0.16
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "active"
+              ],
+              "color": "signal"
+            },
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "#587386",
+              "opacity": 0.4
+            }
+          ]
+        },
+        {
+          "shape": "box",
+          "position": [
+            0,
+            0.08,
+            2.5
+          ],
+          "size": [
+            12,
+            0.09,
+            0.16
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "active"
+              ],
+              "color": "signal"
+            },
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "#587386",
+              "opacity": 0.4
+            }
+          ]
+        },
+        {
+          "shape": "box",
+          "position": [
+            -6.0,
+            0.08,
+            0
+          ],
+          "size": [
+            0.16,
+            0.09,
+            5
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "active"
+              ],
+              "color": "signal"
+            },
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "#587386",
+              "opacity": 0.4
+            }
+          ]
+        },
+        {
+          "shape": "box",
+          "position": [
+            6.0,
+            0.08,
+            0
+          ],
+          "size": [
+            0.16,
+            0.09,
+            5
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "active"
+              ],
+              "color": "signal"
+            },
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "#587386",
+              "opacity": 0.4
+            }
+          ]
+        }
+      ]
+    },
+    "bay-vertical": {
+      "nodes": [
+        {
+          "shape": "box",
+          "position": [
+            0,
+            0.08,
+            -6.0
+          ],
+          "size": [
+            5,
+            0.09,
+            0.16
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "active"
+              ],
+              "color": "signal"
+            },
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "#587386",
+              "opacity": 0.4
+            }
+          ]
+        },
+        {
+          "shape": "box",
+          "position": [
+            0,
+            0.08,
+            6.0
+          ],
+          "size": [
+            5,
+            0.09,
+            0.16
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "active"
+              ],
+              "color": "signal"
+            },
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "#587386",
+              "opacity": 0.4
+            }
+          ]
+        },
+        {
+          "shape": "box",
+          "position": [
+            -2.5,
+            0.08,
+            0
+          ],
+          "size": [
+            0.16,
+            0.09,
+            12
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "active"
+              ],
+              "color": "signal"
+            },
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "#587386",
+              "opacity": 0.4
+            }
+          ]
+        },
+        {
+          "shape": "box",
+          "position": [
+            2.5,
+            0.08,
+            0
+          ],
+          "size": [
+            0.16,
+            0.09,
+            12
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "active"
+              ],
+              "color": "signal"
+            },
+            {
+              "visibleStates": [
+                "idle"
+              ],
+              "color": "#587386",
+              "opacity": 0.4
+            }
+          ]
+        }
+      ]
+    },
+    "reactor": {
+      "nodes": [
+        {
+          "shape": "ring",
+          "position": [
+            0,
+            0.1,
+            0
+          ],
+          "size": [
+            2.1,
+            0.15,
+            1
+          ],
+          "variants": [
+            {
+              "visibleStates": [
+                "healthy"
+              ],
+              "color": "signal"
+            },
+            {
+              "visibleStates": [
+                "weak"
+              ],
+              "color": "hot",
+              "animation": {
+                "pulseAmount": 0.08,
+                "pulseSpeed": 4
+              }
+            },
+            {
+              "visibleStates": [
+                "broken"
+              ],
+              "color": "ink"
+            }
+          ]
+        }
+      ]
+    },
+    "contained-burst": {
+      "duration": 0.65,
+      "nodes": [
+        {
+          "shape": "ring",
+          "position": [
+            0,
+            -0.7,
+            0
+          ],
+          "size": [
+            0.15,
+            0.12,
+            1
+          ],
+          "color": "signal",
+          "animation": {
+            "expandAmount": 1.6,
+            "fade": true
+          }
+        },
+        {
+          "shape": "box",
+          "position": [
+            0,
+            0.6,
+            0
+          ],
+          "size": [
+            0.18,
+            0.18,
+            0.18
+          ],
+          "color": "signal",
+          "count": 8,
+          "animation": {
+            "orbitRadius": 0.3,
+            "radialAmount": 1.6,
+            "spinSpeed": 5,
+            "fade": true
+          }
+        }
+      ]
+    },
+    "loose-burst": {
+      "duration": 0.65,
+      "nodes": [
+        {
+          "shape": "ring",
+          "position": [
+            0,
+            -0.7,
+            0
+          ],
+          "size": [
+            0.15,
+            0.12,
+            1
+          ],
+          "color": "hot",
+          "animation": {
+            "expandAmount": 3.8,
+            "fade": true
+          }
+        },
+        {
+          "shape": "box",
+          "position": [
+            0,
+            0.6,
+            0
+          ],
+          "size": [
+            0.18,
+            0.18,
+            0.18
+          ],
+          "color": "hot",
+          "count": 8,
+          "animation": {
+            "orbitRadius": 0.3,
+            "radialAmount": 3.8,
+            "spinSpeed": 5,
+            "fade": true
+          }
+        }
+      ]
+    }
+  }
+}
