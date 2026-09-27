@@ -1,0 +1,2577 @@
+{
+  "formatVersion": 1,
+  "worldId": "starter-world",
+  "nodes": [
+    {
+      "id": "world-starter-world",
+      "name": "Starter World",
+      "transform": {
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {},
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-1",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 1",
+      "transform": {
+        "position": [
+          -10.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-1-border-1",
+      "parentId": "starter-cube-1",
+      "name": "Letter 1 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-1-border-2",
+      "parentId": "starter-cube-1",
+      "name": "Letter 1 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-1-border-3",
+      "parentId": "starter-cube-1",
+      "name": "Letter 1 Border Left",
+      "transform": {
+        "position": [
+          -0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-1-border-4",
+      "parentId": "starter-cube-1",
+      "name": "Letter 1 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-2",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 2",
+      "transform": {
+        "position": [
+          -8.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-2-border-1",
+      "parentId": "starter-cube-2",
+      "name": "Letter 2 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-2-border-2",
+      "parentId": "starter-cube-2",
+      "name": "Letter 2 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-2-border-4",
+      "parentId": "starter-cube-2",
+      "name": "Letter 2 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-3",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 3",
+      "transform": {
+        "position": [
+          -6.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-3-border-1",
+      "parentId": "starter-cube-3",
+      "name": "Letter 3 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-3-border-2",
+      "parentId": "starter-cube-3",
+      "name": "Letter 3 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-3-border-4",
+      "parentId": "starter-cube-3",
+      "name": "Letter 3 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-4",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 4",
+      "transform": {
+        "position": [
+          -4.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-4-border-1",
+      "parentId": "starter-cube-4",
+      "name": "Letter 4 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-4-border-2",
+      "parentId": "starter-cube-4",
+      "name": "Letter 4 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-4-border-4",
+      "parentId": "starter-cube-4",
+      "name": "Letter 4 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-5",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 5",
+      "transform": {
+        "position": [
+          -2.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-5-border-1",
+      "parentId": "starter-cube-5",
+      "name": "Letter 5 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-5-border-2",
+      "parentId": "starter-cube-5",
+      "name": "Letter 5 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-5-border-4",
+      "parentId": "starter-cube-5",
+      "name": "Letter 5 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-6",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 6",
+      "transform": {
+        "position": [
+          0.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-6-border-1",
+      "parentId": "starter-cube-6",
+      "name": "Letter 6 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-6-border-2",
+      "parentId": "starter-cube-6",
+      "name": "Letter 6 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-6-border-4",
+      "parentId": "starter-cube-6",
+      "name": "Letter 6 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-7",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 7",
+      "transform": {
+        "position": [
+          2.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-7-border-1",
+      "parentId": "starter-cube-7",
+      "name": "Letter 7 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-7-border-2",
+      "parentId": "starter-cube-7",
+      "name": "Letter 7 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-7-border-4",
+      "parentId": "starter-cube-7",
+      "name": "Letter 7 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-8",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 8",
+      "transform": {
+        "position": [
+          4.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-8-border-1",
+      "parentId": "starter-cube-8",
+      "name": "Letter 8 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-8-border-2",
+      "parentId": "starter-cube-8",
+      "name": "Letter 8 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-8-border-4",
+      "parentId": "starter-cube-8",
+      "name": "Letter 8 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-9",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 9",
+      "transform": {
+        "position": [
+          6.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-9-border-1",
+      "parentId": "starter-cube-9",
+      "name": "Letter 9 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-9-border-2",
+      "parentId": "starter-cube-9",
+      "name": "Letter 9 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-9-border-4",
+      "parentId": "starter-cube-9",
+      "name": "Letter 9 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-10",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 10",
+      "transform": {
+        "position": [
+          8.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-10-border-1",
+      "parentId": "starter-cube-10",
+      "name": "Letter 10 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-10-border-2",
+      "parentId": "starter-cube-10",
+      "name": "Letter 10 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-10-border-4",
+      "parentId": "starter-cube-10",
+      "name": "Letter 10 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-11",
+      "parentId": "world-starter-world",
+      "name": "Letter Cube 11",
+      "transform": {
+        "position": [
+          10.0,
+          1.0,
+          -4.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            2.0,
+            2.0
+          ],
+          "color": "#F7F5E9",
+          "pushable": true,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-11-border-1",
+      "parentId": "starter-cube-11",
+      "name": "Letter 11 Border Top",
+      "transform": {
+        "position": [
+          0.0,
+          0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-11-border-2",
+      "parentId": "starter-cube-11",
+      "name": "Letter 11 Border Bottom",
+      "transform": {
+        "position": [
+          0.0,
+          -0.96,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            2.0,
+            0.08,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "starter-cube-11-border-4",
+      "parentId": "starter-cube-11",
+      "name": "Letter 11 Border Right",
+      "transform": {
+        "position": [
+          0.96,
+          0.0,
+          1.03
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "primitive": {
+          "shape": "box",
+          "size": [
+            0.08,
+            2.0,
+            0.06
+          ],
+          "color": "#0B102B",
+          "collidable": false,
+          "castShadow": false,
+          "outline": false
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-1",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 1",
+      "transform": {
+        "position": [
+          -8.4,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-1",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-1"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-2",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 2",
+      "transform": {
+        "position": [
+          -5.6,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-2",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-2"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-3",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 3",
+      "transform": {
+        "position": [
+          -2.8,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-3",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-3"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-4",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 4",
+      "transform": {
+        "position": [
+          0.0,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-4",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-4"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-5",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 5",
+      "transform": {
+        "position": [
+          2.8,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-5",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-5"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-6",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 6",
+      "transform": {
+        "position": [
+          5.6,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-6",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-6"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-7",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 7",
+      "transform": {
+        "position": [
+          8.4,
+          0.0,
+          13.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-7",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-7"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-8",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 8",
+      "transform": {
+        "position": [
+          -8.4,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-8",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-8"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-9",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 9",
+      "transform": {
+        "position": [
+          -5.6,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-9",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-9"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-10",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 10",
+      "transform": {
+        "position": [
+          -2.8,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-10",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-10"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-11",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 11",
+      "transform": {
+        "position": [
+          0.0,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-11",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-11"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-12",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 12",
+      "transform": {
+        "position": [
+          2.8,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-12",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-12"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-13",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 13",
+      "transform": {
+        "position": [
+          5.6,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-13",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-13"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-14",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 14",
+      "transform": {
+        "position": [
+          8.4,
+          0.0,
+          10.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-14",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-14"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-15",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 15",
+      "transform": {
+        "position": [
+          -8.4,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-15",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-15"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-16",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 16",
+      "transform": {
+        "position": [
+          -5.6,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-16",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-16"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-17",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 17",
+      "transform": {
+        "position": [
+          -2.8,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-17",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-17"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-18",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 18",
+      "transform": {
+        "position": [
+          0.0,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-18",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-18"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-19",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 19",
+      "transform": {
+        "position": [
+          2.8,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-19",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-19"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-20",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 20",
+      "transform": {
+        "position": [
+          5.6,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-20",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-20"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    },
+    {
+      "id": "loose-line-21",
+      "parentId": "world-starter-world",
+      "name": "Loose Line 21",
+      "transform": {
+        "position": [
+          8.4,
+          0.0,
+          7.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "components": {
+        "interaction": {
+          "id": "loose-line-21",
+          "kind": "pickup",
+          "label": " ",
+          "radius": 0.9,
+          "color": "#0B102B",
+          "visual": "letter-line-21"
+        }
+      },
+      "editor": {
+        "visible": true,
+        "locked": false
+      }
+    }
+  ]
+}

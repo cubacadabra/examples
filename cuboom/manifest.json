@@ -1,0 +1,2946 @@
+{
+  "id": "cuboom",
+  "version": "0.3.0",
+  "sdkVersion": "0.3.0",
+  "package": {
+    "formatVersion": 3,
+    "entry": "game.luau"
+  },
+  "displayName": "heavy2",
+  "lobby": false,
+  "startWorld": "lobby",
+  "launch": {
+    "destinationWorld": "starter-world",
+    "authoritative": true
+  },
+  "scene": {
+    "eyebrow": "cubacadabra",
+    "title": "heavy2",
+    "description": "A new Cubacadabra game.",
+    "maxPlayers": 18
+  },
+  "palette": {
+    "sky": "#151A3F",
+    "ground": "#20295D",
+    "groundEdge": "#080D26",
+    "grid": "#3B4C86",
+    "signal": "#57E5D0",
+    "hot": "#FF5B85",
+    "coral": "#FF8A3D",
+    "butter": "#F1E95B",
+    "periwinkle": "#9F7BFF",
+    "ink": "#0B102B",
+    "paper": "#F7F5E9"
+  },
+  "avatars": {
+    "player": {
+      "skin": "#E8AE86",
+      "shirt": "#57E5D0",
+      "pants": "#4C3F91",
+      "shoes": "#0B102B"
+    },
+    "npcs": []
+  },
+  "world": {
+    "groundSize": 70,
+    "gridSize": 64,
+    "gridDivisions": 32,
+    "spawn": [
+      0,
+      0,
+      23
+    ],
+    "showSpawnPad": false
+  },
+  "effects": {
+    "version": 1,
+    "templates": {
+      "letter-line-1": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              1.0,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-1",
+            "position": [
+              -1.1000003814697266,
+              0.9599999785423279,
+              -15.970000267028809
+            ],
+            "size": [
+              1.0,
+              0.07999999821186066,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-1",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              1.0,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                -1.1000003814697266,
+                0.9599999785423279,
+                -15.970000267028809
+              ],
+              "travelSize": [
+                1.0,
+                0.07999999821186066,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-1": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-1",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-1",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-2": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.8999999761581421
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-2",
+            "position": [
+              -2.25,
+              1.5099999904632568,
+              -15.970000267028809
+            ],
+            "size": [
+              0.07999999821186066,
+              0.8999999761581421,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-2",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.8999999761581421
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                -2.25,
+                1.5099999904632568,
+                -15.970000267028809
+              ],
+              "travelSize": [
+                0.07999999821186066,
+                0.8999999761581421,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-2": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-2",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-2",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-3": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-3",
+            "position": [
+              -3.200000047683716,
+              1.3600000143051147,
+              -15.970000267028809
+            ],
+            "size": [
+              0.30000001192092896,
+              0.07999999821186066,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-3",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                -3.200000047683716,
+                1.3600000143051147,
+                -15.970000267028809
+              ],
+              "travelSize": [
+                0.30000001192092896,
+                0.07999999821186066,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-3": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-3",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-3",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-4": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-3",
+            "position": [
+              -6.0,
+              0.5600000023841858,
+              -15.970000267028809
+            ],
+            "size": [
+              0.30000001192092896,
+              0.07999999821186066,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-3",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                -6.0,
+                0.5600000023841858,
+                -15.970000267028809
+              ],
+              "travelSize": [
+                0.30000001192092896,
+                0.07999999821186066,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-4": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-3",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-3",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-5": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-3",
+            "position": [
+              -7.949999809265137,
+              0.9599999785423279,
+              -15.970000267028809
+            ],
+            "size": [
+              0.30000001192092896,
+              0.07999999821186066,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-3",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                -7.949999809265137,
+                0.9599999785423279,
+                -15.970000267028809
+              ],
+              "travelSize": [
+                0.30000001192092896,
+                0.07999999821186066,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-5": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-3",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-3",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-6": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.6499999761581421
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-4",
+            "position": [
+              -9.600000381469727,
+              1.3600000143051147,
+              -15.970000267028809
+            ],
+            "size": [
+              0.07999999821186066,
+              0.6499999761581421,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-4",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.6499999761581421
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                -9.600000381469727,
+                1.3600000143051147,
+                -15.970000267028809
+              ],
+              "travelSize": [
+                0.07999999821186066,
+                0.6499999761581421,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-6": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-4",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-4",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-7": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.5
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-4",
+            "position": [
+              -12.399999618530273,
+              0.21000000834465027,
+              -15.970000267028809
+            ],
+            "size": [
+              0.07999999821186066,
+              0.5,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-4",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.5
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                -12.399999618530273,
+                0.21000000834465027,
+                -15.970000267028809
+              ],
+              "travelSize": [
+                0.07999999821186066,
+                0.5,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-7": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-4",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-4",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-8": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              1.0,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-5",
+            "position": [
+              6.899999618530273,
+              0.9599999785423279,
+              -12.970000267028809
+            ],
+            "size": [
+              1.0,
+              0.07999999821186066,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-5",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              1.0,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                6.899999618530273,
+                0.9599999785423279,
+                -12.970000267028809
+              ],
+              "travelSize": [
+                1.0,
+                0.07999999821186066,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-8": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-5",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-5",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-9": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.6499999761581421
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-6",
+            "position": [
+              5.599999904632568,
+              1.3600000143051147,
+              -12.970000267028809
+            ],
+            "size": [
+              0.07999999821186066,
+              0.6499999761581421,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-6",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.6499999761581421
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                5.599999904632568,
+                1.3600000143051147,
+                -12.970000267028809
+              ],
+              "travelSize": [
+                0.07999999821186066,
+                0.6499999761581421,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-9": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-6",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-6",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-10": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.5
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-6",
+            "position": [
+              2.799999952316284,
+              0.21000000834465027,
+              -12.970000267028809
+            ],
+            "size": [
+              0.07999999821186066,
+              0.5,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-6",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.5
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                2.799999952316284,
+                0.21000000834465027,
+                -12.970000267028809
+              ],
+              "travelSize": [
+                0.07999999821186066,
+                0.5,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-10": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-6",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-6",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-11": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.8500000238418579
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-7",
+            "position": [
+              2.0,
+              0.9599999785423279,
+              -12.970000267028809
+            ],
+            "size": [
+              0.07999999821186066,
+              0.8500000238418579,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-7",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.8500000238418579
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                2.0,
+                0.9599999785423279,
+                -12.970000267028809
+              ],
+              "travelSize": [
+                0.07999999821186066,
+                0.8500000238418579,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-11": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-7",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-7",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-12": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.6499999761581421
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-8",
+            "position": [
+              1.2000000476837158,
+              1.3600000143051147,
+              -12.970000267028809
+            ],
+            "size": [
+              0.07999999821186066,
+              0.6499999761581421,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-8",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.6499999761581421
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                1.2000000476837158,
+                1.3600000143051147,
+                -12.970000267028809
+              ],
+              "travelSize": [
+                0.07999999821186066,
+                0.6499999761581421,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-12": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-8",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-8",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-13": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.5
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-8",
+            "position": [
+              -1.5999999046325684,
+              0.21000000834465027,
+              -12.970000267028809
+            ],
+            "size": [
+              0.07999999821186066,
+              0.5,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-8",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.5
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                -1.5999999046325684,
+                0.21000000834465027,
+                -12.970000267028809
+              ],
+              "travelSize": [
+                0.07999999821186066,
+                0.5,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-13": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-8",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-8",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-14": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-9",
+            "position": [
+              -2.3999996185302734,
+              1.3600000143051147,
+              -12.970000267028809
+            ],
+            "size": [
+              0.30000001192092896,
+              0.07999999821186066,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-9",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                -2.3999996185302734,
+                1.3600000143051147,
+                -12.970000267028809
+              ],
+              "travelSize": [
+                0.30000001192092896,
+                0.07999999821186066,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-14": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-9",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-9",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-15": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-9",
+            "position": [
+              14.399999618530273,
+              0.5600000023841858,
+              -9.970000267028809
+            ],
+            "size": [
+              0.30000001192092896,
+              0.07999999821186066,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-9",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                14.399999618530273,
+                0.5600000023841858,
+                -9.970000267028809
+              ],
+              "travelSize": [
+                0.30000001192092896,
+                0.07999999821186066,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-15": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-9",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-9",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-16": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-9",
+            "position": [
+              12.449999809265137,
+              0.9599999785423279,
+              -9.970000267028809
+            ],
+            "size": [
+              0.30000001192092896,
+              0.07999999821186066,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-9",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                12.449999809265137,
+                0.9599999785423279,
+                -9.970000267028809
+              ],
+              "travelSize": [
+                0.30000001192092896,
+                0.07999999821186066,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-16": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-9",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-9",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-17": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-10",
+            "position": [
+              10.800000190734863,
+              1.3600000143051147,
+              -9.970000267028809
+            ],
+            "size": [
+              0.30000001192092896,
+              0.07999999821186066,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-10",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                10.800000190734863,
+                1.3600000143051147,
+                -9.970000267028809
+              ],
+              "travelSize": [
+                0.30000001192092896,
+                0.07999999821186066,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-17": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-10",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-10",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-18": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-10",
+            "position": [
+              8.850000381469727,
+              0.9599999785423279,
+              -9.970000267028809
+            ],
+            "size": [
+              0.30000001192092896,
+              0.07999999821186066,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-10",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.30000001192092896,
+              0.05999999865889549,
+              0.07999999821186066
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                8.850000381469727,
+                0.9599999785423279,
+                -9.970000267028809
+              ],
+              "travelSize": [
+                0.30000001192092896,
+                0.07999999821186066,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-18": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-10",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-10",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-19": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.7799999713897705
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.3400000035762787
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-10",
+            "position": [
+              5.260000228881836,
+              0.3400000035762787,
+              -9.970000267028809
+            ],
+            "size": [
+              0.07999999821186066,
+              0.7799999713897705,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.3400000035762787
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-10",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.7799999713897705
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.3400000035762787
+            ],
+            "animation": {
+              "travelTo": [
+                5.260000228881836,
+                0.3400000035762787,
+                -9.970000267028809
+              ],
+              "travelSize": [
+                0.07999999821186066,
+                0.7799999713897705,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.3400000035762787
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-19": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-10",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-10",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-20": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.6499999761581421
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-11",
+            "position": [
+              4.400000095367432,
+              1.3600000143051147,
+              -9.970000267028809
+            ],
+            "size": [
+              0.07999999821186066,
+              0.6499999761581421,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-11",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.6499999761581421
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                4.400000095367432,
+                1.3600000143051147,
+                -9.970000267028809
+              ],
+              "travelSize": [
+                0.07999999821186066,
+                0.6499999761581421,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-20": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-11",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-11",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      },
+      "letter-line-21": {
+        "duration": 1.15,
+        "nodes": [
+          {
+            "shape": "box",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.5
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "available"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-11",
+            "position": [
+              1.6000003814697266,
+              0.21000000834465027,
+              -9.970000267028809
+            ],
+            "size": [
+              0.07999999821186066,
+              0.5,
+              0.05999999865889549
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "complete"
+            ],
+            "rotation": [
+              0,
+              0,
+              0.0
+            ]
+          },
+          {
+            "shape": "box",
+            "attachedTo": "starter-cube-11",
+            "position": [
+              0,
+              0.04,
+              0
+            ],
+            "size": [
+              0.07999999821186066,
+              0.05999999865889549,
+              0.5
+            ],
+            "color": "#0B102B",
+            "visibleStates": [
+              "default"
+            ],
+            "rotation": [
+              1.5707963,
+              0,
+              0.0
+            ],
+            "animation": {
+              "travelTo": [
+                1.6000003814697266,
+                0.21000000834465027,
+                -9.970000267028809
+              ],
+              "travelSize": [
+                0.07999999821186066,
+                0.5,
+                0.05999999865889549
+              ],
+              "travelRotation": [
+                0,
+                0,
+                0.0
+              ],
+              "fade": true
+            }
+          }
+        ]
+      },
+      "line-settle-21": {
+        "duration": 0.55,
+        "nodes": [
+          {
+            "shape": "ring",
+            "attachedTo": "starter-cube-11",
+            "position": [
+              0,
+              0.08,
+              0
+            ],
+            "size": [
+              0.55,
+              0.08,
+              1
+            ],
+            "color": "signal",
+            "animation": {
+              "expandAmount": 2.2,
+              "fade": true
+            }
+          },
+          {
+            "shape": "sphere",
+            "attachedTo": "starter-cube-11",
+            "position": [
+              0,
+              0.3,
+              0
+            ],
+            "size": [
+              0.08,
+              1,
+              1
+            ],
+            "color": "butter",
+            "count": 4,
+            "animation": {
+              "orbitRadius": 0.4,
+              "orbitSpeed": 4.0,
+              "radialAmount": 0.8,
+              "fade": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "launchPads": [],
+  "blocks": [],
+  "worlds": {
+    "starter-world": {
+      "blocks": [],
+      "signs": [],
+      "interactions": []
+    }
+  }
+}
