@@ -1,12 +1,12 @@
 {
-  "id": "cuboom",
-  "version": "0.4.0",
-  "sdkVersion": "0.6.0",
+  "id": "heavy2",
+  "version": "0.3.0",
+  "sdkVersion": "0.3.0",
   "package": {
     "formatVersion": 3,
     "entry": "game.luau"
   },
-  "displayName": "Cuboom",
+  "displayName": "heavy2",
   "lobby": false,
   "startWorld": "lobby",
   "launch": {
@@ -15,8 +15,8 @@
   },
   "scene": {
     "eyebrow": "cubacadabra",
-    "title": "Cuboom",
-    "description": "Eleven letters. A whole playground. Push, stack, scatter, and reach the sky.",
+    "title": "heavy2",
+    "description": "A new Cubacadabra game.",
     "maxPlayers": 18
   },
   "palette": {
@@ -50,20 +50,7 @@
       0,
       23
     ],
-    "showSpawnPad": false,
-    "physics": {
-      "jumpVelocity": 11.8,
-      "horizontalBounds": {
-        "minimum": [
-          -33,
-          -33
-        ],
-        "maximum": [
-          33,
-          33
-        ]
-      }
-    }
+    "showSpawnPad": false
   },
   "effects": {
     "version": 1,
@@ -2941,186 +2928,6 @@
               "orbitSpeed": 4.0,
               "radialAmount": 0.8,
               "fade": true
-            }
-          }
-        ]
-      },
-      "join-mint": {
-        "nodes": [
-          {
-            "shape": "ring",
-            "position": [
-              0,
-              0.05,
-              0
-            ],
-            "size": [
-              1.7,
-              0.06,
-              1
-            ],
-            "color": "signal"
-          }
-        ]
-      },
-      "join-violet": {
-        "nodes": [
-          {
-            "shape": "ring",
-            "position": [
-              0,
-              0.05,
-              0
-            ],
-            "size": [
-              1.7,
-              0.06,
-              1
-            ],
-            "color": "periwinkle"
-          }
-        ]
-      },
-      "live-letter": {
-        "duration": 0.65,
-        "nodes": [
-          {
-            "shape": "ring",
-            "position": [
-              0,
-              -0.95,
-              0
-            ],
-            "size": [
-              1.1,
-              0.035,
-              1
-            ],
-            "color": "paper",
-            "opacity": 0.24
-          }
-        ]
-      },
-      "fuse-tick": {
-        "duration": 0.4,
-        "nodes": [
-          {
-            "shape": "ring",
-            "position": [
-              0,
-              1.04,
-              0
-            ],
-            "rotation": [
-              0,
-              0,
-              0
-            ],
-            "size": [
-              0.7,
-              0.06,
-              1
-            ],
-            "color": "hot",
-            "animation": {
-              "pulseAmount": 0.1,
-              "pulseSpeed": 12
-            }
-          }
-        ]
-      },
-      "cuboom-pop": {
-        "duration": 0.7,
-        "nodes": [
-          {
-            "shape": "ring",
-            "position": [
-              0,
-              0.1,
-              0
-            ],
-            "size": [
-              0.2,
-              0.08,
-              1
-            ],
-            "color": "paper",
-            "animation": {
-              "expandAmount": 5.8,
-              "fade": true
-            }
-          },
-          {
-            "shape": "box",
-            "position": [
-              0,
-              0.6,
-              0
-            ],
-            "size": [
-              0.15,
-              0.15,
-              0.15
-            ],
-            "color": "paper",
-            "count": 11,
-            "animation": {
-              "orbitRadius": 0.3,
-              "radialAmount": 4,
-              "spinSpeed": 4,
-              "fade": true
-            }
-          }
-        ]
-      },
-      "round-win": {
-        "duration": 1.5,
-        "nodes": [
-          {
-            "shape": "box",
-            "position": [
-              0,
-              1,
-              0
-            ],
-            "size": [
-              0.16,
-              0.16,
-              0.16
-            ],
-            "color": "signal",
-            "count": 11,
-            "animation": {
-              "orbitRadius": 1,
-              "radialAmount": 4,
-              "bobAmount": 2,
-              "bobSpeed": 2,
-              "fade": true
-            }
-          }
-        ]
-      },
-      "sky-beacon": {
-        "nodes": [
-          {
-            "shape": "ring",
-            "position": [
-              0,
-              0.12,
-              0
-            ],
-            "size": [
-              1.5,
-              0.09,
-              1
-            ],
-            "color": "signal",
-            "visibleStates": [
-              "open"
-            ],
-            "animation": {
-              "pulseAmount": 0.04,
-              "pulseSpeed": 2
             }
           }
         ]
