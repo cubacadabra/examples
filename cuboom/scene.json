@@ -1843,7 +1843,7 @@
           "id": "loose-line-1",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-1"
         }
@@ -1879,7 +1879,7 @@
           "id": "loose-line-2",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-2"
         }
@@ -1915,7 +1915,7 @@
           "id": "loose-line-3",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-3"
         }
@@ -1951,7 +1951,7 @@
           "id": "loose-line-4",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-4"
         }
@@ -1987,7 +1987,7 @@
           "id": "loose-line-5",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-5"
         }
@@ -2023,7 +2023,7 @@
           "id": "loose-line-6",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-6"
         }
@@ -2059,7 +2059,7 @@
           "id": "loose-line-7",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-7"
         }
@@ -2095,7 +2095,7 @@
           "id": "loose-line-8",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-8"
         }
@@ -2131,7 +2131,7 @@
           "id": "loose-line-9",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-9"
         }
@@ -2167,7 +2167,7 @@
           "id": "loose-line-10",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-10"
         }
@@ -2203,7 +2203,7 @@
           "id": "loose-line-11",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-11"
         }
@@ -2239,7 +2239,7 @@
           "id": "loose-line-12",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-12"
         }
@@ -2275,7 +2275,7 @@
           "id": "loose-line-13",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-13"
         }
@@ -2311,7 +2311,7 @@
           "id": "loose-line-14",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-14"
         }
@@ -2347,7 +2347,7 @@
           "id": "loose-line-15",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-15"
         }
@@ -2383,7 +2383,7 @@
           "id": "loose-line-16",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-16"
         }
@@ -2419,7 +2419,7 @@
           "id": "loose-line-17",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-17"
         }
@@ -2455,7 +2455,7 @@
           "id": "loose-line-18",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-18"
         }
@@ -2491,7 +2491,7 @@
           "id": "loose-line-19",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-19"
         }
@@ -2527,7 +2527,7 @@
           "id": "loose-line-20",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-20"
         }
@@ -2563,7 +2563,7 @@
           "id": "loose-line-21",
           "kind": "pickup",
           "label": " ",
-          "radius": 0.9,
+          "radius": 1.3,
           "color": "#0B102B",
           "visual": "letter-line-21"
         }
