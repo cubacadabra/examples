@@ -25,6 +25,9 @@ local line_sizes = {
     { 0.3, 0.08, 0.06 }, { 0.3, 0.08, 0.06 }, { 0.3, 0.08, 0.06 },
     { 0.08, 0.78, 0.06 }, { 0.08, 0.65, 0.06 }, { 0.08, 0.5, 0.06 },
 }
+local bot_roam_clock = 0
+local bot_roam_for = 0
+local bot_roam_target = nil
 
 local function effect_id(index)
     return "letter-line-" .. index
@@ -328,6 +331,61 @@ function Game.on_tick(api, delta)
     if changed then
         refresh_blocks(api)
     end
+end
+
+function Game.on_test_player(api, delta)
+    local position = api.test_player:get_position()
+    local yaw = api.test_player:get_yaw()
+    if not position or not yaw then
+        return
+    end
+
+    bot_roam_clock += delta
+    bot_roam_for = math.max(0, bot_roam_for - delta)
+    if bot_roam_for == 0 and bot_roam_clock >= 13 then
+        bot_roam_clock = 0
+        bot_roam_for = 2.5
+        bot_roam_target = {
+            math.random(-14, 14),
+            0,
+            math.random(-8, 15),
+        }
+    end
+
+    local target
+    if bot_roam_for > 0 then
+        target = bot_roam_target
+    else
+        local best_distance = math.huge
+        for index = 1, line_count do
+            if not completed[index] and not moving[index] then
+                local candidate = loose_positions[index]
+                local dx = candidate[1] - position[1]
+                local dz = candidate[3] - position[3]
+                local distance = dx * dx + dz * dz
+                if distance < best_distance then
+                    best_distance = distance
+                    target = candidate
+                end
+            end
+        end
+    end
+
+    if not target then
+        api.test_player:set_input(0, 0, false, false, 0)
+        return
+    end
+
+    local dx = target[1] - position[1]
+    local dz = target[3] - position[3]
+    local distance = math.sqrt(dx * dx + dz * dz)
+    if distance <= 0.8 then
+        api.test_player:set_input(0, 0, false, false, 0)
+        return
+    end
+    local forward = (-dx * math.sin(yaw) - dz * math.cos(yaw)) / distance
+    local strafe = (dx * math.cos(yaw) - dz * math.sin(yaw)) / distance
+    api.test_player:set_input(forward, strafe, false, false, 0)
 end
 
 function Game.on_interaction(api, event)
