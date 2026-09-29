@@ -92,19 +92,12 @@ local last_offsets = {}
 local function read_cube_offsets(api)
     local positions = api.world:get_positions()
     if not positions then
-        return false
+        return
     end
-    local changed = false
     for index = 1, cube_count do
         local body = positions.blocks["starter-cube-" .. index]
-        local offset = body and { body.position[1] - (-12 + 2 * index), body.position[3] + 4 } or { 0, 0 }
-        local previous = last_offsets[index]
-        if not previous or previous[1] ~= offset[1] or previous[2] ~= offset[2] then
-            last_offsets[index] = offset
-            changed = true
-        end
+        last_offsets[index] = body and { body.position[1] - (-12 + 2 * index), body.position[3] + 4 } or { 0, 0 }
     end
-    return changed
 end
 
 local function add_block(blocks, position, size, color, collidable, cube_index)
@@ -147,6 +140,9 @@ local function add_line(blocks, index, line_layer)
 end
 
 local function refresh_blocks(api)
+    -- Attachments follow pushes in the engine. Read current offsets only when
+    -- constructing new geometry for a layer, pickup, or pickup animation.
+    read_cube_offsets(api)
     local blocks = {}
     -- The first row is authored in scene.json. After its pickup visuals are rearmed,
     -- retain its restored lines as runtime blocks so the finished row stays visible.
@@ -316,7 +312,7 @@ function Game.on_tick(api, delta)
     if api.network:is_connected() then
         lines:update(api, delta)
     end
-    local changed = layer > 1 and read_cube_offsets(api)
+    local changed = false
     for index, progress in pairs(animations) do
         local next_progress = progress + delta
         if next_progress >= 1.15 then
