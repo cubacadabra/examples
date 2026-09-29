@@ -11,7 +11,6 @@ local ink_color = 0x0B102B
 local layer = 1
 local completed = {}
 local moving = {}
-local animations = {}
 local advance_scheduled = false
 local target_positions = { { -9.500, 1.000, -2.970 }, { -7.850, 1.550, -2.970 }, { -6.000, 1.400, -2.970 }, { -6.000, 0.600, -2.970 }, { -5.150, 1.000, -2.970 }, { -4.000, 1.400, -2.970 }, { -4.000, 0.250, -2.970 }, { -1.500, 1.000, -2.970 }, { 0.000, 1.400, -2.970 }, { 0.000, 0.250, -2.970 }, { 2.000, 1.000, -2.970 }, { 4.000, 1.400, -2.970 }, { 4.000, 0.250, -2.970 }, { 6.000, 1.400, -2.970 }, { 6.000, 0.600, -2.970 }, { 6.850, 1.000, -2.970 }, { 8.000, 1.400, -2.970 }, { 8.850, 1.000, -2.970 }, { 8.060, 0.380, -2.970 }, { 10.000, 1.400, -2.970 }, { 10.000, 0.250, -2.970 } }
 local loose_positions = { { -8.400, 0.000, 13.000 }, { -5.600, 0.000, 13.000 }, { -2.800, 0.000, 13.000 }, { 0.000, 0.000, 13.000 }, { 2.800, 0.000, 13.000 }, { 5.600, 0.000, 13.000 }, { 8.400, 0.000, 13.000 }, { -8.400, 0.000, 10.000 }, { -5.600, 0.000, 10.000 }, { -2.800, 0.000, 10.000 }, { 0.000, 0.000, 10.000 }, { 2.800, 0.000, 10.000 }, { 5.600, 0.000, 10.000 }, { 8.400, 0.000, 10.000 }, { -8.400, 0.000, 7.000 }, { -5.600, 0.000, 7.000 }, { -2.800, 0.000, 7.000 }, { 0.000, 0.000, 7.000 }, { 2.800, 0.000, 7.000 }, { 5.600, 0.000, 7.000 }, { 8.400, 0.000, 7.000 } }
@@ -120,29 +119,38 @@ local function line_position(index, line_layer)
     return { target[1] + offset[1], target[2] + layer_height * (line_layer - 1), target[3] + offset[2] }
 end
 
+local refresh_blocks
+
 local function add_line(blocks, index, line_layer)
     local target = line_position(index, line_layer)
     local size = line_sizes[index]
-    local progress = line_layer == layer and animations[index]
-    if progress then
-        local start = loose_positions[index]
-        local fraction = math.min(progress / 1.15, 1)
-        local position = {}
-        for axis = 1, 3 do
-            position[axis] = start[axis] + (target[axis] - start[axis]) * fraction
-        end
-        size = {
-            1 + (size[1] - 1) * fraction,
-            0.06 + (size[2] - 0.06) * fraction,
-            0.08 + (size[3] - 0.08) * fraction,
-        }
-        add_block(blocks, position, size, ink_color, false, cube_for_line[index])
-    else
-        add_block(blocks, target, size, ink_color, false, cube_for_line[index])
-    end
+    add_block(blocks, target, size, ink_color, false, cube_for_line[index])
 end
 
-local function refresh_blocks(api)
+local function start_line_animation(api, index, line_layer)
+    local start = loose_positions[index]
+    local target = line_position(index, line_layer)
+    local offset = last_offsets[cube_for_line[index]] or { 0, 0 }
+    api.effects:play(effect_id(index), {
+        position = start,
+        travelTo = {
+            target[1] - offset[1] - start[1],
+            target[2] - start[2],
+            target[3] - offset[2] - start[3],
+        },
+    })
+    api.task:delay(1.15, function()
+        if layer == line_layer then
+            moving[index] = nil
+            api.effects:set_state(interaction_id(index), "complete")
+            api.effects:play("line-settle-" .. index, { position = target })
+            refresh_blocks(api)
+            update_status(api)
+        end
+    end)
+end
+
+refresh_blocks = function(api)
     -- Attachments follow pushes in the engine. Read current offsets only when
     -- constructing new geometry for a layer, pickup, or pickup animation.
     read_cube_offsets(api)
@@ -174,7 +182,7 @@ local function refresh_blocks(api)
             end
         else
             for index = 1, line_count do
-                if completed[index] then
+                if completed[index] and not moving[index] then
                     add_line(blocks, index, row)
                 end
             end
@@ -242,7 +250,6 @@ lines = CubaSharedState.create({
             layer = state.layer
             completed = {}
             moving = {}
-            animations = {}
             advance_scheduled = false
         end
         for index = 1, line_count do
@@ -251,20 +258,7 @@ lines = CubaSharedState.create({
                 if previous and previous.layer == layer then
                     moving[index] = true
                     api.effects:set_state(interaction_id(index), "carried")
-                    if layer == 1 then
-                        api.effects:play(effect_id(index), { position = loose_positions[index] })
-                        local line_layer = layer
-                        api.task:delay(1.15, function()
-                            if layer == line_layer then
-                                moving[index] = nil
-                                api.effects:set_state(interaction_id(index), "complete")
-                                api.effects:play("line-settle-" .. index, { position = target_positions[index] })
-                                update_status(api)
-                            end
-                        end)
-                    else
-                        animations[index] = 0
-                    end
+                    start_line_animation(api, index, layer)
                 else
                     api.effects:set_state(interaction_id(index), "complete")
                 end
@@ -314,22 +308,6 @@ end
 function Game.on_tick(api, delta)
     if api.network:is_connected() then
         lines:update(api, delta)
-    end
-    local changed = false
-    for index, progress in pairs(animations) do
-        local next_progress = progress + delta
-        if next_progress >= 1.15 then
-            animations[index] = nil
-            moving[index] = nil
-            api.effects:set_state(interaction_id(index), "complete")
-            update_status(api)
-        else
-            animations[index] = next_progress
-        end
-        changed = true
-    end
-    if changed then
-        refresh_blocks(api)
     end
 end
 
@@ -400,21 +378,8 @@ function Game.on_interaction(api, event)
         completed[index] = true
         moving[index] = true
         api.effects:set_state(interaction_id(index), "carried")
-        if layer == 1 then
-            api.effects:play(effect_id(index), { position = loose_positions[index] })
-            local line_layer = layer
-            api.task:delay(1.15, function()
-                if layer == line_layer then
-                    moving[index] = nil
-                    api.effects:set_state(interaction_id(index), "complete")
-                    api.effects:play("line-settle-" .. index, { position = target_positions[index] })
-                    update_status(api)
-                end
-            end)
-        else
-            animations[index] = 0
-            refresh_blocks(api)
-        end
+        start_line_animation(api, index, layer)
+        refresh_blocks(api)
         api.lobby:set_status("Line " .. index .. " is snapping into place…")
     end
 end
