@@ -113,6 +113,7 @@ local function add_block(blocks, position, size, color, collidable, cube_index)
         size = size,
         color = color,
         collidable = collidable,
+        outline = false,
         attachedTo = "starter-cube-" .. cube_index,
     }
 end
