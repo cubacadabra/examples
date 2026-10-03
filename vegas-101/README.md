@@ -1,7 +1,7 @@
 # Vegas 101
 
 Vegas 101 is a playable Cubacadabra port built from the imported Roblox
-reference scene at `../../other-examples/vegas.json`. The source map, table bank,
+reference scene supplied during development. The source map, table bank,
 and slot bank are exported as ordinary package meshes; the authored Luau layer
 adds a compact credits/tickets HUD and deterministic local rounds for the
 source table locations.
@@ -42,15 +42,17 @@ cargo run --release --no-default-features --features headless \
 The headless runner checks that package loading, Luau startup, world selection,
 input stepping, and the resulting state hash are deterministic.
 
-To regenerate the checked-in meshes and compact collision file from the default
-reference scene, install `jq` and run:
+To regenerate the checked-in meshes and bounded collision sources, supply the
+local reference export, install `jq`, and run:
 
 ```sh
-./scripts/export_reference.sh
+sh scripts/export_reference.sh /path/to/vegas.json
 ```
 
-An alternate scene JSON can be supplied as the first argument. The original
-Roblox XML is not required to build or run this package.
+The reference export is an optional local regeneration input. It is not
+included in a clean checkout. The checked-in source builds without it or
+the original Roblox XML. The native merger accepts inline and sharded
+collision exports, preserves input order, and validates the rounded geometry.
 
 ## Source fidelity
 

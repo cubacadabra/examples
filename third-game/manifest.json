@@ -1,0 +1,153 @@
+{
+  "id": "third-game",
+  "version": "0.3.0",
+  "sdkVersion": "0.3.0",
+  "package": {
+    "formatVersion": 3,
+    "entry": "game.luau"
+  },
+  "assets": {
+    "audio": {
+      "probe-ping": {
+        "path": "assets/audio/probe-ping.wav",
+        "volume": 0.62
+      }
+    },
+    "images": {
+      "billboard": {
+        "path": "assets/images/billboard.jpg"
+      }
+    }
+  },
+  "effects": {
+    "source": "effects.json"
+  },
+  "displayName": "Third Game: Capability Probe",
+  "lobby": false,
+  "startWorld": "lobby",
+  "launch": {
+    "destinationWorld": "probe-arena",
+    "authoritative": true
+  },
+  "scene": {
+    "eyebrow": "cubacadabra",
+    "title": "Capability Probe",
+    "description": "A compact playable tour of every preview SDK capability.",
+    "maxPlayers": 18
+  },
+  "palette": {
+    "sky": "#E4F4F0",
+    "ground": "#B8D9C3",
+    "groundEdge": "#47766F",
+    "grid": "#D6EEE0",
+    "accent": "#E96B55",
+    "accentSoft": "#F4B860",
+    "ink": "#173B43",
+    "paper": "#FFFDF4"
+  },
+  "avatars": {
+    "player": {
+      "skin": "#E8AE86",
+      "shirt": "#E96B55",
+      "pants": "#315A8A",
+      "shoes": "#173B43",
+      "character": {
+        "version": 1,
+        "body": "cuba:person.v1",
+        "face": "happy",
+        "outfit": "cuba:everyday-hoodie.v1",
+        "equipment": {},
+        "colors": {
+          "primary": "#E96B55",
+          "secondary": "#315A8A",
+          "sole": "#173B43"
+        },
+        "revision": 1
+      }
+    },
+    "npcs": []
+  },
+  "world": {
+    "groundSize": 54,
+    "gridSize": 48,
+    "gridDivisions": 24,
+    "spawn": [0, 0, 13],
+    "showSpawnPad": false,
+    "clouds": [
+      { "position": [-16, 14, -24], "scale": 1.1 },
+      { "position": [19, 16, -31], "scale": 1.4 }
+    ]
+  },
+  "launchPads": [],
+  "blocks": [],
+  "worlds": {
+    "probe-arena": {
+      "palette": {
+        "sky": "#E4F4F0",
+        "ground": "#B8D9C3",
+        "groundEdge": "#47766F",
+        "grid": "#D6EEE0",
+        "accent": "#E96B55",
+        "accentSoft": "#F4B860",
+        "ink": "#173B43",
+        "paper": "#FFFDF4"
+      },
+      "world": {
+        "groundSize": 54,
+        "gridSize": 48,
+        "gridDivisions": 24,
+        "spawn": [0, 0, 13],
+        "showSpawnPad": false,
+        "clouds": [
+          { "position": [-16, 14, -24], "scale": 1.1 },
+          { "position": [19, 16, -31], "scale": 1.4 }
+        ]
+      },
+      "blocks": [
+        { "position": [-8, 0.45, -8], "size": [4, 0.9, 4], "color": "accentSoft" },
+        { "position": [8, 0.45, -8], "size": [4, 0.9, 4], "color": "accent" },
+        { "position": [0, 0.3, -22], "size": [8, 0.6, 2], "color": "ink", "outline": false }
+      ],
+      "signs": [
+        { "text": "TRY EVERY BUTTON", "position": [0, 2.5, -21], "maxWidth": 7, "color": "paper" }
+      ],
+      "billboards": [
+        {
+          "image": "billboard",
+          "position": [0, 4.15, -31],
+          "width": 7.2,
+          "height": 4.05
+        }
+      ],
+      "interactions": [
+        {
+          "id": "probe-left",
+          "kind": "zone",
+          "label": "LEFT SENSOR",
+          "position": [-8, 0, -8],
+          "radius": 2.5,
+          "color": "accentSoft",
+          "visual": "probe-pad"
+        },
+        {
+          "id": "probe-right",
+          "kind": "zone",
+          "label": "RIGHT SENSOR",
+          "position": [8, 0, -8],
+          "radius": 2.5,
+          "color": "accent",
+          "visual": "probe-pad"
+        },
+        {
+          "id": "probe-finish",
+          "kind": "zone",
+          "label": "FINISH SENSOR",
+          "position": [0, 0, -22],
+          "radius": 3,
+          "color": "accent",
+          "visual": "probe-pad"
+        }
+      ]
+    }
+  }
+}

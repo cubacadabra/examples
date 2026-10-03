@@ -1,0 +1,187 @@
+{
+  "id": "second-game",
+  "version": "0.3.0",
+  "sdkVersion": "0.3.0",
+  "package": {
+    "formatVersion": 3,
+    "entry": "game.luau"
+  },
+  "assets": {
+    "audio": {
+      "relay-hit": {
+        "path": "assets/audio/spell-cast.wav",
+        "volume": 0.7
+      },
+      "relay-chain": {
+        "path": "assets/audio/charm-learned.wav",
+        "volume": 0.72
+      },
+      "uplink-ready": {
+        "path": "assets/audio/circle-ready.wav",
+        "volume": 0.68
+      },
+      "relay-overdrive": {
+        "path": "assets/audio/rainbow-burst.wav",
+        "volume": 0.82
+      }
+    }
+  },
+  "effects": {
+    "source": "effects.json"
+  },
+  "displayName": "Second Game: Signal Run",
+  "lobby": false,
+  "startWorld": "lobby",
+  "launch": {
+    "destinationWorld": "relay-yard",
+    "authoritative": true
+  },
+  "scene": {
+    "eyebrow": "cubacadabra",
+    "title": "Signal Run",
+    "description": "Chain four signal gates, then fire the shared uplink.",
+    "maxPlayers": 18
+  },
+  "palette": {
+    "sky": "#151A3F",
+    "ground": "#20295D",
+    "groundEdge": "#080D26",
+    "grid": "#3B4C86",
+    "signal": "#57E5D0",
+    "hot": "#FF5B85",
+    "coral": "#FF8A3D",
+    "butter": "#F1E95B",
+    "periwinkle": "#9F7BFF",
+    "ink": "#0B102B",
+    "paper": "#F7F5E9"
+  },
+  "avatars": {
+    "player": {
+      "skin": "#E8AE86",
+      "shirt": "#57E5D0",
+      "pants": "#4C3F91",
+      "shoes": "#0B102B",
+      "character": {
+        "version": 1,
+        "body": "cuba:person.v1",
+        "face": "determined",
+        "outfit": "cuba:everyday-hoodie.v1",
+        "equipment": {},
+        "colors": {
+          "primary": "#57E5D0",
+          "secondary": "#4C3F91",
+          "sole": "#0B102B"
+        },
+        "revision": 1
+      }
+    },
+    "npcs": []
+  },
+  "world": {
+    "groundSize": 70,
+    "gridSize": 64,
+    "gridDivisions": 32,
+    "spawn": [0, 0, 23],
+    "showSpawnPad": false,
+    "clouds": [
+      { "position": [-20, 19, -35], "scale": 0.9 },
+      { "position": [24, 23, -48], "scale": 1.2 }
+    ]
+  },
+  "launchPads": [],
+  "blocks": [],
+  "worlds": {
+    "relay-yard": {
+      "palette": {
+        "sky": "#151A3F",
+        "ground": "#20295D",
+        "groundEdge": "#080D26",
+        "grid": "#3B4C86",
+        "signal": "#57E5D0",
+        "hot": "#FF5B85",
+        "coral": "#FF8A3D",
+        "butter": "#F1E95B",
+        "periwinkle": "#9F7BFF",
+        "ink": "#0B102B",
+        "paper": "#F7F5E9"
+      },
+      "world": {
+        "groundSize": 70,
+        "gridSize": 64,
+        "gridDivisions": 32,
+        "spawn": [0, 0, 23],
+        "showSpawnPad": false,
+        "clouds": [
+          { "position": [-20, 19, -35], "scale": 0.9 },
+          { "position": [24, 23, -48], "scale": 1.2 }
+        ]
+      },
+      "blocks": [
+        { "position": [-20, 1.3, -5], "size": [0.8, 2.6, 58], "color": "ink", "outline": false },
+        { "position": [20, 1.3, -5], "size": [0.8, 2.6, 58], "color": "ink", "outline": false },
+        { "position": [5, 0.7, 15], "size": [26, 1.4, 1], "color": "ink" },
+        { "position": [-5, 0.7, 6], "size": [26, 1.4, 1], "color": "ink" },
+        { "position": [5, 0.7, -3], "size": [26, 1.4, 1], "color": "ink" },
+        { "position": [-5, 0.7, -12], "size": [26, 1.4, 1], "color": "ink" },
+        { "position": [-12, 0.7, -22], "size": [16, 1.4, 1], "color": "ink" },
+        { "position": [12, 0.7, -22], "size": [16, 1.4, 1], "color": "ink" },
+        { "position": [-15, 0.18, 10], "size": [5.4, 0.36, 5.4], "color": "coral", "outline": false },
+        { "position": [15, 0.18, 1], "size": [5.4, 0.36, 5.4], "color": "butter", "outline": false },
+        { "position": [-15, 0.18, -8], "size": [5.4, 0.36, 5.4], "color": "periwinkle", "outline": false },
+        { "position": [15, 0.18, -17], "size": [5.4, 0.36, 5.4], "color": "hot", "outline": false },
+        { "position": [0, 0.2, -31], "size": [7.2, 0.4, 7.2], "color": "signal", "outline": false }
+      ],
+      "signs": [
+        { "text": "RUN THE SIGNAL", "position": [0, 3.1, 18], "maxWidth": 8, "color": "paper" },
+        { "text": "UPLINK", "position": [0, 4.6, -31], "maxWidth": 5, "color": "signal" }
+      ],
+      "interactions": [
+        {
+          "id": "node-1",
+          "kind": "zone",
+          "label": "NODE 01",
+          "position": [-15, 0, 10],
+          "radius": 2.8,
+          "color": "coral",
+          "visual": "relay-gate"
+        },
+        {
+          "id": "node-2",
+          "kind": "zone",
+          "label": "NODE 02",
+          "position": [15, 0, 1],
+          "radius": 2.8,
+          "color": "butter",
+          "visual": "relay-gate"
+        },
+        {
+          "id": "node-3",
+          "kind": "zone",
+          "label": "NODE 03",
+          "position": [-15, 0, -8],
+          "radius": 2.8,
+          "color": "periwinkle",
+          "visual": "relay-gate"
+        },
+        {
+          "id": "node-4",
+          "kind": "zone",
+          "label": "NODE 04",
+          "position": [15, 0, -17],
+          "radius": 2.8,
+          "color": "hot",
+          "visual": "relay-gate"
+        },
+        {
+          "id": "uplink",
+          "kind": "zone",
+          "label": "UPLINK",
+          "position": [0, 0, -31],
+          "radius": 3.6,
+          "color": "signal",
+          "visual": "uplink-tower"
+        }
+      ]
+    }
+  }
+}

@@ -11,7 +11,7 @@ duplicated only in manifest arrays. Maya, Jun, Priya, and Theo are now
 stationary authored actors rendered through the shared character renderer.
 They have identity and appearance but no AI or movement. The next Studio gate
 is tracked in the canonical
-[Lemonade 101 plan](../../docs/reference/lemonade-101.md).
+[Lemonade 101 plan](https://github.com/cubacadabra/docs/blob/main/reference/lemonade-101.md).
 
 ## Build
 

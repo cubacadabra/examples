@@ -13,6 +13,7 @@ local completed = {}
 local moving = {}
 local blocks_dirty = false
 local advance_scheduled = false
+local network_connected = false
 local target_positions = { { -9.500, 1.000, -2.970 }, { -7.850, 1.550, -2.970 }, { -6.000, 1.400, -2.970 }, { -6.000, 0.600, -2.970 }, { -5.150, 1.000, -2.970 }, { -4.000, 1.400, -2.970 }, { -4.000, 0.250, -2.970 }, { -1.500, 1.000, -2.970 }, { 0.000, 1.400, -2.970 }, { 0.000, 0.250, -2.970 }, { 2.000, 1.000, -2.970 }, { 4.000, 1.400, -2.970 }, { 4.000, 0.250, -2.970 }, { 6.000, 1.400, -2.970 }, { 6.000, 0.600, -2.970 }, { 6.850, 1.000, -2.970 }, { 8.000, 1.400, -2.970 }, { 8.850, 1.000, -2.970 }, { 8.060, 0.380, -2.970 }, { 10.000, 1.400, -2.970 }, { 10.000, 0.250, -2.970 } }
 local loose_positions = { { -8.400, 0.000, 13.000 }, { -5.600, 0.000, 13.000 }, { -2.800, 0.000, 13.000 }, { 0.000, 0.000, 13.000 }, { 2.800, 0.000, 13.000 }, { 5.600, 0.000, 13.000 }, { 8.400, 0.000, 13.000 }, { -8.400, 0.000, 10.000 }, { -5.600, 0.000, 10.000 }, { -2.800, 0.000, 10.000 }, { 0.000, 0.000, 10.000 }, { 2.800, 0.000, 10.000 }, { 5.600, 0.000, 10.000 }, { 8.400, 0.000, 10.000 }, { -8.400, 0.000, 7.000 }, { -5.600, 0.000, 7.000 }, { -2.800, 0.000, 7.000 }, { 0.000, 0.000, 7.000 }, { 2.800, 0.000, 7.000 }, { 5.600, 0.000, 7.000 }, { 8.400, 0.000, 7.000 } }
 local cube_for_line = { 1, 2, 3, 3, 3, 4, 4, 5, 6, 6, 7, 8, 8, 9, 9, 9, 10, 10, 10, 11, 11 }
@@ -40,6 +41,20 @@ end
 local function player_controls()
     return {
         nodes = {
+            {
+                id = "cuboom-objective",
+                kind = "text",
+                text = "Walk over dark lines to rebuild the wall.",
+                layout = { anchor = "topLeft", width = "92%", maxWidth = 460, height = 22, offset = { 16, 74 } },
+                style = { foreground = "#F7F5E9", fontSize = 14 },
+            },
+            {
+                id = "cuboom-progress",
+                kind = "text",
+                text = "Layer 1 · 0/21 lines · local preview",
+                layout = { anchor = "topLeft", width = "92%", maxWidth = 460, height = 22, offset = { 16, 98 } },
+                style = { foreground = "#F7F5E9", fontSize = 12 },
+            },
             {
                 id = "player-joystick",
                 kind = "joystick",
@@ -79,6 +94,8 @@ end
 
 local function update_status(api)
     local count = completed_count()
+    local connection = api.network:is_connected() and "" or " · local preview"
+    api.ui:set_text("cuboom-progress", "Layer " .. layer .. " · " .. count .. "/" .. line_count .. " lines" .. connection)
     if count == line_count and layer == max_layers then
         api.lobby:set_status("Tower complete — all " .. max_layers .. " layers restored!")
     elseif count == line_count then
@@ -312,7 +329,12 @@ function Game.on_network_message(api, event)
 end
 
 function Game.on_tick(api, delta)
-    if api.network:is_connected() then
+    local connected = api.network:is_connected()
+    if connected ~= network_connected then
+        network_connected = connected
+        update_status(api)
+    end
+    if connected then
         lines:update(api, delta)
     end
     if blocks_dirty then
@@ -388,6 +410,7 @@ function Game.on_interaction(api, event)
         moving[index] = true
         api.effects:set_state(interaction_id(index), "carried")
         start_line_animation(api, index, layer)
+        update_status(api)
         api.lobby:set_status("Line " .. index .. " is snapping into place…")
     end
 end

@@ -2,9 +2,8 @@
 set -eu
 # Run from maze-101. The visual hub is split along the source hierarchy so no
 # package asset approaches the runtime's 16 MiB per-asset ceiling. Collision
-# remains one joined source export because the character can traverse between
-# those hierarchies in the same world.
-SCENE_PATH="${1:-/Users/aa/Downloads/reference-scene.json}"
+# is one joined world, stored in bounded source shards by the native exporter.
+SCENE_PATH="${1:?Usage: sh scripts/export_hub.sh /path/to/reference-scene.json}"
 
 export_mesh() {
   cargo run --manifest-path ../../tools/Cargo.toml --bin cubacadabra -- \

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "templates": {
+    "probe-pad": {
+      "duration": 1,
+      "nodes": [
+        {
+          "shape": "ring",
+          "position": [0, 0.08, 0],
+          "size": [2.4, 0.1, 1],
+          "color": "$interaction",
+          "opacity": 0.78,
+          "animation": { "pulseAmount": 0.08, "pulseSpeed": 2.4 }
+        }
+      ]
+    },
+    "probe-pulse": {
+      "duration": 0.8,
+      "nodes": [
+        {
+          "shape": "ring",
+          "position": [0, 0.25, 0],
+          "size": [2.8, 0.12, 1],
+          "color": "accent",
+          "opacity": 0.92,
+          "animation": { "pulseAmount": 0.18, "pulseSpeed": 4 }
+        }
+      ]
+    }
+  }
+}

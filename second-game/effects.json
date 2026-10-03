@@ -1,0 +1,415 @@
+{
+  "version": 1,
+  "templates": {
+    "relay-gate": {
+      "duration": 1,
+      "nodes": [
+        {
+          "shape": "box",
+          "position": [
+            -1.65,
+            1.55,
+            0
+          ],
+          "size": [
+            0.32,
+            3.1,
+            0.32
+          ],
+          "color": "ink",
+          "opacity": 0.94
+        },
+        {
+          "shape": "box",
+          "position": [
+            1.65,
+            1.55,
+            0
+          ],
+          "size": [
+            0.32,
+            3.1,
+            0.32
+          ],
+          "color": "ink",
+          "opacity": 0.94
+        },
+        {
+          "shape": "box",
+          "position": [
+            0,
+            2.95,
+            0
+          ],
+          "size": [
+            3.62,
+            0.3,
+            0.32
+          ],
+          "color": "$interaction",
+          "opacity": 0.82
+        },
+        {
+          "shape": "ring",
+          "position": [
+            0,
+            0.4,
+            0
+          ],
+          "size": [
+            3.2,
+            0.1,
+            1
+          ],
+          "color": "$interaction",
+          "variants": [
+            {
+              "visibleStates": [
+                "default",
+                "locked"
+              ],
+              "opacity": 0.18
+            },
+            {
+              "visibleStates": [
+                "active"
+              ],
+              "position": [
+                0,
+                0.42,
+                0
+              ],
+              "size": [
+                3.2,
+                0.14,
+                1
+              ],
+              "opacity": 0.98,
+              "animation": {
+                "pulseAmount": 0.09,
+                "pulseSpeed": 3.4,
+                "spinSpeed": 0.3
+              }
+            },
+            {
+              "visibleStates": [
+                "captured"
+              ],
+              "size": [
+                3.2,
+                0.11,
+                1
+              ],
+              "opacity": 0.62
+            }
+          ]
+        },
+        {
+          "shape": "sphere",
+          "position": [
+            0,
+            1.45,
+            0
+          ],
+          "size": [
+            0.18,
+            1,
+            1
+          ],
+          "color": "$interaction",
+          "opacity": 0.94,
+          "count": 8,
+          "visibleStates": [
+            "active"
+          ],
+          "animation": {
+            "orbitRadius": 1.62,
+            "orbitSpeed": 0.85,
+            "bobAmount": 0.18,
+            "bobSpeed": 3,
+            "pulseAmount": 0.04,
+            "pulseSpeed": 3.4
+          }
+        },
+        {
+          "shape": "sphere",
+          "position": [
+            0,
+            2.95,
+            0
+          ],
+          "size": [
+            0.22,
+            1,
+            1
+          ],
+          "color": "$interaction",
+          "opacity": 0.8,
+          "count": 3,
+          "visibleStates": [
+            "captured"
+          ],
+          "animation": {
+            "orbitRadius": 0.72,
+            "orbitSpeed": 0.2
+          }
+        }
+      ]
+    },
+    "uplink-tower": {
+      "duration": 1,
+      "nodes": [
+        {
+          "shape": "cylinder",
+          "position": [
+            0,
+            0.46,
+            0
+          ],
+          "size": [
+            5.1,
+            0.44,
+            1
+          ],
+          "color": "ink",
+          "opacity": 0.96
+        },
+        {
+          "shape": "box",
+          "position": [
+            0,
+            2.05,
+            0
+          ],
+          "size": [
+            0.42,
+            3.7,
+            0.42
+          ],
+          "color": "signal",
+          "opacity": 0.72
+        },
+        {
+          "shape": "ring",
+          "position": [
+            0,
+            0.72,
+            0
+          ],
+          "size": [
+            4.55,
+            0.13,
+            1
+          ],
+          "color": "signal",
+          "variants": [
+            {
+              "visibleStates": [
+                "default",
+                "locked"
+              ],
+              "opacity": 0.2
+            },
+            {
+              "visibleStates": [
+                "active"
+              ],
+              "position": [
+                0,
+                0.74,
+                0
+              ],
+              "size": [
+                4.55,
+                0.17,
+                1
+              ],
+              "opacity": 0.98,
+              "animation": {
+                "pulseAmount": 0.12,
+                "pulseSpeed": 3.2,
+                "spinSpeed": 0.45
+              }
+            }
+          ]
+        },
+        {
+          "shape": "sphere",
+          "position": [
+            0,
+            3.82,
+            0
+          ],
+          "size": [
+            0.42,
+            1,
+            1
+          ],
+          "color": "signal",
+          "opacity": 0.96,
+          "visibleStates": [
+            "active",
+            "overdrive"
+          ],
+          "animation": {
+            "bobAmount": 0.2,
+            "bobSpeed": 2.5,
+            "pulseAmount": 0.1,
+            "pulseSpeed": 3.2
+          }
+        },
+        {
+          "shape": "ring",
+          "position": [
+            0,
+            1.7,
+            0
+          ],
+          "size": [
+            2.2,
+            0.12,
+            1
+          ],
+          "color": "hot",
+          "opacity": 0.9,
+          "count": 3,
+          "visibleStates": [
+            "overdrive"
+          ],
+          "animation": {
+            "orbitRadius": 0.7,
+            "orbitSpeed": 1.4,
+            "pulseAmount": 0.12,
+            "pulseSpeed": 4
+          }
+        }
+      ]
+    },
+    "relay-capture": {
+      "duration": 0.85,
+      "nodes": [
+        {
+          "shape": "ring",
+          "position": [
+            0,
+            0.42,
+            0
+          ],
+          "size": [
+            0.8,
+            0.13,
+            1
+          ],
+          "color": "signal",
+          "animation": {
+            "expandAmount": 3.2,
+            "fade": true
+          }
+        },
+        {
+          "shape": "sphere",
+          "position": [
+            0,
+            1.25,
+            0
+          ],
+          "size": [
+            0.2,
+            1,
+            1
+          ],
+          "color": "paper",
+          "count": 8,
+          "animation": {
+            "orbitRadius": 0.65,
+            "orbitSpeed": 2.8,
+            "radialAmount": 2.8,
+            "fade": true
+          }
+        }
+      ]
+    },
+    "overdrive-burst": {
+      "duration": 3.2,
+      "nodes": [
+        {
+          "shape": "ring",
+          "position": [
+            0,
+            0.5,
+            0
+          ],
+          "size": [
+            1.2,
+            0.18,
+            1
+          ],
+          "color": "signal",
+          "animation": {
+            "expandAmount": 9,
+            "fade": true
+          }
+        },
+        {
+          "shape": "ring",
+          "position": [
+            0,
+            0.72,
+            0
+          ],
+          "size": [
+            1.8,
+            0.14,
+            1
+          ],
+          "color": "hot",
+          "animation": {
+            "expandAmount": 7.5,
+            "fade": true
+          }
+        },
+        {
+          "shape": "ring",
+          "position": [
+            0,
+            0.94,
+            0
+          ],
+          "size": [
+            2.4,
+            0.12,
+            1
+          ],
+          "color": "butter",
+          "animation": {
+            "expandAmount": 6,
+            "fade": true
+          }
+        },
+        {
+          "shape": "sphere",
+          "position": [
+            0,
+            1.8,
+            0
+          ],
+          "size": [
+            0.28,
+            1,
+            1
+          ],
+          "color": "paper",
+          "count": 12,
+          "animation": {
+            "orbitRadius": 1.25,
+            "orbitSpeed": 3.2,
+            "bobAmount": 0.65,
+            "bobSpeed": 4.2,
+            "radialAmount": 7,
+            "fade": true
+          }
+        }
+      ]
+    }
+  }
+}

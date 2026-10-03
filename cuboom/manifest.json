@@ -1,12 +1,12 @@
 {
   "id": "heavy2",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "sdkVersion": "0.6.0",
   "package": {
     "formatVersion": 3,
     "entry": "game.luau"
   },
-  "displayName": "heavy2",
+  "displayName": "Cuboom",
   "lobby": false,
   "startWorld": "lobby",
   "launch": {

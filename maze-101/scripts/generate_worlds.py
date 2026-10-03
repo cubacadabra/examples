@@ -15,7 +15,6 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCENE = Path("/Users/aa/Downloads/reference-scene.json")
 SCALE = 0.6
 
 ROOM_TIERS = {
@@ -322,7 +321,7 @@ def rooms_module() -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--scene", type=Path, default=SCENE)
+    parser.add_argument("--scene", type=Path, required=True, help="Local exported Roblox reference scene JSON")
     args = parser.parse_args()
     scene = json.loads(args.scene.read_text(encoding="utf-8"))
     positions = source_room_positions(scene)

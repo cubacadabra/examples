@@ -77,9 +77,15 @@ Regenerate source assets and the authored room data:
 ```sh
 /Applications/Blender.app/Contents/MacOS/Blender --background \
   --python scripts/prepare_reference_meshes.py
-sh scripts/export_hub.sh /Users/aa/Downloads/reference-scene.json
-python3 scripts/generate_worlds.py --scene /Users/aa/Downloads/reference-scene.json
+sh scripts/export_hub.sh /path/to/reference-scene.json
+python3 scripts/generate_worlds.py --scene /path/to/reference-scene.json
 ```
+
+Large collision source exports use an ordered index and bounded JSON shards
+under `reference/hub-collision.parts/`. The native builder merges them into
+runtime triangles; player hosts never interpret authoring shards. To migrate an
+older inline export, use `sh ../../tools/scripts/cubacadabra.sh shard-collision-source
+--input /path/to/old-collision.json --output reference/hub-collision.json`.
 
 The extracted scene JSON is a local development input, not a package asset.
 The generated GLBs, mesh overrides, and collision JSON are checked-in source
